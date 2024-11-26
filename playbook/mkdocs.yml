@@ -1,0 +1,31 @@
+# Project Information
+site_name: Responsible AI Playbook
+site_description: A playbook for Responsible AI in the Singapore Public Service
+site_author: GovTech AI Practice
+
+# Theme Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    primary: indigo
+    accent: pink
+  features:
+    - navigation.tabs
+    - navigation.sections
+    
+# Navigation
+nav:
+  - Home: index.md
+  - Testing: testing.md
+  - Guardrails: guardrails.md
+  - Fairness: fairness.md
+
+# Plugins
+plugins:
+  - search
+  - section-index
+  - exclude:
+      glob:
+        - "*.tmp"
+        - "*.bak"
