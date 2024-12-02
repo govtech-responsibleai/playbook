@@ -2,6 +2,8 @@
 site_name: Responsible AI Playbook
 site_description: A playbook for Responsible AI in the Singapore Public Service
 site_author: GovTech AI Practice
+site_dir: ../docs
+docs_dir: docs
 
 # Theme Configuration
 theme:

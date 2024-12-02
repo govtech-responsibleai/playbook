@@ -27,6 +27,14 @@ This is under active development.
 
 ## Adding new content
 
-Add a new markdown file in the `playbook/src` directory.
+1. Add a new markdown file in the `playbook/src` directory.
 
-Then add a link to it in the `mkdocs.yml` file.
+2. Then add a link to it in the `mkdocs.yml` file.
+
+3. Build the site by running this command at the root directory:
+
+```bash
+mkdocs build --config-file playbook/mkdocs.yml
+```
+
+4. Commit and push your changes.
