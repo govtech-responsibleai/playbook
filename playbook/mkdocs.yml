@@ -14,13 +14,26 @@ theme:
     accent: pink
   features:
     - navigation.tabs
-    - navigation.sections
+    - toc.integrate
+
+# Markdown Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
     
 # Navigation
 nav:
   - Home: index.md
   - Testing: testing.md
-  - Guardrails: guardrails.md
+  - Guardrails:
+    - Overview: guardrails.md
+    - Getting Started: guardrails/getting_started.md
+    - Best Practices When Integrating Guardrails: guardrails/best_practices.md
+    - Building Your Own Guardrails: guardrails/byog.md
   - Fairness: fairness.md
 
 # Plugins
