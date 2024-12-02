@@ -30,8 +30,10 @@ nav:
   - Home: index.md
   - Testing: testing.md
   - Guardrails:
-    - Overview: guardrails.md
-    - Getting Started: guardrails/getting_started.md
+    - Introduction: guardrails.md
+    - Sentinel: guardrails/sentinel.md
+    - Quick Start: guardrails/quick_start.md
+    - Different Types of Guardrails: guardrails/diff_guardrails.md
     - Best Practices When Integrating Guardrails: guardrails/best_practices.md
     - Building Your Own Guardrails: guardrails/byog.md
   - Fairness: fairness.md
