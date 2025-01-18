@@ -1,0 +1,840 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A playbook for Responsible AI in the Singapore Public Service">
+      
+      
+        <meta name="author" content="GovTech AI Practice">
+      
+      
+      
+        <link rel="prev" href="../quick_start/">
+      
+      
+        <link rel="next" href="../best_practices/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>Different Types of Guardrails - Responsible AI Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview-of-guardrails" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Responsible AI Playbook" class="md-header__button md-logo" aria-label="Responsible AI Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Responsible AI Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Different Types of Guardrails
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../testing/" class="md-tabs__link">
+        
+  
+    
+  
+  Testing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Guardrails
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../fairness/" class="md-tabs__link">
+        
+  
+    
+  
+  Fairness
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Responsible AI Playbook" class="md-nav__button md-logo" aria-label="Responsible AI Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Responsible AI Playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guardrails
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guardrails
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sentinel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentinel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Different Types of Guardrails
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Different Types of Guardrails
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-toxicitycontent-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Toxicity/Content Moderation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Toxicity/Content Moderation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-localised-content-moderation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Localised Content Moderation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-personal-identifiable-information-pii" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Personal Identifiable Information (PII)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-jailbreakprompt-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Jailbreak/Prompt Injection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-off-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Off-Topic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-system-prompt-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. System-Prompt Leakage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-hallucination" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Hallucination
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-relevance" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Relevance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best_practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices When Integrating Guardrails
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../byog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Your Own Guardrails
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fairness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fairness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="overview-of-guardrails">Overview of Guardrails</h1>
+<div class="admonition warning">
+<p class="admonition-title">Check your organization's compliance policies when using external services</p>
+<p>In this section, we do mention a few external services as examples. Using such external services means your data is sent to a third party. Please ensure that this is compliant with your organization's relevant policies.</p>
+</div>
+<h2 id="1-toxicitycontent-moderation">1. Toxicity/Content Moderation</h2>
+<p>Content moderation is crucial for filtering out inappropriate or harmful content before it's processed or returned by the LLM. While most state-of-the-art LLMs have built-in safety features through their alignment process, having an additional moderation layer enhances security.</p>
+<p>Popular options include:</p>
+<ul>
+<li><a href="https://platform.openai.com/docs/guides/moderation">OpenAI's Moderation API</a></li>
+<li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">AWS Bedrock Guardrails</a> </li>
+<li><a href="https://learn.microsoft.com/en-us/azure/ai-services/content-safety/">Azure AI Content Safety</a></li>
+<li>Open source models like <a href="https://huggingface.co/meta-llama/Llama-Guard-3-8B">LlamaGuard</a> by Meta and <a href="https://huggingface.co/google/shieldgemma-2b">ShieldGemma</a> by Google</li>
+<li><a href="https://docs.mistral.ai/capabilities/guardrailing/">Mistral's moderation API</a></li>
+</ul>
+<p>These guardrails tend to have their taxonomy of what is considered harmful content. These categories are typically defined in the documentation.</p>
+<h3 id="11-localised-content-moderation">1.1 Localised Content Moderation</h3>
+<p>Generic moderation models may not be sufficiently localized for specific contexts. For example, LionGuard was developed specifically for Singapore-specific content moderation. It's available through:</p>
+<ul>
+<li>Sentinel API (for Singapore Public Officers)</li>
+<li>Open source model on <a href="https://huggingface.co/govtech/lionguard-v1">HuggingFace</a> (for self-hosting)</li>
+</ul>
+<p>In the table below, we list the categories that LionGuard uses. The model provides a risk score for each risk category.</p>
+<table>
+<thead>
+<tr>
+<th>S/N</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hateful</td>
+<td>Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups is considered harassment. Content that includes violence or serious harm towards protected groups.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Harassment</td>
+<td>Content that expresses, incites, or promotes harassing language towards any target/individual. Content that causes prolonged mental or emotional suffering (&gt;1 hour) without mention of violence. Any harassment content that includes violence or serious harm.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Encouraging Public Harm</td>
+<td>Content that promotes, facilitates, or encourages harmful public acts, vice or organized crime.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Encouraging Self-Harm</td>
+<td>Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders. Content that provides instructions or advice on committing such acts.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Sexual</td>
+<td>Content meant to arouse sexual excitement, including descriptions of sexual activity or promotion of sexual services (excluding sex education and wellness). Sexual content involving minors under 18.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Toxic</td>
+<td>Content that is rude, disrespectful, or profane, including use of slurs. Highly aggressive or disrespectful content likely to discourage user participation or discussion.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Violent</td>
+<td>Content that depicts death, violence, or physical injury.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-personal-identifiable-information-pii">2. Personal Identifiable Information (PII)</h2>
+<p>We do not want to pass PII to LLMs, especially when the LLM is accessed via an external managed service. </p>
+<p>To detect PII, we can use:</p>
+<ul>
+<li><a href="https://cloak.gov.sg">Cloak</a> - GovTech's dedicated internal service for comprehensive and localised PII detection (e.g., names, addresses). Direct integration with Sentinel API is coming soon.</li>
+<li><a href="https://github.com/microsoft/presidio">Presidio</a> - Open source tool that identifies various PII entities like names, phone numbers, addresses</li>
+<li>Custom regex patterns for basic PII detection</li>
+</ul>
+<h2 id="3-jailbreakprompt-injection">3. Jailbreak/Prompt Injection</h2>
+<p>As models evolve, jailbreak and prompt injection techniques become increasingly sophisticated. Applications should be robust against common attack patterns. </p>
+<p><a href="https://huggingface.co/meta-llama/Prompt-Guard-86M"><code>PromptGuard</code></a> is a lightweight 86M parameter model specifically for detecting jailbreaks/prompt injections. We have integrated this into our Sentinel API.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip: Input Validation and Sanitization</p>
+<p>Beyond having a separate guardrail model, it is also important to design your application in a way that is robust against prompt injection attacks. This includes:</p>
+<ul>
+<li>Using structured inputs instead of free-form text</li>
+<li>Classification for input validation (e.g., you have a free textbox for users to enter their resume. You can use a LLM to classify if the input is indeed a valid resume or not.) </li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">This is an evolving area</p>
+<p>This is an evolving area, and new jailbreak techniques routinely emerge. As models are typically trained on known jailbreak patterns, they may be susceptible to these new jailbreak techniques. Nevertheless, it is still a good idea to have a guardrail model to detect <strong>common</strong> jailbreak attempts.</p>
+</div>
+<h2 id="4-off-topic">4. Off-Topic</h2>
+<p>Beyond harmful content, it's important to detect and filter irrelevant queries to maintain application focus. We call such queries as "off-topic".</p>
+<p><img alt="Off-topic" src="../images/off_topic.png" /></p>
+<p>Approaches include:</p>
+<ul>
+<li>Zero-shot/few-shot classifiers to detect relevance against system prompt. This approach, however, suffers from lower precision (i.e., many valid queries are incorrectly classified as off-topic).</li>
+<li>Using a custom topic classifier guardrail from Amazon Bedrock Guardrails or Azure AI Content Safety. To use this approach, however, you need to define your own taxonomy of what is considered off-topic and/or provide custom examples for model training.</li>
+</ul>
+<p>Noting these limitations, we trained our own custom off-topic guardrail model that works zero-shot. It classifies if a given prompt is off-topic based on the system prompt. Further details can be found in our blog post here.</p>
+<h2 id="5-system-prompt-leakage">5. System-Prompt Leakage</h2>
+<p>We typically include a system prompt in our Sentinel API to guide the LLM's behaviour. This system prompt usually contains the rules that the LLM must follow. Exposing it to the user may not be desirable as it may reveal sensitive information or allow the user to better manipulate the LLM's behaviour.</p>
+<p>To detect if the system prompt is leaked, we can use:</p>
+<ul>
+<li>Word overlap analysis</li>
+<li>Semantic similarity checks</li>
+</ul>
+<p>Here is an example of how we could use simple keyword overlap analysis to detect if the system prompt is leaked.</p>
+<div class="admonition warning">
+<p class="admonition-title">This section is under development</p>
+<p>This section is under development. We will add more details here soon.</p>
+</div>
+<h2 id="6-hallucination">6. Hallucination</h2>
+<p>Ensuring LLM outputs are grounded in facts and provided context improves reliability. Techniques include:</p>
+<ul>
+<li>Comparing responses against source material</li>
+<li>Zero-shot verification of factual consistency</li>
+<li>Citation checking</li>
+<li>Knowledge graph validation</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">This section is under development</p>
+<p>This section is under development. We will add more details here soon.</p>
+</div>
+<h2 id="7-relevance">7. Relevance</h2>
+<p>Beyond topical relevance, responses should be:</p>
+<ul>
+<li>Contextually appropriate</li>
+<li>Within defined scope</li>
+<li>Aligned with user intent</li>
+<li>Grounded in provided references</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">This section is under development</p>
+<p>This section is under development. We will add more details here soon.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
