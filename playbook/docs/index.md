@@ -53,7 +53,7 @@ We believe that **testing** and **mitigation** are essential to deploying AI mod
 
 Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. [Note: may wanna just draw a diagram]
 
-While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. Moreover, mitigations at the application level are more general and can be widely applied to different contexts. As such, in the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails [output_testing](testing.md) and [guardrails](guardrails.md).
+While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. Moreover, mitigations at the application level are more general and can be widely applied to different contexts. As such, in the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails [testing](testing.md) and [guardrails](guardrails.md).
 
 ## Contributions
 
