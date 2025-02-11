@@ -29,6 +29,12 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Testing: testing.md
+  - Fairness:
+    - Discriminative: fairness_testing/fairness_discriminative.md
+    - Generative: fairness_testing/fairness_generative.md
+  - Safety:
+    - Introduction: safety_testing/safety_testing.md
+    - Benchmarks and Tools: safety_testing/diff_safety.md
   - Guardrails:
     - Introduction: guardrails.md
     - Sentinel: guardrails/sentinel.md
@@ -36,7 +42,7 @@ nav:
     - Different Types of Guardrails: guardrails/diff_guardrails.md
     - Best Practices When Integrating Guardrails: guardrails/best_practices.md
     - Building Your Own Guardrails: guardrails/byog.md
-  - Fairness: fairness.md
+  - Resources: resources.md
 
 # Plugins
 plugins:

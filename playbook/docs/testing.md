@@ -3,7 +3,7 @@
 ## What is testing?
 Testing (possibly also known as "evaluations") is the process of 
 1. establishing risk categories of interest
-2. creating and defining benchmarks,
+2. creating and defining benchmarks
 3. measuring a system's performance against this benchmark
 
 in order to ensure that the system is accurate, reliable and robust.
