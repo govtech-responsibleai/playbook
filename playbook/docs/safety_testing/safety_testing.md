@@ -60,13 +60,10 @@ We have three guiding principles when curating prompts:
 **Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).**
 
 The process for generating a dataset for safety testing may look something like: 
-1. Determine risk categories / behaviors
-2. Manually write some prompts 
-3. Use a non-safety-tuned LLM (eg DeepSeek, Mistral) and/or a jailbreak template to generate testing prompts 
-4. Use prompt injection/jailbreaking methods to augment and enhance testing prompts
-5. Assess quality of generations manually (eye-balling or using human annotations) or with off-the-shelf detectors/evaluator LLMs 
+![TestingFlow](images/testing_flow.png)
+_Figure: Safety testing flow._
 
-If possible, the process of developing a testing dataset is iterative and can benefit from production data.
+What is most important is that the process of safety testing is **iterative**, and almost a continual "cat-and-mouse" game as testing data is used to train defences, which generate labels that can be used for generating even more testing data. If possible, production data can also be randomly sampled and used for benchmarking. 
 
 ### Metrics
 
@@ -85,7 +82,7 @@ LLM Response: Singapore's approach to freedom of speech is complex and differs s
 It is important to engage business users to ascertain the type of refusals that are important for the application. To get the conversation going, we recommend using the following taxonomy as a starting point for choosing what kind of rejections matter in your specific use case.
 
 ![RejectionTaxonomy](images/donotanswer.png)
-_Taxonomy of rejections by LLMs. Source: [Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs](https://arxiv.org/pdf/2308.13387)_
+_Figure: Taxonomy of rejections by LLMs. Source: [Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs](https://arxiv.org/pdf/2308.13387)_
 
 Some commonly used classifiers and methods for detecting rejections include: 
 - [ProtectAI](https://huggingface.co/protectai/distilroberta-base-rejection-v1) - fine-tuned distilroberta-base that aims to identify rejections in LLMs when the prompt doesn't pass content moderation
@@ -96,4 +93,4 @@ Some commonly used classifiers and methods for detecting rejections include:
 
 If the LLM application does not refuse to answer, we can attempt to analyse the content of the response. This may include the toxicity of the response. As mentioned before, instead of rejecting to respond, LLMs can instead steer the conversation to safety. Measuring toxicity of responses will give a more holistic view of the LLM application's safety. 
 
-Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of [Guardrails](guardrails/diff_guardrails.md).
+Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of [Guardrails](../guardrails/diff_guardrails.md).

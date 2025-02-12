@@ -641,6 +641,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../litmus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Litmus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -912,12 +933,9 @@
 3. <strong>Contextualised</strong>: Prompts need to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.</p>
 <p><strong>Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).</strong></p>
 <p>The process for generating a dataset for safety testing may look something like: 
-1. Determine risk categories / behaviors
-2. Manually write some prompts 
-3. Use a non-safety-tuned LLM (eg DeepSeek, Mistral) and/or a jailbreak template to generate testing prompts 
-4. Use prompt injection/jailbreaking methods to augment and enhance testing prompts
-5. Assess quality of generations manually (eye-balling or using human annotations) or with off-the-shelf detectors/evaluator LLMs </p>
-<p>If possible, the process of developing a testing dataset is iterative and can benefit from production data.</p>
+<img alt="TestingFlow" src="../images/testing_flow.png" />
+<em>Figure: Safety testing flow.</em></p>
+<p>What is most important is that the process of safety testing is <strong>iterative</strong>, and almost a continual "cat-and-mouse" game as testing data is used to train defences, which generate labels that can be used for generating even more testing data. If possible, production data can also be randomly sampled and used for benchmarking. </p>
 <h3 id="metrics">Metrics</h3>
 <p>To determine suitable metrics for safety testing, it is imperative to think about how we would want an LLM to ideally respond in each risk scenario. </p>
 <h4 id="refusalrejection"><u>Refusal/rejection</u></h4>
@@ -931,14 +949,14 @@ LLM Response: Singapore's approach to freedom of speech is complex and differs s
 
 <p>It is important to engage business users to ascertain the type of refusals that are important for the application. To get the conversation going, we recommend using the following taxonomy as a starting point for choosing what kind of rejections matter in your specific use case.</p>
 <p><img alt="RejectionTaxonomy" src="../images/donotanswer.png" />
-<em>Taxonomy of rejections by LLMs. Source: <a href="https://arxiv.org/pdf/2308.13387">Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs</a></em></p>
+<em>Figure: Taxonomy of rejections by LLMs. Source: <a href="https://arxiv.org/pdf/2308.13387">Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs</a></em></p>
 <p>Some commonly used classifiers and methods for detecting rejections include: 
 - <a href="https://huggingface.co/protectai/distilroberta-base-rejection-v1">ProtectAI</a> - fine-tuned distilroberta-base that aims to identify rejections in LLMs when the prompt doesn't pass content moderation
 - <a href="https://arxiv.org/pdf/2402.05044">Keyword search</a> - Provide a list of keywords to identify a rejection (eg "I cannot", "I am sorry")
 - Evaluator LLM - Prompt an instruction-tuned LLM to identify whether a sentence is semantically similar to a rejection; likely most accurate for more fine-grained refusal definitions</p>
 <h4 id="toxicity"><u>Toxicity</u></h4>
 <p>If the LLM application does not refuse to answer, we can attempt to analyse the content of the response. This may include the toxicity of the response. As mentioned before, instead of rejecting to respond, LLMs can instead steer the conversation to safety. Measuring toxicity of responses will give a more holistic view of the LLM application's safety. </p>
-<p>Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of <a href="guardrails/diff_guardrails.md">Guardrails</a>.</p>
+<p>Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of <a href="../../guardrails/diff_guardrails/">Guardrails</a>.</p>
 
 
 
