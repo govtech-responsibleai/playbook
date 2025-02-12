@@ -35,6 +35,7 @@ nav:
   - Safety:
     - Introduction: safety_testing/safety_testing.md
     - Benchmarks and Tools: safety_testing/diff_safety.md
+    - Litmus: safety_testing/litmus.md
   - Guardrails:
     - Introduction: guardrails.md
     - Sentinel: guardrails/sentinel.md
