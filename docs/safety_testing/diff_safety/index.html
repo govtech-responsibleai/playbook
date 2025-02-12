@@ -798,6 +798,7 @@
 
 
 <h1 id="open-source-safety-testing-benchmarks-and-tools">Open-source Safety Testing Benchmarks and Tools</h1>
+<p><em>Updated: 12 Feb 2025</em></p>
 <p>In this section, we introduce some well-known open-source safety benchmarks. While they can be used as-is, we recommend understanding what they entail and how they have been generated in order to expand the dataset and come up with more diverse and meaningful prompts for each use case. The examples can be used for manual curation or few-shot prompting, while the methods can be adapted for generating new test samples.</p>
 <p>☠️ = Toxic, hateful, sexual or violent content</p>
 <p>🔪 = Illegal activities or self-harm </p>
@@ -806,6 +807,7 @@
 <p>🤡 = Factually incorrect/misleading</p>
 <p>⚖️ = Discriminatory/bias</p>
 <h2 id="datasets">Datasets</h2>
+<p>The following datasets are known to be more comprehensive, covering several risk categories.</p>
 <table>
 <thead>
 <tr>
@@ -879,6 +881,9 @@
 </tbody>
 </table>
 <h2 id="tools">Tools</h2>
+<p>There are several open-source SDKs and web applications that aggregate safety testing datasets and simplify the process of generating testing pipelines. By abstracting away data, model and evaluation set-ups and providing a higher level interface, these SDKs can help teams to kickstart testing. </p>
+<p>Nonetheless, it is necessary for users to assess whether the tool meets their needs and covers the risk categories and scenarios that they care about. Given that new benchmarks and methods are continually developed, it is also important to consider whether the tool is <strong>extensible</strong> and <strong>well-maintained</strong>. </p>
+<p>Below are some well-known safety testing frameworks and tools that we have surveyed. Note that these tools focus more on safety, rather than faithfulness, another risk targeted by many other evaluation toollkits.</p>
 <table>
 <thead>
 <tr>
@@ -889,24 +894,24 @@
 </thead>
 <tbody>
 <tr>
-<td>Giskard</td>
-<td>xx</td>
-<td>xx</td>
+<td><a href="https://github.com/Giskard-AI/giskard">Giskard</a></td>
+<td>Open-source Python library that incorporates testing benchmarks and automated methods for generating new test data. Extensible to allow testing of custom APIs and models.<p><p>RAG Evaluator Toolkit (RAGET) to automatically generate RAG evaluation datasets and answers. <p><p>SaaS platform also available.</td>
+<td>Heavy emphasis and use of LLM-based agents to generate data and perform evaluation. Prompts used for doing so can serve as inspiration, but be mindful that LLM-based evaluators may also have limitations.</td>
 </tr>
 <tr>
-<td>Garak</td>
-<td>xx</td>
-<td>xx</td>
+<td><a href="ttps://github.com/NVIDIA/garak">Garak</a></td>
+<td>Open-source Python library that combines static, dynamic, and adaptive probes to test vulnerabilities in LLMs and dialog systems</td>
+<td>Clear documentation on probes (datasets) available as well as evaluators. However, library is not very updated, and datasets/automated red teaming methods are slightly outdated.</td>
 </tr>
 <tr>
-<td>Moonshot</td>
-<td>xx</td>
-<td>xx</td>
+<td><a href="https://github.com/aiverify-foundation/moonshot">Moonshot</a></td>
+<td>Open-source Python library with datasets and automated attack modules to evaluate LLMs and LLM applications</td>
+<td>Offers Singapore-contextualised datasets such as Safety Benchmark (Singapore Context), Bias Occupation and Colloquial Wordswap,</td>
 </tr>
 <tr>
-<td>Haize</td>
-<td>xx</td>
-<td>xx</td>
+<td><a href="https://platform.haizelabs.com/app/">Haize</a></td>
+<td>Web application platform allowing users to automatically generate test data based on a user-defined behaviors and evaluate based on user-defined "Code of Conduct".</td>
+<td>Simple and intuitive Web UI, attack prompts are diverse and include rather novel jailbreaking templates. However, not open-source and not clear if it is able to easily integrate into CI/CD workflows. Good for teams starting out.</td>
 </tr>
 </tbody>
 </table>
