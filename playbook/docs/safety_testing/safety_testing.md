@@ -87,7 +87,7 @@ _Figure: Taxonomy of rejections by LLMs. Source: [Do-Not-Answer: A Dataset for E
 Some commonly used classifiers and methods for detecting rejections include: 
 - [ProtectAI](https://huggingface.co/protectai/distilroberta-base-rejection-v1) - fine-tuned distilroberta-base that aims to identify rejections in LLMs when the prompt doesn't pass content moderation
 - [Keyword search](https://arxiv.org/pdf/2402.05044) - Provide a list of keywords to identify a rejection (eg "I cannot", "I am sorry")
-- Evaluator LLM - Prompt an instruction-tuned LLM to identify whether a sentence is semantically similar to a rejection; likely most accurate for more fine-grained refusal definitions
+- Evaluator LLM, possibly using frameworks like [G-Eval](https://docs.confident-ai.com/docs/metrics-llm-evals) - Prompt an instruction-tuned LLM to identify whether a sentence is semantically similar to a rejection; likely most accurate for more fine-grained refusal definitions
 
 #### <u>Toxicity</u>
 
