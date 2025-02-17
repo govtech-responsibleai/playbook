@@ -8,8 +8,8 @@ Testing (possibly also known as "evaluations") is the process of
 
 in order to ensure that the system is accurate, reliable and robust.
 
-![Evals](images/evals_openai.png)
-_Stages of testing maturity in AI systems. Source: OpenAI_
+![Evals](images/testing_progression.png)
+_Figure: Stages of testing maturity in AI systems._
 
 We can think of testing maturity in stages. We want to be at level 4, where testing is comprehensive and automated. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up WOG testing of AI systems. 
 
