@@ -56,9 +56,9 @@ As models evolve, jailbreak and prompt injection techniques become increasingly 
 
 - [`PromptGuard`](https://huggingface.co/meta-llama/Prompt-Guard-86M) is a lightweight 86M parameter model specifically for detecting jailbreaks/prompt injections. We have integrated this into our Sentinel API.
 - [Lakera](https://platform.lakera.ai/docs/api/guard) offers an API endpoint to detect prompt injections; however, not clear what/how effective the model is
-- [deberta-v3-base-injection](https://huggingface.co/deepset/deberta-v3-base-injection) is a model finetuned on jailbreaks/prompt injections; however, it may be outdated
+- [`deberta-v3-base-injection`](https://huggingface.co/deepset/deberta-v3-base-injection) is a model finetuned on jailbreaks/prompt injections; however, it may be outdated
 - [`ProtectAI`](https://github.com/protectai/rebuff) - multi-stage prompt injection detection framework relying on continually updated database of prompt injections and LLM-based detector; however, may be expensive and slow to run
-- [Perplexity Heuristics](https://docs.nvidia.com/nemo/guardrails/user-guides/guardrails-library.html#jailbreak-detection-heuristics) - perplexity-based heuristics/rules for detecting jailbreaking templates with adversarial prefixes/suffixes
+- [Perplexity heuristics](https://docs.nvidia.com/nemo/guardrails/user-guides/guardrails-library.html#jailbreak-detection-heuristics) - perplexity-based heuristics/rules for detecting jailbreaking templates with adversarial prefixes/suffixes
 
 !!! tip "Tip: Input Validation and Sanitization"
 
@@ -138,6 +138,7 @@ In practice, facts can exist in multiple external knowledge bases. Hence, many t
 - [Loki](https://github.com/Libr-AI/OpenFactVerification) - end-to-end pipeline for dissecting long texts into individual claims, assessing their worthiness for verification, generating queries for evidence search, crawling for evidence, and verifying the claims; optimised with parallelism and human-in-the-loop
 - [Search-Augmented Factuality Evaluator (SAFE)](https://github.com/google-deepmind/long-form-factuality) - use LLM agents to reason and send search queries to Google Search
 
+Despite extensive research and tools available for detecting hallucination and non-factuality, latency remains a primary concern. As such, in practice, many applications simply provide citations, allowing end-users to perform reference and fact verification on their own. 
 
 !!! tip "Tip: Prompt Design"
 
