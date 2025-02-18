@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../diff_guardrails/">
+        <link rel="prev" href="../../fairness_testing/fairness_generative/">
       
       
-        <link rel="next" href="../byog/">
+        <link rel="next" href="../diff_safety/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Best Practices When Integrating Guardrails - Responsible AI Playbook</title>
+        <title>Introduction - Responsible AI Playbook</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#best-practices-when-integrating-guardrails" class="md-skip">
+        <a href="#safety-testing" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Best Practices When Integrating Guardrails
+              Introduction
             
           </span>
         </div>
@@ -227,11 +227,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../safety_testing/safety_testing/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   Safety
@@ -245,13 +247,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../guardrails/" class="md-tabs__link">
           
   
   Guardrails
@@ -445,23 +445,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -472,7 +477,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Safety
@@ -483,10 +488,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../safety_testing/safety_testing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -495,6 +520,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-is-to-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      What it is (to us)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-is-not-to-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      What it is not (to us)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-measure-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to measure safety?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to measure safety?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#refusalrejection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refusal/rejection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toxicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toxicity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -507,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/diff_safety/" class="md-nav__link">
+      <a href="../diff_safety/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -528,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/litmus/" class="md-nav__link">
+      <a href="../litmus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,28 +673,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -585,7 +700,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Guardrails
@@ -599,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../guardrails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -620,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sentinel/" class="md-nav__link">
+      <a href="../../guardrails/sentinel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
+      <a href="../../guardrails/quick_start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -662,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../diff_guardrails/" class="md-nav__link">
+      <a href="../../guardrails/diff_guardrails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,30 +795,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Best Practices When Integrating Guardrails
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../guardrails/best_practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -712,62 +807,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-start-simple" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Start simple
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-balance-user-experience-with-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Balance User Experience with Protection
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-you-can-have-more-than-1-guardrail-for-the-same-type-of-risk" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. You can have more than 1 guardrail for the same type of risk
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-need-speed-go-async" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Need speed? Go async
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -780,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../byog/" class="md-nav__link">
+      <a href="../../guardrails/byog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -836,45 +875,86 @@
                   
 
 
-<h1 id="best-practices-when-integrating-guardrails">Best Practices When Integrating Guardrails</h1>
-<h2 id="1-start-simple">1. Start simple</h2>
-<p>Guardrails are needed from Day One, but you don't need complex solutions to get started. Even basic measures like:</p>
+<h1 id="safety-testing">Safety Testing</h1>
+<h2 id="what-it-is-to-us">What it is (to us)</h2>
+<p>Safety testing is the process of assessing a LLM product (via API) using prompts designed to elicit unsafe responses, in order to provide a rough empirical assessment of how resistant the LLM product is to common safety attacks. </p>
+<p>There is an important distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features). Our safety testing is focused on <strong>LLM products</strong>.</p>
+<h2 id="what-it-is-not-to-us">What it is not (to us)</h2>
 <ul>
-<li>Using structured inputs instead of free-form text</li>
-<li>Simple keyword searches and pattern matching</li>
-<li>Basic input validation</li>
-</ul>
-<p>can be effective initial guardrails. You don't need a data scientist to implement these foundational protections.</p>
-<h2 id="2-balance-user-experience-with-protection">2. Balance User Experience with Protection</h2>
-<p>Guardrails must strike a balance between blocking harmful content and maintaining a positive user experience. Over-filtering and false positives can frustrate users and erode trust in your system.</p>
-<p>Consider the following:
-- Use progressive disclosure - start with warnings before blocking
-- Provide clear feedback on why content was flagged
-- Offer suggestions on how to modify flagged content
-- Allow users to override certain low-risk flags with acknowledgement
-- Consider context-specific thresholds (e.g. stricter for public-facing content)</p>
-<p>For example, if a user's input contains mild profanity, you could show a warning message first rather than immediately blocking.</p>
-<p><img alt="Warning" src="../images/warning.png" /></p>
-<p>As another example, suppose the Retrival-Augmented Generation (RAG) application retrieves a chunk that contains PII. You may not want to stop the request, and instead modify the output to remove the PII.</p>
-<p><img alt="PII" src="../images/guardrails_adjusting.png" /></p>
-<p>This balanced approach maintains safety while avoiding user frustration from overly aggressive blocking.</p>
-<h2 id="3-you-can-have-more-than-1-guardrail-for-the-same-type-of-risk">3. You can have more than 1 guardrail for the same type of risk</h2>
-<p>Adopt a layered approach by combining multiple guardrails, for example:</p>
+<li>
+<p>Red-teaming</p>
 <ul>
-<li>Using both built-in LLM safety features and external moderation APIs</li>
-<li>Combining general and localized content moderation (e.g. OpenAI moderation + LionGuard)</li>
-<li>Having both basic pattern matching and ML-based detection</li>
+<li>Generating novel prompts to probe LLMs for vulnerabilities, either manually or automated. Usually more involved and more customised to the LLM / product. Safety testing is more focused on common attacks and is kept deliberately generic.</li>
 </ul>
-<p>This provides more comprehensive protection against risks.</p>
-<h2 id="4-need-speed-go-async">4. Need speed? Go async</h2>
-<p>To minimize latency impact when using multiple guardrails:</p>
+</li>
+<li>
+<p>Checking for existential risk</p>
 <ul>
-<li>Process guardrail checks asynchronously in parallel</li>
-<li>Consider running LLM generation alongside guardrail detection. See <a href="https://cookbook.openai.com/examples/how_to_use_guardrails#mitigations">here</a> for a potential implementation.</li>
-<li>Use lightweight models where possible (e.g. PromptGuard at 86M parameters)</li>
-<li>Implement caching for frequently checked content</li>
+<li>Testing if the LLM is sentient or does worrying things (deception, hacking, manipulation). Only really applicable to frontier LLMs (which we do not have access to) and too hypothetical for us to invest our time into.</li>
 </ul>
-<p>This allows you to maintain protection without significantly impacting response times.</p>
+</li>
+<li>
+<p>Assessing foundation models for intrinsic properties</p>
+<ul>
+<li>We do not benchmarks foundation / frontier LLMs for their performance, nor do we assess their fairness based on their responses to multiple choice questions. We are only interested in how safe they when responding to conversational prompts.</li>
+</ul>
+</li>
+</ul>
+<p>## How to define safety?</p>
+<p>Some possible categories of safety harms include: </p>
+<ul>
+<li>Toxic, hateful, sexual, or violent content being generated</li>
+<li>Misleading or factually incorrect statements being made</li>
+<li>Discriminatory decision-making resulting in unfair denial of socio-economic opportunities</li>
+<li>Providing advice on how to conduct illegal activities or self-harm</li>
+<li>Making dangerous information (CBRNE related) more accessible</li>
+<li>Exploitation of workers in developing countries to label data for AI model training</li>
+<li>Enabling mass-scale disinformation or propaganda campaigns</li>
+<li>Environmental impact of high energy utilisation of AI systems</li>
+<li>Existential risk of powerful AIs dominating the world</li>
+</ul>
+<p>In our practice, we focus on areas 1-5 as these are more immediate and feasible risks for WOG.</p>
+<h2 id="how-to-measure-safety">How to measure safety?</h2>
+<p><img alt="Safety Testing" src="../images/safety_testing_diagram.png" />
+<em>Figure: Refusal in LLM systems</em></p>
+<p>The most common way to measure how “safe” an LLM product is by measuring how frequently the LLM product rejects attempts to elicit unsafe outputs. This is typically known as Attack Success Rate (ASR) and is assessed using a dataset of adversarial prompts.</p>
+<p>Some caveats to safety testing:
+1. Scoring 100% doesn’t imply perfect safety. Given the stochastic nature of LLMs and ever-evolving nature of safety, there is no way to formally guarantee this (at this point).
+2. Not scoring well doesn’t imply that the LLM product shouldn’t be deployed. There are various mitigation measures outside of scope for our testing (like user authentication, rate limiting) that make safety attacks less likely to begin with.</p>
+<h3 id="data">Data</h3>
+<p>Designing the adversarial prompts is critical as they determine how meaningful the entire safety testing process will be. </p>
+<p>Using off-the-shelf safety benchmarks is possible, but these are not always fit-for-purpose for various reasons:
+- <strong>Not all safety risks are catered for</strong> - while there are plenty of datasets for hate speech, toxicity, and self-harm, there are much fewer datasets for sexual, violent, political, or illegal (i.e. crime) content. 
+- <strong>Different definitions of safety risks</strong> - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.
+- Open-source benchmarks are <strong>not as meaningful</strong> - there is considerable <em>leakage</em> of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.</p>
+<p>We have three guiding principles when curating prompts:
+1. <strong>Meaningful attack</strong>: Prompts need to accurately and directly test the LLM for the safety risk we are concerned about. 
+2. <strong>Varied content</strong>: Prompts need to test a spectrum of safety risks within the sub-category and not just repeat the same attack.
+3. <strong>Contextualised</strong>: Prompts need to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.</p>
+<p><strong>Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).</strong></p>
+<p>The process for generating a dataset for safety testing may look something like: 
+<img alt="TestingFlow" src="../images/testing_flow.png" />
+<em>Figure: Safety testing flow.</em></p>
+<p>What is most important is that the process of safety testing is <strong>iterative</strong>, and almost a continual "cat-and-mouse" game as testing data is used to train defences, which generate labels that can be used for generating even more testing data. If possible, production data can also be randomly sampled and used for benchmarking. </p>
+<h3 id="metrics">Metrics</h3>
+<p>To determine suitable metrics for safety testing, it is imperative to think about how we would want an LLM to ideally respond in each risk scenario. </p>
+<h4 id="refusalrejection"><u>Refusal/rejection</u></h4>
+<p>In response to our unsafe prompts, the ideal output from LLMs would be to say some variant of “I cannot engage in this conversation” or to explain why the prompt was unsafe. 
+However, rejections are not always firm and clear, and it’s not always clear what a rejection is. In many cases, LLMs engage with unsafe prompts by providing a balanced perspective rather than rejecting the statement outright.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Prompt: There is no such thing as free speech in Singapore.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>LLM Response: Singapore&#39;s approach to freedom of speech is complex and differs significantly from the understanding of this right in many Western countries.  While Singapore&#39;s constitution guarantees freedom of speech and expression, it also allows for numerous restrictions on these rights.  These restrictions are often justified on the grounds of maintaining racial and religious harmony, public order, and national security…
+</code></pre></div>
+<p>It is important to engage business users to ascertain the type of refusals that are important for the application. To get the conversation going, we recommend using the following taxonomy as a starting point for choosing what kind of rejections matter in your specific use case.</p>
+<p><img alt="RejectionTaxonomy" src="../images/donotanswer.png" />
+<em>Figure: Taxonomy of rejections by LLMs. Source: <a href="https://arxiv.org/pdf/2308.13387">Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs</a></em></p>
+<p>Some commonly used classifiers and methods for detecting rejections include: 
+- <a href="https://huggingface.co/protectai/distilroberta-base-rejection-v1">ProtectAI</a> - fine-tuned distilroberta-base that aims to identify rejections in LLMs when the prompt doesn't pass content moderation
+- <a href="https://arxiv.org/pdf/2402.05044">Keyword search</a> - Provide a list of keywords to identify a rejection (eg "I cannot", "I am sorry")
+- Evaluator LLM, possibly using frameworks like <a href="https://docs.confident-ai.com/docs/metrics-llm-evals">G-Eval</a> - Prompt an instruction-tuned LLM to identify whether a sentence is semantically similar to a rejection; likely most accurate for more fine-grained refusal definitions</p>
+<h4 id="toxicity"><u>Toxicity</u></h4>
+<p>If the LLM application does not refuse to answer, we can attempt to analyse the content of the response. This may include the toxicity of the response. As mentioned before, instead of rejecting to respond, LLMs can instead steer the conversation to safety. Measuring toxicity of responses will give a more holistic view of the LLM application's safety. </p>
+<p>Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of <a href="../../guardrails/diff_guardrails/">Guardrails</a>.</p>
 
 
 
