@@ -1014,6 +1014,7 @@
 <li>
 <p>Sampling-based - prompting the LLM to respond multiple times and evaluating the consistency of the responses; however, this can be computationally costly </p>
 <ul>
+<li><a href="https://arxiv.org/pdf/2207.05221">Self-evaluation</a> - asking models to first propose answers, and then to evaluate the probability "P(True)" that their answers are correct and and "P(I Know)" that they know the answer to the question</li>
 <li><a href="https://github.com/potsawee/selfcheckgpt">SelfCheckGPT</a> - sample multiple responses and measure consistency of information among responses</li>
 <li><a href="https://github.com/intuit/sac3">Semantic-aware cross-check consistency (SAC<sup>3</sup>)</a> - overcomes key limitations of self-consistency such as LMs consistently producing hallucinated facts, by conducting question-level (generating alternative, semantically equivalent input queries) and model-level (additional verified LM to generate answers) cross-checking; however, this is computationally heavy and slow</li>
 <li><a href="https://aclanthology.org/2023.emnlp-main.778.pdf">Cross-examination</a> - facilitate a multi-turn interaction between the LM that generated the claim and another LM (acting as an examiner) which introduces questions to discover inconsistencies</li>
