@@ -16,7 +16,7 @@ There is an important distinction between LLMs (as models) and LLM products (tec
 - Assessing foundation models for intrinsic properties
     - We do not benchmarks foundation / frontier LLMs for their performance, nor do we assess their fairness based on their responses to multiple choice questions. We are only interested in how safe they when responding to conversational prompts.
  
- ## How to define safety?
+## How to define safety?
 
 Some possible categories of safety harms include: 
 
@@ -39,20 +39,22 @@ _Figure: Refusal in LLM systems_
 
 The most common way to measure how “safe” an LLM product is by measuring how frequently the LLM product rejects attempts to elicit unsafe outputs. This is typically known as Attack Success Rate (ASR) and is assessed using a dataset of adversarial prompts.
 
-Some caveats to safety testing:
-1. Scoring 100% doesn’t imply perfect safety. Given the stochastic nature of LLMs and ever-evolving nature of safety, there is no way to formally guarantee this (at this point).
-2. Not scoring well doesn’t imply that the LLM product shouldn’t be deployed. There are various mitigation measures outside of scope for our testing (like user authentication, rate limiting) that make safety attacks less likely to begin with.
+!!! note "Caveats to safety testing"
+    1. Scoring 100% doesn’t imply perfect safety. Given the stochastic nature of LLMs and ever-evolving nature of safety, there is no way to formally guarantee this (at this point).
+    2. Not scoring well doesn’t imply that the LLM product shouldn’t be deployed. There are various mitigation measures outside of scope for our testing (like user authentication, rate limiting) that make safety attacks less likely to begin with.
 
 ### Data 
 
 Designing the adversarial prompts is critical as they determine how meaningful the entire safety testing process will be. 
 
 Using off-the-shelf safety benchmarks is possible, but these are not always fit-for-purpose for various reasons:
+
 - **Not all safety risks are catered for** - while there are plenty of datasets for hate speech, toxicity, and self-harm, there are much fewer datasets for sexual, violent, political, or illegal (i.e. crime) content. 
 - **Different definitions of safety risks** - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.
 - Open-source benchmarks are **not as meaningful** - there is considerable *leakage* of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.
 
 We have three guiding principles when curating prompts:
+
 1. **Meaningful attack**: Prompts need to accurately and directly test the LLM for the safety risk we are concerned about. 
 2. **Varied content**: Prompts need to test a spectrum of safety risks within the sub-category and not just repeat the same attack.
 3. **Contextualised**: Prompts need to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.
@@ -60,6 +62,7 @@ We have three guiding principles when curating prompts:
 **Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).**
 
 The process for generating a dataset for safety testing may look something like: 
+
 ![TestingFlow](images/testing_flow.png)
 _Figure: Safety testing flow._
 
@@ -85,12 +88,13 @@ It is important to engage business users to ascertain the type of refusals that 
 _Figure: Taxonomy of rejections by LLMs. Source: [Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs](https://arxiv.org/pdf/2308.13387)_
 
 Some commonly used classifiers and methods for detecting rejections include: 
+
 - [ProtectAI](https://huggingface.co/protectai/distilroberta-base-rejection-v1) - fine-tuned distilroberta-base that aims to identify rejections in LLMs when the prompt doesn't pass content moderation
-- [Keyword search](https://arxiv.org/pdf/2402.05044) - Provide a list of keywords to identify a rejection (eg "I cannot", "I am sorry")
+- [Keyword search](https://arxiv.org/pdf/2402.05044) - Provide a list of keywords to identify a rejection (eg "I cannot", "I am sorry", see Appendix C of linked paper)
 - Evaluator LLM, possibly using frameworks like [G-Eval](https://docs.confident-ai.com/docs/metrics-llm-evals) - Prompt an instruction-tuned LLM to identify whether a sentence is semantically similar to a rejection; likely most accurate for more fine-grained refusal definitions
 
 #### <u>Toxicity</u>
 
 If the LLM application does not refuse to answer, we can attempt to analyse the content of the response. This may include the toxicity of the response. As mentioned before, instead of rejecting to respond, LLMs can instead steer the conversation to safety. Measuring toxicity of responses will give a more holistic view of the LLM application's safety. 
 
-Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of [Guardrails](../guardrails/diff_guardrails.md).
+Some commonly used classifiers and methods for detecting toxicity can be found in Section 1 of [Guardrails](../../guardrails/diff_guardrails.md).

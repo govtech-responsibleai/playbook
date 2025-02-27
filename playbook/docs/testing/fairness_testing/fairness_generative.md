@@ -4,6 +4,7 @@ There has been a large body of work testing fairness and biases in LLMs, focusin
 
 ## Dataset
 Much of the existing literature involves designing prompt templates that vary by a protected attribute like gender, race or religion. Some popular methods are:
+
 - Using [naturally occurring prompts that contain references to a protected attribute](https://github.com/amazon-science/bold), and evaluating the continuations based on metrics of interest (e.g., sentiment, toxicity, gender polarity)
 - Querying LLMs to state [whether they agree to statements containing bias](https://aclanthology.org/2023.acl-long.656/)
 - Requiring LLMs to perform [classification](https://arxiv.org/abs/1901.09451) or [make a choice in MCQs](https://arxiv.org/abs/2110.08193) based on textual descriptions with explicit indicators of a protected attribute 
@@ -19,6 +20,7 @@ In our experiments for Appraiser, an AI product assisting teachers with generati
 To determine the metrics for evaluating LLM generations, it is important to consider discriminative outcomes that the application is at risk for. 
 
 Some common outcomes/risks include: 
+
 - Sentiment 
 - Toxicity 
 - Psycholinguistic norms (more extensive emotiion states)
