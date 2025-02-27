@@ -22,9 +22,12 @@ This playbook aims to provide resources, recommendations and technical guides to
 
 Various circulars exist to uphold RAI principles in government, such as PMO (SNDGO) Circular No. 1/2023 on the 'Use of Large Language Models in the Public Sector'. This playbook aims to complement these circulars by deep-diving into certain risks and providing greater technical detail to measure and mitigate them. 
 
-There have also been several other playbooks released to guide secure AI adoption in government, such as XX. Unlike them, this playbook aims to cover the safety aspects of Responsible AI, and will only briefly touch on security risks.  
+There have also been several other playbooks released to guide secure AI adoption in government, such as CSA's Guidelines and Companion Guide for Securing AI Systems. Unlike them, this playbook aims to cover the safety aspects of Responsible AI, and will only briefly touch on security risks.  
 
 ## Life Cycle
+
+![AI Cycle](images/ai_cycle.png)
+_Figure: AI life cycle._
 
 AI risks, as well as mitigating measures, exist at each stage of the application life cycle. 
 
@@ -49,11 +52,21 @@ Finally, when an AI model is embedded into a software application, the way users
 
 ##  Our Approach
 
-We believe that **testing** and **mitigation** are essential to deploying AI models safely. 
+![Approach](images/approach_focus.png)
+_Figure: Functional focus areas for Responsible AI._
 
-Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. [Note: may wanna just draw a diagram]
+At present, our approach to deploying AI model safely involves **testing**, **mitigation** and model **understanding**. 
 
-While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. Moreover, mitigations at the application level are more general and can be widely applied to different contexts. As such, in the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails output [testing](testing.md) and [guardrails](guardrails.md).
+Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
+
+After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. 
+
+Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. 
+
+In the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails [output testing](testing.md) and [guardrails](guardrails.md).
+
+
+
 
 ## Contributions
 

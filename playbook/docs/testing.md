@@ -17,14 +17,14 @@ We can think of testing maturity in stages. We want to be at level 4, where test
 
 Safety testing is crucial for generative AI applications because their stochastic nature can produce unpredictable and potentially harmful outputs. Ensuring these systems operate within safe boundaries helps mitigate safety risks in WOG applications. 
 
-See [safety_testing](safety_testing/safety_testing.md) for more details. 
+See [safety testing](testing/safety_testing/safety_testing.md) for more details. 
 
 ## Fairness Testing
 
 While outputs are constrained and more predictable in discriminative AI applications, they can nonetheless disproportionately impact certain groups based on protected and sensitive attributes like race or gender. Hence, significant work have been done to establish fairness testing and metrics in discrminative AI. 
 
-(to be added)
+See [discriminative AI fairness testing](testing/fairness_testing/fairness_discriminative.md) for more details. 
 
 Similarly, fairness testing is essential in generative AI to ensure that outputs do not perpetuate biases or discriminate against specific groups. This is especially due to the fact that LLMs have been trained on Internet data, which are known to contain biases. 
 
-See [fairness_testing_generative](fairness_testing/fairness_generative.md) for more details. 
+See [generative AI fairness testing](testing/fairness_testing/fairness_generative.md) for more details. 

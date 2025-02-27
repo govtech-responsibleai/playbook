@@ -109,37 +109,33 @@ Ensuring LLM outputs are grounded in facts and the provided context improves rel
 - Citation checking
 
 Of the above, the first technique is most popular, particularly in the RAG setting. There are currently many tools available for doing so (see [GovTech AIP's RAG Playbook](https://playbooks.aip.gov.sg/rag/evaluation/) for an assessment), including:
+
 - [RAGAS](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/faithfulness/)
 - [TruLens](https://www.trulens.org/getting_started/quickstarts/groundtruth_evals_for_retrieval_systems/)
 - [DeepEval](https://docs.confident-ai.com/docs/metrics-hallucination)
-
-The challenge, however, is converting these evaluators into guardrails at inference time and ensuring low latency and cost. This is especially the case when the response is long and has to be broken down into multiple claims/statements. This results in multiple calls to the evaluator LLM to check if each claim is faithful to the reference. An alternative method is to use [light weight natural language inference (NLI) models](https://huggingface.co/tasksource/deberta-small-long-nli) to detect entailment.
+- [AWS Bedrock Guardrails Contextual Grounding](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html)
+- [Azure AI Content Safety Groundedness](https://learn.microsoft.com/en-gb/azure/ai-services/content-safety/overview)
 
 There is also a parallel track of research generally known as *reference-free* hallucination detection, which does not require a reference or source to verify claims. This is based on the intuition that LLMs may exhibit tell-tale behaviours when hallucinating, much like humans sweating when lying. There are three main approaches:
 
-1. Sampling-based - prompting the LLM to respond multiple times and evaluating the consistency of the responses; however, this can be computationally costly 
-    - [Self-evaluation](https://arxiv.org/pdf/2207.05221) - asking models to first propose answers, and then to evaluate the probability "P(True)" that their answers are correct and and "P(I Know)" that they know the answer to the question
-    - [SelfCheckGPT](https://github.com/potsawee/selfcheckgpt) - sample multiple responses and measure consistency of information among responses
-    - [Semantic-aware cross-check consistency (SAC<sup>3</sup>)](https://github.com/intuit/sac3) - overcomes key limitations of self-consistency such as LMs consistently producing hallucinated facts, by conducting question-level (generating alternative, semantically equivalent input queries) and model-level (additional verified LM to generate answers) cross-checking; however, this is computationally heavy and slow
-    - [Cross-examination](https://aclanthology.org/2023.emnlp-main.778.pdf) - facilitate a multi-turn interaction between the LM that generated the claim and another LM (acting as an examiner) which introduces questions to discover inconsistencies
-    - [CleanLab](https://aclanthology.org/2024.acl-long.283/) - combines enhanced self-consistency check (with more diverse prompts) and self-consistency check (asking the LLM to state how confident its original answer is correct) into a [single score](https://help.cleanlab.ai/tlm/faq/)
+| Approach | Description | Examples |
+|----------|-----------|----------|
+| Sampling-based | Prompting the LLM to respond multiple times and evaluating the consistency of the responses; however, this can be computationally costly | - [Self-evaluation](https://arxiv.org/pdf/2207.05221 "asking models to first propose answers, and then to evaluate the probability 'P(True)' that their answers are correct and 'P(I Know)' that they know the answer to the question") <br> - [SelfCheckGPT](https://github.com/potsawee/selfcheckgpt "sample multiple responses and measure consistency of information among responses") <br> - [Semantic-aware cross-check consistency (SAC<sup>3</sup>)](https://github.com/intuit/sac3 "overcomes key limitations of self-consistency such as LMs consistently producing hallucinated facts, by conducting question-level (generating alternative, semantically equivalent input queries) and model-level (additional verified LM to generate answers) cross-checking; however, this is computationally heavy and slow") <br> - [Cross-examination](https://aclanthology.org/2023.emnlp-main.778.pdf "facilitate a multi-turn interaction between the LM that generated the claim and another LM (acting as an examiner) which introduces questions to discover inconsistencies") <br> - [CleanLab](https://aclanthology.org/2024.acl-long.283/ "combines enhanced self-consistency check (with more diverse prompts) and self-evaluation (asking the LLM to state how confident its original answer is correct) into a single score") |
+| Probability-based | Examining and aggregating the probabilities of tokens generated, reframing hallucination detection as **uncertainty estimation**; however, this requires access to token probabilities, which close APIs do not provide | - [Token probability](https://arxiv.org/pdf/2307.03987 "obtain probabilities of concepts in response and additionally validate uncertain concepts") <br> - [Claim Conditioned Probability](https://github.com/IINemo/lm-polygraph/blob/5f3755e7c16d14aacf8c33ea97b26b4c619d2d54/README.md?plain=1#L156 "calculates claim-level uncertainty scores") <br> - [Semantic Entropy](https://www.nature.com/articles/s41586-024-07421-0 "sampling several possible answers to each question and clustering them algorithmically into answers that have similar meanings, before summing probabilities of sequences that share the same meaning and computing entropy") <br> - [LM-Polygraph](https://github.com/IINemo/lm-polygraph?tab=readme-ov-file#overview_of_methods "suite of uncertainty estimation (UE) methods and confidence scores") |
+| Model-based | Finetuning new models to detect hallucination | - [Lynx](https://huggingface.co/PatronusAI/Llama-3-Patronus-Lynx-70B-Instruct "8b hallucination LLM that has been finetuned on hard-to-detect hallucinations, requiring users to provide question, answer and context triplets") |
 
-2. Probability-based - examining and aggregating the probabilities of tokens generated, reframing hallucination detection as **uncertainty estimation**; however, this requires access to token probabilities, which close APIs do not provide
-    - [Token probability](https://arxiv.org/pdf/2307.03987) - obtain probabilities of concepts in response and additionally validate uncertain concepts 
-    - [Claim Conditioned Probability](https://github.com/IINemo/lm-polygraph/blob/5f3755e7c16d14aacf8c33ea97b26b4c619d2d54/README.md?plain=1#L156) calculates claim-level uncertainty scores
-    - [Semantic Entropy](https://www.nature.com/articles/s41586-024-07421-0) - sampling several possible answers to each question and clustering them algorithmically into answers that have similar meanings, before summing probabilities of sequences that share the same meaning and computing entropy
-    - [LM-Polygraph](https://github.com/IINemo/lm-polygraph?tab=readme-ov-file#overview_of_methods) - suite of uncertainty estimation (UE) methods and confidence scores
+!!! note "Latency and cost" 
+    When using these evaluators at inference time, latency and cost may be of concern, especially when the response is long and has to be broken down into multiple claims/statements. Most methods rely on multiple calls to an evaluator LLM, compounding latency. An alternative method is to use [light weight natural language inference (NLI) models](https://huggingface.co/tasksource/deberta-small-long-nli) to detect entailment. Another option is to simply provide citations, allowing end-users to perform reference and fact verification on their own. 
 
-3. Model-based - finetuning new models to detect hallucination 
-    - [Lynx](https://huggingface.co/PatronusAI/Llama-3-Patronus-Lynx-70B-Instruct) - 8b hallucination LLM that has been finetuned on hard-to-detect hallucinations, requiring users to provide question, answer and context triplets
 
 While closely related to hallucination, <u>**factuality**</u> refers to the accuracy of information presented in accordance to world knowledge. World knowledge can be obtained from external tools like Wikipedia or Google Search, or stored in a knowledge base that serves as a single source of truth. Verifying responses with respect to world knowledge then becomes similar to hallucination detection in the RAG setting, with [this world knowledge akin to the retrieved context](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/factual_correctness/). 
 
 In practice, facts can exist in multiple external knowledge bases. Hence, many tools have emerged to create pipelines for fact checking and verification. This includes: 
+
 - [Loki](https://github.com/Libr-AI/OpenFactVerification) - end-to-end pipeline for dissecting long texts into individual claims, assessing their worthiness for verification, generating queries for evidence search, crawling for evidence, and verifying the claims; optimised with parallelism and human-in-the-loop
 - [Search-Augmented Factuality Evaluator (SAFE)](https://github.com/google-deepmind/long-form-factuality) - use LLM agents to reason and send search queries to Google Search
+- [Grounding with Gemini](https://ai.google.dev/gemini-api/docs/grounding?lang=python) - ground Gemini responses with Google Search
 
-Despite extensive research and tools available for detecting hallucination and non-factuality, latency remains a primary concern. As such, in practice, many applications simply provide citations, allowing end-users to perform reference and fact verification on their own. 
 
 !!! tip "Tip: Prompt Design"
 

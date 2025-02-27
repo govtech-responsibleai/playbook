@@ -16,6 +16,16 @@ theme:
     - navigation.tabs
     - toc.integrate
 
+# Extra Configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/orgs/govtech-responsibleai/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/govtech-singapore
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/GovTechSG
+
 # Markdown Extensions
 markdown_extensions:
   - admonition
@@ -28,21 +38,24 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
-  - Testing: testing.md
-  - Fairness:
-    - Discriminative: fairness_testing/fairness_discriminative.md
-    - Generative: fairness_testing/fairness_generative.md
-  - Safety:
-    - Introduction: safety_testing/safety_testing.md
-    - Benchmarks and Tools: safety_testing/diff_safety.md
-    - Litmus: safety_testing/litmus.md
+  - Testing: 
+      - Introduction: testing.md
+      - Fairness:
+          - Discriminative: testing/fairness_testing/fairness_discriminative.md
+          - Generative: testing/fairness_testing/fairness_generative.md
+      - Safety:
+          - Introduction: testing/safety_testing/safety_testing.md
+          - Benchmarks and Tools: testing/safety_testing/diff_safety.md
+          - Litmus: testing/safety_testing/litmus.md
   - Guardrails:
-    - Introduction: guardrails.md
-    - Sentinel: guardrails/sentinel.md
-    - Quick Start: guardrails/quick_start.md
-    - Different Types of Guardrails: guardrails/diff_guardrails.md
-    - Best Practices When Integrating Guardrails: guardrails/best_practices.md
-    - Building Your Own Guardrails: guardrails/byog.md
+      - Introduction: guardrails.md
+      - Sentinel: guardrails/sentinel.md
+      - Quick Start: guardrails/quick_start.md
+      - Different Types of Guardrails: guardrails/diff_guardrails.md
+      - Best Practices When Integrating Guardrails: guardrails/best_practices.md
+      - Building Your Own Guardrails: guardrails/byog.md
+  - Understanding:
+      - Introduction: understanding.md
   - Resources: resources.md
 
 # Plugins
