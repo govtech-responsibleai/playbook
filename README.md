@@ -1,6 +1,6 @@
 # Responsible AI Playbook
 
-This is a playbook for Responsible AI in the Singapore Public Service.
+This is a playbook for Responsible AI in the Singapore Public Service, maintained by GovTech Singapore's AI Practice. 
 
 This is under active development.
 
@@ -38,3 +38,5 @@ mkdocs build --config-file playbook/mkdocs.yml
 ```
 
 4. Commit and push your changes.
+
+For external collaborators, please create a separate branch and raise a PR to merge. 
