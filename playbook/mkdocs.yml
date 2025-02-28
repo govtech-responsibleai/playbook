@@ -15,6 +15,9 @@ theme:
   features:
     - navigation.tabs
     - toc.integrate
+  analytics:
+    provider: "google"
+    property: "G-5KF68JT99H"
 
 # Extra Configuration
 extra:
