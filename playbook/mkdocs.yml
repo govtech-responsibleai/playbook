@@ -41,6 +41,7 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
+  - About: about.md
   - Testing: 
       - Introduction: testing.md
       - Fairness:
