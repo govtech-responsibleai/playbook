@@ -37,7 +37,8 @@ The following datasets are known to be more comprehensive, covering several risk
 
 There are several open-source SDKs and web applications that aggregate safety testing datasets and simplify the process of generating testing pipelines. By abstracting away data, model and evaluation set-ups and providing a higher level interface, these SDKs can help teams to kickstart testing. 
 
-Nonetheless, it is necessary for users to assess whether the tool meets their needs and covers the risk categories and scenarios that they care about. Given that new benchmarks and methods are continually developed, it is also important to consider whether the tool is **extensible** and **well-maintained**. 
+!!! warning "Selecting the right tool"
+    It is necessary for developers to assess whether the tool meets their needs and covers the risk categories and scenarios that they care about. Given that new benchmarks and methods are continually developed, it is also important to consider whether the tool is **extensible** (both in terms of adding your own data, and model endpoints), **well-maintained** and **easily integrated** with your application or testing pipelines. 
 
 Below are some well-known safety testing frameworks and tools that we have surveyed. Note that these tools focus more on safety, rather than faithfulness, another risk targeted by many other evaluation toollkits.
 
