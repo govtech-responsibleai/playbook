@@ -10,8 +10,12 @@ This playbook will be continually updated and maintained, at least on a per-quar
 
 For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:jessica_foo@tech.gov.sg) for a more in-depth discussion. 
 
+## About us 
+To be filled in
+
 ## Contributions
 
 We welcome contributions to this playbook as we work together to ensure Responsible AI in government. This playbook is meant to be a living document as we adapt to new insights, real-world challenges, and emerging practices. Our goal is to create a practical resource that serves the diverse needs of the public sector and remains grounded in the realities of deployment and implementation. 
 
 If you would like to contribute, please raise a pull request and we will review it accordingly. Thank you. 
+
