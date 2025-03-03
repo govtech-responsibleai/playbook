@@ -1,70 +1,40 @@
 # Responsible AI Playbook
 
+![](images/responsibleai.png)
 
-## Overview
+## About this playbook
 
-Broadly, Responsible AI (“RAI”) focuses on how to develop, evaluate, deploy, and monitor AI systems in a safe, trustworthy, and ethical manner. From how data is collected to how humans interact with AI systems, RAI will help to guide these decisions toward beneficial and equitable outcomes. In the public sector context, RAI will help align AI systems to achieve the public good.
+Our aim is to help people understand and apply Responsible AI from a technical perspective. We do so in three ways:  
 
-At GovTech's AI Practice, we break down RAI into 6 key principles that AI systems should strive towards. 
+1. Clear and detailed **explanations for key concepts** in Responsible AI (such as safety, fairness, and interpretability)  
+2. Easy-to-follow and actionable **recommendations for deploying AI responsibly** for your applications  
+3. **Curated resources and papers** to dive deeper into various aspects of Responsible AI  
 
-| Principle    | Description |
-|--------------|-------------|
-| Safety       | AI systems should be (i) protected against adversarial threats and misuse for harmful activities and (ii) aligned to the public good. |
-| Robustness   | AI systems should perform up to task even when subjected to challenging requirements or circumstances. |
-| Fairness     | AI systems should strive to be fair and equitable to all, regardless of gender, race, religion, or other attributes. |
-| Explainability | AI systems should provide clear and reliable explanations for their automated decisions to key stakeholders. |
-| Privacy      | AI systems should handle personal data carefully and protect against potential data leakages. |
-| Transparency | AI systems should document key development and deployment choices and be clear about how the AI system should be used. |
+Our hope is for our playbook to help you to **quickly grasp the entire landscape** of papers, guides, tools, and methodologies relating to Responsible AI, provide a **practical starting point** to guard your AI applications against basic risks, and thus enabling you to **ship fast and responsibly**.
 
-## Objectives
+## Our target audience
 
-This playbook aims to provide resources, recommendations and technical guides to deploying AI responsibly in your applications. However, the resources reviewed are not meant to be exhaustive. Readers are encouraged to use them as references and apply them at their own discretion.
+This playbook is primarily meant for **application developers** working in the Singapore government, especially those who are excited to develop and launch AI products but are concerned about managing safety or bias concerns about AI. However, this playbook will also be helpful to **product managers**, **CIO teams**, and even **policy officers**, as long as you have some foundational understanding of key AI concepts and are keen to learn more about Responsible AI.
 
-Various circulars exist to uphold RAI principles in government, such as PMO (SNDGO) Circular No. 1/2023 on the 'Use of Large Language Models in the Public Sector'. This playbook aims to complement these circulars by deep-diving into certain risks and providing greater technical detail to measure and mitigate them. 
+Although this playbook is written with the Singapore government's context in mind, most of the explanations and recommendations in this playbook should be applicable to anyone building AI applications. After all, building safe, fair, and responsible AI applications is a common goal for many organisations. 
 
-There have also been several other playbooks released to guide secure AI adoption in government, such as CSA's Guidelines and Companion Guide for Securing AI Systems. Unlike them, this playbook aims to cover the safety aspects of Responsible AI, and will only briefly touch on security risks.  
+## About us 
 
-## Life Cycle
+To be filled in
 
-![AI Cycle](images/ai_cycle.png)
-_Figure: AI life cycle._
+## How to best make use of this 
 
-AI risks, as well as mitigating measures, exist at each stage of the application life cycle. 
+To be edited
 
-### Data
+Given the pace of development in the AI space, we aim to continually update this playbook on a quarterly basis. When new tools or resources are available, we hope to quickly assess them and include them in the playbook. 
 
-As the old adage goes, "garbage in, garbage out". If unsafe or biased data is used for training, the model outputs are likely to be unsafe and biased as well. Large Language Models are typically pre-trained on massive amounts of text from the Internet, which contain harmful, toxic and biased texts. This has resulted in models learning such textual distributions and producing similar outputs. As such, a large body of research has been dedicated to improving data quality in pre-training data. 
+If you're new to AI safety, our recommendation is to start with a few most important risk categories for testing and guardrails; before moving on to more advanced and extensive testing as the product matures. 
 
-### Model
-
-In discriminative AI settings, the choice of modelling parameters can greatly impact their fairness. For example, the use of sensitive variables in predictive algorithms can lead to unfair outcomes. 
-
-Most generative modeling approaches entail autoregressively generating the next most probable token, which depends on the joint distribution of tokens learned during training. As such, if unsafe token sequences are learned, they will naturally be reproduced by the model. 
-
-To reduce model harms in LLMs, significant research has been dedicated to aligning models with human preferences and desirable values. Given paired text data and their rankings, LLMs undergo a second stage of reinforcement learning to learn to output preferred (i.e., safer) responses. 
-
-Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness. 
+For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:jessica_foo@tech.gov.sg) for a more in-depth discussion. 
 
 
-### Application
+## Contributions
 
-Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. As such, input and output guardrails have emerged as viable defences against such risks. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. 
+We welcome contributions to this playbook as we work together to ensure Responsible AI in government. This playbook is meant to be a living document as we adapt to new insights, real-world challenges, and emerging practices. Our goal is to create a practical resource that serves the diverse needs of the public sector and remains grounded in the realities of deployment and implementation. 
 
-##  Our Approach
-
-![Approach](images/approach_focus.png)
-_Figure: Functional focus areas for Responsible AI._
-
-At present, our approach to deploying AI model safely involves **testing**, **mitigation** and model **understanding**. 
-
-Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
-
-After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. 
-
-Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. 
-
-In the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails [output testing](testing.md) and [guardrails](guardrails.md).
-
-
-
-
+If you would like to contribute, please raise a pull request and we will review it accordingly. Thank you. 
