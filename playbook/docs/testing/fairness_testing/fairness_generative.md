@@ -9,9 +9,10 @@ Much of the existing literature involves designing prompt templates that vary by
 - Querying LLMs to state [whether they agree to statements containing bias](https://aclanthology.org/2023.acl-long.656/)
 - Requiring LLMs to perform [classification](https://arxiv.org/abs/1901.09451) or [make a choice in MCQs](https://arxiv.org/abs/2110.08193) based on textual descriptions with explicit indicators of a protected attribute 
 
-For each specific application, it is necessary to evaluate whether the LLM generations could be affected by a protected attribute, bearing in mind that the attribute can be explicitly defined (e.g., user has to state gender) or implicit (e.g., name). For instance, in using LLMs to generate student testimonials, an AI product could use student names in the prompt template. 
+!!! tip "Tip: Assess if your application requires fairness testing"
+    Whether your application requires testing depends on whether the LLM generations could be affected by a protected attribute, bearing in mind that the attribute can be explicitly defined (e.g., user has to state gender) or implicit (e.g., name). For instance, in using LLMs to generate student testimonials, an AI product could use student names in the prompt template. 
 
-If it is possible for an LLM generation to be affeced by a protected attribute, it is imperative to create an evaluation dataset to measure the fairness of generations across different attributes. Similar to safety testing, the data used for evaluation should be (i) meaningful, (ii) varied, (iii) contextualised. 
+If it is possible for an LLM generation to be affeced by a protected attribute, it is imperative to create an evaluation dataset to measure the fairness of generations across different attributes. 
 
 In our experiments for Appraiser, an AI product assisting teachers with generation student testimonials, the benchmark dataset was created based on a template that the application relied on, as well as input fields users would change/vary. 
 
@@ -33,7 +34,7 @@ Some applications may require application-specific metrics. In some cases, we co
 
 A common evaluation approach is to split the evaluation dataset depending on the protected attribute (subgroups), and assess if there are differences in the metric of interest between different subgroups.
 
-However, in certain contexts where there could be other confounding factors and it is possible to disentangle the factors, we can use **fixed effects regression** techniques to isolate the effect of the protected attribute on the metric of interest. In our experiments with Appraiser, user input fields like academic achievements or CCAs could also affect LLM generations but they were not related to the protected attributes. Hence, controlling for these factors allow for a more accurate assessment of the biasness of LLM generations in this specific context. 
+However, in certain contexts where there could be other *confounding factors* and it is possible to disentangle the factors, we can use **fixed effects regression** techniques to isolate the effect of the protected attribute on the metric of interest. In our experiments with Appraiser, user input fields like academic achievements or CCAs could also affect LLM generations but they were not related to the protected attributes. Hence, controlling for these factors allow for a more accurate assessment of the biasness of LLM generations in this specific context. 
 
 !!! note "Original Blog Post"
 

@@ -1035,26 +1035,12 @@
 <p>Safety testing is the process of assessing a LLM product (via API) using prompts designed to elicit unsafe responses, in order to provide a rough empirical assessment of how resistant the LLM product is to common safety attacks. </p>
 <p>There is an important distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features). Our safety testing is focused on <strong>LLM products</strong>.</p>
 <h2 id="what-it-is-not-to-us">What it is not (to us)</h2>
-<ul>
-<li>
-<p>Red-teaming</p>
-<ul>
-<li>Generating novel prompts to probe LLMs for vulnerabilities, either manually or automated. Usually more involved and more customised to the LLM / product. Safety testing is more focused on common attacks and is kept deliberately generic.</li>
-</ul>
-</li>
-<li>
-<p>Checking for existential risk</p>
-<ul>
-<li>Testing if the LLM is sentient or does worrying things (deception, hacking, manipulation). Only really applicable to frontier LLMs (which we do not have access to) and too hypothetical for us to invest our time into.</li>
-</ul>
-</li>
-<li>
-<p>Assessing foundation models for intrinsic properties</p>
-<ul>
-<li>We do not benchmarks foundation / frontier LLMs for their performance, nor do we assess their fairness based on their responses to multiple choice questions. We are only interested in how safe they when responding to conversational prompts.</li>
-</ul>
-</li>
-</ul>
+<p>❌ Red-teaming
+- Generating novel prompts to probe LLMs for vulnerabilities, either manually or automated. Usually more involved and more customised to the LLM / product. Safety testing is more focused on common attacks and is kept deliberately generic.</p>
+<p>❌ Checking for existential risk
+- Testing if the LLM is sentient or does worrying things (deception, hacking, manipulation). Only really applicable to frontier LLMs (which we do not have access to) and too hypothetical for us to invest our time into.</p>
+<p>❌ Assessing foundation models for intrinsic properties
+- We do not benchmarks foundation / frontier LLMs for their performance, nor do we assess their fairness based on their responses to multiple choice questions. We are only interested in how safe they when responding to conversational prompts.</p>
 <h2 id="how-to-define-safety">How to define safety?</h2>
 <p>Some possible categories of safety harms include: </p>
 <ul>
@@ -1088,7 +1074,10 @@
 <li><strong>Different definitions of safety risks</strong> - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.</li>
 <li>Open-source benchmarks are <strong>not as meaningful</strong> - there is considerable <em>leakage</em> of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.</li>
 </ul>
-<p><strong>Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip: Building your testing dataset</p>
+<p>Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs). Incorporating production data, or data similar to it (e.g., call transcripts for customer service chatbot) will also be extremely useful.</p>
+</div>
 <p>The process for generating a dataset for safety testing may look something like: </p>
 <p><img alt="TestingFlow" src="../images/testing_flow.png" />
 <em>Figure: Safety testing flow.</em></p>
@@ -1102,7 +1091,10 @@ However, rejections are not always firm and clear, and it’s not always clear w
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>LLM Response: Singapore&#39;s approach to freedom of speech is complex and differs significantly from the understanding of this right in many Western countries.  While Singapore&#39;s constitution guarantees freedom of speech and expression, it also allows for numerous restrictions on these rights.  These restrictions are often justified on the grounds of maintaining racial and religious harmony, public order, and national security…
 </code></pre></div>
-<p>It is important to engage business users to ascertain the type of refusals that are important for the application. To get the conversation going, we recommend using the following taxonomy as a starting point for choosing what kind of rejections matter in your specific use case.</p>
+<div class="admonition warning">
+<p class="admonition-title">Not all refusals are equal</p>
+<p>It is important to engage business users to ascertain the type of refusals that matter to them. To get the conversation going, we recommend using a taxonomy such as the one below as as a starting point for choosing what kind of rejections matter in your specific use case.</p>
+</div>
 <p><img alt="RejectionTaxonomy" src="../images/donotanswer.png" />
 <em>Figure: Taxonomy of rejections by LLMs. Source: <a href="https://arxiv.org/pdf/2308.13387">Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs</a></em></p>
 <p>Some commonly used classifiers and methods for detecting rejections include: </p>

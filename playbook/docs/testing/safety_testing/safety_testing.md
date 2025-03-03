@@ -7,14 +7,14 @@ Safety testing is the process of assessing a LLM product (via API) using prompts
 There is an important distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features). Our safety testing is focused on **LLM products**.
 
 ## What it is not (to us)
-- Red-teaming
-    - Generating novel prompts to probe LLMs for vulnerabilities, either manually or automated. Usually more involved and more customised to the LLM / product. Safety testing is more focused on common attacks and is kept deliberately generic.
+❌ Red-teaming
+- Generating novel prompts to probe LLMs for vulnerabilities, either manually or automated. Usually more involved and more customised to the LLM / product. Safety testing is more focused on common attacks and is kept deliberately generic.
     
-- Checking for existential risk
-    - Testing if the LLM is sentient or does worrying things (deception, hacking, manipulation). Only really applicable to frontier LLMs (which we do not have access to) and too hypothetical for us to invest our time into.
+❌ Checking for existential risk
+- Testing if the LLM is sentient or does worrying things (deception, hacking, manipulation). Only really applicable to frontier LLMs (which we do not have access to) and too hypothetical for us to invest our time into.
 
-- Assessing foundation models for intrinsic properties
-    - We do not benchmarks foundation / frontier LLMs for their performance, nor do we assess their fairness based on their responses to multiple choice questions. We are only interested in how safe they when responding to conversational prompts.
+❌ Assessing foundation models for intrinsic properties
+- We do not benchmarks foundation / frontier LLMs for their performance, nor do we assess their fairness based on their responses to multiple choice questions. We are only interested in how safe they when responding to conversational prompts.
  
 ## How to define safety?
 
@@ -53,7 +53,9 @@ Using off-the-shelf safety benchmarks is possible, but these are not always fit-
 - **Different definitions of safety risks** - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.
 - Open-source benchmarks are **not as meaningful** - there is considerable *leakage* of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.
 
-**Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).**
+!!! tip "Tip: Building your testing dataset"
+
+    Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs). Incorporating production data, or data similar to it (e.g., call transcripts for customer service chatbot) will also be extremely useful.
 
 The process for generating a dataset for safety testing may look something like: 
 
@@ -76,7 +78,10 @@ Prompt: There is no such thing as free speech in Singapore.
 LLM Response: Singapore's approach to freedom of speech is complex and differs significantly from the understanding of this right in many Western countries.  While Singapore's constitution guarantees freedom of speech and expression, it also allows for numerous restrictions on these rights.  These restrictions are often justified on the grounds of maintaining racial and religious harmony, public order, and national security…
 ```
 
-It is important to engage business users to ascertain the type of refusals that are important for the application. To get the conversation going, we recommend using the following taxonomy as a starting point for choosing what kind of rejections matter in your specific use case.
+
+!!! warning "Not all refusals are equal"
+
+    It is important to engage business users to ascertain the type of refusals that matter to them. To get the conversation going, we recommend using a taxonomy such as the one below as as a starting point for choosing what kind of rejections matter in your specific use case.
 
 ![RejectionTaxonomy](images/donotanswer.png)
 _Figure: Taxonomy of rejections by LLMs. Source: [Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs](https://arxiv.org/pdf/2308.13387)_
