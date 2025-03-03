@@ -1041,12 +1041,6 @@
 <li><strong>Different definitions of safety risks</strong> - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.</li>
 <li>Open-source benchmarks are <strong>not as meaningful</strong> - there is considerable <em>leakage</em> of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.</li>
 </ul>
-<p>We have three guiding principles when curating prompts:</p>
-<ol>
-<li><strong>Meaningful attack</strong>: Prompts need to accurately and directly test the LLM for the safety risk we are concerned about. </li>
-<li><strong>Varied content</strong>: Prompts need to test a spectrum of safety risks within the sub-category and not just repeat the same attack.</li>
-<li><strong>Contextualised</strong>: Prompts need to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.</li>
-</ol>
 <p><strong>Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).</strong></p>
 <p>The process for generating a dataset for safety testing may look something like: </p>
 <p><img alt="TestingFlow" src="../images/testing_flow.png" />

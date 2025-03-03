@@ -53,12 +53,6 @@ Using off-the-shelf safety benchmarks is possible, but these are not always fit-
 - **Different definitions of safety risks** - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.
 - Open-source benchmarks are **not as meaningful** - there is considerable *leakage* of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.
 
-We have three guiding principles when curating prompts:
-
-1. **Meaningful attack**: Prompts need to accurately and directly test the LLM for the safety risk we are concerned about. 
-2. **Varied content**: Prompts need to test a spectrum of safety risks within the sub-category and not just repeat the same attack.
-3. **Contextualised**: Prompts need to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.
-
 **Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs).**
 
 The process for generating a dataset for safety testing may look something like: 

@@ -422,6 +422,25 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#principles-for-effective-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principles for Effective Testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-testing-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key testing dimensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key testing dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#safety-testing" class="md-nav__link">
     <span class="md-ellipsis">
       Safety Testing
@@ -429,13 +448,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#fairness-testing" class="md-nav__link">
     <span class="md-ellipsis">
       Fairness Testing
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -925,19 +949,33 @@
 
 
 <h1 id="testing">Testing</h1>
+<div class="admonition success">
+<p class="admonition-title">Key Message</p>
+<p>Testing is the process of establishing risk categories of interest, creating benchmarks and establishing quantitative metrics, and measuring a system's performance against the benchmark. Testing should be (i) meaningful and representative, (ii) contextualised, and (iii) continuous.</p>
+</div>
 <h2 id="what-is-testing">What is testing?</h2>
-<p>Testing (possibly also known as "evaluations") is the process of 
-1. establishing risk categories of interest
-2. creating and defining benchmarks
-3. measuring a system's performance against this benchmark</p>
+<p>Testing (possibly also known as "evaluations") is the process of </p>
+<ol>
+<li>establishing risk categories of interest</li>
+<li>creating and defining benchmarks</li>
+<li>measuring a system's performance against this benchmark</li>
+</ol>
 <p>in order to ensure that the system is accurate, reliable and robust.</p>
 <p><img alt="Evals" src="../images/testing_progression.png" />
 <em>Figure: Stages of testing maturity in AI systems.</em></p>
 <p>We can think of testing maturity in stages. We want to be at level 4, where testing is comprehensive and automated. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up WOG testing of AI systems. </p>
-<h2 id="safety-testing">Safety Testing</h2>
+<h2 id="principles-for-effective-testing">Principles for Effective Testing</h2>
+<p>We have three guiding principles when collecting data for testing:</p>
+<ol>
+<li><strong>Meaningful and representative</strong>: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently diverse, realistic and naturalistic. </li>
+<li><strong>Contextualised</strong>: Testing needs to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.</li>
+<li><strong>Continuous</strong>: Testing needs to be continuously performed, minimally before major deployments. As users interact with the application and data distributions shift, testing needs to conducting to ensure that the risks are continuously mitigated. </li>
+</ol>
+<h2 id="key-testing-dimensions">Key testing dimensions</h2>
+<h3 id="safety-testing">Safety Testing</h3>
 <p>Safety testing is crucial for generative AI applications because their stochastic nature can produce unpredictable and potentially harmful outputs. Ensuring these systems operate within safe boundaries helps mitigate safety risks in WOG applications. </p>
 <p>See <a href="safety_testing/safety_testing/">safety testing</a> for more details. </p>
-<h2 id="fairness-testing">Fairness Testing</h2>
+<h3 id="fairness-testing">Fairness Testing</h3>
 <p>While outputs are constrained and more predictable in discriminative AI applications, they can nonetheless disproportionately impact certain groups based on protected and sensitive attributes like race or gender. Hence, significant work have been done to establish fairness testing and metrics in discrminative AI. </p>
 <p>See <a href="fairness_testing/fairness_discriminative/">discriminative AI fairness testing</a> for more details. </p>
 <p>Similarly, fairness testing is essential in generative AI to ensure that outputs do not perpetuate biases or discriminate against specific groups. This is especially due to the fact that LLMs have been trained on Internet data, which are known to contain biases. </p>
