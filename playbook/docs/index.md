@@ -12,6 +12,8 @@ Our aim is to help people understand and apply Responsible AI from a technical p
 
 Our hope is for our playbook to help you to **quickly grasp the entire landscape** of papers, guides, tools, and methodologies relating to Responsible AI, provide a **practical starting point** to guard your AI applications against basic risks, and thus enabling you to **ship fast and responsibly**.
 
+This playbook focuses on the technical aspects of Responsible AI. If you are interested in broader AI governance, please refer to the Circulars published by MDDI on the use, development, and deployment of LLM systems in the Singapore government. For specific guidance on AI security, please refer to CSA's Guidelines and Companion Guide for Securing AI Systems. 
+
 ## Our target audience
 
 This playbook is primarily meant for **application developers** working in the Singapore government, especially those who are excited to develop and launch AI products but are concerned about managing safety or bias concerns about AI. However, this playbook will also be helpful to **product managers**, **CIO teams**, and even **policy officers**, as long as you have some foundational understanding of key AI concepts and are keen to learn more about Responsible AI.
@@ -20,21 +22,18 @@ Although this playbook is written with the Singapore government's context in min
 
 ## About us 
 
-To be filled in
+We are the Responsible AI team in GovTech Singapore's AI Practice. We develop deep technical capabilities in Responsible AI to improve how the Singapore government develops, evaluates, deploys, and monitors AI systems in a safe, trustworthy, and ethical manner. To that end, we focus on applied research and experimentation on AI safety, fairness, and interpretability, especially in areas relevant to Singapore (such as localisation and low-resource languages).
 
-## How to best make use of this 
+We benefit a lot from open-source research, and we are happy to contribute back to the community through our open-sourced work on Hugging Face [here](https://huggingface.co/govtech), such as [LionGuard](https://huggingface.co/collections/govtech/lionguard-673838d03777e5ccb1b0ac2f), our [off-topic guardrail](https://huggingface.co/collections/govtech/off-topic-guardrail-673838a62e4c661f248e81a4), and [SEA-LION v2.1 SECURE](https://huggingface.co/collections/govtech/sea-lionv21-secure-67b6b427c4e5531c1b96199e). We also write more accessible Medium articles [here](https://medium.com/dsaid-govtech) for less technical audiences. 
 
-To be edited
+## How to use this playbook
 
-Given the pace of development in the AI space, we aim to continually update this playbook on a quarterly basis. When new tools or resources are available, we hope to quickly assess them and include them in the playbook. 
+If you're new to Responsible AI, start with our introduction to responsible AI concepts [here](./responsibleai.md). Otherwise, feel free to jump directly into the different sections on testing and guardrails. For more advanced readers, our curated list of papers and tools [here](./resources.md) may be more suitable for you.
 
-If you're new to AI safety, our recommendation is to start with a few most important risk categories for testing and guardrails; before moving on to more advanced and extensive testing as the product matures. 
-
-For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:jessica_foo@tech.gov.sg) for a more in-depth discussion. 
-
+Given the rapid pace of developments in the AI space, we aim to update this playbook on a quarterly basis. Let us know if you spot any issues or have any feedback for the playbook through the feedback widget at the bottom of each page. If you need more customised advice, feel free to [reach out to us](mailto:jessica_foo@tech.gov.sg) for a more in-depth discussion. 
 
 ## Contributions
 
-We welcome contributions to this playbook as we work together to ensure Responsible AI in government. This playbook is meant to be a living document as we adapt to new insights, real-world challenges, and emerging practices. Our goal is to create a practical resource that serves the diverse needs of the public sector and remains grounded in the realities of deployment and implementation. 
+This playbook is a living document that adapts to new insights, real-world challenges, and emerging practices. We welcome contributions as we work together to improve Responsible AI in the government. We particularly appreciate case studies which showcase the diverse needs of the public sector while highlighting the realities of deployment and implementation. 
 
-If you would like to contribute, please raise a pull request and we will review it accordingly. Thank you. 
+If you would like to contribute, please raise a pull request and we will review it accordingly. Thank you!

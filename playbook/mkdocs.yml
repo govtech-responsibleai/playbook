@@ -17,6 +17,8 @@ theme:
     - toc.integrate    
 
 # Extra Configuration
+extra_css:
+  - extra.css
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -28,6 +30,20 @@ extra:
   analytics:
     provider: google
     property: G-5KF68JT99H
+    feedback: 
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://forms.gle/v8bB9pNAARDctmpT6" target="_blank" rel="noopener">feedback form</a>.
 
 # Markdown Extensions
 markdown_extensions:
@@ -37,6 +53,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.blocks.caption
     
 # Navigation
 nav:
