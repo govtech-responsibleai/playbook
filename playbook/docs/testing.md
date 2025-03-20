@@ -36,10 +36,10 @@ See [safety testing](testing/safety_testing/safety_testing.md) for more details.
 
 ### Fairness Testing ⚖️
 
-While outputs are constrained and more predictable in discriminative AI applications, they can nonetheless disproportionately impact certain groups based on protected and sensitive attributes like race or gender. Hence, significant work have been done to establish fairness testing and metrics in discrminative AI. 
+While outputs are constrained and more predictable in discriminative AI applications, they can nonetheless disproportionately impact certain groups based on protected and sensitive attributes like race or gender. Hence, significant work has been done to establish fairness testing and metrics in discriminative AI. 
 
 See [discriminative AI fairness testing](testing/fairness_testing/fairness_discriminative.md) for more details. 
 
 Similarly, fairness testing is essential in generative AI to ensure that outputs do not perpetuate biases or discriminate against specific groups. This is especially due to the fact that LLMs have been trained on Internet data, which are known to contain biases. 
 
-See [generative AI fairness testing](testing/fairness_testing/fairness_generative.md) for more details. 
+See [generative AI fairness testing](testing/fairness_testing/fairness_generative.md) for more details.
