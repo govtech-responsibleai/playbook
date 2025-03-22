@@ -14,7 +14,7 @@
       
       
       
-        <link rel="next" href="about/">
+        <link rel="next" href="responsibleai/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -47,6 +47,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="extra.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -204,12 +206,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="about/" class="md-tabs__link">
+      <a href="responsibleai/" class="md-tabs__link">
         
   
     
   
-  About
+  Responsible AI
 
       </a>
     </li>
@@ -375,69 +377,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#about-this-playbook" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      About this playbook
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#objectives" class="md-nav__link">
+  <a href="#our-target-audience" class="md-nav__link">
     <span class="md-ellipsis">
-      Objectives
+      Our target audience
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#life-cycle" class="md-nav__link">
+  <a href="#about-us" class="md-nav__link">
     <span class="md-ellipsis">
-      Life Cycle
+      About us
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Life Cycle">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#application" class="md-nav__link">
-    <span class="md-ellipsis">
-      Application
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#our-approach" class="md-nav__link">
+  <a href="#how-to-use-this-playbook" class="md-nav__link">
     <span class="md-ellipsis">
-      Our Approach
+      How to use this playbook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributions
     </span>
   </a>
   
@@ -458,11 +436,11 @@
   
   
     <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
+      <a href="responsibleai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    About
+    Responsible AI
   </span>
   
 
@@ -1007,68 +985,28 @@
 
 
 <h1 id="responsible-ai-playbook">Responsible AI Playbook</h1>
-<h2 id="overview">Overview</h2>
-<p>Broadly, Responsible AI (“RAI”) focuses on how to develop, evaluate, deploy, and monitor AI systems in a safe, trustworthy, and ethical manner. From how data is collected to how humans interact with AI systems, RAI will help to guide these decisions toward beneficial and equitable outcomes. In the public sector context, RAI will help align AI systems to achieve the public good.</p>
-<p>At GovTech's AI Practice, we break down RAI into 6 key principles that AI systems should strive towards. </p>
-<table>
-<thead>
-<tr>
-<th>Principle</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Safety</td>
-<td>AI systems should be (i) protected against adversarial threats and misuse for harmful activities and (ii) aligned to the public good.</td>
-</tr>
-<tr>
-<td>Robustness</td>
-<td>AI systems should perform up to task even when subjected to challenging requirements or circumstances.</td>
-</tr>
-<tr>
-<td>Fairness</td>
-<td>AI systems should strive to be fair and equitable to all, regardless of gender, race, religion, or other attributes.</td>
-</tr>
-<tr>
-<td>Explainability</td>
-<td>AI systems should provide clear and reliable explanations for their automated decisions to key stakeholders.</td>
-</tr>
-<tr>
-<td>Privacy</td>
-<td>AI systems should handle personal data carefully and protect against potential data leakages.</td>
-</tr>
-<tr>
-<td>Transparency</td>
-<td>AI systems should document key development and deployment choices and be clear about how the AI system should be used.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="objectives">Objectives</h2>
-<p>This playbook aims to provide resources, recommendations and technical guides to deploying AI responsibly in your applications. However, the resources reviewed are not meant to be exhaustive. Readers are encouraged to use them as references and apply them at their own discretion.</p>
-<p>Various circulars exist to uphold RAI principles in government, such as PMO (SNDGO) Circular No. 1/2023 on the 'Use of Large Language Models in the Public Sector'. This playbook aims to complement these circulars by deep-diving into certain risks and providing greater technical detail to measure and mitigate them. </p>
-<p>There have also been several other playbooks released to guide secure AI adoption in government, such as CSA's Guidelines and Companion Guide for Securing AI Systems. Unlike them, this playbook aims to cover the safety aspects of Responsible AI, and will only briefly touch on security risks.  </p>
-<h2 id="life-cycle">Life Cycle</h2>
-<p><img alt="AI Cycle" src="images/ai_cycle.png" />
-<em>Figure: AI life cycle.</em></p>
-<p>AI risks, as well as mitigating measures, exist at each stage of the application life cycle. </p>
-<h3 id="data">Data</h3>
-<p>As the old adage goes, "garbage in, garbage out". If unsafe or biased data is used for training, the model outputs are likely to be unsafe and biased as well. Large Language Models are typically pre-trained on massive amounts of text from the Internet, which contain harmful, toxic and biased texts. This has resulted in models learning such textual distributions and producing similar outputs. As such, a large body of research has been dedicated to improving data quality in pre-training data. </p>
-<h3 id="model">Model</h3>
-<p>In discriminative AI settings, the choice of modelling parameters can greatly impact their fairness. For example, the use of sensitive variables in predictive algorithms can lead to unfair outcomes. </p>
-<p>Most generative modeling approaches entail autoregressively generating the next most probable token, which depends on the joint distribution of tokens learned during training. As such, if unsafe token sequences are learned, they will naturally be reproduced by the model. </p>
-<p>To reduce model harms in LLMs, significant research has been dedicated to aligning models with human preferences and desirable values. Given paired text data and their rankings, LLMs undergo a second stage of reinforcement learning to learn to output preferred (i.e., safer) responses. </p>
-<p>Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness. </p>
-<h3 id="application">Application</h3>
-<p>Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. As such, input and output guardrails have emerged as viable defences against such risks. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. </p>
-<h2 id="our-approach">Our Approach</h2>
-<p><img alt="Approach" src="images/approach_focus.png" />
-<em>Figure: Functional focus areas for Responsible AI.</em></p>
-<p>At present, our approach to deploying AI model safely involves <strong>testing</strong>, <strong>mitigation</strong> and model <strong>understanding</strong>. </p>
-<p>Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. </p>
-<p>After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. </p>
-<p>Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. </p>
-<p>In the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails <a href="testing/">output testing</a> and <a href="guardrails/">guardrails</a>.</p>
+<p><img alt="" src="images/responsibleai.png" /></p>
+<h2 id="about-this-playbook">About this playbook</h2>
+<p>Our aim is to help people understand and apply Responsible AI from a technical perspective. We do so in three ways:  </p>
+<ol>
+<li>Clear and detailed <strong>explanations for key concepts</strong> in Responsible AI (such as safety, fairness, and interpretability)  </li>
+<li>Easy-to-follow and actionable <strong>recommendations for deploying AI responsibly</strong> for your applications  </li>
+<li><strong>Curated resources and papers</strong> to dive deeper into various aspects of Responsible AI  </li>
+</ol>
+<p>Our hope is for our playbook to help you to <strong>quickly grasp the entire landscape</strong> of papers, guides, tools, and methodologies relating to Responsible AI, provide a <strong>practical starting point</strong> to guard your AI applications against basic risks, and thus enabling you to <strong>ship fast and responsibly</strong>.</p>
+<p>This playbook focuses on the technical aspects of Responsible AI. If you are interested in broader AI governance, please refer to the Circulars published by MDDI on the use, development, and deployment of LLM systems in the Singapore government. For specific guidance on AI security, please refer to CSA's Guidelines and Companion Guide for Securing AI Systems. </p>
+<h2 id="our-target-audience">Our target audience</h2>
+<p>This playbook is primarily meant for <strong>application developers</strong> working in the Singapore government, especially those who are excited to develop and launch AI products but are concerned about managing safety or bias concerns about AI. However, this playbook will also be helpful to <strong>product managers</strong>, <strong>CIO teams</strong>, and even <strong>policy officers</strong>, as long as you have some foundational understanding of key AI concepts and are keen to learn more about Responsible AI.</p>
+<p>Although this playbook is written with the Singapore government's context in mind, most of the explanations and recommendations in this playbook should be applicable to anyone building AI applications. After all, building safe, fair, and responsible AI applications is a common goal for many organisations. </p>
+<h2 id="about-us">About us</h2>
+<p>We are the Responsible AI team in GovTech Singapore's AI Practice. We develop deep technical capabilities in Responsible AI to improve how the Singapore government develops, evaluates, deploys, and monitors AI systems in a safe, trustworthy, and ethical manner. To that end, we focus on applied research and experimentation on AI safety, fairness, and interpretability, especially in areas relevant to Singapore (such as localisation and low-resource languages).</p>
+<p>We benefit a lot from open-source research, and we are happy to contribute back to the community through our open-sourced work on Hugging Face <a href="https://huggingface.co/govtech">here</a>, such as <a href="https://huggingface.co/collections/govtech/lionguard-673838d03777e5ccb1b0ac2f">LionGuard</a>, our <a href="https://huggingface.co/collections/govtech/off-topic-guardrail-673838a62e4c661f248e81a4">off-topic guardrail</a>, and <a href="https://huggingface.co/collections/govtech/sea-lionv21-secure-67b6b427c4e5531c1b96199e">SEA-LION v2.1 SECURE</a>. We also write more accessible Medium articles <a href="https://medium.com/dsaid-govtech">here</a> for less technical audiences. </p>
+<h2 id="how-to-use-this-playbook">How to use this playbook</h2>
+<p>If you're new to Responsible AI, start with our introduction to responsible AI concepts <a href="responsibleai/">here</a>. Otherwise, feel free to jump directly into the different sections on testing and guardrails. For more advanced readers, our curated list of papers and tools <a href="resources/">here</a> may be more suitable for you.</p>
+<p>Given the rapid pace of developments in the AI space, we aim to update this playbook on a quarterly basis. Let us know if you spot any issues or have any feedback for the playbook through the feedback widget at the bottom of each page. If you need more customised advice, feel free to <a href="mailto:jessica_foo@tech.gov.sg">reach out to us</a> for a more in-depth discussion. </p>
+<h2 id="contributions">Contributions</h2>
+<p>This playbook is a living document that adapts to new insights, real-world challenges, and emerging practices. We welcome contributions as we work together to improve Responsible AI in the government. We particularly appreciate case studies which showcase the diverse needs of the public sector while highlighting the realities of deployment and implementation. </p>
+<p>If you would like to contribute, please raise a pull request and we will review it accordingly. Thank you!</p>
 
 
 
@@ -1081,6 +1019,46 @@
   
 
 
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://forms.gle/v8bB9pNAARDctmpT6" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
 
                 
