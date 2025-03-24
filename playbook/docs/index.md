@@ -32,6 +32,8 @@ If you're new to Responsible AI, start with our introduction to responsible AI c
 
 Given the rapid pace of developments in the AI space, we aim to update this playbook on a quarterly basis. Let us know if you spot any issues or have any feedback for the playbook through the feedback widget at the bottom of each page. If you need more customised advice, feel free to [reach out to us](mailto:jessica_foo@tech.gov.sg) for a more in-depth discussion. 
 
+For generic solutions, Singapore government users may refer to [AI Guardian](http://aiguardian.gov.sg/). For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:AiPractice@tech.go.sg) for a more in-depth discussion.
+
 ## Contributions
 
 This playbook is a living document that adapts to new insights, real-world challenges, and emerging practices. We welcome contributions as we work together to improve Responsible AI in the government. We particularly appreciate case studies which showcase the diverse needs of the public sector while highlighting the realities of deployment and implementation. 
