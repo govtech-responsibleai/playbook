@@ -70,9 +70,9 @@ Testing generally involves a process similar to this:
 !!! note "Steps in Testing"
     1. Establish safety categories of interest and requisite metrics
     2. Collect and analyse testing data to generate safety metrics
-        a. Static or dynamic 
-        b. General or domain-specific
-        c. Synthetic or real (e.g. from production)
+        1. Static or dynamic 
+        2. General or domain-specific
+        3. Synthetic or real (e.g. from production)
     3. Continually expand and curate more testing data
 
 While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
