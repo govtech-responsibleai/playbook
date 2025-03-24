@@ -465,6 +465,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Our Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Understanding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1059,13 +1092,13 @@
 <p>In another example, Air Canada's LLM chatbot provided a customer with incorrect information regarding bereavement fares, which led to the customer's claim being denied by Air Canada on the basis that the chatbot's information was non-binding. <a href="https://aibusiness.com/nlp/air-canada-held-responsible-for-chatbot-s-hallucinations-">A Canadian tribunal ruled against the airline</a>, emphasizing that companies are accountable for the information their AI systems disseminate, regardless of disclaimers. ​</p>
 <p>These incidents highlight the need for AI application developers <strong>to consider how their AI models could fail, test their models and applications rigorously, and implement measures to reduce the likelihood of such failures</strong>. This is at the heart of what we do in the Responsible AI space.</p>
 <h2 id="where-can-issues-arise">Where can issues arise?</h2>
+<p>Issues of safety, bias, robustness, and other RAI areas can exist at each stage of the application life cycle. Below we go through each stage and explain how some of these issues may emerge.</p>
 <figure>
 <p><img alt="AI Cycle" src="../images/ai_cycle.png" /></p>
 <figcaption>
 <p>The AI life cycle consists of the data, model, and application.</p>
 </figcaption>
 </figure>
-<p>Issues of safety, bias, robustness, and other RAI areas can exist at each stage of the application life cycle. Below we go through each stage and explain how some of these issues may emerge.</p>
 <h3 id="data">Data</h3>
 <p>As the old adage goes, "garbage in, garbage out". <strong>If unsafe or biased data is used for training, the model outputs are likely to be unsafe and biased as well.</strong> For example, ​<a href="https://www.washingtonpost.com/health/2019/10/24/racial-bias-medical-algorithm-favors-white-patients-over-sicker-black-patients/">a 2019 study</a> revealed that a widely used healthcare algorithm exhibited racial bias by underestimating the health needs of black patients compared to equally ill white patients. The algorithm used healthcare costs as a proxy for health needs, leading to black patients, who typically incur lower healthcare costs due to systemic disparities, being assigned lower risk scores. Consequently, black patients were less likely to be referred for advanced care management programs.</p>
 <p>In the Generative AI space, LLMs are typically pre-trained on massive amounts of text or image data from the Internet, which contain harmful, toxic and biased texts. Since LLMs autoregressively generate the next most probable token, the output depends on the joint distribution of tokens learned during training. If unsafe token sequences are learned, they will naturally be reproduced by the model, as <a href="https://www.bloomberg.com/news/newsletters/2022-12-08/chatgpt-open-ai-s-chatbot-is-spitting-out-biased-sexist-results">ChatGPT did in its early days</a>. For image generation models, there have been <a href="https://www.cigionline.org/articles/generative-ai-tools-are-perpetuating-harmful-gender-stereotypes/">several studies</a> finding that generated outputs of engineers, scientists, or lawyers disproportionately portray men over women, reflecting the unequal gender representation of those occupations in the training data.</p>
@@ -1074,13 +1107,28 @@
 <p>In the generative AI space, significant research has been dedicated to aligning models with human preferences and desirable values. Given paired text data and their rankings, LLMs undergo a second stage of reinforcement learning to learn to output preferred (i.e., safer) responses. </p>
 <p>Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness. </p>
 <h3 id="application">Application</h3>
-<p>Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. As such, input and output guardrails have emerged as viable defences against such risks. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. </p>
+<p>Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. To address this risk, input and output guardrails have emerged as viable defences. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. </p>
 <h2 id="our-approach">Our Approach</h2>
+<p>At present, our approach to deploying AI model safely involves <strong>testing</strong>, <strong>mitigation</strong> and model <strong>understanding</strong>. </p>
 <p><img alt="Approach" src="../images/approach_focus.png" />
 <em>Figure: Functional focus areas for Responsible AI.</em></p>
-<p>At present, our approach to deploying AI model safely involves <strong>testing</strong>, <strong>mitigation</strong> and model <strong>understanding</strong>. </p>
-<p>Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. </p>
+<h3 id="testing">Testing</h3>
+<p>Testing generally involves a process similar to this:</p>
+<div class="admonition note">
+<p class="admonition-title">Steps in Testing</p>
+<ol>
+<li>Establish safety categories of interest and requisite metrics</li>
+<li>Collect and analyse testing data to generate safety metrics
+    a. Static or dynamic 
+    b. General or domain-specific
+    c. Synthetic or real (e.g. from production)</li>
+<li>Continually expand and curate more testing data</li>
+</ol>
+</div>
+<p>While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. </p>
+<h3 id="mitigation">Mitigation</h3>
 <p>After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. </p>
+<h3 id="model-understanding">Model Understanding</h3>
 <p>Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. </p>
 <p>In the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails <a href="../testing/">output testing</a> and <a href="../guardrails/">guardrails</a>.</p>
 

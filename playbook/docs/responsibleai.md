@@ -30,12 +30,12 @@ These incidents highlight the need for AI application developers **to consider h
 
 ## Where can issues arise?
 
+Issues of safety, bias, robustness, and other RAI areas can exist at each stage of the application life cycle. Below we go through each stage and explain how some of these issues may emerge.
+
 ![AI Cycle](images/ai_cycle.png)
 /// caption
 The AI life cycle consists of the data, model, and application.
 ///
-
-Issues of safety, bias, robustness, and other RAI areas can exist at each stage of the application life cycle. Below we go through each stage and explain how some of these issues may emerge.
 
 ### Data
 
@@ -53,18 +53,35 @@ Another significant research direction entails analysing harmfulness and toxicit
 
 ### Application
 
-Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. As such, input and output guardrails have emerged as viable defences against such risks. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. 
+Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. To address this risk, input and output guardrails have emerged as viable defences. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. 
 
 ## Our Approach
+
+At present, our approach to deploying AI model safely involves **testing**, **mitigation** and model **understanding**. 
 
 ![Approach](images/approach_focus.png)
 _Figure: Functional focus areas for Responsible AI._
 
-At present, our approach to deploying AI model safely involves **testing**, **mitigation** and model **understanding**. 
 
-Testing involves establishing safety categories of interest, as well as their requisite metrics. This is followed by collecting testing data, which can be static or dynamic, general or domain/use case-specific, synthetic or real. The testing data is then used to generate safety metrics, to determine the overall safety of the application. While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
+### Testing 
+
+Testing generally involves a process similar to this:
+
+!!! note "Steps in Testing"
+    1. Establish safety categories of interest and requisite metrics
+    2. Collect and analyse testing data to generate safety metrics
+        a. Static or dynamic 
+        b. General or domain-specific
+        c. Synthetic or real (e.g. from production)
+    3. Continually expand and curate more testing data
+
+While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
+
+### Mitigation
 
 After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. 
+
+### Model Understanding
 
 Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. 
 
