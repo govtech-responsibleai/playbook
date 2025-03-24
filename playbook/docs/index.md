@@ -30,9 +30,9 @@ We benefit a lot from open-source research, and we are happy to contribute back 
 
 If you're new to Responsible AI, start with our introduction to responsible AI concepts [here](./responsibleai.md). Otherwise, feel free to jump directly into the different sections on testing and guardrails. For more advanced readers, our curated list of papers and tools [here](./resources.md) may be more suitable for you.
 
-Given the rapid pace of developments in the AI space, we aim to update this playbook on a quarterly basis. Let us know if you spot any issues or have any feedback for the playbook through the feedback widget at the bottom of each page. If you need more customised advice, feel free to [reach out to us](mailto:jessica_foo@tech.gov.sg) for a more in-depth discussion. 
+Given the rapid pace of developments in the AI space, we aim to update this playbook on a quarterly basis. Let us know if you spot any issues or have any feedback for the playbook through the feedback widget at the bottom of each page.
 
-For generic solutions, Singapore government users may refer to [AI Guardian](http://aiguardian.gov.sg/). For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:AiPractice@tech.go.sg) for a more in-depth discussion.
+For generic solutions to quickly deploy applications with a base standard of safety, Singapore government users may refer to [AI Guardian](http://aiguardian.gov.sg/). For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:AiPractice@tech.go.sg) for a more in-depth discussion.
 
 ## Contributions
 
