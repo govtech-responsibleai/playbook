@@ -32,7 +32,7 @@ If you're new to Responsible AI, start with our introduction to responsible AI c
 
 Given the rapid pace of developments in the AI space, we aim to update this playbook on a quarterly basis. Let us know if you spot any issues or have any feedback for the playbook through the feedback widget at the bottom of each page.
 
-For generic solutions to quickly deploy applications with a base standard of safety, Singapore government users may refer to [AI Guardian](http://aiguardian.gov.sg/). For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:AiPractice@tech.go.sg) for a more in-depth discussion.
+For generic solutions to quickly deploy applications with a base standard of safety, Singapore government users may refer to [AI Guardian](https://www.aiguardian.gov.sg/). For more customised solutions, feel free to reach out to our team at [GovTech's AI Practice (Responsible AI)](mailto:AiPractice@tech.go.sg) for a more in-depth discussion.
 
 ## Contributions
 
