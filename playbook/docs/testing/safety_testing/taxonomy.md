@@ -36,7 +36,7 @@ Incorporating severity levels helps to assess both the **potential impact and li
 
 Clear definitions, supported by **concrete and contextually relevant examples**, are essential for consistency and clarity. Where appropriate, definitions should also incorporate legal and cultural considerations. 
 
-!!! tip "Definition of Hate in our taxonomy"
+!!! tip "Example: Definition of Hate in our taxonomy"
 
     **Level 1 (Discrimination)**: Derogatory statements or negative stereotypes against a protected group (e.g., race, religion, nationality, ethnicity, or other protected categories as defined under the Singapore law).
 
