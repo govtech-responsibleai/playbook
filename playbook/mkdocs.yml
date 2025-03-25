@@ -67,6 +67,7 @@ nav:
       - Safety:
           - Introduction: testing/safety_testing/safety_testing.md
           - Benchmarks and Tools: testing/safety_testing/diff_safety.md
+          - Taxonomy: testing/safety_testing/taxonomy.md
           - Litmus: testing/safety_testing/litmus.md
   - Guardrails:
       - Introduction: guardrails.md

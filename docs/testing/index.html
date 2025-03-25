@@ -696,6 +696,27 @@
   
   
     <li class="md-nav__item">
+      <a href="safety_testing/taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="safety_testing/litmus/" class="md-nav__link">
         
   
@@ -1012,13 +1033,14 @@
 <p>in order to ensure that the system is accurate, reliable and robust.</p>
 <p><img alt="Evals" src="../images/testing_progression.png" />
 <em>Figure: Stages of testing maturity in AI systems.</em></p>
-<p>We can think of testing maturity in stages. Ideally, we want to be at level 4, where testing is comprehensive and automated. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up Whole-of-Government (WOG) testing of AI systems. </p>
+<p>We can think of testing maturity in stages. Ideally, we want to be at level 4, where testing is comprehensive and automated. At level 4, testing is continuously performed, ensuring that risks are continuously monitored and mitigated as users interact with the application and data distributions shift. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up Whole-of-Government (WOG) testing of AI systems. </p>
 <h2 id="principles-for-effective-testing">Principles for Effective Testing 🎯</h2>
 <p>We have three guiding principles when collecting data for testing:</p>
 <ol>
-<li><strong>Meaningful and representative</strong>: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently diverse, realistic and naturalistic. </li>
-<li><strong>Contextualised</strong>: Testing needs to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.</li>
-<li><strong>Continuous</strong>: Testing needs to be continuously performed, minimally before major deployments. As users interact with the application and data distributions shift, testing needs to conducting to ensure that the risks are continuously mitigated. </li>
+<li><strong>Meaningful and representative</strong>: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently realistic and naturalistic. </li>
+<li><strong>Diverse and varied</strong>: Testing needs to be diverse in content, framing and sources to ensure comprehensiveness. They must cover a broad range of risks (i.e., content) and vary in linguistic structure, in order to reflect the real-world distribution.</li>
+<li><strong>Contextualised and/or localised</strong>: Testing needs to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar. Curating long-tail, context-specific tests is valuable in assessing whether the model can detect underrepresented forms of localised risks.</li>
+<li><strong>Incremental complexity</strong>: The design of attack levels should align with the target users, starting with simple adversarial tests and gradually increasing in sophistication. Intermediate attacks combine basic level prompts with adversarial prompting templates like role-playing exploits and prompt injections to enhance difficulty. </li>
 </ol>
 <h2 id="key-testing-dimensions">Key testing dimensions</h2>
 <h3 id="safety-testing">Safety Testing 🦺</h3>
