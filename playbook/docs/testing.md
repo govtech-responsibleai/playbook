@@ -16,15 +16,16 @@ in order to ensure that the system is accurate, reliable and robust.
 ![Evals](images/testing_progression.png)
 _Figure: Stages of testing maturity in AI systems._
 
-We can think of testing maturity in stages. Ideally, we want to be at level 4, where testing is comprehensive and automated. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up Whole-of-Government (WOG) testing of AI systems. 
+We can think of testing maturity in stages. Ideally, we want to be at level 4, where testing is comprehensive and automated. At level 4, testing is continuously performed, ensuring that risks are continuously monitored and mitigated as users interact with the application and data distributions shift. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up Whole-of-Government (WOG) testing of AI systems. 
 
 ## Principles for Effective Testing 🎯
 
 We have three guiding principles when collecting data for testing:
 
-1. **Meaningful and representative**: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently diverse, realistic and naturalistic. 
-2. **Contextualised**: Testing needs to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar.
-3. **Continuous**: Testing needs to be continuously performed, minimally before major deployments. As users interact with the application and data distributions shift, testing needs to conducting to ensure that the risks are continuously mitigated. 
+1. **Meaningful and representative**: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently realistic and naturalistic. 
+2. **Diverse and varied**: Testing needs to be diverse in content, framing and sources to ensure comprehensiveness. They must cover a broad range of risks (i.e., content) and vary in linguistic structure, in order to reflect the real-world distribution.
+2. **Contextualised and/or localised**: Testing needs to be localised to the context. If we're testing for toxicity in Singapore, this includes Singapore-specific references, vocabulary, and grammar. Curating long-tail, context-specific tests is valuable in assessing whether the model can detect underrepresented forms of localised risks.
+3. **Incremental complexity**: The design of attack levels should align with the target users, starting with simple adversarial tests and gradually increasing in sophistication. Intermediate attacks combine basic level prompts with adversarial prompting templates like role-playing exploits and prompt injections to enhance difficulty. 
 
 ## Key testing dimensions
 

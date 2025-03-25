@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../fairness_discriminative/">
+        <link rel="prev" href="../diff_safety/">
       
       
-        <link rel="next" href="../../safety_testing/safety_testing/">
+        <link rel="next" href="../litmus/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Generative - Responsible AI Playbook</title>
+        <title>Taxonomy - Responsible AI Playbook</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fairness-testing-in-genai" class="md-skip">
+        <a href="#risk-taxonomy" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generative
+              Taxonomy
             
           </span>
         </div>
@@ -434,6 +434,94 @@
                 
   
   
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fairness
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fairness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fairness_testing/fairness_discriminative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discriminative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fairness_testing/fairness_generative/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -449,24 +537,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Fairness
+    Safety
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Fairness
+            Safety
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -477,11 +565,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../fairness_discriminative/" class="md-nav__link">
+      <a href="../safety_testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Discriminative
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diff_safety/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benchmarks and Tools
   </span>
   
 
@@ -511,7 +620,7 @@
           
   
   <span class="md-ellipsis">
-    Generative
+    Taxonomy
   </span>
   
 
@@ -522,7 +631,7 @@
         
   
   <span class="md-ellipsis">
-    Generative
+    Taxonomy
   </span>
   
 
@@ -544,29 +653,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dataset" class="md-nav__link">
+  <a href="#why-is-a-taxonomy-necessary" class="md-nav__link">
     <span class="md-ellipsis">
-      Dataset
+      Why is a taxonomy necessary?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics" class="md-nav__link">
+  <a href="#why-a-taxonomy-for-wog-specifically" class="md-nav__link">
     <span class="md-ellipsis">
-      Metrics
+      Why a taxonomy for WOG specifically?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why a taxonomy for WOG specifically?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-understanding-of-the-governments-distinct-risk-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Understanding of the government's distinct risk landscape
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-granularity-through-subcategories-risk-levels-and-clear-definitions" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluation
+      2. Granularity through subcategories, risk levels and clear definitions
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validation-maintenance-and-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validation, maintenance and adaptation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -579,52 +712,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Safety
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            Safety
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -632,70 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/safety_testing/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Introduction
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../safety_testing/diff_safety/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Benchmarks and Tools
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../safety_testing/taxonomy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Taxonomy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../safety_testing/litmus/" class="md-nav__link">
+      <a href="../litmus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,39 +1020,40 @@
                   
 
 
-<h1 id="fairness-testing-in-genai">Fairness Testing in GenAI</h1>
-<p>There has been a large body of work testing fairness and biases in LLMs, focusing on whether there are inherent biases encoded in LLMs. We think it is best to adapt existing methods to your specific application context to test your application, instead of simply measuring LLM fairness based on open-source benchmarks. </p>
-<h2 id="dataset">Dataset</h2>
-<p>Much of the existing literature involves designing prompt templates that vary by a protected attribute like gender, race or religion. Some popular methods are:</p>
-<ul>
-<li>Using <a href="https://github.com/amazon-science/bold">naturally occurring prompts that contain references to a protected attribute</a>, and evaluating the continuations based on metrics of interest (e.g., sentiment, toxicity, gender polarity)</li>
-<li>Querying LLMs to state <a href="https://aclanthology.org/2023.acl-long.656/">whether they agree to statements containing bias</a></li>
-<li>Requiring LLMs to perform <a href="https://arxiv.org/abs/1901.09451">classification</a> or <a href="https://arxiv.org/abs/2110.08193">make a choice in MCQs</a> based on textual descriptions with explicit indicators of a protected attribute </li>
-</ul>
+<h1 id="risk-taxonomy">Risk Taxonomy</h1>
+<div class="admonition success">
+<p class="admonition-title">Key Message</p>
+<p>We developed a risk taxonomy based on key principles of (i)understanding of the government's distinct risk landscape, (ii) granularity through subcategories, risk levels and clear definitions, (iii) validation, maintenance and adaptation.</p>
+</div>
+<h2 id="why-is-a-taxonomy-necessary">Why is a taxonomy necessary?</h2>
+<p>In today’s rapidly evolving online landscape, efforts to safeguard against risks can become inconsistent and overly reactive without a clear, well-defined framework. A taxonomy is essential for structuring risk assessments, enabling product teams to better identify, analyze, and mitigate online threats.</p>
+<p>Defining an effective taxonomy involves <strong>balancing specificity with applicability</strong>. Categories should be precise enough to clearly distinguish between risks, yet broad enough to remain applicable across various use cases and adaptable to evolving and emerging threats. Ensuring that each risk group is intuitive and incorporating layers of severity and sub-categories can enhance the taxonomy’s utility.</p>
+<h2 id="why-a-taxonomy-for-wog-specifically">Why a taxonomy for WOG specifically?</h2>
+<p>To meet the need to address key aspects of online trust and safety in the context of the Singapore government, we have defined the following risk taxonomy that is designed to be applicable to any government AI system.  </p>
+<p><img alt="Risk Taxonomy" src="../images/risk_taxonomy.png" />
+<em>Figure: Risk Taxonomy for WOG AI systems</em></p>
+<p>This taxonomy guides our testing process and guardrails curation, and was developed based on several key principles.  </p>
+<h3 id="1-understanding-of-the-governments-distinct-risk-landscape">1. Understanding of the government's distinct risk landscape</h3>
+<p>Government AI systems face unique risks that other AI applications may not. In particular, we have identified the following categories of risk that developers should take note of when developing govenrment AI applications. </p>
+<ol>
+<li><strong>Undesirable content</strong>: outputs that are inappropriate for government use, including offensive language and harmful stereotypes</li>
+<li><strong>Specialised advice</strong>: outputs that appear to constitute specialized advice without the necessary qualifications, particularly in sensitive domains such as healthcare, law, and finance</li>
+<li><strong>Political content</strong>: output that can appear as political bias and result in misinterpretation and reputational harm.</li>
+</ol>
+<p>In the public sector, compliance with governing policies and ethical expectations is non-negotiable. The risk categories were designed to help developers anticipate risks but are by no means exhaustive. Product teams should evaluate their product and choose appropriate risk categories accordingly. </p>
+<h3 id="2-granularity-through-subcategories-risk-levels-and-clear-definitions">2. Granularity through subcategories, risk levels and clear definitions</h3>
+<p>The broad categories should be further refined into subcategories by considering different forms each risk may take and the specific contexts in which they arise. Subcategories should be <strong>mutually exclusive</strong> to minimize overlap and confusion, making it easier to assess and mitigate through targeted interventions.</p>
+<p>Incorporating severity levels helps to assess both the <strong>potential impact and likelihood</strong> of each identified risk. A simple scale—such as low, medium, and high—can be used, with clearly defined criteria for each level tailored to the specific context. While not all risks require this additional granularity, it can provide clarity where necessary. </p>
+<p>Clear definitions, supported by <strong>concrete and contextually relevant examples</strong>, are essential for consistency and clarity. Where appropriate, definitions should also incorporate legal and cultural considerations. </p>
 <div class="admonition tip">
-<p class="admonition-title">Tip: Assess if your application requires fairness testing</p>
-<p>Whether your application requires testing depends on whether the LLM generations could be affected by a protected attribute, bearing in mind that the attribute can be explicitly defined (e.g., user has to state gender) or implicit (e.g., name). For instance, in using LLMs to generate student testimonials, an AI product could use student names in the prompt template. </p>
+<p class="admonition-title">Definition of Hate in our taxonomy</p>
+<p><strong>Level 1 (Discrimination)</strong>: Derogatory statements or negative stereotypes against a protected group (e.g., race, religion, nationality, ethnicity, or other protected categories as defined under the Singapore law).</p>
+<p><em>Example</em>: “If you notice in uni got no malays one, they all at scdf. I not racist, this is a fact.”</p>
+<p><strong>Level 2 (Hate Speech)</strong>: Explicit calls for harm/violence against a protected group; or language praising/justifying violence.</p>
+<p><em>Example</em>: “sg should start rolling out euthanasia like they do in canada to get rid of the old ppl”</p>
 </div>
-<p>If it is possible for an LLM generation to be affeced by a protected attribute, it is imperative to create an evaluation dataset to measure the fairness of generations across different attributes. </p>
-<p>In our experiments for Appraiser, an AI product assisting teachers with generation student testimonials, the benchmark dataset was created based on a template that the application relied on, as well as input fields users would change/vary. </p>
-<h2 id="metrics">Metrics</h2>
-<p>To determine the metrics for evaluating LLM generations, it is important to consider discriminative outcomes that the application is at risk for. </p>
-<p>Some common outcomes/risks include: </p>
-<ul>
-<li>Sentiment </li>
-<li>Toxicity </li>
-<li>Psycholinguistic norms (more extensive emotiion states)</li>
-<li>Gender Polarity (number of male/female specific tokens)</li>
-<li>Language style/formality </li>
-</ul>
-<p>Some applications may require application-specific metrics. In some cases, we could rely on traditional NLP methods (e.g., TF-IDF, word count), classifiers (sentiment) or LLMs for evaluation. In our experiments for Appraiser, we noticed that the adjectives used in LLM generations could be categorised under stereotypical personality traits, and used word counts of adjectives and associated synonyms to measure the degree to which the testimonial demonstrated the trait. </p>
-<h2 id="evaluation">Evaluation</h2>
-<p>A common evaluation approach is to split the evaluation dataset depending on the protected attribute (subgroups), and assess if there are differences in the metric of interest between different subgroups.</p>
-<p>However, in certain contexts where there could be other <em>confounding factors</em> and it is possible to disentangle the factors, we can use <strong>fixed effects regression</strong> techniques to isolate the effect of the protected attribute on the metric of interest. In our experiments with Appraiser, user input fields like academic achievements or CCAs could also affect LLM generations but they were not related to the protected attributes. Hence, controlling for these factors allow for a more accurate assessment of the biasness of LLM generations in this specific context. </p>
-<div class="admonition note">
-<p class="admonition-title">Original Blog Post</p>
-<p>This page is adapted from our <a href="https://medium.com/dsaid-govtech/evaluating-fairness-of-llm-generated-testimonials-c65e0f271b17">original blog post</a> on this topic.</p>
-</div>
+<h3 id="3-validation-maintenance-and-adaptation">3. Validation, maintenance and adaptation</h3>
+<p>We will continue to engage stakeholders from technical teams, agencies, industry and the community to validate our taxonomy. Regular reviews and updates are essential to keep pace with evolving threats, business changes, and lessons learned from real-world use. Taxonomy curation is not a one-time task but an ongoing process. The taxonomy must continuously evolve and adapt to address emerging threats and new vulnerabilities.</p>
 
 
 
