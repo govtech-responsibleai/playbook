@@ -2,7 +2,6 @@
 site_name: Responsible AI Playbook
 site_description: A playbook for Responsible AI in the Singapore Public Service
 site_author: GovTech AI Practice
-site_dir: ../docs
 docs_dir: docs
 
 # Theme Configuration
@@ -29,7 +28,7 @@ extra:
       link: https://x.com/GovTechSG
   analytics:
     provider: google
-    property: G-5KF68JT99H
+    property: G-D8325S860G
     feedback: 
       title: Was this page helpful?
       ratings:
