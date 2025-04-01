@@ -1,6 +1,5 @@
 # Litmus: Comprehensive AI Safety Testing for Government Applications
 
-## Overview
 Litmus is a Testing-as-a-Service (TaaS) platform that allows development teams building Generative AI applications to perform frequent and seamless AI safety and security testing. By having the ability to perform testing within the CI/CD pipeline as well as through a Web App, Litmus provides application teams and business owners with a near real-time awareness of AI application and model risks in this ever-changing landscape, without the need for extensive setup or infrastructure management. Through Litmus, we hope to empower teams to make informed decisions in the AI applications, and react to AI-related risks in an agile manner.
 
 
