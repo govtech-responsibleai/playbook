@@ -38,4 +38,4 @@ For generic solutions to quickly deploy applications with a base standard of saf
 
 This playbook is a living document that adapts to new insights, real-world challenges, and emerging practices. We welcome contributions as we work together to improve Responsible AI in the government. We particularly appreciate case studies which showcase the diverse needs of the public sector while highlighting the realities of deployment and implementation. 
 
-If you would like to contribute, please raise a pull request and we will review it accordingly. Thank you!
+If you would like to contribute, please [raise a pull request](https://github.com/govtech-responsibleai/playbook/pulls) and we will review it accordingly. Thank you!
