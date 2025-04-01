@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../testing/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -45,6 +49,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -198,14 +204,16 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
   
-  About
+  Responsible AI
 
       </a>
     </li>
@@ -342,18 +350,160 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Responsible AI
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    About
+    Responsible AI
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-responsible-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Responsible AI?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-rai-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is RAI important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-can-issues-arise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where can issues arise?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where can issues arise?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#our-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Our Approach
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Our Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Understanding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -576,6 +726,27 @@
   
   <span class="md-ellipsis">
     Benchmarks and Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/safety_testing/taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy
   </span>
   
 
@@ -895,11 +1066,94 @@
 
 <h1 id="responsible-ai">Responsible AI</h1>
 <h2 id="what-is-responsible-ai">What is Responsible AI?</h2>
-<p>Our current working definition is</p>
-<blockquote>
-<p>Responsible AI focuses on how to develop, evaluate, deploy, and monitor AI systems in a safe, trustworthy, and ethical manner. From how data is collected to how humans interact with AI systems, Responsible AI will help to guide these decisions toward beneficial and equitable outcomes. In the public sector context, Responsible AI will help to align AI systems to achieve the public good.</p>
-</blockquote>
-<h2 id="why-is-responsible-ai-important">Why is Responsible AI important?</h2>
+<p>Broadly, Responsible AI (“RAI”) focuses on how to <strong>develop, evaluate, deploy, and monitor AI systems in a safe, trustworthy, and ethical manner</strong>. From how data is collected to how humans interact with AI systems, RAI will help to guide these decisions toward beneficial and equitable outcomes. In the public sector context, RAI will help align AI systems to achieve the public good.</p>
+<p>At GovTech's AI Practice, we break down RAI into 6 key principles that AI systems should strive towards. </p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safety</td>
+<td>AI systems should be (i) protected against adversarial threats and misuse for harmful activities and (ii) aligned to the public good.</td>
+</tr>
+<tr>
+<td>Robustness</td>
+<td>AI systems should perform up to task even when subjected to challenging requirements or circumstances.</td>
+</tr>
+<tr>
+<td>Fairness</td>
+<td>AI systems should strive to be fair and equitable to all, regardless of gender, race, religion, or other attributes.</td>
+</tr>
+<tr>
+<td>Explainability</td>
+<td>AI systems should provide clear and reliable explanations for their automated decisions to key stakeholders.</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>AI systems should handle personal data carefully and protect against potential data leakages.</td>
+</tr>
+<tr>
+<td>Transparency</td>
+<td>AI systems should document key development and deployment choices and be clear about how the AI system should be used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="why-is-rai-important">Why is RAI important?</h2>
+<figure>
+<p><img alt="Case Studies" src="../images/rai-case-studies.png" /></p>
+<figcaption>
+<p>Examples of how LLM systems can fail in the real world</p>
+</figcaption>
+</figure>
+<p>Responsible AI is crucial to prevent unintended consequences and biases in automated systems. For instance, a Chevrolet dealership implemented a ChatGPT-powered chatbot to assist customers. However, <a href="https://venturebeat.com/ai/a-chevy-for-1-car-dealer-chatbots-show-perils-of-ai-for-customer-service/">users exploited the chatbot's lack of safeguards</a>, prompting it to agree to absurd deals, such as selling a 2024 Chevy Tahoe for $1. Similarly, a <a href="https://www.bloomberg.com/graphics/2024-openai-gpt-hiring-racial-discrimination/?leadSource=uverify%20wall">Bloomberg investigation</a> revealed that OpenAI's GPT-4 model exhibited racial biases when ranking resumes. The LLM favored names associated with Asian women and ranked those linked to Black men lowest for certain job roles. </p>
+<p>In another example, Air Canada's LLM chatbot provided a customer with incorrect information regarding bereavement fares, which led to the customer's claim being denied by Air Canada on the basis that the chatbot's information was non-binding. <a href="https://aibusiness.com/nlp/air-canada-held-responsible-for-chatbot-s-hallucinations-">A Canadian tribunal ruled against the airline</a>, emphasizing that companies are accountable for the information their AI systems disseminate, regardless of disclaimers. ​</p>
+<p>These incidents highlight the need for AI application developers <strong>to consider how their AI models could fail, test their models and applications rigorously, and implement measures to reduce the likelihood of such failures</strong>. This is at the heart of what we do in the Responsible AI space.</p>
+<h2 id="where-can-issues-arise">Where can issues arise?</h2>
+<p>Issues of safety, bias, robustness, and other RAI areas can exist at each stage of the application life cycle. Below we go through each stage and explain how some of these issues may emerge.</p>
+<figure>
+<p><img alt="AI Cycle" src="../images/ai_cycle.png" /></p>
+<figcaption>
+<p>The AI life cycle consists of the data, model, and application.</p>
+</figcaption>
+</figure>
+<h3 id="data">Data</h3>
+<p>As the old adage goes, "garbage in, garbage out". <strong>If unsafe or biased data is used for training, the model outputs are likely to be unsafe and biased as well.</strong> For example, ​<a href="https://www.washingtonpost.com/health/2019/10/24/racial-bias-medical-algorithm-favors-white-patients-over-sicker-black-patients/">a 2019 study</a> revealed that a widely used healthcare algorithm exhibited racial bias by underestimating the health needs of black patients compared to equally ill white patients. The algorithm used healthcare costs as a proxy for health needs, leading to black patients, who typically incur lower healthcare costs due to systemic disparities, being assigned lower risk scores. Consequently, black patients were less likely to be referred for advanced care management programs.</p>
+<p>In the Generative AI space, LLMs are typically pre-trained on massive amounts of text or image data from the Internet, which contain harmful, toxic and biased texts. Since LLMs autoregressively generate the next most probable token, the output depends on the joint distribution of tokens learned during training. If unsafe token sequences are learned, they will naturally be reproduced by the model, as <a href="https://www.bloomberg.com/news/newsletters/2022-12-08/chatgpt-open-ai-s-chatbot-is-spitting-out-biased-sexist-results">ChatGPT did in its early days</a>. For image generation models, there have been <a href="https://www.cigionline.org/articles/generative-ai-tools-are-perpetuating-harmful-gender-stereotypes/">several studies</a> finding that generated outputs of engineers, scientists, or lawyers disproportionately portray men over women, reflecting the unequal gender representation of those occupations in the training data.</p>
+<h3 id="model">Model</h3>
+<p>In discriminative AI settings, the choice of modelling parameters can greatly impact their fairness. One key consideration is whether to include sensitive variables (i.e. variables about protected attributes like race or gender) in the model. On one hand, including these variables may result in bias against specific groups, such as <a href="https://www.reuters.com/legal/tutoring-firm-settles-us-agencys-first-bias-lawsuit-involving-ai-software-2023-08-10/">ageist and sexist bias in online recruitment software</a>. However, algorithmic bias has also been shown to persist even in models that deliberately exclude sensitive variables from the model, such as <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">with recidivism prediction (i.e. COMPAS)</a> or <a href="https://www.bloomberg.com/graphics/2016-amazon-same-day/">with delivery services (i.e. Amazon Prime)</a>.</p>
+<p>In the generative AI space, significant research has been dedicated to aligning models with human preferences and desirable values. Given paired text data and their rankings, LLMs undergo a second stage of reinforcement learning to learn to output preferred (i.e., safer) responses. </p>
+<p>Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness. </p>
+<h3 id="application">Application</h3>
+<p>Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. To address this risk, input and output guardrails have emerged as viable defences. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. </p>
+<h2 id="our-approach">Our Approach</h2>
+<p>At present, our approach to deploying AI model safely involves <strong>testing</strong>, <strong>mitigation</strong> and model <strong>understanding</strong>. </p>
+<p><img alt="Approach" src="../images/approach_focus.png" />
+<em>Figure: Functional focus areas for Responsible AI.</em></p>
+<h3 id="testing">Testing</h3>
+<p>Testing generally involves a process similar to this:</p>
+<div class="admonition note">
+<p class="admonition-title">Steps in Testing</p>
+<ol>
+<li>Establish safety categories of interest and requisite metrics</li>
+<li>Collect and analyse testing data to generate safety metrics<ol>
+<li>Static or dynamic </li>
+<li>General or domain-specific</li>
+<li>Synthetic or real (e.g. from production)</li>
+</ol>
+</li>
+<li>Continually expand and curate more testing data</li>
+</ol>
+</div>
+<p>While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. </p>
+<h3 id="mitigation">Mitigation</h3>
+<p>After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. </p>
+<h3 id="model-understanding">Model Understanding</h3>
+<p>Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. </p>
+<p>In the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails <a href="../testing/">output testing</a> and <a href="../guardrails/">guardrails</a>.</p>
 
 
 
@@ -912,6 +1166,46 @@
   
 
 
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://forms.gle/v8bB9pNAARDctmpT6" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
 
                 

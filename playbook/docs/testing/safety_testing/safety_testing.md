@@ -28,7 +28,7 @@ Some possible categories of safety harms include:
 - Environmental impact of high energy utilisation of AI systems
 - Existential risk of powerful AIs dominating the world
 
-In our practice, we focus on areas 1-5 as these are more immediate and feasible risks for WOG.
+In our practice, we focus on areas 1-5 as these are more immediate and feasible risks for WOG. Based on these areas, we developed [**our own risk taxonomy**](taxonomy.md) for government agencies to adopt and adapt from. 
 
 ## How to measure safety?
 
@@ -48,9 +48,9 @@ Designing the adversarial prompts is critical as they determine how meaningful t
 
 Using off-the-shelf safety benchmarks is possible, but these are not always fit-for-purpose for various reasons:
 
-- **Not all safety risks are catered for** - while there are plenty of datasets for hate speech, toxicity, and self-harm, there are much fewer datasets for sexual, violent, political, or illegal (i.e., crime) content.
-- **Different definitions of safety risks** - each organisation has a different view of what is hateful or toxic (e.g., Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.
-- Open-source benchmarks are **not as meaningful** - there is considerable *leakage* of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.
+- **Limited coverage of safety risks** - while there are plenty of datasets for hate speech, toxicity, and self-harm, there are much fewer datasets for sexual, violent, political, or illegal (i.e. crime) content. 
+- **Varying definitions of safety risks** - each organisation has a different view of what is hateful or toxic (e.g. Anglo-centric, org-specific). As the SG govt, we have our own definitions and risks we need to cater to.
+- **Reduced effectiveness of open-source benchmarks** - there is considerable *leakage* of open-source benchmarks into the training dataset for many LLMs. For the benchmark to correctly test for safety, the prompts need to be novel to the LLM.
 
 !!! tip "Tip: Building your testing dataset"
 
