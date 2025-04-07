@@ -20,7 +20,7 @@ We can think of testing maturity in stages. Ideally, we want to be at level 4, w
 
 ## Principles for Effective Testing 🎯
 
-We have three guiding principles when collecting data for testing:
+We have four guiding principles when collecting data for testing:
 
 1. **Meaningful and representative**: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently realistic and naturalistic. 
 2. **Diverse and varied**: Testing needs to be diverse in content, framing and sources to ensure comprehensiveness. They must cover a broad range of risks (i.e., content) and vary in linguistic structure, in order to reflect the real-world distribution.

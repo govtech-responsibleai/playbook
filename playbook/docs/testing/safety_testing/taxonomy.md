@@ -24,7 +24,7 @@ Government AI systems face unique risks that other AI applications may not. In p
 
 1. **Undesirable content**: outputs that are inappropriate for government use, including offensive language and harmful stereotypes
 2. **Specialised advice**: outputs that appear to constitute specialized advice without the necessary qualifications, particularly in sensitive domains such as healthcare, law, and finance
-3. **Political content**: output that can appear as political bias and result in misinterpretation and reputational harm.
+3. **Political content**: political content of any nature—whether domestic affairs, geopolitics, or social policies—should be avoided, as neutral responses may be misinterpreted and raise sensitivities.
 
 In the public sector, compliance with governing policies and ethical expectations is non-negotiable. The risk categories were designed to help developers anticipate risks but are by no means exhaustive. Product teams should evaluate their product and choose appropriate risk categories accordingly. 
 

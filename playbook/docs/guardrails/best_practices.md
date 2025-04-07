@@ -15,6 +15,7 @@ can be effective initial guardrails. You don't need a data scientist to implemen
 Guardrails must strike a balance between blocking harmful content and maintaining a positive user experience. Over-filtering and false positives can frustrate users and erode trust in your system.
 
 Consider the following:
+
 - Use progressive disclosure - start with warnings before blocking
 - Provide clear feedback on why content was flagged
 - Offer suggestions on how to modify flagged content
