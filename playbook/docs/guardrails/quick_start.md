@@ -1,6 +1,6 @@
 # Quick Start
 
-Here we suggest 3 ways to get started with guardrails. The first and second is via API access to Sentinel and OpenAI respectively. The third option involves self-hosting of our open-sourced models.
+Here we suggest 3 ways to get started with guardrails. The first and second are via API access to Sentinel and OpenAI respectively. The third option involves self-hosting of our open-sourced models.
 
 ## 1. Sentinel
 

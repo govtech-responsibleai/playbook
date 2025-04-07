@@ -43,4 +43,4 @@ See [discriminative AI fairness testing](testing/fairness_testing/fairness_discr
 
 Similarly, fairness testing is essential in generative AI to ensure that outputs do not perpetuate biases or discriminate against specific groups. This is especially due to the fact that LLMs have been trained on Internet data, which are known to contain biases. 
 
-See [generative AI fairness testing](testing/fairness_testing/fairness_generative.md) for more details. 
+See [generative AI fairness testing](testing/fairness_testing/fairness_generative.md) for more details.
