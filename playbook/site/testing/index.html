@@ -1035,7 +1035,7 @@
 <em>Figure: Stages of testing maturity in AI systems.</em></p>
 <p>We can think of testing maturity in stages. Ideally, we want to be at level 4, where testing is comprehensive and automated. At level 4, testing is continuously performed, ensuring that risks are continuously monitored and mitigated as users interact with the application and data distributions shift. However, based on our knowledge, level 1-level 3 testing are most commonly adopted in the industry today. This is largely due to the difficulty in measuring how good/trusted/comprehensive the testing benchmark is. Nonetheless, as SOTA moves towards level 4, we believe that we can gradually level up Whole-of-Government (WOG) testing of AI systems. </p>
 <h2 id="principles-for-effective-testing">Principles for Effective Testing 🎯</h2>
-<p>We have three guiding principles when collecting data for testing:</p>
+<p>We have four guiding principles when collecting data for testing:</p>
 <ol>
 <li><strong>Meaningful and representative</strong>: Testing  needs to be meaningful by ensuring that data need to accurately and directly test the LLM for risk of concern. Testing needs to be representative and accurately reflect the real-world distribution of risks that users may encounter. For example, a human-facing application needs to be tested with data that is sufficiently realistic and naturalistic. </li>
 <li><strong>Diverse and varied</strong>: Testing needs to be diverse in content, framing and sources to ensure comprehensiveness. They must cover a broad range of risks (i.e., content) and vary in linguistic structure, in order to reflect the real-world distribution.</li>
@@ -1050,7 +1050,7 @@
 <p>While outputs are constrained and more predictable in discriminative AI applications, they can nonetheless disproportionately impact certain groups based on protected and sensitive attributes like race or gender. Hence, significant work has been done to establish fairness testing and metrics in discriminative AI. </p>
 <p>See <a href="fairness_testing/fairness_discriminative/">discriminative AI fairness testing</a> for more details. </p>
 <p>Similarly, fairness testing is essential in generative AI to ensure that outputs do not perpetuate biases or discriminate against specific groups. This is especially due to the fact that LLMs have been trained on Internet data, which are known to contain biases. </p>
-<p>See <a href="fairness_testing/fairness_generative/">generative AI fairness testing</a> for more details. </p>
+<p>See <a href="fairness_testing/fairness_generative/">generative AI fairness testing</a> for more details.</p>
 
 
 
