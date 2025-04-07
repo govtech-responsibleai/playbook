@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../quick_start/">
       
       
-        <link rel="next" href="../quick_start/">
+        <link rel="next" href="../diff_guardrails/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -614,6 +614,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -621,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/safety_testing/litmus/" class="md-nav__link">
+      <a href="../../testing/litmus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,14 +638,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -718,6 +718,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -770,6 +791,15 @@
   <a href="#why-use-sentinel" class="md-nav__link">
     <span class="md-ellipsis">
       Why Use Sentinel?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-sentinel-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Does Sentinel Work?
     </span>
   </a>
   
@@ -833,27 +863,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Quick Start
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1033,7 +1042,7 @@
 <h1 id="sentinel-robust-ai-guardrails-for-government-ai-systems">Sentinel: Robust AI Guardrails for Government AI Systems</h1>
 <p>Sentinel provides a multi-tenant SaaS service that allows development teams building Generative AI applications to integrate Input and Output Guardrails for AI security and safety. These guardrails detect, quantify, and mitigate risks like prompt injection, toxicity, and PII leakage. By providing the ability to integrate guardrails within any GenAI application, Sentinel provides application teams with the assurance that their application is safeguarded from basic risks present in all generative-AI models.</p>
 <p>For optimal performance, Sentinel is recommended to be used in conjunction with Litmus (WOG AI Testing product), to ensure application teams are mitigating against the specific risks identified in their individual models and/or applications.</p>
-<h3 id="why-use-sentinel">Why Use Sentinel?</h3>
+<h2 id="why-use-sentinel">Why Use Sentinel?</h2>
 <p>Sentinel provides essential protection for Government Generative AI applications with:</p>
 <ul>
 <li>Input and Output Guardrails tailored towards sensitive government data</li>
@@ -1042,6 +1051,9 @@
 <li>Curation of both best-in-class and in-house created guardrails to comprehensively protect government applications</li>
 </ul>
 <p>Sentinel acts as the first line of defence, shielding Singapore's government AI applications from fundamental risks inherent in all generative AI models, ensuring the protection of citizen data and maintaining public trust.</p>
+<h2 id="how-does-sentinel-work">How Does Sentinel Work?</h2>
+<p>The following diagram shows how Sentinel enhances the safety and security of an AI App with both input and output guardrails:
+<img alt="How Sentinel Works" src="../images/sentinel.svg" title="How Sentinel Works" /></p>
 <h2 id="types-of-guardrails">Types of Guardrails</h2>
 <table>
 <thead>
@@ -1054,43 +1066,43 @@
 </thead>
 <tbody>
 <tr>
-<td>Toxicity/Content Moderation</td>
+<td><a href="../diff_guardrails/#1-toxicitycontent-moderation">Toxicity/Content Moderation</a></td>
 <td>Harmful, offensive, or inappropriate content</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Jailbreak/Prompt Injection</td>
+<td><a href="../diff_guardrails/#3-jailbreakprompt-injection">Jailbreak/Prompt Injection</a></td>
 <td>Attempts to bypass system constraints or inject malicious prompts</td>
 <td>✓</td>
 <td></td>
 </tr>
 <tr>
-<td>PII</td>
+<td><a href="../diff_guardrails/#2-personal-identifiable-information-pii">PII</a></td>
 <td>Information that can identify an individual</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Off-Topic</td>
+<td><a href="../diff_guardrails/#4-off-topic">Off-Topic</a></td>
 <td>Content irrelevant to the application's purpose</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>System-Prompt Leakage</td>
+<td><a href="../diff_guardrails/#5-system-prompt-leakage">System-Prompt Leakage</a></td>
 <td>Exposure of system prompts containing application information</td>
 <td></td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Hallucination</td>
+<td><a href="../diff_guardrails/#6-hallucination-and-factuality">Hallucination</a></td>
 <td>Content not factual or grounded in source material</td>
 <td></td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Relevance</td>
+<td><a href="../diff_guardrails/#7-relevance">Relevance</a></td>
 <td>Responses not pertinent to user queries</td>
 <td></td>
 <td>✓</td>
