@@ -5,7 +5,7 @@ Sentinel provides a multi-tenant SaaS service that allows development teams buil
 For optimal performance, Sentinel is recommended to be used in conjunction with Litmus (WOG AI Testing product), to ensure application teams are mitigating against the specific risks identified in their individual models and/or applications.
 
 
-### Why Use Sentinel?
+## Why Use Sentinel?
 
 Sentinel provides essential protection for Government Generative AI applications with:
 
@@ -17,17 +17,21 @@ Sentinel provides essential protection for Government Generative AI applications
 Sentinel acts as the first line of defence, shielding Singapore's government AI applications from fundamental risks inherent in all generative AI models, ensuring the protection of citizen data and maintaining public trust.
 
 
+## How Does Sentinel Work?
+The following diagram shows how Sentinel enhances the safety and security of an AI App with both input and output guardrails:
+![How Sentinel Works](images/sentinel.svg "How Sentinel Works")
+
 ## Types of Guardrails 
 
 | Type | Description | Input | Output |
 | --- | --- | --- | --- |
-| Toxicity/Content Moderation | Harmful, offensive, or inappropriate content | ✓ | ✓ |
-| Jailbreak/Prompt Injection | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
-| PII | Information that can identify an individual | ✓ | ✓ |
-| Off-Topic | Content irrelevant to the application's purpose | ✓ | ✓ |
-| System-Prompt Leakage | Exposure of system prompts containing application information |  | ✓ |
-| Hallucination | Content not factual or grounded in source material |  | ✓ |
-| Relevance | Responses not pertinent to user queries |  | ✓ |
+| [Toxicity/Content Moderation](diff_guardrails.md#1-toxicitycontent-moderation) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
+| [Jailbreak/Prompt Injection](diff_guardrails.md#3-jailbreakprompt-injection) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
+| [PII](diff_guardrails.md#2-personal-identifiable-information-pii) | Information that can identify an individual | ✓ | ✓ |
+| [Off-Topic](diff_guardrails.md#4-off-topic) | Content irrelevant to the application's purpose | ✓ | ✓ |
+| [System-Prompt Leakage](diff_guardrails.md#5-system-prompt-leakage) | Exposure of system prompts containing application information |  | ✓ |
+| [Hallucination](diff_guardrails.md#6-hallucination-and-factuality) | Content not factual or grounded in source material |  | ✓ |
+| [Relevance](diff_guardrails.md#7-relevance) | Responses not pertinent to user queries |  | ✓ |
 
 *Note: The list is not meant to be exhaustive, more will be added on an ongoing basis.*
 

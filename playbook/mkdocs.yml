@@ -67,11 +67,11 @@ nav:
           - Introduction: testing/safety_testing/safety_testing.md
           - Benchmarks and Tools: testing/safety_testing/diff_safety.md
           - Taxonomy: testing/safety_testing/taxonomy.md
-          - Litmus: testing/safety_testing/litmus.md
+      - Litmus: testing/litmus.md
   - Guardrails:
       - Introduction: guardrails.md
-      - Sentinel: guardrails/sentinel.md
       - Quick Start: guardrails/quick_start.md
+      - Sentinel: guardrails/sentinel.md
       - Different Types of Guardrails: guardrails/diff_guardrails.md
       - Best Practices When Integrating Guardrails: guardrails/best_practices.md
       - Building Your Own Guardrails: guardrails/byog.md
@@ -81,6 +81,10 @@ nav:
 
 # Plugins
 plugins:
+  # - d2:
+  #     theme: 0
+  #     dark_theme: -1
+  #     pad: 20
   - search
   - section-index
   - exclude:

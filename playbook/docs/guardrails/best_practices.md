@@ -23,11 +23,11 @@ Consider the following:
 
 For example, if a user's input contains mild profanity, you could show a warning message first rather than immediately blocking.
 
-![Warning](../images/warning.png)
+![Warning](images/warning.png)
 
 As another example, suppose the Retrival-Augmented Generation (RAG) application retrieves a chunk that contains PII. You may not want to stop the request, and instead modify the output to remove the PII.
 
-![PII](../images/guardrails_adjusting.png)
+![PII](images/guardrails_adjusting.png)
 
 This balanced approach maintains safety while avoiding user frustration from overly aggressive blocking.
 

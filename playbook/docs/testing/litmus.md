@@ -12,6 +12,9 @@ Litmus ensures that AI applications used in Singapore's public services meet the
 - Comprehensive risk and behaviour analysis aligned with public sector AI ethics, policies, and guidelines
 - Customisable testing scenarios for diverse government use cases (e.g., chatbots, document processing, policy analysis)
 
+## How Does Litmus Work?
+The following diagram shows how Litmus enhances the safety and security of an AI App with automated testing via CICD integration:
+![How Litmus Works](images/litmus.svg "How Litmus Works")
 
 ## Features
 - **Comprehensive baseline security and safety testing**  
@@ -24,7 +27,6 @@ Litmus ensures that AI applications used in Singapore's public services meet the
   Integrate Litmus with your internal systems using our Litmus API for seamless data synchronization and automation.
 - **Custom Test Scenarios**  
   Create custom test cases, simulate user interactions, and perform specific workflows to ensure your app is comprehensively tested.
-
 
 ## Onboarding
 Visit [AIGuardian](https://www.aiguardian.gov.sg) for the latest Litmus onboarding guide.
