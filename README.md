@@ -10,6 +10,7 @@ This is under active development.
 
     ```bash
     python -m venv .venv
+    source .venv/bin/activate
     ```
 
 2. Install the dependencies:
@@ -21,13 +22,12 @@ This is under active development.
 3. Run the development server:
 
     ```bash
-    cd playbook
-    mkdocs serve
+    mkdocs serve --config-file playbook/mkdocs.yml
     ```
 
 ## Adding new content
 
-1. Add a new markdown file in the `playbook/src` directory.
+1. Add a new markdown file in the `playbook/docs` directory.
 
 2. Then add a link to it in the `mkdocs.yml` file.
 
