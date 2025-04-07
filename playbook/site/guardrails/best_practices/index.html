@@ -1014,12 +1014,14 @@
 <p>can be effective initial guardrails. You don't need a data scientist to implement these foundational protections.</p>
 <h2 id="2-balance-user-experience-with-protection">2. Balance User Experience with Protection</h2>
 <p>Guardrails must strike a balance between blocking harmful content and maintaining a positive user experience. Over-filtering and false positives can frustrate users and erode trust in your system.</p>
-<p>Consider the following:
-- Use progressive disclosure - start with warnings before blocking
-- Provide clear feedback on why content was flagged
-- Offer suggestions on how to modify flagged content
-- Allow users to override certain low-risk flags with acknowledgement
-- Consider context-specific thresholds (e.g. stricter for public-facing content)</p>
+<p>Consider the following:</p>
+<ul>
+<li>Use progressive disclosure - start with warnings before blocking</li>
+<li>Provide clear feedback on why content was flagged</li>
+<li>Offer suggestions on how to modify flagged content</li>
+<li>Allow users to override certain low-risk flags with acknowledgement</li>
+<li>Consider context-specific thresholds (e.g. stricter for public-facing content)</li>
+</ul>
 <p>For example, if a user's input contains mild profanity, you could show a warning message first rather than immediately blocking.</p>
 <p><img alt="Warning" src="../images/warning.png" /></p>
 <p>As another example, suppose the Retrival-Augmented Generation (RAG) application retrieves a chunk that contains PII. You may not want to stop the request, and instead modify the output to remove the PII.</p>
