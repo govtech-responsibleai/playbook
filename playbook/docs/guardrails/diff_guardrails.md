@@ -82,7 +82,7 @@ Approaches include:
 - Zero-shot/few-shot classifiers to detect relevance against system prompt. This approach, however, suffers from lower precision (i.e., many valid queries are incorrectly classified as off-topic).
 - Using a custom topic classifier guardrail from Amazon Bedrock Guardrails or Azure AI Content Safety. To use this approach, however, you need to define your own taxonomy of what is considered off-topic and/or provide custom examples for model training.
 
-Noting these limitations, we trained our own custom off-topic guardrail model that works zero-shot. It classifies if a given prompt is off-topic based on the system prompt. Further details can be found in our blog post here.
+Noting these limitations, we trained our own custom off-topic guardrail model that works zero-shot. It classifies if a given prompt is off-topic based on the system prompt. Further details can be found in our blog post [here](https://medium.com/dsaid-govtech/open-sourcing-an-off-topic-prompt-guardrail-fde422a66152).
 
 ## 5. System-Prompt Leakage 
 
