@@ -22,22 +22,7 @@ These guardrails tend to have their taxonomy of what is considered harmful conte
 
 ### 1.1 Localised Content Moderation
 
-Generic moderation models may not be sufficiently localized for specific contexts. For example, LionGuard was developed specifically for Singapore-specific content moderation. It's available through:
-
-- Sentinel API (for Singapore Public Officers)
-- Open source model on [HuggingFace](https://huggingface.co/govtech/lionguard-v1) (for self-hosting)
-
-In the table below, we list the categories that LionGuard uses. The model provides a risk score for each risk category.
-
-| S/N | Category | Description |
-|-----|----------|-------------|
-| 1 | Hateful | Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups is considered harassment. Content that includes violence or serious harm towards protected groups. |
-| 2 | Harassment | Content that expresses, incites, or promotes harassing language towards any target/individual. Content that causes prolonged mental or emotional suffering (>1 hour) without mention of violence. Any harassment content that includes violence or serious harm. |
-| 3 | Encouraging Public Harm | Content that promotes, facilitates, or encourages harmful public acts, vice or organized crime. |
-| 4 | Encouraging Self-Harm | Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders. Content that provides instructions or advice on committing such acts. |
-| 5 | Sexual | Content meant to arouse sexual excitement, including descriptions of sexual activity or promotion of sexual services (excluding sex education and wellness). Sexual content involving minors under 18. |
-| 6 | Toxic | Content that is rude, disrespectful, or profane, including use of slurs. Highly aggressive or disrespectful content likely to discourage user participation or discussion. |
-| 7 | Violent | Content that depicts death, violence, or physical injury. |
+Generic moderation models may not be sufficiently localized for specific contexts. For example, LionGuard was developed specifically for Singapore-specific content moderation. Further details can be found [here](lionguard.md).
 
 
 ## 2. Personal Identifiable Information (PII)
