@@ -22,7 +22,7 @@ These guardrails tend to have their taxonomy of what is considered harmful conte
 
 ### 1.1 Localised Content Moderation
 
-Generic moderation models may not be sufficiently localized for specific contexts. For example, LionGuard was developed specifically for Singapore-specific content moderation. Further details can be found [here](lionguard.md).
+Generic moderation models may not be sufficiently localized for specific contexts. For example, LionGuard was developed specifically for Singapore-specific content moderation. Further details can be found [here](govtech.md).
 
 
 ## 2. Personal Identifiable Information (PII)
