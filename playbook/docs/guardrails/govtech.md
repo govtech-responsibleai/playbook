@@ -15,7 +15,7 @@ Our latest version, LionGuard 2, enhances moderation capabilities through:
 
 Lightweight deployment remains central to LionGuard’s design. LionGuard 2 utilises pre-trained OpenAI embeddings combined with a multi-head ordinal classifier, significantly outperforming commercial and open-source systems across 17 localised and general benchmarks. Importantly, LionGuard 2 achieves these accuracy improvements using a training dataset 70% smaller than its predecessor, LionGuard 1, and can be fully retrained within two minutes on standard CPUs.
 
-To foster wider adoption and further research, LionGuard 2 is open-sourced for self-hosting and also accessible via the Sentinel API. Detailed insights are available in our [blog post](PLACEHOLDER) and [paper](https://arxiv.org/abs/2507.15339).
+To foster wider adoption and further research, LionGuard 2 is open-sourced for self-hosting and also accessible via the Sentinel API. Detailed insights are available in our [blog post](go.gov.sg/lionguard-2-blog) and [paper](https://arxiv.org/abs/2507.15339).
 
 ## Off-Topic
 
