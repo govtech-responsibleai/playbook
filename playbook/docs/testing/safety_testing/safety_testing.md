@@ -56,12 +56,6 @@ Using off-the-shelf safety benchmarks is possible, but these are not always fit-
 
     Our recommendation is to mix prompts from open-source benchmarks (some with modifications) along with your own prompts (self-written or using LLMs). Incorporating production data, or data similar to it (e.g., call transcripts for customer service chatbot) will also be extremely useful.
 
-The process for generating a dataset for safety testing may look something like:
-
-![TestingFlow](images/testing_flow.png)
-_Figure: Safety testing flow._
-
-What is most important is that the process of safety testing is **iterative**, and almost a continual "cat-and-mouse" game as testing data is used to train defences, which generate labels that can be used for generating even more testing data. If possible, production data can also be randomly sampled and used for benchmarking.
 
 ### Metrics
 
