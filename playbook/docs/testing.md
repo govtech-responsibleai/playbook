@@ -56,3 +56,15 @@ See [robustness testing](testing/robustness_testing/robustness_testing.md) for d
 Agentic systems are often more prone to unsafe behaviors than their base models, partly due to their growing autonomy and expanded capabilities through tool integration. As agentic systems are able to define their own goals and plans and execute multi-step operations without humans in the loop, the impact and blast radius of failures in agentic systems are significantly larger. Instead of simply testing the outputs of the AI application, we need to test and evaluate the safety, security and robustness of each component in the agentic system. 
 
 See [agentic testing](testing/agentic_testing/agentic_testing.md) for details. 
+
+## Responsible AI Benchmark
+
+We have developed the Responsible AI Benchmark, a collection of **application-level safety, robustness and fairness tests** designed around real-world use cases. The benchmark serves as a rough guide for developers in filtering down a subset of appropriate models for their use case. However, it is still necessary for application developers to conduct their own testing before deployment. 
+
+
+![RAI Bench](images/rai-bench-safety.png)
+/// caption
+Screenshot of RAI Bench on Safety Performance, taken on 12 Aug 2025
+///
+
+Visit the [**Responsible AI Benchmark**](https://go.gov.sg/rai-bench) space for updated results and information.
