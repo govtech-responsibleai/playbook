@@ -13,7 +13,8 @@ theme:
     accent: pink
   features:
     - navigation.tabs
-    - toc.integrate    
+    - toc.integrate 
+    - content.last_updated   
 
 # Extra Configuration
 extra_css:
@@ -87,6 +88,9 @@ nav:
 plugins:
   - search
   - section-index
+  - git-revision-date-localized:
+      type: date  # or datetime if you want the time too
+      fallback_to_build_date: true
   - exclude:
       glob:
         - "*.tmp"
