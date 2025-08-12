@@ -77,12 +77,15 @@ Testing generally involves a process similar to this:
 
 While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
 
+Refer to [the section on testing](testing.md) for details. 
+
 ### Mitigation
 
 After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. 
+
+Refer to [the section on guardrails](guardrails.md) for details. 
 
 ### Model Understanding
 
 Lastly, model understanding, whether by understanding the internal mechanisms (i.e., mechanistic interpretability) or outputs (i.e., explainability), is important in increasing transparency of and trust in AI. 
 
-In the first version of this playbook, we will focus on testing and mitigations at the application level. At present, this largely entails [output testing](testing.md) and [guardrails](guardrails.md).

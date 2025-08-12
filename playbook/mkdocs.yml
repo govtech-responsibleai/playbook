@@ -70,6 +70,8 @@ nav:
           - Litmus: testing/safety_testing/litmus.md
       - Robustness:
           - Introduction: testing/robustness_testing/robustness_testing.md
+      - Agentic AI:
+          - Introduction: testing/agentic_testing/agentic_testing.md
   - Guardrails:
       - Introduction: guardrails.md
       - Sentinel: guardrails/sentinel.md
