@@ -57,7 +57,7 @@ Finally, when an AI model is embedded into a software application, the way users
 
 ## Our Approach
 
-At present, our approach to deploying AI model safely involves **testing**, **mitigation** and model **understanding**. 
+At present, our approach to deploying AI models safely involves **testing**, **mitigation** and model **understanding**. 
 
 ![Approach](images/approach_focus.png)
 _Figure: Functional focus areas for Responsible AI._
