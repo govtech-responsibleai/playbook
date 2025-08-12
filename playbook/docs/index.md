@@ -14,6 +14,18 @@ Our hope is for our playbook to help you to **quickly grasp the entire landscape
 
 This playbook focuses on the technical aspects of Responsible AI. If you are interested in broader AI governance, please refer to the Circulars published by MDDI on the use, development, and deployment of LLM systems in the Singapore government. For specific guidance on AI security, please refer to CSA's Guidelines and Companion Guide for Securing AI Systems. 
 
+## What's new 🚀
+
+We regularly update this playbook to keep pace with the latest developments in Responsible AI. Here’s a summary of the most recent changes (14 Aug 2025):
+
+- Updated [Resources](resources.md) page 
+- Added new section on [benchmarks developed by our team](testing/safety_testing/govtech.md), including RabakBench and MinorBench
+- Added new section on [Robustness testing](testing/robustness_testing/robustness_testing.md)
+- Added new section on [Agentic testing](testing/agentic_testing/agentic_testing.md) 
+- Updated main [Testing page](testing.md) to highlight human evaluations and our automated RAI Benchmark
+
+
+
 ## Our target audience
 
 This playbook is primarily meant for **application developers** working in the Singapore government, especially those who are excited to develop and launch AI products but are concerned about managing safety or bias concerns about AI. However, this playbook will also be helpful to **product managers**, **CIO teams**, and even **policy officers**, as long as you have some foundational understanding of key AI concepts and are keen to learn more about Responsible AI.
