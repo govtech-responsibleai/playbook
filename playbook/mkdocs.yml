@@ -68,6 +68,8 @@ nav:
           - Benchmarks and Tools: testing/safety_testing/diff_safety.md
           - Taxonomy: testing/safety_testing/taxonomy.md
           - Litmus: testing/safety_testing/litmus.md
+      - Robustness:
+          - Introduction: testing/robustness_testing/robustness_testing.md
   - Guardrails:
       - Introduction: guardrails.md
       - Sentinel: guardrails/sentinel.md
