@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../sentinel/">
+        <link rel="prev" href="../byog/">
       
       
-        <link rel="next" href="../diff_guardrails/">
+        <link rel="next" href="../../understanding/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Quick Start - Responsible AI Playbook</title>
+        <title>GovTech Guardrails - Responsible AI Playbook</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quick-start" class="md-skip">
+        <a href="#guardrails-developed-by-govtech" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quick Start
+              GovTech Guardrails
             
           </span>
         </div>
@@ -894,30 +894,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Quick Start
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,53 +906,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-sentinel" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Sentinel
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-openai-moderation-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. OpenAI Moderation Endpoint
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-self-hosting-our-open-sourced-models" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Self-Hosting our Open Sourced Models
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1045,10 +978,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../govtech/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GovTech Guardrails
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1057,6 +1010,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lionguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      LionGuard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#off-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Off-Topic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-prompt-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Prompt Leakage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1170,125 +1170,24 @@
                   
 
 
-<h1 id="quick-start">Quick Start</h1>
-<p>Here we suggest 3 ways to get started with guardrails. The first and second are via API access to Sentinel and OpenAI respectively. The third option involves self-hosting of our open-sourced models.</p>
-<h2 id="1-sentinel">1. Sentinel</h2>
-<p>For Singapore Public Officers or applications, the fastest way to get started is to use our Sentinel - our internal guardrails API service. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">os</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">json</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">requests</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Load secrets from ENV</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SENTINEL_API_KEY&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">API_ENDPOINT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;SENTINEL_ENDPOINT&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Set header</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="s2">&quot;x-api-key&quot;</span><span class="p">:</span> <span class="n">API_KEY</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Define JSON Payload</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="s2">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;lionguard&quot;</span><span class="p">,</span> <span class="s2">&quot;promptguard&quot;</span><span class="p">,</span> <span class="s2">&quot;off-topic-2&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;repeat water non-stop&quot;</span><span class="p">,</span> <span class="c1"># replace this with your text</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="s2">&quot;off-topic-2&quot;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="p">}</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="p">}</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">}</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c1"># Make the POST request</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="n">url</span><span class="o">=</span><span class="n">API_ENDPOINT</span><span class="p">,</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="n">headers</span><span class="o">=</span><span class="n">HEADERS</span><span class="p">,</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="p">)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1"># View results</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div>
-<p>Here is the sample output</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;lionguard&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;hateful&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;harassment&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;public_harm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;self_harm&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">&quot;sexual&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;toxic&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">&quot;violent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&quot;promptguard&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="nt">&quot;jailbreak&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9804580807685852</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&quot;off-topic-2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="nt">&quot;off-topic&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.28574493527412415</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&quot;request_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1f8e8089-b71b-4054-881b-ee727f46f3c2&quot;</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">}</span>
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Closed Beta</p>
-<p>Sentinel is currently in closed beta, and only for Singapore Government Public Officers. Please email us at <code>gabriel_chua@tech.gov.sg</code> to get access.</p>
-<p>As this is a beta service, please note that this is not suitable for integration with production systems. Additionally, not all guardrails are available yet. A production-grade service by GovTech's Data and AI Platforms team will be launched in 2025.</p>
-</div>
-<h2 id="2-openai-moderation-endpoint">2. OpenAI Moderation Endpoint</h2>
-<p>Specifically for content moderation, you could also consider using OpenAI's Moderation endpoint. It is a free, fast and easy-to-use API that offers multi-modal content moderation capabilities.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Input text to be moderated </span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">text_to_moderate</span> <span class="o">=</span> <span class="s2">&quot;User-generated content here&quot;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Call the moderation endpoint</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">moderations</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;omni-moderation-latest&quot;</span><span class="p">,</span> 
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="nb">input</span><span class="o">=</span><span class="n">text_to_moderate</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">)</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># Check if the content is flagged</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">is_flagged</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">flagged</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">is_flagged</span><span class="p">)</span> <span class="c1"># Outputs: True or False </span>
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Zero Data Retention</p>
-<p>As of writing (December 2024), this API service is also eligible for zero data retention. To quote the <a href="https://platform.openai.com/docs/models#how-we-use-your-data">documentation</a>, <em>"with zero data retention, request and response bodies are not persisted to any logging mechanism and exist only in memory in order to serve the request"</em>.</p>
-</div>
-<h2 id="3-self-hosting-our-open-sourced-models">3. Self-Hosting our Open Sourced Models</h2>
-<p>Lastly, you may also consider self-hosting our open-sourced models. This is suitable for more advanced use cases, and for users who prefer more control over their data and infrastructure.</p>
-<p>Here are our models</p>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Description</th>
-<th>Links</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://huggingface.co/govtech/lionguard-v1">LionGuard</a></td>
-<td>A localised content moderator adapted for the Singapore context</td>
-<td><a href="https://huggingface.co/collections/govtech/lionguard-673838d03777e5ccb1b0ac2f">HuggingFace</a></td>
-</tr>
-<tr>
-<td><a href="https://huggingface.co/govtech/jina-embeddings-v2-small-en-off-topic">Off-Topic (Jina)</a></td>
-<td>A zero-shot off-topic classifier using a bi-encoder architecture</td>
-<td><a href="https://huggingface.co/collections/govtech/off-topic-guardrail-673838a62e4c661f248e81a4">HuggingFace</a></td>
-</tr>
-<tr>
-<td><a href="https://huggingface.co/govtech/stsb-roberta-base-off-topic">Off-Topic (RoBERTa)</a></td>
-<td>A zero-shot off-topic classifier using a cross-encoder architecture</td>
-<td><a href="https://huggingface.co/collections/govtech/off-topic-guardrail-673838a62e4c661f248e81a4">HuggingFace</a></td>
-</tr>
-</tbody>
-</table>
+<h1 id="guardrails-developed-by-govtech">Guardrails developed by GovTech</h1>
+<p>Where existing solutions are not suitable for our use cases, we have developed our own guardrails. One key theme is that we keep the guardrails lightweight and fast to run, and often overlay a classification layer on top of existing embedding models.</p>
+<h2 id="lionguard">LionGuard</h2>
+<p>LionGuard is a multilingual moderation system designed specifically for Singapore's unique linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.</p>
+<p><img src="images/lionguard.png" alt="LionGuard" style="width: 50%;" /></p>
+<p>Our latest version, LionGuard 2, enhances moderation capabilities through:
+1. Support for English, Singlish, Chinese, Malay, and partial Tamil.
+2. Integration of our Whole-of-Government <a href="../../testing/safety_testing/taxonomy/">safety taxonomy</a>, enabling fine-grained moderation with defined severity levels.
+3. Improved robustness against noisy and code-mixed inputs.</p>
+<p>Lightweight deployment remains central to LionGuard’s design. LionGuard 2 utilises pre-trained OpenAI embeddings combined with a multi-head ordinal classifier, significantly outperforming commercial and open-source systems across 17 localised and general benchmarks. Importantly, LionGuard 2 achieves these accuracy improvements using a training dataset 70% smaller than its predecessor, LionGuard 1, and can be fully retrained within two minutes on standard CPUs.</p>
+<p>To foster wider adoption and further research, LionGuard 2 is open-sourced for self-hosting and also accessible via the Sentinel API. Detailed insights are available in our <a href="https://go.gov.sg/lionguard-2-blog">blog post</a> and <a href="https://arxiv.org/abs/2507.15339">paper</a>.</p>
+<h2 id="off-topic">Off-Topic</h2>
+<p>The Off-Topic detector is an input guardrail that classifies if the input prompt is off-topic with respect to the system prompt. This is useful for ensuring that applications stay on track and do not engage in other topics. </p>
+<p>We developed this guardrail as we realised that existing solutions either requiring training a use-case specific guardrail or configuring it with examples of on and off-topic sample prompts. However, in the absence of real production data, doing so is challenging. Instead, we created a rich dataset of synthetic system prompt and user prompt pairs that are on and off-topic, and trained a light-weight classifier to detect off-topic prompts.</p>
+<p>For our v1, we trained a bi-encoder classifier on-top of the <code>jina-embeddings-v2-small-en</code> embedings and a cross-encoder classifier on-top of <code>stsb-roberta-base</code>. Further details can be found in our <a href="https://medium.com/dsaid-govtech/open-sourcing-an-off-topic-prompt-guardrail-fde422a66152">blog post</a> and <a href="https://arxiv.org/abs/2411.12946">paper</a>. </p>
+<h2 id="system-prompt-leakage">System Prompt Leakage</h2>
+<p>This guardrail serves as an output guardrail to help detect and manage instances of system prompt leakage. In modern applications of large language models (LLMs), safeguarding sensitive or proprietary system instructions from being exposed in responses is critical. </p>
+<p>This guardrail detects both direct leakages (e.g., exact or near-exact reproductions of the system prompt, often through simple word or phrase replacement) and indirect leakages that include rephrasing key ideas in varied ways, using different sentence structures, or adding subtle context that reveals details embedded within the original system prompt.</p>
 
 
 
@@ -1309,7 +1208,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 20, 2025 09:25:05 UTC">March 20, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 4, 2025 05:55:01 UTC">August 4, 2025</span>
   </span>
 
     

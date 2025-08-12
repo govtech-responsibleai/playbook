@@ -60,7 +60,7 @@ As models evolve, jailbreak and prompt injection techniques become increasingly 
 
 Beyond harmful content, it's important to detect and filter irrelevant queries to maintain application focus. We call such queries as "off-topic".
 
-![Off-topic](../images/off_topic.png)
+![Off-topic](images/off_topic.png)
 
 Approaches include:
 
