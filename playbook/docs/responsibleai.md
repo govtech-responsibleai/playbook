@@ -17,7 +17,7 @@ At GovTech's AI Practice, we break down RAI into 6 key principles that AI system
 
 ## Why is RAI important?
 
-![Case Studies](../images/rai-case-studies.png)
+![Case Studies](images/rai-case-studies.png)
 /// caption
 Examples of how LLM systems can fail in the real world
 ///
