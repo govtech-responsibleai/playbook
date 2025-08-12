@@ -45,13 +45,13 @@ Similarly, fairness testing is essential in generative AI to ensure that outputs
 
 See [generative AI fairness testing](testing/fairness_testing/fairness_generative.md) for more details.
 
-### Robustness Testing
+### Robustness Testing 💪
 
 Robustness refers to a system’s ability to maintain reliable performance when faced with unexpected or challenging conditions, like noisy inputs, adversarial attacks, or shifts in the environment. It is important for AI applications to behave consistently well on unseen, perturbed, or out-of-distribution examples. Robustness is critical for any AI system deployed in high-stakes settings, especially in government services, where citizens depend on accurate, up-to-date information to make decisions with financial, legal, or medical consequences. 
 
 See [robustness testing](testing/robustness_testing/robustness_testing.md) for details. 
 
-### Agentic Testing
+### Agentic Testing 🤖
 
 Agentic systems are often more prone to unsafe behaviors than their base models, partly due to their growing autonomy and expanded capabilities through tool integration. As agentic systems are able to define their own goals and plans and execute multi-step operations without humans in the loop, the impact and blast radius of failures in agentic systems are significantly larger. Instead of simply testing the outputs of the AI application, we need to test and evaluate the safety, security and robustness of each component in the agentic system. 
 
