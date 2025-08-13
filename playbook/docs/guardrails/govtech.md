@@ -6,7 +6,7 @@ Where existing solutions are not suitable for our use cases, we have developed o
 
 LionGuard is a multilingual moderation system designed specifically for Singapore's unique linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
 
-<img src="images/lionguard.png" alt="LionGuard" style="width: 50%;" />
+![LionGuard](images/lionguard.png)
 
 Our latest version, LionGuard 2, enhances moderation capabilities through:
 1. Support for English, Singlish, Chinese, Malay, and partial Tamil.
