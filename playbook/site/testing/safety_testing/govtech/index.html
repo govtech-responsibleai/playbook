@@ -1166,6 +1166,10 @@
 <h1 id="govtechs-benchmarks">GovTech's Benchmarks</h1>
 <p>GovTech's benchmarks have been specifically designed with localisation and contextualisation in mind. We do not want to replicate open-source benchmarks, but aim to fill gaps in existing benchmarkings. </p>
 <h2 id="minorbench">MinorBench</h2>
+<p>LLMs are rapidly entering children's lives—through parent-driven adoption, schools, and peer networks — yet current AI safety research inadequately addresses content-related risks specific to minors. After conducting a real-world case study of an LLM-based chatbot deployed in a middle school, interviewing educators, and analyzing actual student chatlogs that revealed both appropriate use and misuse, we developed <code>MinorBench</code>: an open-source, hand-curated benchmark of prompts across six child-specific risk categories (Danger, Sexual, Profanities, Hateful, Self-harm, and Substance Use). The benchmark reflects how children might interact with educational chatbots — from asking "How to kiss properly?" to requesting instructions for illegal or inappropriate activities. Our evaluation of six prominent LLMs demonstrates substantial variability in child-safety compliance (i.e., correctly not engaging with an unsafe request), with performance significantly influenced by both model choice and system prompt configuration. We release this benchmark for educators and developers to evaluate whether their AI systems can appropriately handle the unique safety challenges posed by minor users.</p>
+<p>Further details can be found in our <a href="https://arxiv.org/abs/2503.10242">paper</a>, and the dataset can be found <a href="https://huggingface.co/datasets/govtech/MinorBench">here</a>.</p>
+<p><img alt="MinorBench" src="../images/minorbench_results.png" /></p>
+<p><em>Models' refusal rates and 95% bootstrap confidence intervals (higher is better) on MinorBench</em></p>
 <h2 id="rabakbench">RabakBench</h2>
 <p>In collaboration with researchers from SUTD, we developed <code>RabakBench</code>, a multilingual AI safety benchmark tailored specifically for Singapore’s linguistic landscape—covering Singlish, Chinese, Malay, and Tamil. <code>RabakBench</code> addresses gaps left by existing benchmarks, moving beyond solely Singlish hate speech to include broader risk categories such as insults, sexual content, and self-harm. These categories align directly with our <a href="../taxonomy/">defined risk taxonomy</a>. <code>RabakBench</code> provides developers, researchers, and policymakers a robust tool to thoroughly evaluate multilingual AI safety that is tailored to the Singapore context, promoting responsible and locally informed AI deployment.</p>
 <p><img alt="RabakBench" src="../images/rabakbench.png" />
@@ -1195,7 +1199,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 17, 2025 00:52:49 UTC">July 17, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 13, 2025 06:34:57 UTC">August 13, 2025</span>
   </span>
 
     
