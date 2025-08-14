@@ -13,25 +13,25 @@
       
       
       
-        <link rel="prev" href="../fairness_discriminative/">
+        <link rel="prev" href="../byog/">
       
       
-        <link rel="next" href="../../safety_testing/safety_testing/">
+        <link rel="next" href="../../understanding/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
     
     
       
-        <title>Generative - Responsible AI Playbook</title>
+        <title>GovTech Guardrails - Responsible AI Playbook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fairness-testing-in-genai" class="md-skip">
+        <a href="#guardrails-developed-by-govtech" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Responsible AI Playbook" class="md-header__button md-logo" aria-label="Responsible AI Playbook" data-md-component="logo">
+    <a href="../.." title="Responsible AI Playbook" class="md-header__button md-logo" aria-label="Responsible AI Playbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generative
+              GovTech Guardrails
             
           </span>
         </div>
@@ -189,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -206,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../responsibleai/" class="md-tabs__link">
+      <a href="../../responsibleai/" class="md-tabs__link">
         
   
     
@@ -221,13 +221,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../testing/" class="md-tabs__link">
           
   
   Testing
@@ -241,11 +239,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../guardrails/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Guardrails
@@ -263,7 +263,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../understanding/" class="md-tabs__link">
+        <a href="../../understanding/" class="md-tabs__link">
           
   
   Understanding
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../resources/" class="md-tabs__link">
+      <a href="../../resources/" class="md-tabs__link">
         
   
     
@@ -315,7 +315,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Responsible AI Playbook" class="md-nav__button md-logo" aria-label="Responsible AI Playbook" data-md-component="logo">
+    <a href="../.." title="Responsible AI Playbook" class="md-nav__button md-logo" aria-label="Responsible AI Playbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -333,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -353,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../responsibleai/" class="md-nav__link">
+      <a href="../../responsibleai/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -370,28 +370,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -402,7 +397,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Testing
@@ -416,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -434,8 +429,6 @@
                 
   
   
-    
-  
   
   
     
@@ -445,11 +438,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -463,7 +456,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Fairness
@@ -477,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fairness_discriminative/" class="md-nav__link">
+      <a href="../../testing/fairness_testing/fairness_discriminative/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -495,30 +488,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Generative
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../testing/fairness_testing/fairness_generative/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,53 +500,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dataset" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dataset
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Metrics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -632,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/safety_testing/" class="md-nav__link">
+      <a href="../../testing/safety_testing/safety_testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/diff_safety/" class="md-nav__link">
+      <a href="../../testing/safety_testing/diff_safety/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/taxonomy/" class="md-nav__link">
+      <a href="../../testing/safety_testing/taxonomy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../safety_testing/govtech/" class="md-nav__link">
+      <a href="../../testing/safety_testing/govtech/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -762,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../robustness_testing/robustness_testing/" class="md-nav__link">
+      <a href="../../testing/robustness_testing/robustness_testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -829,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agentic_testing/agentic_testing/" class="md-nav__link">
+      <a href="../../testing/agentic_testing/agentic_testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -858,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../litmus/" class="md-nav__link">
+      <a href="../../testing/litmus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -883,23 +809,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -910,7 +841,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Guardrails
@@ -924,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guardrails/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guardrails/quick_start/" class="md-nav__link">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -966,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guardrails/sentinel/" class="md-nav__link">
+      <a href="../sentinel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -987,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guardrails/diff_guardrails/" class="md-nav__link">
+      <a href="../diff_guardrails/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1008,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guardrails/best_practices/" class="md-nav__link">
+      <a href="../best_practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1029,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guardrails/byog/" class="md-nav__link">
+      <a href="../byog/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1047,10 +978,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../guardrails/govtech/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GovTech Guardrails
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1059,6 +1010,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lionguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      LionGuard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#off-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Off-Topic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-prompt-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Prompt Leakage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1116,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../understanding/" class="md-nav__link">
+      <a href="../../understanding/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1144,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1172,39 +1170,24 @@
                   
 
 
-<h1 id="fairness-testing-in-genai">Fairness Testing in GenAI</h1>
-<p>There has been a large body of work testing fairness and biases in LLMs, focusing on whether there are inherent biases encoded in LLMs. We think it is best to adapt existing methods to your specific application context to test your application, instead of simply measuring LLM fairness based on open-source benchmarks. </p>
-<h2 id="dataset">Dataset</h2>
-<p>Much of the existing literature involves designing prompt templates that vary by a protected attribute like gender, race or religion. Some popular methods are:</p>
-<ul>
-<li>Using <a href="https://github.com/amazon-science/bold">naturally occurring prompts that contain references to a protected attribute</a>, and evaluating the continuations based on metrics of interest (e.g., sentiment, toxicity, gender polarity)</li>
-<li>Querying LLMs to state <a href="https://aclanthology.org/2023.acl-long.656/">whether they agree to statements containing bias</a></li>
-<li>Requiring LLMs to perform <a href="https://arxiv.org/abs/1901.09451">classification</a> or <a href="https://arxiv.org/abs/2110.08193">make a choice in MCQs</a> based on textual descriptions with explicit indicators of a protected attribute </li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip: Assess if your application requires fairness testing</p>
-<p>Whether your application requires testing depends on whether the LLM generations could be affected by a protected attribute, bearing in mind that the attribute can be explicitly defined (e.g., user has to state gender) or implicit (e.g., name). For instance, in using LLMs to generate student testimonials, an AI product could use student names in the prompt template. </p>
-</div>
-<p>If it is possible for an LLM generation to be affected by a protected attribute, it is imperative to create an evaluation dataset to measure the fairness of generations across different attributes. </p>
-<p>In our experiments for Appraiser, an AI product assisting teachers with generating student testimonials, the benchmark dataset was created based on a template that the application relied on, as well as input fields users would change/vary. </p>
-<h2 id="metrics">Metrics</h2>
-<p>To determine the metrics for evaluating LLM generations, it is important to consider discriminative outcomes that the application is at risk for. </p>
-<p>Some common outcomes/risks include: </p>
-<ul>
-<li>Sentiment </li>
-<li>Toxicity </li>
-<li>Psycholinguistic norms (more extensive emotion states)</li>
-<li>Gender Polarity (number of male/female specific tokens)</li>
-<li>Language style/formality </li>
-</ul>
-<p>Some applications may require application-specific metrics. In some cases, we could rely on traditional NLP methods (e.g., TF-IDF, word count), classifiers (sentiment) or LLMs for evaluation. In our experiments for Appraiser, we noticed that the adjectives used in LLM generations could be categorized under stereotypical personality traits, and used word counts of adjectives and associated synonyms to measure the degree to which the testimonial demonstrated the trait. </p>
-<h2 id="evaluation">Evaluation</h2>
-<p>A common evaluation approach is to split the evaluation dataset depending on the protected attribute (subgroups), and assess if there are differences in the metric of interest between different subgroups.</p>
-<p>However, in certain contexts where there could be other <em>confounding factors</em> and it is possible to disentangle the factors, we can use <strong>fixed effects regression</strong> techniques to isolate the effect of the protected attribute on the metric of interest. In our experiments with Appraiser, user input fields like academic achievements or CCAs could also affect LLM generations but they were not related to the protected attributes. Hence, controlling for these factors allows for a more accurate assessment of the bias of LLM generations in this specific context. </p>
-<div class="admonition note">
-<p class="admonition-title">Original Blog Post</p>
-<p>This page is adapted from our <a href="https://medium.com/dsaid-govtech/evaluating-fairness-of-llm-generated-testimonials-c65e0f271b17">original blog post</a> on this topic.</p>
-</div>
+<h1 id="guardrails-developed-by-govtech">Guardrails developed by GovTech</h1>
+<p>Where existing solutions are not suitable for our use cases, we have developed our own guardrails. One key theme is that we keep the guardrails lightweight and fast to run, and often overlay a classification layer on top of existing embedding models.</p>
+<h2 id="lionguard">LionGuard</h2>
+<p>LionGuard is a multilingual moderation system designed specifically for Singapore's unique linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.</p>
+<p><img alt="LionGuard" src="../images/lionguard.png" /></p>
+<p>Our latest version, LionGuard 2, enhances moderation capabilities through:
+1. Support for English, Singlish, Chinese, Malay, and partial Tamil.
+2. Integration of our Whole-of-Government <a href="../../testing/safety_testing/taxonomy/">safety taxonomy</a>, enabling fine-grained moderation with defined severity levels.
+3. Improved robustness against noisy and code-mixed inputs.</p>
+<p>Lightweight deployment remains central to LionGuard’s design. LionGuard 2 utilises pre-trained OpenAI embeddings combined with a multi-head ordinal classifier, significantly outperforming commercial and open-source systems across 17 localised and general benchmarks. Importantly, LionGuard 2 achieves these accuracy improvements using a training dataset 70% smaller than its predecessor, LionGuard 1, and can be fully retrained within two minutes on standard CPUs.</p>
+<p>To foster wider adoption and further research, LionGuard 2 is open-sourced for self-hosting and also accessible via the Sentinel API. Detailed insights are available in our <a href="https://go.gov.sg/lionguard-2-blog">blog post</a> and <a href="https://arxiv.org/abs/2507.15339">paper</a>.</p>
+<h2 id="off-topic">Off-Topic</h2>
+<p>The Off-Topic detector is an input guardrail that classifies if the input prompt is off-topic with respect to the system prompt. This is useful for ensuring that applications stay on track and do not engage in other topics. </p>
+<p>We developed this guardrail as we realised that existing solutions either requiring training a use-case specific guardrail or configuring it with examples of on and off-topic sample prompts. However, in the absence of real production data, doing so is challenging. Instead, we created a rich dataset of synthetic system prompt and user prompt pairs that are on and off-topic, and trained a light-weight classifier to detect off-topic prompts.</p>
+<p>For our v1, we trained a bi-encoder classifier on-top of the <code>jina-embeddings-v2-small-en</code> embedings and a cross-encoder classifier on-top of <code>stsb-roberta-base</code>. Further details can be found in our <a href="https://medium.com/dsaid-govtech/open-sourcing-an-off-topic-prompt-guardrail-fde422a66152">blog post</a> and <a href="https://arxiv.org/abs/2411.12946">paper</a>. </p>
+<h2 id="system-prompt-leakage">System Prompt Leakage</h2>
+<p>This guardrail serves as an output guardrail to help detect and manage instances of system prompt leakage. In modern applications of large language models (LLMs), safeguarding sensitive or proprietary system instructions from being exposed in responses is critical. </p>
+<p>This guardrail detects both direct leakages (e.g., exact or near-exact reproductions of the system prompt, often through simple word or phrase replacement) and indirect leakages that include rephrasing key ideas in varied ways, using different sentence structures, or adding subtle context that reveals details embedded within the original system prompt.</p>
 
 
 
@@ -1225,7 +1208,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 20, 2025 09:25:05 UTC">March 20, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 13, 2025 06:34:57 UTC">August 13, 2025</span>
   </span>
 
     
@@ -1351,10 +1334,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.integrate", "content.last_updated"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.integrate", "content.last_updated"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

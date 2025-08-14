@@ -13,7 +13,8 @@ theme:
     accent: pink
   features:
     - navigation.tabs
-    - toc.integrate    
+    - toc.integrate 
+    - content.last_updated   
 
 # Extra Configuration
 extra_css:
@@ -67,6 +68,11 @@ nav:
           - Introduction: testing/safety_testing/safety_testing.md
           - Benchmarks and Tools: testing/safety_testing/diff_safety.md
           - Taxonomy: testing/safety_testing/taxonomy.md
+          - GovTech Benchmarks: testing/safety_testing/govtech.md
+      - Robustness:
+          - Introduction: testing/robustness_testing/robustness_testing.md
+      - Agentic AI:
+          - Introduction: testing/agentic_testing/agentic_testing.md
       - Litmus: testing/litmus.md
   - Guardrails:
       - Introduction: guardrails.md
@@ -75,6 +81,7 @@ nav:
       - Different Types of Guardrails: guardrails/diff_guardrails.md
       - Best Practices When Integrating Guardrails: guardrails/best_practices.md
       - Building Your Own Guardrails: guardrails/byog.md
+      - GovTech Guardrails: guardrails/govtech.md
   - Understanding:
       - Introduction: understanding.md
   - Resources: resources.md
@@ -87,6 +94,9 @@ plugins:
   #     pad: 20
   - search
   - section-index
+  - git-revision-date-localized:
+      type: date  # or datetime if you want the time too
+      fallback_to_build_date: true
   - exclude:
       glob:
         - "*.tmp"
