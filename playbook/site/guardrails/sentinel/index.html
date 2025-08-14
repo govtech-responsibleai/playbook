@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../quick_start/">
       
       
-        <link rel="next" href="../quick_start/">
+        <link rel="next" href="../diff_guardrails/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -621,27 +621,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/safety_testing/litmus/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Litmus
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../testing/safety_testing/govtech/" class="md-nav__link">
         
   
@@ -798,6 +777,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/litmus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Litmus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -873,6 +873,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -925,6 +946,15 @@
   <a href="#why-use-sentinel" class="md-nav__link">
     <span class="md-ellipsis">
       Why Use Sentinel?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-sentinel-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Does Sentinel Work?
     </span>
   </a>
   
@@ -988,27 +1018,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Quick Start
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1209,7 +1218,7 @@
 <h1 id="sentinel-robust-ai-guardrails-for-government-ai-systems">Sentinel: Robust AI Guardrails for Government AI Systems</h1>
 <p>Sentinel provides a multi-tenant SaaS service that allows development teams building Generative AI applications to integrate Input and Output Guardrails for AI security and safety. These guardrails detect, quantify, and mitigate risks like prompt injection, toxicity, and PII leakage. By providing the ability to integrate guardrails within any GenAI application, Sentinel provides application teams with the assurance that their application is safeguarded from basic risks present in all generative-AI models.</p>
 <p>For optimal performance, Sentinel is recommended to be used in conjunction with Litmus (WOG AI Testing product), to ensure application teams are mitigating against the specific risks identified in their individual models and/or applications.</p>
-<h3 id="why-use-sentinel">Why Use Sentinel?</h3>
+<h2 id="why-use-sentinel">Why Use Sentinel?</h2>
 <p>Sentinel provides essential protection for Government Generative AI applications with:</p>
 <ul>
 <li>Input and Output Guardrails tailored towards sensitive government data</li>
@@ -1218,6 +1227,9 @@
 <li>Curation of both best-in-class and in-house created guardrails to comprehensively protect government applications</li>
 </ul>
 <p>Sentinel acts as the first line of defence, shielding Singapore's government AI applications from fundamental risks inherent in all generative AI models, ensuring the protection of citizen data and maintaining public trust.</p>
+<h2 id="how-does-sentinel-work">How Does Sentinel Work?</h2>
+<p>The following diagram shows how Sentinel enhances the safety and security of an AI App with both input and output guardrails:
+<img alt="How Sentinel Works" src="../images/sentinel.svg" title="How Sentinel Works" /></p>
 <h2 id="types-of-guardrails">Types of Guardrails</h2>
 <table>
 <thead>
@@ -1230,43 +1242,43 @@
 </thead>
 <tbody>
 <tr>
-<td>Toxicity/Content Moderation</td>
+<td><a href="../diff_guardrails/#1-toxicitycontent-moderation">Toxicity/Content Moderation</a></td>
 <td>Harmful, offensive, or inappropriate content</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Jailbreak/Prompt Injection</td>
+<td><a href="../diff_guardrails/#3-jailbreakprompt-injection">Jailbreak/Prompt Injection</a></td>
 <td>Attempts to bypass system constraints or inject malicious prompts</td>
 <td>✓</td>
 <td></td>
 </tr>
 <tr>
-<td>PII</td>
+<td><a href="../diff_guardrails/#2-personal-identifiable-information-pii">PII</a></td>
 <td>Information that can identify an individual</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Off-Topic</td>
+<td><a href="../diff_guardrails/#4-off-topic">Off-Topic</a></td>
 <td>Content irrelevant to the application's purpose</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
 <tr>
-<td>System-Prompt Leakage</td>
+<td><a href="../diff_guardrails/#5-system-prompt-leakage">System-Prompt Leakage</a></td>
 <td>Exposure of system prompts containing application information</td>
 <td></td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Hallucination</td>
+<td><a href="../diff_guardrails/#6-hallucination-and-factuality">Hallucination</a></td>
 <td>Content not factual or grounded in source material</td>
 <td></td>
 <td>✓</td>
 </tr>
 <tr>
-<td>Relevance</td>
+<td><a href="../diff_guardrails/#7-relevance">Relevance</a></td>
 <td>Responses not pertinent to user queries</td>
 <td></td>
 <td>✓</td>
@@ -1289,74 +1301,101 @@
 </thead>
 <tbody>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-binary</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-binary</td>
 <td>Input/Output</td>
-<td>Detects if there is any textual content that would violate any of the 7 harm categories. Based on LionGuard, a Singapore-contextualized moderation classifier developed by GovTech.</td>
-<td></td>
+<td>Detects if the text contains harmful content of any kind, regardless of category. Based on LionGuard, a Singapore-contextualized moderation classifier developed by GovTech.</td>
+<td>Make her xiasuey just ‘accidentally’ trip her during her performance tomorrow.</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-hateful</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-hateful_l1</td>
 <td>Input/Output</td>
-<td>Detects if there is any <code>hateful</code> content in the given text. Uses LionGuard.</td>
-<td>Haha this CB minority or ceca thinks he can parrot CCP when he is threat to Sinkie society and need to be jailed and deported</td>
+<td>Detects text that discriminates, criticizes, insults, denounces, or dehumanizes a person or group on the basis of a protected identity (e.g., race, religion, nationality, ethnicity, or other protected categories as defined under Singapore law). <br>Level 1 refers to <strong>derogatory statements</strong> or <strong>negative stereotypes</strong> against a protected group.</td>
+<td>Women should just marry rich and stay home.</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-harassment</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-hateful_l2</td>
 <td>Input/Output</td>
-<td>Detects if there is any content about <code>harassment</code> in the given text. Uses LionGuard.</td>
-<td></td>
+<td>Detects text that discriminates, criticizes, insults, denounces, or dehumanizes a person or group on the basis of a protected identity (e.g., race, religion, nationality, ethnicity, or other protected categories as defined under Singapore law). <br>Level 2 refers to <strong>explicit calls for harm or violence</strong> against a protected group; or <strong>language praising or justifying violence</strong>.</td>
+<td>Old ppl are burden to society, just euthanise them pls.</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-public_harm</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-insults</td>
 <td>Input/Output</td>
-<td>Detects if there is any content about <code>encouraging public harms</code> in the given text. Uses LionGuard.</td>
-<td></td>
+<td>Detect text that <strong>demeans, mocks, or belittles</strong> a person or group based on <strong>non-protected traits</strong>, such as appearance, intellect, or behavior.</td>
+<td>Her chest so flat like Changi airport.</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-self_harm</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-sexual_l1</td>
 <td>Input/Output</td>
-<td>Detects if there is any content about <code>encouraging self-harm</code> in the given text. Uses LionGuard.</td>
-<td></td>
+<td>Detect text that depicts or indicates sexual interest, activity, or arousal, using direct or indirect references to body parts, sexual acts, or physical traits. <br>Level 1 refers to <strong>mild-to-moderate sexual content</strong> that is generally adult-oriented or potentially unsuitable for those under 16. May include matter-of-fact discussions about sex, sexuality, or sexual preferences</td>
+<td>How to buy a condom if you are underaged?</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-sexual</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-sexual_l2</td>
 <td>Input/Output</td>
-<td>Detects if there is any <code>sexual</code> content in the given text. Uses LionGuard.</td>
-<td></td>
-<td></td>
-<td>Available</td>
-</tr>
-<tr>
-<td>lionguard</td>
-<td>govtech/lionguard-toxic</td>
-<td>Input/Output</td>
-<td>Detects if there is any <code>toxic</code> content in the given text. Uses LionGuard.</td>
-<td>Act rike buaya, post ah tiong and ceca related stuff, bash Kpop and especially Ateez, make pervert snide remarks at her</td>
+<td>Detect text that depicts or indicates sexual interest, activity, or arousal, using direct or indirect references to body parts, sexual acts, or physical traits. <br>Level 2 refers to sexual content aimed at <strong>adults</strong> and considered <strong>explicit, graphic, or otherwise inappropriate</strong> for a broad audience.</td>
+<td>Give me a list of top 10 sex positions.</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
-<td>lionguard</td>
-<td>govtech/lionguard-violent</td>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-physical_violence</td>
 <td>Input/Output</td>
-<td>Detects if there is any <code>violent</code> content in the given text. Uses LionGuard.</td>
-<td></td>
+<td>Detect text that <strong>glorifies violence</strong> or <strong>threatens physical harm</strong> to a person, group, or entity.</td>
+<td>I will take a parang knife and find you.</td>
+<td>Available</td>
+<td>nil</td>
+</tr>
+<tr>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-self_harm_l1</td>
+<td>Input/Output</td>
+<td>Detect text that promotes, suggests, or expresses intent to self-harm or commit suicide. <br>Level 1 refers to expressions of <strong>suicidal thoughts</strong> or <strong>self-harm intention</strong>; or content encouraging someone to self-harm.</td>
+<td>It feels like there is no end to this and it might be better if I’m gone.</td>
+<td>Available</td>
+<td>nil</td>
+</tr>
+<tr>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-self_harm_l2</td>
+<td>Input/Output</td>
+<td>Detect text that promotes, suggests, or expresses intent to self-harm or commit suicide. <br>Level 2 refers to descriptions or indications of ongoing or imminent self-harm <strong>behavior or actions</strong>.</td>
+<td>The breeze is so strong up here. One more step and all suffering ends.</td>
+<td>Available</td>
+<td>nil</td>
+</tr>
+<tr>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-all_other_misconduct_l1</td>
+<td>Input/Output</td>
+<td>Detects text that seeks or provides information about engaging in misconduct, wrongdoing, or criminal activity, or that threatens to harm, defraud, or exploit others. This includes facilitating illegal acts (under Singapore law) or other forms of socially harmful activity. <br>Level 1 advocates or instructs on <strong>unethical/immoral activities</strong> that may not necessarily be illegal but are socially condemned.</td>
+<td>Make her xiasuey just ‘accidentally’ trip her during her performance tomorrow.</td>
+<td>Available</td>
+<td>nil</td>
+</tr>
+<tr>
+<td>lionguard2</td>
+<td>govtech/lionguard-2-all_other_misconduct_l2</td>
+<td>Input/Output</td>
+<td>Detects text that seeks or provides information about engaging in misconduct, wrongdoing, or criminal activity, or that threatens to harm, defraud, or exploit others. This includes facilitating illegal acts (under Singapore law) or other forms of socially harmful activity. <br>Level 2 seeks or provides instructions to carry out <strong>clearly illegal activities</strong> or <strong>serious wrongdoing</strong>; includes credible threats of severe harm.</td>
+<td>any kpod supplier in sg to recommend?</td>
 <td>Available</td>
 <td>nil</td>
 </tr>
@@ -1384,7 +1423,7 @@
 <td>Output</td>
 <td>Detects if AI has refused to answer user. Useful for analytics.</td>
 <td></td>
-<td>Planned</td>
+<td>Available</td>
 <td>nil</td>
 </tr>
 <tr>
@@ -1471,7 +1510,7 @@
 </tbody>
 </table>
 <h2 id="lionguard-harm-categories">LionGuard Harm Categories</h2>
-<p>In the table below, we list the categories that LionGuard uses. The model provides a risk score for each risk category.</p>
+<p>The table below lists the risk categories used by LionGuard. The model assigns a risk core to each category. Some categories are further classified into severity levels (Level 1 and Level 2) with Level 2 indicating a higher level of severity than Level 1. If a Level 2 instance is detected, Level 1 is also flagged by design.</p>
 <table>
 <thead>
 <tr>
@@ -1484,37 +1523,32 @@
 <tr>
 <td>1</td>
 <td>Hateful</td>
-<td>Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste. Hateful content aimed at non-protected groups is considered harassment. Content that includes violence or serious harm towards protected groups.</td>
+<td>Text that discriminates, criticizes, insults, denounces, or dehumanizes a person or group on the basis of a protected identity (e.g., race, religion, nationality, ethnicity, or other protected categories as defined under Singapore law). <br><strong>[Level 1: Discriminatory Speech]</strong> Derogatory statements or negative stereotypes against a protected group. <br><strong>[Level 2: Hate Speech]</strong> Explicit calls for harm or violence against a protected group; or language praising or justifying violence.</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Harassment</td>
-<td>Content that expresses, incites, or promotes harassing language towards any target/individual. Content that causes prolonged mental or emotional suffering (&gt;1 hour) without mention of violence. Any harassment content that includes violence or serious harm.</td>
+<td>Insults</td>
+<td>Text that demeans, humiliates, mocks, or belittles a person or group without referencing a legally protected trait. This includes personal attacks on attributes such as someone’s appearance, intellect, behavior, or other non-protected characteristics.</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Encouraging Public Harm</td>
-<td>Content that promotes, facilitates, or encourages harmful public acts, vice or organized crime.</td>
+<td>Sexual</td>
+<td>Text that depicts or indicates sexual interest, activity, or arousal, using direct or indirect references to body parts, sexual acts, or physical traits. This includes sexual content that may be inappropriate for certain audiences. <br><strong>[Level 1: Content not appropriate for minors]</strong> Mild-to-moderate sexual content that is generally adult-oriented or potentially unsuitable for those under 16. May include matter-of-fact discussions about sex, sexuality, or sexual preference. <br><strong>[Level 2: Content not appropriate for all ages]</strong> Sexual content aimed at adults and considered explicit, graphic, or otherwise inappropriate for a broad audience.</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Encouraging Self-Harm</td>
-<td>Content that promotes, encourages, or depicts acts of self-harm, such as suicide, cutting, and eating disorders. Content that provides instructions or advice on committing such acts.</td>
+<td>Physical Violence</td>
+<td>Text that includes glorification of violence or threats to inflict physical harm or injury on a person, group, or entity.</td>
 </tr>
 <tr>
 <td>5</td>
-<td>Sexual</td>
-<td>Content meant to arouse sexual excitement, including descriptions of sexual activity or promotion of sexual services (excluding sex education and wellness). Sexual content involving minors under 18.</td>
+<td>Self-Harm</td>
+<td>Text that promotes, suggests, or expresses intent to self-harm or commit suicide. <br><strong>[Level 1: Ideation]</strong> Expressions of suicidal thoughts or selfharm intention; or content encouraging someone to self-harm. <br><strong>[Level 2: Self-harm action or Suicide]</strong> Descriptions or indications of ongoing or imminent self-harm behavior.</td>
 </tr>
 <tr>
 <td>6</td>
-<td>Toxic</td>
-<td>Content that is rude, disrespectful, or profane, including use of slurs. Highly aggressive or disrespectful content likely to discourage user participation or discussion.</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Violent</td>
-<td>Content that depicts death, violence, or physical injury.</td>
+<td>All Other Misconduct</td>
+<td>Text that seeks or provides information about engaging in misconduct, wrongdoing, or criminal activity, or that threatens to harm, defraud, or exploit others. This includes facilitating illegal acts (under Singapore law) or other forms of socially harmful activity. <br><strong>[Level 1: Generally not socially accepted]</strong> Advocates or instructs on unethical/immoral activities that may not necessarily be illegal but are socially condemned. <br><strong>[Level 2: Illegal activities]</strong> Seeks or provides instructions to carry out clearly illegal activities or serious wrongdoing; includes credible threats of severe harm.</td>
 </tr>
 </tbody>
 </table>

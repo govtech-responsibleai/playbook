@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../quick_start/">
+        <link rel="prev" href="../sentinel/">
       
       
         <link rel="next" href="../best_practices/">
@@ -621,27 +621,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/safety_testing/litmus/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Litmus
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../testing/safety_testing/govtech/" class="md-nav__link">
         
   
@@ -798,6 +777,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testing/litmus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Litmus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -876,11 +876,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../sentinel/" class="md-nav__link">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Sentinel
+    Quick Start
   </span>
   
 
@@ -897,11 +897,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick_start/" class="md-nav__link">
+      <a href="../sentinel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Quick Start
+    Sentinel
   </span>
   
 
@@ -1276,7 +1276,7 @@
 <li>Zero-shot/few-shot classifiers to detect relevance against system prompt. This approach, however, suffers from lower precision (i.e., many valid queries are incorrectly classified as off-topic).</li>
 <li>Using a custom topic classifier guardrail from Amazon Bedrock Guardrails or Azure AI Content Safety. To use this approach, however, you need to define your own taxonomy of what is considered off-topic and/or provide custom examples for model training.</li>
 </ul>
-<p>Noting these limitations, we trained our own custom off-topic guardrail model that works zero-shot. It classifies if a given prompt is off-topic based on the system prompt. Further details can be found in our blog post here.</p>
+<p>Noting these limitations, we trained our own custom off-topic guardrail model that works zero-shot. It classifies if a given prompt is off-topic based on the system prompt. Further details can be found in our blog post <a href="https://medium.com/dsaid-govtech/open-sourcing-an-off-topic-prompt-guardrail-fde422a66152">here</a>.</p>
 <h2 id="5-system-prompt-leakage">5. System-Prompt Leakage</h2>
 <p>We typically include a system prompt in our Sentinel API to guide the LLM's behaviour. This system prompt usually contains the rules that the LLM must follow. Exposing it to the user may not be desirable as it may reveal sensitive information or allow the user to better manipulate the LLM's behaviour.</p>
 <p>To detect if the system prompt is leaked, we can use:</p>
