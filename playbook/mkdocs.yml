@@ -9,10 +9,22 @@ theme:
   name: material
   language: en
   palette:
-    primary: indigo
-    accent: pink
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.tabs
+    - navigation.footer
+    - navigation.top
     - content.last_updated   
 
 # Extra Configuration
