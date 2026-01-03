@@ -13,7 +13,6 @@ theme:
     accent: pink
   features:
     - navigation.tabs
-    - toc.integrate 
     - content.last_updated   
 
 # Extra Configuration
