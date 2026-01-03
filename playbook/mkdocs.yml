@@ -59,6 +59,8 @@ extra:
 # Markdown Extensions
 markdown_extensions:
   - admonition
+  - toc:
+      permalink: "#"
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
