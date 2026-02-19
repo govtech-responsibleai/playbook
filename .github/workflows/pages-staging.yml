@@ -33,16 +33,16 @@ jobs:
           pip install mkdocs
 
       - name: Build site
-        run: mkdocs build --clean
+        run: mkdocs build --clean --config-file playbook/mkdocs.yml
 
       # Prevent GitHub Pages from trying to run Jekyll behavior on your static output
       - name: Disable Jekyll
-        run: touch site/.nojekyll
+        run: touch playbook/site/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: playbook/site
 
   deploy:
     runs-on: ubuntu-latest
