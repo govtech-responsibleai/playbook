@@ -1,0 +1,23 @@
+/* Keep global typography at theme defaults; only image rules below */
+
+/* Add breathing room below the feedback widget */
+[data-md-component="feedback"] { margin-bottom: 2rem; }
+/* Add space specifically under the feedback icons (smiley/sad) */
+.md-feedback__list { margin-bottom: 1.25rem; }
+
+/* Images: fill container width by default */
+.md-typeset img {
+  width: 100%;
+  height: auto;
+}
+
+/* Full-bleed images across viewport when opted-in */
+.md-content__inner img.full-bleed,
+.md-typeset .full-bleed {
+  display: block;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+}
