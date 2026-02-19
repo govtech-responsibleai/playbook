@@ -1,0 +1,296 @@
+/* Home page hero section - break out of container */
+.md-content__inner > .home-hero {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh; /* modern mobile safe viewport */
+  display: flex;
+  align-items: flex-end; /* move content to bottom */
+  justify-content: flex-start; /* keep content on the left */
+  background-image: url('../images/responsibleai.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  /* Pull hero up behind header/tabs so image is flush */
+  margin-top: calc(-1 * var(--home-header-offset, 0px));
+  padding: calc(var(--home-header-offset, 0px) + 2rem) 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Light black veil across image + brand gradient overlay */
+  background:
+    /* Slightly stronger dark veil for better contrast */
+    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+    linear-gradient(to top right, rgba(186, 47, 162, 0.2) 0%, rgba(0, 192, 243, 0.2) 100%);
+  z-index: 1;
+}
+
+/* Ensure header/tabs sit above background overlay */
+body.home-page .md-header,
+body.home-page .md-tabs {
+  position: relative;
+  z-index: 10;
+}
+
+/* Remove default content offset under fixed header on home page */
+body.home-page .md-main__inner,
+body.home-page .md-content {
+  margin-top: 0 !important;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: white;
+  max-width: 900px;
+  padding: 2rem;
+  background: none; /* remove local black box */
+  border-radius: 0;
+}
+
+.home-hero-content h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  /* Soft brand gradient mixed ~70% white */
+  background: linear-gradient(90deg, #eac1e3 0%, #b3ecfb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* No outline or shadows for a clean, soft look */
+  -webkit-text-stroke: 0 transparent;
+  filter: none;
+}
+
+.playbook-title {
+  position: relative;
+  display: inline-block;
+}
+
+.playbook-title::after { content: none; }
+
+.home-hero-content p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.typed-wrapper {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-weight: 600;
+  opacity: 0.95;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Static prompt symbol before the typed text */
+.typed-wrapper::before {
+  content: "> ";
+  color: #ffffff;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+/* Subtle outside-only shadow for typed line */
+.home-hero-content .typed-wrapper { filter: none; }
+
+.typed-areas {
+  color: #ffffff !important; /* solid white */
+}
+
+.typed-caret {
+  display: inline-block;
+  margin-left: 2px;
+  color: #ffffff;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.home-hero-content .md-button {
+  font-size: 0.95rem;
+  padding: 0.7rem 1.5rem;
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  box-shadow: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-hero-content .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* Key areas section */
+.key-areas-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.key-areas-section h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 3rem;
+  color: var(--md-primary-fg-color);
+}
+
+.key-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.key-area-card {
+  background: var(--md-default-bg-color);
+  border: 2px solid var(--md-default-fg-color--lightest);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.key-area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--md-primary-fg-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.key-area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: none;
+  border-color: var(--md-primary-fg-color);
+}
+
+.key-area-card:hover::before {
+  transform: scaleX(1);
+}
+
+.key-area-card h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+/* (Removed social/contact section styles as the section is no longer used) */
+
+/* Use default theme spacing for header/tabs */
+
+/* Keep defaults; no override required */
+
+body.home-page .md-sidebar,
+body.home-page .md-sidebar--primary,
+body.home-page .md-sidebar--secondary {
+  display: none !important;
+}
+
+body.home-page .md-nav--primary,
+body.home-page .md-nav--secondary,
+body.home-page .md-nav__list,
+body.home-page .md-nav__title {
+  display: none !important;
+}
+
+/* Hide last updated section */
+body.home-page .md-last-updated,
+body.home-page [data-md-component="last-updated"],
+body.home-page .md-source-file {
+  display: none !important;
+}
+
+/* Hide feedback section */
+body.home-page .md-feedback,
+body.home-page [data-md-component="feedback"] {
+  display: none !important;
+}
+
+/* Hide back-to-top on home page only */
+body.home-page .md-top,
+body.home-page [data-md-component="top"] {
+  display: none !important;
+}
+
+/* Hide navigation tabs */
+/* Keep tabs visible on home page */
+/* (intentionally no overrides that hide .md-tabs) */
+
+.md-content__inner {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Ensure full width for home page sections */
+body[data-md-component="main"] .md-content__inner > div:first-child {
+  max-width: 100%;
+}
+
+.md-typeset {
+  max-width: 100%;
+}
+
+/* Do not hide global nav tabs anywhere */
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .home-hero-content p {
+    font-size: 1rem;
+  }
+  
+  .key-areas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .key-areas-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* (Removed responsive rules for social/contact section) */
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    min-height: 60vh;
+  }
+  
+  .home-hero-content h1 {
+    font-size: 1.6rem;
+  }
+  
+  .home-hero-content p {
+    font-size: 0.95rem;
+  }
+}

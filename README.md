@@ -1,8 +1,9 @@
 # Responsible AI Playbook
 
-This is a playbook for Responsible AI in the Singapore Public Service, maintained by GovTech Singapore's AI Practice. 
+This is a playbook for Responsible AI in the Singapore Public Service, maintained by GovTech Singapore's AI Practice.
 
-This is under active development.
+- Prod (`main`): https://playbooks.aip.gov.sg/responsibleai/
+- Staging (`staging`): https://govtech-responsibleai.github.io/playbook/
 
 ## Set-up
 
@@ -25,18 +26,18 @@ This is under active development.
     mkdocs serve --config-file playbook/mkdocs.yml
     ```
 
-## Adding new content
+## Contributing
 
-1. Add a new markdown file in the `playbook/docs` directory.
+1. Branch off `staging`.
 
-2. Then add a link to it in the `mkdocs.yml` file.
+2. Add a new markdown file in the `playbook/docs` directory and link to it in `playbook/mkdocs.yml` under `nav`.
 
-3. Build the site by running this command at the root directory:
+3. Commit and push your changes, then raise a PR into `staging` for review — this deploys to the staging URL.
 
-```bash
-mkdocs build --config-file playbook/mkdocs.yml
-```
+4. Once approved, PR `staging` into `main` to promote to prod.
 
-4. Commit and push your changes.
+`main` should only ever receive merges from `staging`.
 
-For external collaborators, please create a separate branch and raise a PR to merge. 
+## Macros
+
+Some pages use the [mkdocs-macros](https://mkdocs-macros-plugin.readthedocs.io/) plugin to render dynamic content. Page-specific data lives in `_data.yml` files alongside the page, and is rendered via macros defined in `playbook/main.py` (e.g. `render_our_work()` in `our-work/index.md`).
