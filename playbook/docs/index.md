@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 <div class="home-hero">
   <div class="home-hero-content">
     <h1 class="playbook-title">Responsible AI Playbook</h1>

@@ -2,8 +2,8 @@
 
 This is a playbook for Responsible AI in the Singapore Public Service, maintained by GovTech Singapore's AI Practice.
 
-- Prod (`main`): https://playbooks.aip.gov.sg/responsibleai/
-- Staging (`staging`): https://govtech-responsibleai.github.io/playbook/
+- [Prod (`main`)](https://playbooks.aip.gov.sg/responsibleai/)
+- [Staging (`staging`)](https://govtech-responsibleai.github.io/playbook/)
 
 ## Set-up
 

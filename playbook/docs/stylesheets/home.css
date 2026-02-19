@@ -1,9 +1,7 @@
-/* Home page hero section - break out of container */
+/* Home page hero section - full width (sidebars hidden via frontmatter) */
 .md-content__inner > .home-hero {
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
 }
 
 .home-hero {
@@ -242,6 +240,14 @@ body.home-page [data-md-component="top"] {
 /* Hide navigation tabs */
 /* Keep tabs visible on home page */
 /* (intentionally no overrides that hide .md-tabs) */
+
+body.home-page .md-main__inner {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 
 body.home-page .md-content__inner {
   margin: 0 auto;
