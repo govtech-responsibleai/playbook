@@ -243,18 +243,18 @@ body.home-page [data-md-component="top"] {
 /* Keep tabs visible on home page */
 /* (intentionally no overrides that hide .md-tabs) */
 
-.md-content__inner {
+body.home-page .md-content__inner {
   margin: 0 auto;
   max-width: 100%;
   padding: 0;
 }
 
 /* Ensure full width for home page sections */
-body[data-md-component="main"] .md-content__inner > div:first-child {
+body.home-page .md-content__inner > div:first-child {
   max-width: 100%;
 }
 
-.md-typeset {
+body.home-page .md-typeset {
   max-width: 100%;
 }
 
