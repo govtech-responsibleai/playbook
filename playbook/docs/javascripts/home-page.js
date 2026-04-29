@@ -38,13 +38,13 @@
   });
 })();
 
-// Typing effect for the 6 areas of Responsible AI
+// Typing effect for the risk area in the home page tagline.
 function startTypingEffect() {
   const el = document.querySelector('.typed-areas');
   if (!el || el.dataset.typingInit === '1') return;
   el.dataset.typingInit = '1';
 
-  const words = ['Safety', 'Robustness', 'Fairness', 'Explainability', 'Privacy', 'Transparency'];
+  const words = ['safety', 'robustness', 'fairness', 'explainability', 'privacy', 'transparency'];
   const typeDelay = 90;       // ms per char when typing
   const eraseDelay = 60;      // ms per char when erasing
   const holdDelay = 1200;     // ms to hold full word before erase

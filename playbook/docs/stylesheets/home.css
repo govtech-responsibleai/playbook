@@ -11,7 +11,7 @@
   min-height: 100svh; /* modern mobile safe viewport */
   display: flex;
   align-items: flex-end; /* move content to bottom */
-  justify-content: flex-start; /* keep content on the left */
+  justify-content: flex-end; /* keep content on the right */
   background-image: url('../images/responsibleai.png');
   background-size: cover;
   background-position: center;
@@ -54,9 +54,9 @@ body.home-page .md-content {
 .home-hero-content {
   position: relative;
   z-index: 2;
-  text-align: left;
+  text-align: right;
   color: white;
-  max-width: 900px;
+  max-width: 1350px;
   padding: 2rem;
   background: none; /* remove local black box */
   border-radius: 0;
@@ -68,12 +68,11 @@ body.home-page .md-content {
   margin-bottom: 0.5rem;
   line-height: 1.05;
   letter-spacing: 0.02em;
-  /* Soft brand gradient mixed ~70% white */
-  background: linear-gradient(90deg, #eac1e3 0%, #b3ecfb 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  /* No outline or shadows for a clean, soft look */
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.72);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.08em 0.18em;
   -webkit-text-stroke: 0 transparent;
   filter: none;
 }
@@ -91,19 +90,29 @@ body.home-page .md-content {
   line-height: 1.6;
 }
 
+.playbook-tagline {
+  display: block;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.72);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.08em 0.25em;
+  margin-left: auto;
+  white-space: nowrap;
+  width: fit-content;
+}
+
 .typed-wrapper {
-  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  display: inline;
+  font-size: inherit;
   font-weight: 600;
+  margin-right: 0.25em;
   opacity: 0.95;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* Static prompt symbol before the typed text */
 .typed-wrapper::before {
-  content: "> ";
-  color: #ffffff;
-  display: inline-block;
-  margin-right: 0.25rem;
+  content: none;
 }
 
 /* Subtle outside-only shadow for typed line */
@@ -264,6 +273,16 @@ body.home-page .md-typeset {
   max-width: 100%;
 }
 
+/* Restore normal reading width for content after the full-bleed hero. */
+body.home-page .md-content__inner > :not(.home-hero) {
+  box-sizing: border-box;
+  max-width: 61rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
 /* Do not hide global nav tabs anywhere */
 
 /* Responsive design */
@@ -274,6 +293,10 @@ body.home-page .md-typeset {
   
   .home-hero-content p {
     font-size: 1rem;
+  }
+
+  .playbook-tagline {
+    white-space: normal;
   }
   
   .key-areas-grid {
