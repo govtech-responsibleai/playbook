@@ -57,6 +57,12 @@ Agentic systems are often more prone to unsafe behaviors than their base models,
 
 See [agentic testing](testing/agentic_testing/agentic_testing.md) for details. 
 
+### Privacy Testing 🔒
+
+Privacy testing evaluates a system's ability to protect sensitive data throughout the AI lifecycle from the data used to train the model to the information handled during real-time inference. This ensures that sensitive data remains confidential and that the model does not inadvertently disclose protected information.
+
+See [privacy testing](testing/privacy_testing/privacy_testing.md) for details.
+
 ## Responsible AI Benchmark
 
 We have developed the Responsible AI Benchmark, a collection of **application-level safety, robustness and fairness tests** designed around real-world use cases. The benchmark serves as a rough guide for developers in filtering down a subset of appropriate models for their use case. However, it is still necessary for application developers to conduct their own testing before deployment. 
