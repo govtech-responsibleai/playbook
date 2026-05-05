@@ -43,6 +43,8 @@ As the old adage goes, "garbage in, garbage out". If unsafe or biased data is us
 
 In the Generative AI space, LLMs are typically pre-trained on massive amounts of text or image data from the Internet, which contain harmful, toxic and biased texts. Since LLMs autoregressively generate the next most probable token, the output depends on the joint distribution of tokens learned during training. If unsafe token sequences are learned, they will naturally be reproduced by the model, as ChatGPT did in its early days. For image generation models, there have been several studies finding that generated outputs of engineers, scientists, or lawyers disproportionately portray men over women, reflecting the unequal gender representation of those occupations in the training data.
 
+Furthermore, this massive scale of data collection introduces [severe privacy risks](https://arxiv.org/pdf/2506.17185). Given that the training of foundational models often rely on indiscriminate web scraping, the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymized prior to training, models can memorize and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
+
 ### Model
 
 In discriminative AI settings, the choice of modelling parameters can greatly impact their fairness. One key consideration is whether to include sensitive variables (i.e. variables about protected attributes like race or gender) in the model. On one hand, including these variables may result in bias against specific groups, such as ageist and sexist bias in online recruitment software. However, algorithmic bias has also been shown to persist even in models that deliberately exclude sensitive variables from the model, such as with recidivism prediction (i.e. COMPAS) or with delivery services (i.e. Amazon Prime).
@@ -51,9 +53,13 @@ In the generative AI space, significant research has been dedicated to aligning 
 
 Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness. 
 
+Alongside fairness and toxicity, the tendency of models to memorise training data often leads to the direct regurgitation of PII, Protected Health Information (PHI), or proprietary code from the training corpus. Furthermore, even when raw data is not explicitly exposed, attackers can exploit model weights and predictive probabilities. [Membership inference attacks](https://ieeexplore.ieee.org/document/9793586) can determine if specific records were used in training, while [model inversion attacks](https://rist.tech.cornell.edu/papers/mi-ccs.pdf) can reconstruct sensitive input features. 
+
 ### Application
 
-Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. To address this risk, input and output guardrails have emerged as viable defences. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer. 
+Finally, when an AI model is embedded into a software application, the way users interact with the application may also result in significant risks. For example, users may intentionally probe the application to exfiltrate sensitive data or elicit harmful outputs at scale. Even well-intentioned users pose a risk by inadvertently including Personally Identifiable Information (PII) in their prompts, which can lead to data leakage if the application logs or trains on user interactions. To address this risk, input and output guardrails have emerged as viable defences. Guardrails are typically known as black-box defences as they do not require access to the models and can be easily deployed in the application layer.
+
+For a deeper look at how privacy vulnerabilities emerge across the layers, see the chapter [Identifying Privacy Risks](https://go.gov.sg/identifying-privacy-risks-for-rai) in GovTech Data Practice's AI Privacy publication.
 
 ## Our Approach
 
@@ -80,7 +86,11 @@ Refer to the section on [testing](../testing.md) for details.
 
 ### Mitigation
 
-After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. 
+After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. 
+
+To address the privacy risks associated with data collection and model memorization, Privacy-Enhancing Technologies serve as a crucial line of defense. As a data-level mitigation, Synthetic Data Generation allows organizations to train downstream models without exposing actual PII by creating artificial datasets that mirror the statistical properties of real-world data. One can also apply Differential Privacy during model training to introduce mathematically calibrated noise, ensuring the model learns broad statistical patterns without memorizing individual, sensitive records. Frameworks like Federated Learning enable models to train on decentralized devices, keeping raw data localized and eliminating the risk of centralized data breaches. For more information, see the chapter [Mitigating Privacy Risks for RAI](https://go.gov.sg/mitigating-privacy-risks-for-rai) within GovTech Data Practice's AI Privacy publication. 
+
+On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts.
 
 Refer to the section on [guardrails](../guardrails.md) for details. 
 

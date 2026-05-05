@@ -107,6 +107,8 @@ nav:
           - Introduction: testing/robustness_testing/robustness_testing.md
       - Agentic AI:
           - Introduction: testing/agentic_testing/agentic_testing.md
+      - Privacy:
+          - Introduction: testing/privacy_testing/privacy_testing.md
       - Litmus: testing/litmus.md
   - Guardrails:
       - Introduction: guardrails.md

@@ -27,11 +27,11 @@ Generic moderation models may not be sufficiently localized for specific context
 
 ## 2. Personal Identifiable Information (PII)
 
-We do not want to pass PII to LLMs, especially when the LLM is accessed via an external managed service. 
+We do not want to pass direct identifiers (like names and emails) and indirect identifiers (like postal codes, date of birth, gender or job titles) to LLMs, especially when the LLM is accessed via an external managed service. While indirect identifiers do not point to a specific person on their own, the advanced capabilities of LLMs pose an [increasing risk](https://arxiv.org/pdf/2310.07298), as they can easily piece such fragments together with other data to infer sensitive personal attributes.
 
 To detect PII, we can use:
 
-- [Cloak](https://cloak.gov.sg) - GovTech's dedicated internal service for comprehensive and localised PII detection (e.g., names, addresses). Direct integration with Sentinel API is coming soon.
+- [Cloak](https://cloak.gov.sg) - GovTech's dedicated internal service for comprehensive and localised PII detection (e.g., names, addresses). Beyond the standard PII types, Cloak also offers LLM-enabled custom entity detection to protect custom, domain-specific or localised entities unique to your use case. Direct integration with Sentinel API is coming soon.
 - [Presidio](https://github.com/microsoft/presidio) - Open source tool that identifies various PII entities like names, phone numbers, addresses
 - Custom regex patterns for basic PII detection
 
