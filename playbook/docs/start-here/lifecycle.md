@@ -30,11 +30,11 @@ Measure whether the system works and where it fails.
 
 Evaluation includes:
 
-- [Accuracy and task-quality evals](../evaluating-risks/accuracy-task-quality.md)
-- [RAG and grounding evals](../evaluating-risks/rag-grounding.md)
-- [Performance evals](../evaluating-risks/performance.md)
-- [Safety evals](../evaluating-risks/safety-evals.md)
-- [Privacy and PII leakage evals](../evaluating-risks/privacy-pii.md)
+- [Accuracy and task-quality evals](../evaluating-risks/functional.md)
+- [RAG and grounding evals](../evaluating-risks/functional.md)
+- [Performance evals](../evaluating-risks/functional.md)
+- [Safety evals](../evaluating-risks/safety.md)
+- [Privacy and PII leakage evals](../evaluating-risks/privacy.md)
 - [Robustness evals](../evaluating-risks/robustness.md)
 - [Fairness evals](../evaluating-risks/fairness.md)
 

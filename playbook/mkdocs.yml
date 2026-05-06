@@ -102,18 +102,12 @@ nav:
       - Launch criteria and risk register: defining-risks/launch-criteria-risk-register.md
   - Evaluating Risks:
       - Overview: evaluating-risks/index.md
-      - Designing an evaluation plan: evaluating-risks/designing-evaluation-plan.md
-      - Accuracy and task-quality evals: evaluating-risks/accuracy-task-quality.md
-      - RAG and grounding evals: evaluating-risks/rag-grounding.md
-      - Performance evals: evaluating-risks/performance.md
-      - Safety evals: evaluating-risks/safety-evals.md
-      - Privacy and PII leakage evals: evaluating-risks/privacy-pii.md
+      - Functional evals: evaluating-risks/functional.md
+      - Safety evals: evaluating-risks/safety.md
       - Robustness evals: evaluating-risks/robustness.md
       - Fairness evals: evaluating-risks/fairness.md
-      - Human evaluation: evaluating-risks/human-evaluation.md
-      - LLM-as-judge evaluation: evaluating-risks/llm-as-judge.md
-      - Continuous evals and monitoring: evaluating-risks/continuous-evals.md
-      - Evaluation report template: evaluating-risks/evaluation-report-template.md
+      - Privacy evals: evaluating-risks/privacy.md
+      - Evaluation methods: evaluating-risks/methods.md
   - Mitigating Risks:
       - Overview: mitigating-risks/index.md
       - Guardrail architecture: mitigating-risks/guardrail-architecture.md

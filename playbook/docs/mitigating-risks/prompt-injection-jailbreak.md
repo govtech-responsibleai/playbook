@@ -18,4 +18,4 @@ Prompt injection and jailbreak attempts try to override system instructions, byp
 - Avoid placing secrets in prompts or retrievable context.
 - Test multi-turn attacks, not only single-turn jailbreaks.
 
-See [safety evals](../evaluating-risks/safety-evals.md) and [agentic safety controls](../agentic-ai/safety-controls.md) for related testing and control guidance.
+See [safety evals](../evaluating-risks/safety.md) and [agentic safety controls](../agentic-ai/safety-controls.md) for related testing and control guidance.

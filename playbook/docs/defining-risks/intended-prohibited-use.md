@@ -34,4 +34,4 @@ It must not [prohibited behaviors].
 When the request is outside scope, it should [refuse, redirect, ask for clarification, or escalate].
 ```
 
-Use this statement to scope [evaluation plans](../evaluating-risks/designing-evaluation-plan.md), [off-topic guardrails](../mitigating-risks/off-topic-scope.md), and [minimum launch checks](../start-here/minimum-bar-before-launch.md).
+Use this statement to scope [evaluation plans](../evaluating-risks/index.md), [off-topic guardrails](../mitigating-risks/off-topic-scope.md), and [minimum launch checks](../start-here/minimum-bar-before-launch.md).

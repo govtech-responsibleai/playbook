@@ -13,4 +13,4 @@ Grounding mitigations reduce unsupported answers and help systems abstain when t
 
 ## What to Measure
 
-Use [RAG and grounding evals](../evaluating-risks/rag-grounding.md) to measure faithfulness, citation correctness, and abstention. A grounding guardrail should improve those metrics without causing excessive over-refusal.
+Use [RAG and grounding evals](../evaluating-risks/functional.md) to measure faithfulness, citation correctness, and abstention. A grounding guardrail should improve those metrics without causing excessive over-refusal.

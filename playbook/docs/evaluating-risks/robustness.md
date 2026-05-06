@@ -11,10 +11,14 @@ Robustness evals check whether the application behaves consistently under realis
 - Distribution shift from development examples to real user behavior.
 - Adversarial perturbations where relevant.
 
-## Existing Material
-
-The existing [Robustness Testing](../testing/robustness_testing/robustness_testing.md) page focuses on out-of-context reliability for RAG applications and the `KnowOrNot` approach for testing whether applications abstain when the knowledge base does not contain the answer.
-
 ## Practical Advice
 
 Robustness evals should include both non-malicious variation and foreseeable misuse. For high-stakes applications, pay special attention to whether the system recognizes uncertainty and abstains appropriately.
+
+## Adversarial vs. Distributional Robustness
+
+*Coming soon — this section will cover the difference between adversarial robustness (deliberate perturbations) and distributional robustness (natural shift), and when each matters for an application.*
+
+## Out-of-Context Reliability
+
+*Coming soon — this section will cover the out-of-context reliability problem (the system answering confidently when the answer is outside its knowledge base) and the KnowOrNot approach for testing it.*
