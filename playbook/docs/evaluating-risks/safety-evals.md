@@ -23,4 +23,4 @@ For deeper Responsible AI safety material, see:
 - [Risk Taxonomy](../testing/safety_testing/taxonomy.md)
 - [GovTech's Benchmarks](../testing/safety_testing/govtech.md)
 
-For automated support, see [Litmus](../testing/litmus.md) and the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md).
+For automated support, see [Litmus](../tools/litmus.md) and the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md).

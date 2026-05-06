@@ -101,32 +101,32 @@ nav:
       - Risk categories: defining-risks/risk-categories.md
       - Launch criteria and risk register: defining-risks/launch-criteria-risk-register.md
   - Evaluating Risks:
-      - Overview: evaluation-testing/index.md
-      - Designing an evaluation plan: evaluation-testing/designing-evaluation-plan.md
-      - Accuracy and task-quality evals: evaluation-testing/accuracy-task-quality.md
-      - RAG and grounding evals: evaluation-testing/rag-grounding.md
-      - Performance evals: evaluation-testing/performance.md
-      - Safety evals: evaluation-testing/safety-evals.md
-      - Privacy and PII leakage evals: evaluation-testing/privacy-pii.md
-      - Robustness evals: evaluation-testing/robustness.md
-      - Fairness evals: evaluation-testing/fairness.md
-      - Human evaluation: evaluation-testing/human-evaluation.md
-      - LLM-as-judge evaluation: evaluation-testing/llm-as-judge.md
-      - Continuous evals and monitoring: evaluation-testing/continuous-evals.md
-      - Evaluation report template: evaluation-testing/evaluation-report-template.md
+      - Overview: evaluating-risks/index.md
+      - Designing an evaluation plan: evaluating-risks/designing-evaluation-plan.md
+      - Accuracy and task-quality evals: evaluating-risks/accuracy-task-quality.md
+      - RAG and grounding evals: evaluating-risks/rag-grounding.md
+      - Performance evals: evaluating-risks/performance.md
+      - Safety evals: evaluating-risks/safety-evals.md
+      - Privacy and PII leakage evals: evaluating-risks/privacy-pii.md
+      - Robustness evals: evaluating-risks/robustness.md
+      - Fairness evals: evaluating-risks/fairness.md
+      - Human evaluation: evaluating-risks/human-evaluation.md
+      - LLM-as-judge evaluation: evaluating-risks/llm-as-judge.md
+      - Continuous evals and monitoring: evaluating-risks/continuous-evals.md
+      - Evaluation report template: evaluating-risks/evaluation-report-template.md
   - Mitigating Risks:
-      - Overview: guardrails-mitigations/index.md
-      - Guardrail architecture: guardrails-mitigations/guardrail-architecture.md
-      - PII guardrails: guardrails-mitigations/pii-guardrails.md
-      - Content safety guardrails: guardrails-mitigations/content-safety.md
-      - Prompt injection and jailbreak guardrails: guardrails-mitigations/prompt-injection-jailbreak.md
-      - Hallucination and grounding guardrails: guardrails-mitigations/hallucination-grounding.md
-      - Off-topic and scope guardrails: guardrails-mitigations/off-topic-scope.md
-      - System-prompt leakage guardrails: guardrails-mitigations/system-prompt-leakage.md
-      - Threshold tuning: guardrails-mitigations/threshold-tuning.md
-      - Measuring guardrail impact: guardrails-mitigations/measuring-impact.md
-      - Building your own guardrail: guardrails-mitigations/building-your-own-guardrail.md
-      - Production integration: guardrails-mitigations/production-integration.md
+      - Overview: mitigating-risks/index.md
+      - Guardrail architecture: mitigating-risks/guardrail-architecture.md
+      - PII guardrails: mitigating-risks/pii-guardrails.md
+      - Content safety guardrails: mitigating-risks/content-safety.md
+      - Prompt injection and jailbreak guardrails: mitigating-risks/prompt-injection-jailbreak.md
+      - Hallucination and grounding guardrails: mitigating-risks/hallucination-grounding.md
+      - Off-topic and scope guardrails: mitigating-risks/off-topic-scope.md
+      - System-prompt leakage guardrails: mitigating-risks/system-prompt-leakage.md
+      - Threshold tuning: mitigating-risks/threshold-tuning.md
+      - Measuring guardrail impact: mitigating-risks/measuring-impact.md
+      - Building your own guardrail: mitigating-risks/building-your-own-guardrail.md
+      - Production integration: mitigating-risks/production-integration.md
   - Agentic AI:
       - What makes a system agentic?: agentic-ai/what-makes-agentic.md
       - Agentic risk model: agentic-ai/risk-model.md
@@ -138,8 +138,8 @@ nav:
       - Agentic system checklist: agentic-ai/checklist.md
   - Tools & Benchmarks:
       - Overview: tools/index.md
-      - Litmus: testing/litmus.md
-      - Sentinel: guardrails/sentinel.md
+      - Litmus: tools/litmus.md
+      - Sentinel: tools/sentinel.md
       - LionGuard: tools/lionguard.md
       - RabakBench: tools/rabakbench.md
       - MinorBench: tools/minorbench.md

@@ -24,7 +24,7 @@ Although the playbook is written with Singapore's public sector context in mind,
 
 If you are not sure where to start, use [Choose your path](../start-here/choose-your-path.md). If you are preparing a launch, start with the [Minimum bar before launch](../start-here/minimum-bar-before-launch.md).
 
-If you are designing tests, go to [Evaluation and Testing](../evaluation-testing/index.md). If you are reducing known risks, go to [Guardrails and Mitigations](../guardrails-mitigations/index.md). If you are building with planning, tools, memory, or autonomy, go to [Agentic AI Systems](../agentic-ai/what-makes-agentic.md).
+If you are designing tests, go to [Evaluation and Testing](../evaluating-risks/index.md). If you are reducing known risks, go to [Guardrails and Mitigations](../mitigating-risks/index.md). If you are building with planning, tools, memory, or autonomy, go to [Agentic AI Systems](../agentic-ai/what-makes-agentic.md).
 
 For deeper conceptual material, use [Deep Dives and Resources](../deep-dives/index.md). For implementation support, use [Tools, Benchmarks and Templates](../tools/index.md).
 

@@ -24,8 +24,8 @@ The Responsible AI Playbook helps technical teams understand and apply Responsib
 The playbook has been reorganized around a practitioner workflow:
 
 - [Defining Risks](defining-risks/index.md): scope intended use, prohibited use, application risk profiles, risk categories, and launch criteria.
-- [Evaluating Risks](evaluation-testing/index.md): design evaluation plans and test functional quality, safety, robustness, fairness, and privacy.
-- [Mitigating Risks](guardrails-mitigations/index.md): choose guardrails and other mitigations based on evaluated failure modes.
+- [Evaluating Risks](evaluating-risks/index.md): design evaluation plans and test functional quality, safety, robustness, fairness, and privacy.
+- [Mitigating Risks](mitigating-risks/index.md): choose guardrails and other mitigations based on evaluated failure modes.
 - [Agentic AI](agentic-ai/what-makes-agentic.md): identify agentic capabilities, evaluate tool use and planning, and apply safety controls.
 - [Tools & Benchmarks](tools/index.md): find GovTech tools, benchmarks, and reusable templates.
 

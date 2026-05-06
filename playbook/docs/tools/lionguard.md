@@ -10,6 +10,6 @@ LionGuard categories include hateful content, insults, sexual content, physical 
 
 For detailed model and category information, see:
 
-- [Sentinel: Available Guardrails](../guardrails/sentinel.md#available-guardrails)
+- [Sentinel: Available Guardrails](../tools/sentinel.md#available-guardrails)
 - [Guardrails developed by GovTech](../guardrails/govtech.md#lionguard)
 - [GovTech Hugging Face collection](https://huggingface.co/collections/govtech/lionguard-673838d03777e5ccb1b0ac2f)

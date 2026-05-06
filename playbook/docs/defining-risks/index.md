@@ -32,4 +32,4 @@ Start here if your team is still deciding what to test or what controls are need
 3. [Risk categories](risk-categories.md)
 4. [Launch criteria and risk register](launch-criteria-risk-register.md)
 
-Then move to [Evaluating Risks](../evaluation-testing/index.md) and [Mitigating Risks](../guardrails-mitigations/index.md).
+Then move to [Evaluating Risks](../evaluating-risks/index.md) and [Mitigating Risks](../mitigating-risks/index.md).

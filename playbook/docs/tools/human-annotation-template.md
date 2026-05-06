@@ -16,4 +16,4 @@ Define:
 - Whether reviewers should see model identity or system metadata.
 - How disagreements will be resolved.
 
-See [Human evaluation](../evaluation-testing/human-evaluation.md).
+See [Human evaluation](../evaluating-risks/human-evaluation.md).

@@ -22,4 +22,4 @@ Include examples with:
 
 ## Link to Mitigations
 
-Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../guardrails-mitigations/pii-guardrails.md), [system-prompt leakage guardrails](../guardrails-mitigations/system-prompt-leakage.md), and [production integration](../guardrails-mitigations/production-integration.md).
+Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../mitigating-risks/pii-guardrails.md), [system-prompt leakage guardrails](../mitigating-risks/system-prompt-leakage.md), and [production integration](../mitigating-risks/production-integration.md).

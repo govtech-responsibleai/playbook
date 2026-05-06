@@ -30,19 +30,19 @@ Measure whether the system works and where it fails.
 
 Evaluation includes:
 
-- [Accuracy and task-quality evals](../evaluation-testing/accuracy-task-quality.md)
-- [RAG and grounding evals](../evaluation-testing/rag-grounding.md)
-- [Performance evals](../evaluation-testing/performance.md)
-- [Safety evals](../evaluation-testing/safety-evals.md)
-- [Privacy and PII leakage evals](../evaluation-testing/privacy-pii.md)
-- [Robustness evals](../evaluation-testing/robustness.md)
-- [Fairness evals](../evaluation-testing/fairness.md)
+- [Accuracy and task-quality evals](../evaluating-risks/accuracy-task-quality.md)
+- [RAG and grounding evals](../evaluating-risks/rag-grounding.md)
+- [Performance evals](../evaluating-risks/performance.md)
+- [Safety evals](../evaluating-risks/safety-evals.md)
+- [Privacy and PII leakage evals](../evaluating-risks/privacy-pii.md)
+- [Robustness evals](../evaluating-risks/robustness.md)
+- [Fairness evals](../evaluating-risks/fairness.md)
 
 ## Mitigate
 
 Reduce risk based on evaluation findings.
 
-Mitigations include guardrails, UX design, retrieval constraints, access controls, prompt changes, tool permissioning, human escalation, logging, and rate limits. Start with [Guardrails and Mitigations](../guardrails-mitigations/index.md).
+Mitigations include guardrails, UX design, retrieval constraints, access controls, prompt changes, tool permissioning, human escalation, logging, and rate limits. Start with [Guardrails and Mitigations](../mitigating-risks/index.md).
 
 ## Govern and Apply
 

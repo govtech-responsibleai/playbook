@@ -22,4 +22,4 @@ PII guardrails detect, redact, block, warn, log, or escalate content that may co
 
 ## Testing
 
-Evaluate PII guardrails using [privacy and PII leakage evals](../evaluation-testing/privacy-pii.md). Include standard formats, free text, multilingual examples, copied documents, and adversarial requests to reveal personal data.
+Evaluate PII guardrails using [privacy and PII leakage evals](../evaluating-risks/privacy-pii.md). Include standard formats, free text, multilingual examples, copied documents, and adversarial requests to reveal personal data.

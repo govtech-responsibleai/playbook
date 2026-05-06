@@ -25,13 +25,13 @@ The following diagram shows how Sentinel enhances the safety and security of an 
 
 | Type | Description | Input | Output |
 | --- | --- | --- | --- |
-| [Toxicity/Content Moderation](diff_guardrails.md#1-toxicitycontent-moderation) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
-| [Jailbreak/Prompt Injection](diff_guardrails.md#3-jailbreakprompt-injection) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
-| [PII](diff_guardrails.md#2-personal-identifiable-information-pii) | Information that can identify an individual | ✓ | ✓ |
-| [Off-Topic](diff_guardrails.md#4-off-topic) | Content irrelevant to the application's purpose | ✓ | ✓ |
-| [System-Prompt Leakage](diff_guardrails.md#5-system-prompt-leakage) | Exposure of system prompts containing application information |  | ✓ |
-| [Hallucination](diff_guardrails.md#6-hallucination-and-factuality) | Content not factual or grounded in source material |  | ✓ |
-| [Relevance](diff_guardrails.md#7-relevance) | Responses not pertinent to user queries |  | ✓ |
+| [Toxicity/Content Moderation](../mitigating-risks/content-safety.md) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
+| [Jailbreak/Prompt Injection](../mitigating-risks/prompt-injection-jailbreak.md) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
+| [PII](../mitigating-risks/pii-guardrails.md) | Information that can identify an individual | ✓ | ✓ |
+| [Off-Topic](../mitigating-risks/off-topic-scope.md) | Content irrelevant to the application's purpose | ✓ | ✓ |
+| [System-Prompt Leakage](../mitigating-risks/system-prompt-leakage.md) | Exposure of system prompts containing application information |  | ✓ |
+| [Hallucination](../mitigating-risks/hallucination-grounding.md) | Content not factual or grounded in source material |  | ✓ |
+| [Relevance](../mitigating-risks/off-topic-scope.md) | Responses not pertinent to user queries |  | ✓ |
 
 *Note: The list is not meant to be exhaustive, more will be added on an ongoing basis.*
 

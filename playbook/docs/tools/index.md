@@ -8,8 +8,8 @@ Tools and templates are separated from conceptual methodology pages so readers c
 
 | Item | Use for |
 | --- | --- |
-| [Litmus](../testing/litmus.md) | Safety and security testing as a service |
-| [Sentinel](../guardrails/sentinel.md) | Input and output guardrails |
+| [Litmus](../tools/litmus.md) | Safety and security testing as a service |
+| [Sentinel](../tools/sentinel.md) | Input and output guardrails |
 | [LionGuard](lionguard.md) | Localized content moderation |
 | [RabakBench](rabakbench.md) | Multilingual safety benchmarking for Singapore context |
 | [MinorBench](minorbench.md) | Child-specific safety benchmarking |
