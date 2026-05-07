@@ -1,6 +1,6 @@
 # PII Guardrails
 
-PII guardrails detect, redact, block, warn, log, or escalate content that may contain personal data.
+PII guardrails detect, redact, block, warn, log, or escalate content that may contain personal data. The goal is to avoid passing PII to LLMs unnecessarily, especially when the LLM is accessed via an external managed service.
 
 ## Where PII Can Appear
 
@@ -9,6 +9,12 @@ PII guardrails detect, redact, block, warn, log, or escalate content that may co
 - Retrieved documents.
 - Tool arguments and tool results.
 - Logs, traces, analytics, and feedback forms.
+
+## Detection Tools
+
+- **[Cloak](https://cloak.gov.sg)** — GovTech's dedicated internal service for comprehensive and localised PII detection (names, addresses, etc.). Direct integration with the Sentinel API is coming soon.
+- **[Presidio](https://github.com/microsoft/presidio)** — open-source tool that identifies PII entities like names, phone numbers, addresses.
+- **Custom regex patterns** — for basic PII detection of structured formats.
 
 ## Possible Actions
 

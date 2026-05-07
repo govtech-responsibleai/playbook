@@ -76,13 +76,13 @@ Testing generally involves a process similar to this:
 
 While testing can technically be conducted at any point of the application life cycle, third party testing is typically done at the application level. 
 
-Refer to the section on [testing](../testing.md) for details. 
+Refer to the section on [evaluating risks](../evaluating-risks/index.md) for details. 
 
 ### Mitigation
 
 After testing is completed, mitigation measures can then be adopted, where applicable and appropriate. A common mitigation measure is finetuning or alignment, in which AI models are trained to output human-preferred responses, or aligned to human values, requiring access to model weights. On the other hand, mitigations at the application level in the form of guardrails are more general and can be widely applied to different contexts. 
 
-Refer to the section on [guardrails](../guardrails.md) for details. 
+Refer to the section on [mitigating risks](../mitigating-risks/index.md) for details. 
 
 ### Model Understanding
 

@@ -22,4 +22,4 @@ Consider a custom guardrail when:
 6. Tune thresholds against product risk.
 7. Monitor failures and refresh the dataset.
 
-For examples of GovTech-developed guardrails, see [LionGuard](../tools/lionguard.md) and [Guardrails developed by GovTech](../guardrails/govtech.md).
+For examples of GovTech-developed guardrails, see [LionGuard](../tools/lionguard.md), the [GovTech Off-Topic guardrail](off-topic-scope.md#govtechs-off-topic-guardrail), and the [system-prompt leakage guardrail](system-prompt-leakage.md#govtechs-system-prompt-leakage-guardrail).

@@ -1,15 +1,27 @@
 # LionGuard
 
-LionGuard is GovTech's localized content moderation guardrail for Singapore's linguistic and cultural context.
+LionGuard is GovTech's localized content moderation guardrail for Singapore's linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
 
-Use LionGuard when you need to detect harmful content in English, Singlish, Chinese, Malay, or partially Tamil contexts, especially where generic moderation systems may miss local nuance.
+![LionGuard](../images/lionguard.png)
 
-## What It Supports
+## Capabilities
+
+LionGuard 2 enhances moderation through:
+
+1. Support for English, Singlish, Chinese, Malay, and partial Tamil.
+2. Integration of our Whole-of-Government [risk taxonomy](../defining-risks/risk-categories.md), enabling fine-grained moderation with defined severity levels.
+3. Improved robustness against noisy and code-mixed inputs.
 
 LionGuard categories include hateful content, insults, sexual content, physical violence, self-harm, and other misconduct. Some categories include severity levels.
 
-For detailed model and category information, see:
+## Why It's Lightweight
 
-- [Sentinel: Available Guardrails](../tools/sentinel.md#available-guardrails)
-- [Guardrails developed by GovTech](../guardrails/govtech.md#lionguard)
+Lightweight deployment is central to LionGuard's design. LionGuard 2 uses pre-trained OpenAI embeddings combined with a multi-head ordinal classifier, significantly outperforming commercial and open-source systems across 17 localised and general benchmarks. It achieves these accuracy improvements using a training dataset 70% smaller than its predecessor, LionGuard 1, and can be fully retrained within two minutes on standard CPUs.
+
+## Access
+
+LionGuard 2 is open-sourced for self-hosting and accessible via the Sentinel API:
+
+- [Sentinel: Available Guardrails](sentinel.md#available-guardrails)
 - [GovTech Hugging Face collection](https://huggingface.co/collections/govtech/lionguard-673838d03777e5ccb1b0ac2f)
+- [Blog post](https://go.gov.sg/lionguard-2-blog) and [paper](https://arxiv.org/abs/2507.15339)

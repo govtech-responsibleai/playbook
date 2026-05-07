@@ -22,3 +22,13 @@ For each capability, identify:
 5. What readiness checks must pass before launch.
 
 This section should connect to ARC work by making the capability assessment explicit and actionable.
+
+## Agentic Risk and Capability Framework
+
+!!! note "Agentic Risk & Capability Framework"
+
+    The [Agentic Risk and Capability Framework](http://go.gov.sg/agentic-risk-capability) defines (i) baseline risks that apply to all agentic systems, and (ii) a hierarchical taxonomy of capability risks for specific capabilities a system may have. Each risk is then systematically tested and evaluated. The framework also maps each risk to a set of technical controls, with an example implementation.
+
+## Frontier-Model Risks
+
+*Coming soon — this section will cover frontier-model risks (deception, sandbagging, scheming) that are currently out of scope for most WOG systems but worth monitoring as model capabilities evolve.*

@@ -2,6 +2,10 @@
 
 Prompt injection and jailbreak attempts try to override system instructions, bypass safety constraints, reveal hidden context, or misuse tools.
 
+!!! warning "An evolving area"
+
+    Jailbreak techniques routinely evolve. Models trained on known jailbreak patterns may be susceptible to new variants. A guardrail model still helps catch *common* jailbreak attempts, but pair it with input validation and robust application design.
+
 ## What to Defend
 
 - System prompts and hidden instructions.
@@ -17,5 +21,22 @@ Prompt injection and jailbreak attempts try to override system instructions, byp
 - Limit tool permissions and require explicit approval for sensitive actions.
 - Avoid placing secrets in prompts or retrievable context.
 - Test multi-turn attacks, not only single-turn jailbreaks.
+
+## Detection Tools
+
+| Tool | Description |
+|---|---|
+| [PromptGuard](https://huggingface.co/meta-llama/Prompt-Guard-86M) | Lightweight 86M-parameter model specifically for detecting jailbreaks/prompt injections. Integrated into the Sentinel API. |
+| [Lakera](https://platform.lakera.ai/docs/api/guard) | API endpoint to detect prompt injections. The underlying model is not fully documented. |
+| [deberta-v3-base-injection](https://huggingface.co/deepset/deberta-v3-base-injection) | Model fine-tuned on jailbreaks/prompt injections. May be outdated. |
+| [ProtectAI / Rebuff](https://github.com/protectai/rebuff) | Multi-stage detection framework with a continually updated database of injections plus an LLM-based detector. May be expensive and slow. |
+| [Perplexity heuristics](https://docs.nvidia.com/nemo/guardrails/user-guides/guardrails-library.html#jailbreak-detection-heuristics) | Perplexity-based rules for detecting jailbreaking templates with adversarial prefixes/suffixes. |
+
+!!! tip "Input validation and sanitization"
+
+    Beyond a separate guardrail model, design the application to be robust against prompt injection:
+
+    - Use **structured inputs** instead of free-form text where possible.
+    - Use a **classifier for input validation** (e.g. for a free-text resume box, use an LLM to classify whether the input is a valid resume).
 
 See [safety evals](../evaluating-risks/safety.md) and [agentic safety controls](../agentic-ai/safety-controls.md) for related testing and control guidance.

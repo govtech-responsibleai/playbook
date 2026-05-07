@@ -9,4 +9,4 @@ Start with:
 - [Agentic evals](../agentic-ai/evals.md)
 - [Agentic safety controls](../agentic-ai/safety-controls.md)
 
-For earlier background, see [Agentic Testing](../testing/agentic_testing/agentic_testing.md).
+See also the [Agentic Risk and Capability Framework](http://go.gov.sg/agentic-risk-capability) referenced in the [agentic risk model](../agentic-ai/risk-model.md).

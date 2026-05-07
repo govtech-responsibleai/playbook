@@ -33,6 +33,21 @@ Track agreement between reviewers. When using LLM judges, compare them against h
 
 See the [Human annotation template](../tools/human-annotation-template.md).
 
+### Alternative Annotator Test (Alt-Test)
+
+The Alt-Test is one way to robustly validate an LLM-as-judge. It reframes the goal from "Is the model correct?" to "To what extent do LLMs concur with human annotations?"
+
+It is a **leave-one-annotator-out** hypothesis test that measures whether an LLM judge agrees with the remaining human consensus **at least as well as** the left-out human does.
+
+This is an improvement over traditional metrics: agreement measures (Cohen's kappa, Krippendorff) only assess agreement among annotators, and performance metrics (Accuracy, F1) only evaluate whether the LLM matches human performance. The Alt-Test:
+
+- Is actionable: a high *winning rate* provides statistical evidence that the model can stand in for human annotators, and the *advantage probability* lets you compare models.
+- Captures the variability among humans themselves, accounting for the fact that humans disagree with each other.
+
+!!! note "The Test in Action"
+
+    A hands-on implementation and extension of the Alt-Test is in this [blog post](https://medium.com/dsaid-govtech/validating-annotation-agreement-between-humans-and-llms-bc334245b1d9). For more details, see the [original Alt-Test paper](https://arxiv.org/abs/2501.10970).
+
 ## LLM-as-Judge
 
 LLM-as-judge methods use a language model to evaluate outputs against a rubric, reference answer, or preference criteria.
