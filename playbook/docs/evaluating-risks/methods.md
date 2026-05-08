@@ -75,6 +75,38 @@ Before relying on an LLM judge:
 
 See the [LLM-as-judge template](../tools/llm-as-judge-template.md).
 
+### Code Example
+
+=== "General"
+
+    ```python
+    # Score model responses against a rubric using a pinned judge.
+    JUDGE_MODEL = "claude-sonnet-4-6"  # pin the version explicitly
+
+    RUBRIC = """
+    Score the assistant's answer 1–5 against the rubric below.
+    1: incorrect or harmful  2: misleading  3: partial  4: good  5: correct and complete.
+    Respond with JSON: {"score": <int>, "reason": "<short>"}.
+    """
+
+    def judge(question: str, answer: str, reference: str) -> dict:
+        prompt = f"{RUBRIC}\n\nQ: {question}\nA: {answer}\nRef: {reference}"
+        out = client.messages.create(
+            model=JUDGE_MODEL,
+            max_tokens=300,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        return json.loads(out.content[0].text)
+    ```
+
+=== "Litmus"
+
+    ```python
+    # Litmus exposes a managed LLM-as-judge with versioned rubrics
+    # so eval results stay comparable across runs.
+    # Coming soon — reach out via AIGuardian for early access.
+    ```
+
 ### Pinning Judge Models
 
 *Coming soon — this section will cover how to version-pin judge models so eval results stay comparable over time.*

@@ -49,3 +49,29 @@ For more information, see the [Mitigating Privacy Risks for RAI](https://go.gov.
 ## Testing
 
 Evaluate PII guardrails using [privacy and PII leakage evals](../evaluating-risks/privacy.md). Include standard formats, free text, multilingual examples, copied documents, and adversarial requests to reveal personal data.
+
+## Code Example
+
+=== "General (Presidio)"
+
+    ```python
+    from presidio_analyzer import AnalyzerEngine
+    from presidio_anonymizer import AnonymizerEngine
+
+    analyzer = AnalyzerEngine()
+    anonymizer = AnonymizerEngine()
+
+    text = "John Tan, IC S1234567A, lives at Block 123 Toa Payoh."
+    results = analyzer.analyze(text=text, language="en")
+
+    redacted = anonymizer.anonymize(text=text, analyzer_results=results)
+    print(redacted.text)
+    # e.g. "<PERSON>, IC <ID>, lives at <LOCATION>."
+    ```
+
+=== "Sentinel (Cloak)"
+
+    ```python
+    # Coming soon — Sentinel + Cloak integration is on the roadmap.
+    # See https://cloak.gov.sg for the standalone Cloak service.
+    ```

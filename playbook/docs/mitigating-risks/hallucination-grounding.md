@@ -61,3 +61,36 @@ Factuality refers to accuracy with respect to *world knowledge* (Wikipedia, Goog
 ## What to Measure
 
 Use [RAG and grounding evals](../evaluating-risks/functional.md) to measure faithfulness, citation correctness, and abstention. A grounding guardrail should improve those metrics without causing excessive over-refusal.
+
+## Code Example
+
+=== "General (RAGAS faithfulness)"
+
+    ```python
+    # Score whether the answer is supported by the retrieved context.
+    from ragas import evaluate
+    from ragas.metrics import faithfulness
+    from datasets import Dataset
+
+    ds = Dataset.from_dict({
+        "question": [user_question],
+        "answer": [model_answer],
+        "contexts": [retrieved_chunks],
+    })
+    result = evaluate(ds, metrics=[faithfulness])
+    print(result["faithfulness"])  # 0.0–1.0
+    ```
+
+=== "Sentinel"
+
+    ```python
+    # Hallucination guardrail is on the Sentinel roadmap (govtech/hallucination,
+    # status: Planned). Pair Sentinel input/output guardrails with a
+    # grounding eval (RAGAS, TruLens, AWS Bedrock Contextual Grounding)
+    # at inference time until the dedicated guardrail ships.
+    payload = json.dumps({
+        "text": model_answer,
+        "guardrails": {"govtech/hallucination": {"context": retrieved_chunks}},
+    })
+    response = requests.post(SENTINEL_BASE_URL, headers=HEADERS, data=payload)
+    ```

@@ -33,3 +33,32 @@ For v1 we trained a bi-encoder classifier on top of `jina-embeddings-v2-small-en
 - Refuse unsupported topics politely.
 - Ask a clarifying question when scope is ambiguous.
 - Escalate repeated or suspicious attempts.
+
+## Code Example
+
+=== "General (cosine similarity)"
+
+    ```python
+    # Lightweight off-topic check: embed system prompt and user prompt,
+    # flag if cosine similarity falls below a threshold.
+    from sentence_transformers import SentenceTransformer, util
+
+    model = SentenceTransformer("jinaai/jina-embeddings-v2-small-en")
+
+    def is_off_topic(system_prompt: str, user_prompt: str, threshold: float = 0.35) -> bool:
+        s, u = model.encode([system_prompt, user_prompt])
+        return float(util.cos_sim(s, u)) < threshold
+    ```
+
+=== "Sentinel"
+
+    ```python
+    payload = json.dumps({
+        "text": user_input,
+        "messages": [{"role": "system", "content": SYSTEM}],
+        "guardrails": {"off-topic": {"system_prompt": SYSTEM}},
+    })
+    response = requests.post(SENTINEL_BASE_URL, headers=HEADERS, data=payload)
+    if response.json()["results"]["off-topic"]["score"] > 0.7:
+        return "I can only help with O-Level Maths questions."
+    ```

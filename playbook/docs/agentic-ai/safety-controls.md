@@ -16,3 +16,52 @@ Agentic systems need controls that limit what they can do, not only what they ca
 ## Design Principle
 
 Do not rely on prompting alone for high-impact controls. Use system-level permissions, validation, and workflow design wherever possible.
+
+## Sandboxing Patterns
+
+*Coming soon — this section will cover sandboxing patterns for tool execution (containerised runners, ephemeral file systems, network egress restrictions) and when each is appropriate.*
+
+## Mid-loop Human Review (HITL) Architectures
+
+*Coming soon — this section will cover architectures that interrupt the agent loop for human approval, including step-by-step approval, batched checkpoint review, and exception-only escalation.*
+
+## Approval-gate UX
+
+*Coming soon — this section will cover how to present approval gates to users and operators — what context to show, how to make denials safe, and how to avoid approval-fatigue rubber-stamping.*
+
+## Code Example
+
+=== "General (allowlist + approval wrapper)"
+
+    ```python
+    # A minimal wrapper that enforces an allowlist and routes
+    # high-impact actions through a human approval callback.
+    ALLOWED_TOOLS = {"search_kb", "draft_reply"}
+    HIGH_IMPACT = {"send_email", "issue_refund"}
+
+    def safe_dispatch(tool_name, tool_args, request_approval):
+        if tool_name not in ALLOWED_TOOLS and tool_name not in HIGH_IMPACT:
+            raise PermissionError(f"Tool {tool_name!r} not permitted.")
+        if tool_name in HIGH_IMPACT:
+            decision = request_approval(tool_name, tool_args)
+            if not decision.approved:
+                return {"status": "denied", "reason": decision.reason}
+        return TOOLS[tool_name](**tool_args)
+    ```
+
+=== "Sentinel"
+
+    ```python
+    # Pair the wrapper above with Sentinel input/output guardrails on
+    # the tool arguments and outputs to catch prompt injection and PII
+    # leakage that the allowlist alone cannot.
+    def safe_dispatch_with_sentinel(tool_name, tool_args, request_approval):
+        # Pre-flight: scan tool args for PII / prompt-injection attempts.
+        check = requests.post(SENTINEL_BASE_URL, headers=HEADERS, data=json.dumps({
+            "text": json.dumps(tool_args),
+            "guardrails": {"aws": {}, "system-prompt-leakage": {"system_prompt": SYSTEM}},
+        })).json()["results"]
+        if check["aws/prompt_attack"]["score"] > 0.5:
+            return {"status": "blocked", "reason": "Prompt injection detected in tool args."}
+        return safe_dispatch(tool_name, tool_args, request_approval)
+    ```
