@@ -11,6 +11,14 @@ hide:
   </div>
 </div>
 
+!!! info "What's changed in this release"
+
+    This page has been updated for the upcoming Responsible AI Playbook release. It now points readers to the new **Define → Evaluate → Mitigate** workflow plus a dedicated **Agentic AI** track, replacing the previous Testing / Guardrails / Understanding split. Summary of changes:
+
+    - Reorganised the "What's New" callout around the new top-level sections (Defining Risks, Evaluating Risks, Mitigating Risks, Agentic AI, Tools & Benchmarks).
+    - Added a "Choose your path" entry for readers unsure where to start.
+    - Updated project credits to include LionGuard 2, Kaleidoscope, the Agentic Risk & Capability Framework, MinorBench, and SEA-LION v2.1 SECURE.
+
 ## About This Playbook
 
 The Responsible AI Playbook helps technical teams understand and apply Responsible AI through practical evaluation and safety work. We break this down into three main tasks:

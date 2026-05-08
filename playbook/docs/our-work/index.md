@@ -5,6 +5,10 @@ hide:
   - toc
 ---
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a portfolio showcase of key projects and publications from the GovTech Responsible AI team. All content is new.
+
 Explore key projects and publications from our portfolio.
 
 <style>

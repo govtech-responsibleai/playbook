@@ -1,5 +1,9 @@
 # Agentic Risk Assessment Template
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a reusable template for mapping agentic capabilities to risks, evals, and required controls. All content is new.
+
 Use this template to map capabilities to risks, evals, and controls.
 
 | Capability | Enabled? | Risk introduced | Required eval | Required control | Status |

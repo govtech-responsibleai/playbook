@@ -1,5 +1,9 @@
 # Hallucination and Grounding Guardrails
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers mitigation patterns, reference-based grounding tools, reference-free hallucination detection, factuality verification, and a General/Sentinel code example. Unhighlighted sections are migrated from the previously published [Different Types of Guardrails: Hallucination and Factuality](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#6-hallucination-and-factuality) page; new prose and the code example are highlighted.
+
 Grounding mitigations reduce unsupported answers and help systems abstain when they lack enough evidence. Ensuring LLM outputs are grounded in facts and the provided context improves reliability.
 
 ## Mitigation Patterns

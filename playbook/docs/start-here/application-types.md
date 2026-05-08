@@ -1,5 +1,9 @@
 # Common AI Application Types
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It maps common application types (chatbots, RAG assistants, classifiers, agents) to the relevant parts of the playbook. All content is new.
+
 Different application types need different evals and mitigations. Use this page to map your system to the most relevant parts of the playbook.
 
 | Application type | Typical concerns | Useful starting points |

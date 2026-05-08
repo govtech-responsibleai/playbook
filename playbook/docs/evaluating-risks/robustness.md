@@ -1,5 +1,9 @@
 # Robustness Evals
 
+!!! info "About this page"
+
+    This page is new at this URL in the upcoming Responsible AI Playbook release. It covers robustness evaluation as non-malicious failure handling, including out-of-context reliability and KnowOrNot. Unhighlighted sections are migrated from the previously published [Robustness Testing](https://playbooks.aip.gov.sg/responsibleai/testing/robustness_testing/robustness_testing/) page; new prose is highlighted.
+
 Robustness evals check whether the application behaves consistently under realistic variation, ambiguity, and unexpected inputs. We treat robustness as **non-malicious failure modes** — whether applications handle real-world variability gracefully — rather than as resistance to deliberate attacks.
 
 ## What to Test
@@ -17,7 +21,7 @@ Robustness evals should include both non-malicious variation and foreseeable mis
 
 ## Adversarial vs. Distributional Robustness
 
-*Coming soon — this section will cover the difference between adversarial robustness (deliberate perturbations) and distributional robustness (natural shift), and when each matters for an application.*
+<mark class="new-since-v1">*Coming soon — this section will cover the difference between adversarial robustness (deliberate perturbations) and distributional robustness (natural shift), and when each matters for an application.*</mark>
 
 ## Out-of-Context Reliability
 

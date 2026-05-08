@@ -1,5 +1,9 @@
 # Capability Assessment
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It walks through assessment questions for agentic capabilities and the capability → risk → eval → control mapping that follows. All content is new.
+
 Capability assessment identifies what an agentic system can do and which risks follow from those capabilities.
 
 ## Assessment Questions

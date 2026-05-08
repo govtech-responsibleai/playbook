@@ -1,5 +1,13 @@
 # Papers and External Tools
 
+!!! info "What's changed in this release"
+
+    This page has been updated for the upcoming Responsible AI Playbook release. It now serves as a curated reading list across surveys, benchmarks, testing/red-teaming, guardrails, alignment, interpretability, agentic safety, and practitioner blogs. Summary of changes:
+
+    - Added an **Agentic Safety** section (Progent, prompt-injection design patterns).
+    - Refreshed Alignment, Interpretability, and Testing/Red-teaming entries with recent (2024–2025) work.
+    - Added new practitioner blogs and OpenAI's agentic-AI governance paper.
+
 This page collects influential papers, benchmarks, methods, repositories, and guides for deeper Responsible AI and AI safety work.
 
 ## Surveys

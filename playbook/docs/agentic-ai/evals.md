@@ -1,5 +1,9 @@
 # Agentic Evals
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers how to evaluate agentic systems through end-to-end task scenarios, with placeholder sections for upcoming work on tool-call attack surface, memory and state evals, and multi-agent / delegated-task evals. All content is new.
+
 Agentic evals check whether a system can complete tasks safely and reliably across multiple steps.
 
 ## What to Evaluate
@@ -23,19 +27,19 @@ For risk framing, see the [Agentic risk model](risk-model.md), which references 
 
 ## End-to-end Task Scenarios
 
-*Coming soon — this section will cover how to design realistic multi-step task scenarios that test goal completion, checkpoint adherence, and failure recovery.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to design realistic multi-step task scenarios that test goal completion, checkpoint adherence, and failure recovery.*</mark>
 
 ## Tool-call Attack Surface
 
-*Coming soon — this section will cover how to test tool-argument injection (shell, SQL, SSRF via tool args), permission-boundary violations, and credential exposure through tools.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to test tool-argument injection (shell, SQL, SSRF via tool args), permission-boundary violations, and credential exposure through tools.*</mark>
 
 ## Memory and State Evals
 
-*Coming soon — this section will cover how to test agent memory and state for leakage, contamination across sessions, and context-window manipulation.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to test agent memory and state for leakage, contamination across sessions, and context-window manipulation.*</mark>
 
 ## Multi-agent and Delegated-task Evals
 
-*Coming soon — this section will cover how to evaluate multi-agent systems and delegated subtasks, where one agent invokes another or instructions cross trust boundaries.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to evaluate multi-agent systems and delegated subtasks, where one agent invokes another or instructions cross trust boundaries.*</mark>
 
 ## Code Example
 

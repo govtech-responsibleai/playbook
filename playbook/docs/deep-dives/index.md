@@ -1,5 +1,9 @@
 # Deep Dives and Resources
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Resources section — short conceptual primers that point back at the action-oriented sections. All content is new.
+
 This section contains conceptual background, deeper Responsible AI material, and external references.
 
 Use the action-oriented sections first when you are trying to launch or evaluate a system:

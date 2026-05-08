@@ -1,5 +1,9 @@
 # Off-Topic and Scope Guardrails
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers off-topic detection approaches, the GovTech off-topic guardrail, and a General/Sentinel code example. Unhighlighted sections are migrated from the previously published [Guardrails developed by GovTech: Off-Topic](https://playbooks.aip.gov.sg/responsibleai/guardrails/govtech/#off-topic) and [Different Types of Guardrails: Off-Topic](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#4-off-topic) pages; new prose and the code example are highlighted.
+
 Off-topic guardrails keep applications within their intended purpose. Beyond filtering harmful content, detecting and filtering irrelevant queries helps maintain application focus.
 
 ![Off-topic](../images/off_topic.png)

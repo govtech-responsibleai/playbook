@@ -1,10 +1,14 @@
 # Agentic Safety
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a short Agentic Safety primer that points readers at the canonical Agentic AI section. All content is new.
+
 Agentic safety focuses on risks introduced by planning, tool use, memory, autonomy, delegation, and external actions.
 
 ## Why Agentic Safety Differs from Text-only Safety
 
-*Coming soon — this section will cover what changes when an LLM gains the ability to take actions: the failure surface expands from "what the model says" to "what the model does, with what permissions, against what systems." It will explain why traditional content-safety guardrails are necessary but not sufficient, and why testing, controls, and monitoring all need agent-aware variants.*
+<mark class="new-since-v1">*Coming soon — this section will cover what changes when an LLM gains the ability to take actions: the failure surface expands from "what the model says" to "what the model does, with what permissions, against what systems." It will explain why traditional content-safety guardrails are necessary but not sufficient, and why testing, controls, and monitoring all need agent-aware variants.*</mark>
 
 ## Where to Start
 

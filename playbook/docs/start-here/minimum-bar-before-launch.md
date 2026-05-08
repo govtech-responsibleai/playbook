@@ -1,5 +1,9 @@
 # Minimum Bar Before Launch
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It defines the minimum technical evidence a team should have before treating an AI application as launch-ready. All content is new.
+
 The near-term minimum bar is intentionally simple: before launch, teams should complete **functional testing** and **safety testing** that is appropriate to the application's context and users.
 
 This is not a full governance approval framework. It is the minimum technical evidence a team should have before treating an AI application as launch-ready.

@@ -1,5 +1,9 @@
 # Measuring Guardrail Impact
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers metrics, evaluation design, and failure-review patterns for evaluating guardrails as application components. All content is new.
+
 A guardrail should be evaluated like any other model or system component. The goal is not only to catch risks, but to improve the overall user journey.
 
 ## Metrics

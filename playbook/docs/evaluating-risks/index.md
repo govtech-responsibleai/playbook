@@ -1,5 +1,9 @@
 # Evaluating Risks
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Evaluating Risks section: when and why to evaluate, how to design an evaluation plan, and where to find each evaluation area. All content is new.
+
 Evaluation is the process of defining what good behavior means, creating representative tests, measuring system performance, and analyzing failures. For AI applications, this includes both functional quality and Responsible AI risks.
 
 !!! success "Key message"
@@ -69,4 +73,4 @@ Do not stop at headline scores. Group failures by root cause, severity, affected
 
 ## Eval Ownership and Review Cadence
 
-*Coming soon — this section will cover who runs evals, how often, and how results feed back into the application lifecycle.*
+<mark class="new-since-v1">*Coming soon — this section will cover who runs evals, how often, and how results feed back into the application lifecycle.*</mark>

@@ -1,5 +1,9 @@
 # Agentic Safety Controls
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers core controls (least privilege, allowlists, approval gates, sandboxing, kill switches), placeholder sections for sandboxing patterns / HITL architectures / approval-gate UX, and a General/Sentinel allowlist+approval code example. All content is new.
+
 Agentic systems need controls that limit what they can do, not only what they can say.
 
 ## Core Controls
@@ -19,15 +23,15 @@ Do not rely on prompting alone for high-impact controls. Use system-level permis
 
 ## Sandboxing Patterns
 
-*Coming soon — this section will cover sandboxing patterns for tool execution (containerised runners, ephemeral file systems, network egress restrictions) and when each is appropriate.*
+<mark class="new-since-v1">*Coming soon — this section will cover sandboxing patterns for tool execution (containerised runners, ephemeral file systems, network egress restrictions) and when each is appropriate.*</mark>
 
 ## Mid-loop Human Review (HITL) Architectures
 
-*Coming soon — this section will cover architectures that interrupt the agent loop for human approval, including step-by-step approval, batched checkpoint review, and exception-only escalation.*
+<mark class="new-since-v1">*Coming soon — this section will cover architectures that interrupt the agent loop for human approval, including step-by-step approval, batched checkpoint review, and exception-only escalation.*</mark>
 
 ## Approval-gate UX
 
-*Coming soon — this section will cover how to present approval gates to users and operators — what context to show, how to make denials safe, and how to avoid approval-fatigue rubber-stamping.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to present approval gates to users and operators — what context to show, how to make denials safe, and how to avoid approval-fatigue rubber-stamping.*</mark>
 
 ## Code Example
 

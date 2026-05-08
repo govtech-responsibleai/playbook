@@ -1,5 +1,9 @@
 # Tool-Use and Planning Evals
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It enumerates tool-use and planning checks, scenario-design patterns, and placeholder sections for tool argument-injection tests and permission-boundary scenarios. All content is new.
+
 Tool-use and planning evals check whether an agent chooses appropriate actions and executes them safely.
 
 ## Tool-Use Checks
@@ -24,8 +28,8 @@ Create scenarios with normal tasks, ambiguous tasks, malicious instructions, par
 
 ## Tool Argument-Injection Tests
 
-*Coming soon — this section will cover specific argument-injection test patterns: shell injection via filename arguments, SQL injection in query parameters, SSRF via URL arguments, path traversal via path arguments, and how to detect each in a scenario harness.*
+<mark class="new-since-v1">*Coming soon — this section will cover specific argument-injection test patterns: shell injection via filename arguments, SQL injection in query parameters, SSRF via URL arguments, path traversal via path arguments, and how to detect each in a scenario harness.*</mark>
 
 ## Permission-Boundary Scenarios
 
-*Coming soon — this section will cover scenarios that probe permission edges: cross-tenant access attempts, requests for tools not in the allowlist, attempts to invoke high-impact tools without approval, and validation that least-privilege defaults hold under adversarial input.*
+<mark class="new-since-v1">*Coming soon — this section will cover scenarios that probe permission edges: cross-tenant access attempts, requests for tools not in the allowlist, attempts to invoke high-impact tools without approval, and validation that least-privilege defaults hold under adversarial input.*</mark>

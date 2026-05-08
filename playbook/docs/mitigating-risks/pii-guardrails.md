@@ -1,5 +1,9 @@
 # PII Guardrails
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers where PII appears, detection tools, possible actions, privacy-enhancing technologies, and a General/Sentinel code example. Unhighlighted sections are migrated from [Different Types of Guardrails: PII](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#2-personal-identifiable-information-pii). Teal-highlighted sections were contributed via the [`feat/privacy-additions`](https://github.com/govtech-responsibleai/playbook/tree/feat/privacy-additions) branch.
+
 PII guardrails detect, redact, block, warn, log, or escalate content that may contain personal data. The goal is to avoid passing PII to LLMs unnecessarily, especially when the LLM is accessed via an external managed service.
 
 <div class="privacy-additions" markdown>

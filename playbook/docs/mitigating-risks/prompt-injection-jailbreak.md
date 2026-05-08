@@ -1,5 +1,9 @@
 # Prompt Injection and Jailbreak Guardrails
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers what to defend, mitigation patterns, detection tools, and a General/Sentinel code example. Unhighlighted sections are migrated from the previously published [Different Types of Guardrails: Jailbreak / Prompt Injection](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#3-jailbreakprompt-injection) page; new prose and the code example are highlighted.
+
 Prompt injection and jailbreak attempts try to override system instructions, bypass safety constraints, reveal hidden context, or misuse tools.
 
 !!! warning "An evolving area"

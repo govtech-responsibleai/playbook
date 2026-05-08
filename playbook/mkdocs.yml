@@ -146,7 +146,6 @@ nav:
       - Agentic risk assessment template: tools/agentic-risk-assessment-template.md
   - Resources:
       - Overview: deep-dives/index.md
-      - Responsible AI concepts: getting-started/responsibleai.md
       - Safety: deep-dives/safety.md
       - Fairness: deep-dives/fairness.md
       - Robustness: deep-dives/robustness.md

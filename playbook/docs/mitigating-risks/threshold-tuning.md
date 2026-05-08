@@ -1,5 +1,9 @@
 # Threshold Tuning
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers how to tune guardrail thresholds against product risk and user-journey impact. All content is new.
+
 Many guardrails return scores rather than simple yes/no decisions. Threshold tuning decides when the application should block, warn, log, or escalate.
 
 ## Tune Against the Product Risk

@@ -1,5 +1,9 @@
 # Evaluation Methods
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It collects the cross-cutting evaluation methods (human evaluation, LLM-as-judge with Alt-Test, continuous evals) used across all five area pages. All content is new.
+
 These methods are used across all five evaluation areas (functional, safety, robustness, fairness, privacy). They are not areas in themselves — they are how you score outputs and keep evaluations running.
 
 ## Human Evaluation
@@ -109,11 +113,11 @@ See the [LLM-as-judge template](../tools/llm-as-judge-template.md).
 
 ### Pinning Judge Models
 
-*Coming soon — this section will cover how to version-pin judge models so eval results stay comparable over time.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to version-pin judge models so eval results stay comparable over time.*</mark>
 
 ### Judge Drift and Re-validation
 
-*Coming soon — this section will cover how to detect when an LLM judge's behavior has drifted, and the cadence for re-validating against human annotations.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to detect when an LLM judge's behavior has drifted, and the cadence for re-validating against human annotations.*</mark>
 
 ## Continuous Evals and Monitoring
 
@@ -147,8 +151,8 @@ Start with a small, high-signal regression suite. Expand only when failures show
 
 ### Regression Baselines and Alert Thresholds
 
-*Coming soon — this section will cover how to set regression baselines and what change triggers a real alert vs. routine variation.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to set regression baselines and what change triggers a real alert vs. routine variation.*</mark>
 
 ### Model-version Migration Evals
 
-*Coming soon — this section will cover how to run a comparison eval when migrating between model versions so behavior changes are caught before they reach users.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to run a comparison eval when migrating between model versions so behavior changes are caught before they reach users.*</mark>

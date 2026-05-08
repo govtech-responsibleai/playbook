@@ -1,5 +1,9 @@
 # Agentic Risk Model
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It maps agentic risk sources to controls and inlines the GovTech Agentic Risk and Capability Framework reference. The framework reference itself is migrated from the previously published [Agentic Testing](https://playbooks.aip.gov.sg/responsibleai/testing/agentic_testing/agentic_testing/) page; the rest is new.
+
 Agentic risk comes from the combination of model behavior, system design, tools, permissions, and operating context.
 
 ## Risk Sources
@@ -31,4 +35,4 @@ This section should connect to ARC work by making the capability assessment expl
 
 ## Frontier-Model Risks
 
-*Coming soon — this section will cover frontier-model risks (deception, sandbagging, scheming) that are currently out of scope for most WOG systems but worth monitoring as model capabilities evolve.*
+<mark class="new-since-v1">*Coming soon — this section will cover frontier-model risks (deception, sandbagging, scheming) that are currently out of scope for most WOG systems but worth monitoring as model capabilities evolve.*</mark>

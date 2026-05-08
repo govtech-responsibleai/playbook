@@ -1,5 +1,9 @@
 # Safety Evals
 
+!!! info "About this page"
+
+    This page is new at this URL in the upcoming Responsible AI Playbook release. It covers safety evaluation: defining what to test, measuring Attack Success Rate, refusal taxonomies, benchmark-leakage handling, and tooling. Unhighlighted sections are migrated from the previously published [Safety Testing](https://playbooks.aip.gov.sg/responsibleai/testing/safety_testing/safety_testing/) page; new prose and code examples are highlighted.
+
 Safety evals check whether the system avoids harmful, prohibited, adversarial, or otherwise unacceptable behavior.
 
 Safety testing is the process of assessing an LLM product (via API) using prompts designed to elicit unsafe responses, in order to provide a rough empirical assessment of how resistant the LLM product is to common safety attacks. Note the distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features) — our safety testing is focused on **LLM products**.
@@ -34,7 +38,7 @@ The most common way to measure how "safe" an LLM product is to measure how frequ
 
 ## Adversarial / Red-team Prompt Generation
 
-*Coming soon — this section will cover how to generate adversarial prompts beyond off-the-shelf benchmarks, including LLM-assisted prompt mutation and team-led red-team exercises.*
+<mark class="new-since-v1">*Coming soon — this section will cover how to generate adversarial prompts beyond off-the-shelf benchmarks, including LLM-assisted prompt mutation and team-led red-team exercises.*</mark>
 
 ### Building Your Testing Dataset
 
@@ -97,13 +101,13 @@ If the LLM application does not refuse to answer, analyse the content of the res
 
 ## Benchmark-Leakage Handling
 
-*Coming soon — this section will cover concrete strategies for detecting benchmark leakage and rotating proprietary prompts to keep evals meaningful as models evolve.*
+<mark class="new-since-v1">*Coming soon — this section will cover concrete strategies for detecting benchmark leakage and rotating proprietary prompts to keep evals meaningful as models evolve.*</mark>
 
 ## Evaluator-LLM Validation
 
 When using an LLM to score safety eval outputs, validate it against human reviewers. See [Evaluation methods](methods.md) for the general approach including the Alternative Annotator Test.
 
-*Coming soon — extend with safety-specific validation patterns.*
+<mark class="new-since-v1">*Coming soon — extend with safety-specific validation patterns.*</mark>
 
 ## Safety-Testing Tools
 

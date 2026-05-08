@@ -1,5 +1,9 @@
 # MinorBench
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is the dedicated tool page for MinorBench, replacing the earlier section in the GovTech Benchmarks page. Unhighlighted sections are migrated from the previously published [GovTech's Benchmarks: MinorBench](https://playbooks.aip.gov.sg/responsibleai/testing/safety_testing/govtech/#minorbench) page; new prose is highlighted.
+
 MinorBench is a benchmark for child-specific safety risks in LLM applications. It is a hand-curated set of prompts across six child-specific risk categories: **Danger, Sexual, Profanities, Hateful, Self-harm, and Substance Use**.
 
 Use MinorBench when evaluating systems that may be used by minors or deployed in educational contexts.

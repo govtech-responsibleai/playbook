@@ -1,5 +1,9 @@
 # Fairness Evals
 
+!!! info "About this page"
+
+    This page is new at this URL in the upcoming Responsible AI Playbook release. It covers fairness evaluation for generative AI (paired-prompt design, metrics, evaluation) with a placeholder for discriminative AI fairness. Unhighlighted sections are migrated from the previously published [Fairness Testing in GenAI](https://playbooks.aip.gov.sg/responsibleai/testing/fairness_testing/fairness_generative/) page; new prose is highlighted.
+
 Fairness evals check whether system behavior differs unfairly across protected or sensitive attributes, groups, languages, or user contexts.
 
 ## When to Run Fairness Evals
@@ -49,4 +53,4 @@ Where there are *confounding factors* that can be disentangled, **fixed-effects 
 
 ## Discriminative AI Fairness
 
-*Coming soon — this section will cover fairness evaluation for discriminative AI models, including subgroup performance, false-positive/negative rates, calibration, and downstream impact analysis.*
+<mark class="new-since-v1">*Coming soon — this section will cover fairness evaluation for discriminative AI models, including subgroup performance, false-positive/negative rates, calibration, and downstream impact analysis.*</mark>

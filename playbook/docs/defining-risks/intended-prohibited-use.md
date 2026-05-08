@@ -1,5 +1,9 @@
 # Intended and Prohibited Use
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It explains how to capture intended and prohibited use as the operating boundary for an AI system. All content is new.
+
 Intended and prohibited use define the operating boundary for the AI system. Without this boundary, evals and guardrails become generic and hard to justify.
 
 ## Intended Use

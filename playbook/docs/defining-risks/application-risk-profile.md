@@ -1,5 +1,9 @@
 # Application Risk Profile
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It walks through the risk-profile dimensions teams use to make testing and mitigation proportionate to deployment context. All content is new.
+
 The same model can have very different risks depending on where it is deployed. Build a simple risk profile before deciding what testing or mitigation is proportionate.
 
 ## Profile Dimensions

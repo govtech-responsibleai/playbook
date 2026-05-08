@@ -1,5 +1,9 @@
 # Agentic System Checklist
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a Define / Evaluate / Mitigate readiness checklist for agentic systems with each item cross-linked to the page that explains how to do it. All content is new.
+
 Use this checklist before piloting or launching an agentic system. Each item links to the page that explains how to do it.
 
 ## Define

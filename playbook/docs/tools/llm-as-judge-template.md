@@ -1,5 +1,9 @@
 # LLM-as-Judge Template
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a reusable judge-prompt template for LLM-as-judge evaluation. All content is new.
+
 Use this prompt structure as a starting point for judge-based evaluation.
 
 ```text

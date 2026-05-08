@@ -1,5 +1,9 @@
 # LionGuard
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It pulls together LionGuard's capabilities, design rationale, and access points into a single tool page. Unhighlighted sections are migrated from the previously published [Guardrails developed by GovTech: LionGuard](https://playbooks.aip.gov.sg/responsibleai/guardrails/govtech/#lionguard) page; new prose is highlighted.
+
 LionGuard is GovTech's localized content moderation guardrail for Singapore's linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
 
 ![LionGuard](../images/lionguard.png)

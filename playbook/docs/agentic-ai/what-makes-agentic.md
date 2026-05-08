@@ -1,5 +1,9 @@
 # What Makes a System Agentic?
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It defines agentic behaviour, lists signals that indicate when a system has crossed into agentic territory, and explains why it matters for risk modelling. All content is new.
+
 An AI system becomes agentic when it can pursue goals through multi-step behavior, make plans, use tools, maintain state, delegate tasks, or act with some degree of autonomy.
 
 ## Signs of Agentic Behavior

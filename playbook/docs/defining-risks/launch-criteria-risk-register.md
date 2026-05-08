@@ -1,5 +1,9 @@
 # Launch Criteria and Risk Register
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It defines the minimum launch criteria and the risk-register structure for documenting tested, mitigated, accepted, and deferred risks. All content is new.
+
 Launch criteria define what must be true before the system can be released. A risk register records what has been tested, mitigated, accepted, or deferred.
 
 ## Minimum Launch Criteria

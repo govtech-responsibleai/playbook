@@ -1,5 +1,9 @@
 # Sentinel: Robust AI Guardrails for Government AI Systems
 
+!!! info "About this page"
+
+    This page is new at this URL in the upcoming Responsible AI Playbook release. The page itself is migrated from the previously published [Sentinel](https://playbooks.aip.gov.sg/responsibleai/guardrails/sentinel/) page (now under Tools & Benchmarks); the **Quick Start** code block at the bottom is new in this release.
+
 Sentinel provides a multi-tenant SaaS service that allows development teams building Generative AI applications to integrate Input and Output Guardrails for AI security and safety. These guardrails detect, quantify, and mitigate risks like prompt injection, toxicity, and PII leakage. By providing the ability to integrate guardrails within any GenAI application, Sentinel provides application teams with the assurance that their application is safeguarded from basic risks present in all generative-AI models.
 
 For optimal performance, Sentinel is recommended to be used in conjunction with Litmus (WOG AI Testing product), to ensure application teams are mitigating against the specific risks identified in their individual models and/or applications.

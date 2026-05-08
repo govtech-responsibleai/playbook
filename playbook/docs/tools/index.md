@@ -1,5 +1,9 @@
 # Tools, Benchmarks and Templates
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Tools & Benchmarks section: GovTech tools (Litmus, Sentinel, LionGuard), benchmarks (RabakBench, MinorBench, Responsible AI Benchmark), and reusable templates. All content is new.
+
 This section collects practical implementation support for teams applying the playbook.
 
 Tools and templates are separated from conceptual methodology pages so readers can first learn the method, then choose the artefact that operationalizes it.

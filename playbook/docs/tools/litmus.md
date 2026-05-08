@@ -1,5 +1,9 @@
 # Litmus: Comprehensive AI Safety Testing for Government Applications
 
+!!! info "About this page"
+
+    This page is new at this URL in the upcoming Responsible AI Playbook release. It is migrated unchanged from the previously published [Litmus](https://playbooks.aip.gov.sg/responsibleai/testing/litmus/) page; the new home is under Tools & Benchmarks.
+
 Litmus is a Testing-as-a-Service (TaaS) platform that allows development teams building Generative AI applications to perform frequent and seamless AI safety and security testing. By having the ability to perform testing within the CI/CD pipeline as well as through a Web App, Litmus provides application teams and business owners with a near real-time awareness of AI application and model risks in this ever-changing landscape, without the need for extensive setup or infrastructure management. Through Litmus, we hope to empower teams to make informed decisions in the AI applications, and react to AI-related risks in an agile manner.
 
 

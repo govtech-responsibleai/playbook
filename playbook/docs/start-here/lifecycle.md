@@ -1,5 +1,9 @@
 # AI Evaluation and Safety Lifecycle
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It walks through the Define → Evaluate → Mitigate → Deploy → Monitor lifecycle that the playbook is organised around. All content is new.
+
 The playbook is organized around a practical lifecycle:
 
 ```mermaid

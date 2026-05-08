@@ -1,5 +1,9 @@
 # Privacy and PII Leakage Evals
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers privacy evaluation across three layers — Data, Model, and Application — and links to the corresponding mitigations. Teal-highlighted sections were contributed via the [`feat/privacy-additions`](https://github.com/govtech-responsibleai/playbook/tree/feat/privacy-additions) branch by the GovTech Data Practice team.
+
 Privacy evals check whether the system leaks, exposes, mishandles, or regurgitates personal or sensitive information.
 
 <div class="privacy-additions" markdown>

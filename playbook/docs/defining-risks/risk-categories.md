@@ -1,5 +1,9 @@
 # Risk Categories
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It collects core risk categories and the GovTech risk taxonomy used for safety testing. The taxonomy section is migrated from the previously published [Risk Taxonomy](https://playbooks.aip.gov.sg/responsibleai/testing/safety_testing/taxonomy/) page; new prose is highlighted.
+
 Risk categories help teams decide what to evaluate and mitigate. Start broad, then narrow to the categories that matter for the application.
 
 ## Core Categories

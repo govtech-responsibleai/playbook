@@ -1,5 +1,9 @@
 # Production Integration
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers integration checklist, common mistakes, and best practices for production guardrail deployment. Unhighlighted sections are migrated from the previously published [Best Practices When Integrating Guardrails](https://playbooks.aip.gov.sg/responsibleai/guardrails/best_practices/) page; new prose is highlighted.
+
 Production integration is where mitigations become part of the application workflow.
 
 ## Integration Checklist

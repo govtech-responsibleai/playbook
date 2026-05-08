@@ -1,5 +1,9 @@
 # PII Test Set Template
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a reusable template for privacy and PII leakage evals. All content is new.
+
 Use this template to create privacy and PII leakage evals.
 
 | ID | Scenario | Input contains PII? | Expected behavior | Risk type | Notes |

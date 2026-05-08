@@ -1,5 +1,9 @@
 # Content Safety Guardrails
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers content-safety categories, popular moderation services, and a General/Sentinel code example. Unhighlighted sections are migrated from the previously published [Different Types of Guardrails: Toxicity / Content Moderation](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#1-toxicitycontent-moderation) page; new prose and the code example are highlighted.
+
 Content safety guardrails detect harmful, offensive, or prohibited content in user inputs and model outputs. While most state-of-the-art LLMs have built-in safety features through their alignment process, an additional moderation layer enhances security.
 
 !!! warning "Check compliance policies before using external services"

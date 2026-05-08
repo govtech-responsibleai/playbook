@@ -1,5 +1,9 @@
 # Building Your Own Guardrail
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers when to build a custom guardrail and the basic workflow from data collection through threshold tuning. All content is new.
+
 Build a custom guardrail when off-the-shelf options do not match your risk, language, domain, latency, privacy, or deployment constraints.
 
 ## When to Build

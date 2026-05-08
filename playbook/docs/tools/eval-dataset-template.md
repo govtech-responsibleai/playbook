@@ -1,5 +1,9 @@
 # Eval Dataset Template
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a reusable template for capturing evaluation examples across functional, safety, privacy, robustness, or agentic dimensions. All content is new.
+
 Use this template for functional, safety, privacy, robustness, or agentic evals.
 
 | ID | User input | Context or setup | Expected behavior | Evaluation dimension | Severity | Notes |

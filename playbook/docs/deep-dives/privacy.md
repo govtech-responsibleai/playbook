@@ -1,5 +1,9 @@
 # Privacy
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a short Privacy primer that points readers at the canonical privacy evals and PII guardrails pages. All content is new.
+
 Privacy focuses on whether systems handle personal and sensitive data appropriately.
 
 In the near-term IA, privacy appears in two action-oriented places:

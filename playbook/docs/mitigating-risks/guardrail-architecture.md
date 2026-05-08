@@ -1,5 +1,9 @@
 # Guardrail Architecture
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It explains where guardrail checks sit in an application, what each layer detects, and what action to take. All content is new.
+
 A guardrail architecture defines where checks happen, what they detect, and what action the application takes.
 
 ## Common Positions

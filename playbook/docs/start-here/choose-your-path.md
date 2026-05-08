@@ -1,5 +1,9 @@
 # Choose Your Path
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It is a question-driven router that points readers at the part of the playbook closest to their current task. All content is new.
+
 Start with the question closest to your current task. You do not need to read the playbook from front to back.
 
 | If you are asking... | Start here |

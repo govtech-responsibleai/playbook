@@ -1,5 +1,9 @@
 # Functional Evals
 
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It combines task-quality, RAG/grounding, and performance evaluation under a single Functional area page. All content is new.
+
 For AI applications, "accuracy" is often too narrow. Functional evaluation asks whether the system performs the intended task well enough for its users and risk context. It covers task quality, retrieval-augmented generation (RAG), and operational performance.
 
 ## Task Quality

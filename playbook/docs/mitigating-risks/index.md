@@ -1,5 +1,9 @@
 # Guardrails and Mitigations
 
+!!! info "About this page"
+
+    This page is new at this URL in the upcoming Responsible AI Playbook release. It covers what guardrails are, how to choose between mitigation types, and the three principles for effective guardrails. Unhighlighted sections are migrated from the previously published [Guardrails](https://playbooks.aip.gov.sg/responsibleai/guardrails/) page; new prose is highlighted.
+
 Guardrails are one kind of mitigation, but not every mitigation is a guardrail. AI safety work may also require UX changes, retrieval constraints, access controls, prompt design, tool permissioning, human review, logging, rate limits, and operational controls.
 
 !!! success "Key message"
