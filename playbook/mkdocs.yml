@@ -8,16 +8,20 @@ docs_dir: docs
 theme:
   name: material
   language: en
+  favicon: assets/favicons/favicon.ico
+  logo: assets/favicons/logo.png
+  font:
+    text: Lato
   palette:
     - scheme: default
-      primary: indigo
-      accent: cyan
+      primary: custom
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: cyan
+      primary: custom
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
