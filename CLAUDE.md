@@ -29,7 +29,7 @@ No test suite or linter. Validation = successful build + visual check.
 
 ## Local Hooks
 
-The shared pre-commit hook runs `.githooks/check-agent-guides.sh`. It blocks repository-level changes unless both `AGENTS.md` and `CLAUDE.md` are staged, so navigation, dependency, macro, workflow, style, script, and major docs changes keep agent guidance current.
+The shared pre-commit hook runs `.githooks/check-agent-guides.sh`. It blocks repository-level changes unless both `AGENTS.md` and `CLAUDE.md` are staged. If both guides were reviewed and no edit is needed, commit with `AGENT_GUIDES_REVIEWED=1 git commit`.
 
 ## Branch Model
 

@@ -44,4 +44,4 @@ Follow `playbook/docs/contributing/page-standards.md` for release admonitions, i
 
 ## Local Hooks
 
-Enable shared Git hooks with `git config core.hooksPath .githooks`. The pre-commit hook blocks repository-level changes unless both `AGENTS.md` and `CLAUDE.md` are staged, keeping guidance aligned after navigation, dependency, macro, workflow, style, script, or major docs changes.
+Enable shared Git hooks with `git config core.hooksPath .githooks`. The pre-commit hook blocks repository-level changes unless both guides are staged. If you reviewed them and no edit is needed, commit with `AGENT_GUIDES_REVIEWED=1 git commit`.

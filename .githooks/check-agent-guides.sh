@@ -13,6 +13,10 @@ if [ -z "$big_change_files" ]; then
   exit 0
 fi
 
+if [ "${AGENT_GUIDES_REVIEWED:-}" = "1" ]; then
+  exit 0
+fi
+
 agent_guides="$(printf '%s\n' "$changed_files" | grep -E '^(AGENTS\.md|CLAUDE\.md)$' || true)"
 
 if printf '%s\n' "$agent_guides" | grep -qx 'AGENTS.md' && \
@@ -29,7 +33,10 @@ macros, workflows, styles, scripts, or major docs sections.
 After updating, stage the files and commit again:
   git add AGENTS.md CLAUDE.md
 
-To bypass for a deliberate exception:
+If you checked both guides and no update is needed:
+  AGENT_GUIDES_REVIEWED=1 git commit
+
+To bypass all pre-commit hooks for a deliberate exception:
   git commit --no-verify
 EOF
 
