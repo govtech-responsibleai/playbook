@@ -18,7 +18,7 @@ Safety testing is **not** red-teaming. Red-teaming generates novel prompts to pr
 - Toxicity, harassment, hate, sexual content, self-harm, or violence risks where relevant.
 - Unsafe behavior specific to the application's domain or users.
 
-In our practice we focus on toxic/hateful/sexual/violent content, illegal activities or self-harm, factually incorrect or misleading statements, discriminatory decision-making, and CBRNE-related risks. See [Risk categories](../defining-risks/risk-categories.md) for the GovTech risk taxonomy.
+In our practice we focus on toxic/hateful/sexual/violent content, illegal activities or self-harm, factually incorrect or misleading statements, discriminatory decision-making, and CBRNE-related risks. See [Risk categories](../understanding-risks/risk-categories.md) for the GovTech risk taxonomy.
 
 ## Minimum Launch Expectation
 
@@ -97,7 +97,7 @@ Common classifiers and methods for detecting rejections:
 
 ### Toxicity Measurement
 
-If the LLM application does not refuse to answer, analyse the content of the response itself. Measuring toxicity gives a more holistic view of safety than refusal alone, especially when the model steers conversation rather than refusing outright. See the [Content safety guardrails](../mitigating-risks/content-safety.md) page for classifiers.
+If the LLM application does not refuse to answer, analyse the content of the response itself. Measuring toxicity gives a more holistic view of safety than refusal alone, especially when the model steers conversation rather than refusing outright. See the [Content safety guardrails](../mitigations-controls/content-safety.md) page for classifiers.
 
 ## Benchmark-Leakage Handling
 

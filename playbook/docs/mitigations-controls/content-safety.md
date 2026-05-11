@@ -19,7 +19,7 @@ Content safety guardrails detect harmful, offensive, or prohibited content in us
 - Illegal or harmful instructions.
 - Public harm or misconduct.
 
-Use a taxonomy that fits your users and context. For Singapore public-sector safety categories, see the [Risk taxonomy](../defining-risks/risk-categories.md) and [LionGuard](../tools/lionguard.md).
+Use a taxonomy that fits your users and context. For Singapore public-sector safety categories, see the [Risk taxonomy](../understanding-risks/risk-categories.md) and [LionGuard](../tools/lionguard.md).
 
 ## Popular Moderation Services
 

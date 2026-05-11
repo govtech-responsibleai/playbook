@@ -26,7 +26,7 @@ Define:
 - Functional success criteria.
 - Safety categories that matter for the system.
 
-Use [Defining Risks](../defining-risks/index.md) to turn this into a concrete risk scope.
+Use [Understanding Risks](../understanding-risks/index.md) to turn this into a concrete risk scope.
 
 ## Evaluate
 
@@ -34,19 +34,19 @@ Measure whether the system works and where it fails.
 
 Evaluation includes:
 
-- [Accuracy and task-quality evals](../evaluating-risks/functional.md)
-- [RAG and grounding evals](../evaluating-risks/functional.md)
-- [Performance evals](../evaluating-risks/functional.md)
-- [Safety evals](../evaluating-risks/safety.md)
-- [Privacy and PII leakage evals](../evaluating-risks/privacy.md)
-- [Robustness evals](../evaluating-risks/robustness.md)
-- [Fairness evals](../evaluating-risks/fairness.md)
+- [Accuracy and task-quality evals](../evaluating-ai-systems/functional.md)
+- [RAG and grounding evals](../evaluating-ai-systems/functional.md)
+- [Performance evals](../evaluating-ai-systems/functional.md)
+- [Safety evals](../evaluating-ai-systems/safety.md)
+- [Privacy and PII leakage evals](../evaluating-ai-systems/privacy.md)
+- [Robustness evals](../evaluating-ai-systems/robustness.md)
+- [Fairness evals](../evaluating-ai-systems/fairness.md)
 
 ## Mitigate
 
 Reduce risk based on evaluation findings.
 
-Mitigations include guardrails, UX design, retrieval constraints, access controls, prompt changes, tool permissioning, human escalation, logging, and rate limits. Start with [Guardrails and Mitigations](../mitigating-risks/index.md).
+Mitigations include guardrails, UX design, retrieval constraints, access controls, prompt changes, tool permissioning, human escalation, logging, and rate limits. Start with [Mitigations & Controls](../mitigations-controls/index.md).
 
 ## Govern and Apply
 

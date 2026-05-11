@@ -13,9 +13,9 @@ hide:
 
 !!! info "What's changed in this release"
 
-    This page has been updated for the upcoming Responsible AI Playbook release. It now points readers to the new **Define → Evaluate → Mitigate** workflow plus a dedicated **Agentic AI** track, replacing the previous Testing / Guardrails / Understanding split. Summary of changes:
+    This page has been updated for the upcoming Responsible AI Playbook release. It now points readers to the new **Understanding Risks → Evaluating AI Systems → Mitigations & Controls** workflow plus a dedicated **Agentic AI** track, replacing the previous Testing / Guardrails / Understanding split. Summary of changes:
 
-    - Reorganised the "What's New" callout around the new top-level sections (Defining Risks, Evaluating Risks, Mitigating Risks, Agentic AI, Tools & Benchmarks).
+    - Reorganised the "What's New" callout around the new top-level sections (Understanding Risks, Evaluating AI Systems, Mitigations & Controls, Agentic AI, Tools & Benchmarks).
     - Added a "Choose your path" entry for readers unsure where to start.
     - Updated project credits to include LionGuard 2, Kaleidoscope, the Agentic Risk & Capability Framework, MinorBench, and SEA-LION v2.1 SECURE.
 
@@ -31,9 +31,9 @@ The Responsible AI Playbook helps technical teams understand and apply Responsib
 
 The playbook has been reorganized around a practitioner workflow:
 
-- [Defining Risks](defining-risks/index.md): scope intended use, prohibited use, application risk profiles, risk categories, and launch criteria.
-- [Evaluating Risks](evaluating-risks/index.md): design evaluation plans and test functional quality, safety, robustness, fairness, and privacy.
-- [Mitigating Risks](mitigating-risks/index.md): choose guardrails and other mitigations based on evaluated failure modes.
+- [Understanding Risks](understanding-risks/index.md): scope intended use, prohibited use, application risk profiles, risk categories, and launch criteria.
+- [Evaluating AI Systems](evaluating-ai-systems/index.md): design evaluation plans and test functional quality, safety, robustness, fairness, and privacy.
+- [Mitigations & Controls](mitigations-controls/index.md): choose guardrails and other mitigations based on evaluated failure modes.
 - [Agentic AI](agentic-ai/what-makes-agentic.md): identify agentic capabilities, evaluate tool use and planning, and apply safety controls.
 - [Tools & Benchmarks](tools/index.md): find GovTech tools, benchmarks, and reusable templates.
 

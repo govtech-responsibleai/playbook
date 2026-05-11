@@ -43,7 +43,7 @@ Prompt injection and jailbreak attempts try to override system instructions, byp
     - Use **structured inputs** instead of free-form text where possible.
     - Use a **classifier for input validation** (e.g. for a free-text resume box, use an LLM to classify whether the input is a valid resume).
 
-See [safety evals](../evaluating-risks/safety.md) and [agentic safety controls](../agentic-ai/safety-controls.md) for related testing and control guidance.
+See [safety evals](../evaluating-ai-systems/safety.md) and [agentic safety controls](../agentic-ai/safety-controls.md) for related testing and control guidance.
 
 ## Code Example
 

@@ -13,7 +13,7 @@ LionGuard is GovTech's localized content moderation guardrail for Singapore's li
 LionGuard 2 enhances moderation through:
 
 1. Support for English, Singlish, Chinese, Malay, and partial Tamil.
-2. Integration of our Whole-of-Government [risk taxonomy](../defining-risks/risk-categories.md), enabling fine-grained moderation with defined severity levels.
+2. Integration of our Whole-of-Government [risk taxonomy](../understanding-risks/risk-categories.md), enabling fine-grained moderation with defined severity levels.
 3. Improved robustness against noisy and code-mixed inputs.
 
 LionGuard categories include hateful content, insults, sexual content, physical violence, self-harm, and other misconduct. Some categories include severity levels.

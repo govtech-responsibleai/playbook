@@ -1,4 +1,4 @@
-# Deep Dives and Resources
+# Resources
 
 !!! info "About this page"
 
@@ -9,8 +9,8 @@ This section contains conceptual background, deeper Responsible AI material, and
 Use the action-oriented sections first when you are trying to launch or evaluate a system:
 
 - [Start Here](../start-here/choose-your-path.md)
-- [Evaluation and Testing](../evaluating-risks/index.md)
-- [Guardrails and Mitigations](../mitigating-risks/index.md)
-- [Agentic AI Systems](../agentic-ai/what-makes-agentic.md)
+- [Evaluating AI Systems](../evaluating-ai-systems/index.md)
+- [Mitigations & Controls](../mitigations-controls/index.md)
+- [Agentic AI](../agentic-ai/what-makes-agentic.md)
 
 Use deep dives when you need more conceptual grounding or research context.

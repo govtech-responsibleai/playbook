@@ -52,7 +52,7 @@ For more information, see the [Mitigating Privacy Risks for RAI](https://go.gov.
 
 ## Testing
 
-Evaluate PII guardrails using [privacy and PII leakage evals](../evaluating-risks/privacy.md). Include standard formats, free text, multilingual examples, copied documents, and adversarial requests to reveal personal data.
+Evaluate PII guardrails using [privacy and PII leakage evals](../evaluating-ai-systems/privacy.md). Include standard formats, free text, multilingual examples, copied documents, and adversarial requests to reveal personal data.
 
 ## Code Example
 

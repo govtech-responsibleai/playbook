@@ -94,33 +94,33 @@ nav:
           - AI evaluation and safety lifecycle: start-here/lifecycle.md
           - Common AI application types: start-here/application-types.md
           - Glossary: start-here/glossary.md
-  - Defining Risks:
-      - Overview: defining-risks/index.md
-      - Intended and prohibited use: defining-risks/intended-prohibited-use.md
-      - Application risk profile: defining-risks/application-risk-profile.md
-      - Risk categories: defining-risks/risk-categories.md
-      - Launch criteria and risk register: defining-risks/launch-criteria-risk-register.md
-  - Evaluating Risks:
-      - Overview: evaluating-risks/index.md
-      - Functional evals: evaluating-risks/functional.md
-      - Safety evals: evaluating-risks/safety.md
-      - Robustness evals: evaluating-risks/robustness.md
-      - Fairness evals: evaluating-risks/fairness.md
-      - Privacy evals: evaluating-risks/privacy.md
-      - Evaluation methods: evaluating-risks/methods.md
-  - Mitigating Risks:
-      - Overview: mitigating-risks/index.md
-      - Guardrail architecture: mitigating-risks/guardrail-architecture.md
-      - PII guardrails: mitigating-risks/pii-guardrails.md
-      - Content safety guardrails: mitigating-risks/content-safety.md
-      - Prompt injection and jailbreak guardrails: mitigating-risks/prompt-injection-jailbreak.md
-      - Hallucination and grounding guardrails: mitigating-risks/hallucination-grounding.md
-      - Off-topic and scope guardrails: mitigating-risks/off-topic-scope.md
-      - System-prompt leakage guardrails: mitigating-risks/system-prompt-leakage.md
-      - Threshold tuning: mitigating-risks/threshold-tuning.md
-      - Measuring guardrail impact: mitigating-risks/measuring-impact.md
-      - Building your own guardrail: mitigating-risks/building-your-own-guardrail.md
-      - Production integration: mitigating-risks/production-integration.md
+  - Understanding Risks:
+      - Overview: understanding-risks/index.md
+      - Intended and prohibited use: understanding-risks/intended-prohibited-use.md
+      - Application risk profile: understanding-risks/application-risk-profile.md
+      - Risk categories: understanding-risks/risk-categories.md
+      - Launch criteria and risk register: understanding-risks/launch-criteria-risk-register.md
+  - Evaluating AI Systems:
+      - Overview: evaluating-ai-systems/index.md
+      - Functional evals: evaluating-ai-systems/functional.md
+      - Safety evals: evaluating-ai-systems/safety.md
+      - Robustness evals: evaluating-ai-systems/robustness.md
+      - Fairness evals: evaluating-ai-systems/fairness.md
+      - Privacy evals: evaluating-ai-systems/privacy.md
+      - Evaluation methods: evaluating-ai-systems/methods.md
+  - Mitigations & Controls:
+      - Overview: mitigations-controls/index.md
+      - Guardrail architecture: mitigations-controls/guardrail-architecture.md
+      - PII guardrails: mitigations-controls/pii-guardrails.md
+      - Content safety guardrails: mitigations-controls/content-safety.md
+      - Prompt injection and jailbreak guardrails: mitigations-controls/prompt-injection-jailbreak.md
+      - Hallucination and grounding guardrails: mitigations-controls/hallucination-grounding.md
+      - Off-topic and scope guardrails: mitigations-controls/off-topic-scope.md
+      - System-prompt leakage guardrails: mitigations-controls/system-prompt-leakage.md
+      - Threshold tuning: mitigations-controls/threshold-tuning.md
+      - Measuring guardrail impact: mitigations-controls/measuring-impact.md
+      - Building your own guardrail: mitigations-controls/building-your-own-guardrail.md
+      - Production integration: mitigations-controls/production-integration.md
   - Agentic AI:
       - What makes a system agentic?: agentic-ai/what-makes-agentic.md
       - Agentic risk model: agentic-ai/risk-model.md

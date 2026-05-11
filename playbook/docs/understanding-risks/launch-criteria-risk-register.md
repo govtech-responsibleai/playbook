@@ -37,4 +37,4 @@ Avoid vague criteria like "passes safety testing". Prefer criteria such as:
 - RAG system abstains on out-of-knowledge-base questions at the agreed rate.
 - All high-severity failures have an owner and mitigation decision.
 
-Use these criteria to guide [evaluation planning](../evaluating-risks/index.md) and [mitigation decisions](../mitigating-risks/index.md).
+Use these criteria to guide [evaluation planning](../evaluating-ai-systems/index.md) and [mitigation decisions](../mitigations-controls/index.md).

@@ -8,7 +8,7 @@ Use this checklist before piloting or launching an agentic system. Each item lin
 
 ## Define
 
-- [ ] Intended use and prohibited use are documented. → [Intended and prohibited use](../defining-risks/intended-prohibited-use.md)
+- [ ] Intended use and prohibited use are documented. → [Intended and prohibited use](../understanding-risks/intended-prohibited-use.md)
 - [ ] Agentic capabilities are listed. → [What makes a system agentic?](what-makes-agentic.md), [Capability assessment](capability-assessment.md)
 - [ ] Tools, data access, memory, and external actions are mapped. → [Capability assessment](capability-assessment.md), [Agentic risk model](risk-model.md)
 - [ ] Human approval points are defined. → [Agentic safety controls](safety-controls.md#approval-gate-ux)
@@ -18,8 +18,8 @@ Use this checklist before piloting or launching an agentic system. Each item lin
 - [ ] Task success scenarios are tested. → [Agentic evals](evals.md#end-to-end-task-scenarios)
 - [ ] Tool-use correctness is tested. → [Tool-use and planning evals](tool-use-planning-evals.md#tool-use-checks)
 - [ ] Planning reliability is tested. → [Tool-use and planning evals](tool-use-planning-evals.md#planning-checks)
-- [ ] Prompt injection and malicious context scenarios are tested. → [Agentic evals](evals.md#tool-call-attack-surface), [Prompt injection guardrails](../mitigating-risks/prompt-injection-jailbreak.md)
-- [ ] Data leakage and privilege misuse scenarios are tested. → [Tool-use and planning evals](tool-use-planning-evals.md#permission-boundary-scenarios), [Privacy evals](../evaluating-risks/privacy.md#application-layer)
+- [ ] Prompt injection and malicious context scenarios are tested. → [Agentic evals](evals.md#tool-call-attack-surface), [Prompt injection guardrails](../mitigations-controls/prompt-injection-jailbreak.md)
+- [ ] Data leakage and privilege misuse scenarios are tested. → [Tool-use and planning evals](tool-use-planning-evals.md#permission-boundary-scenarios), [Privacy evals](../evaluating-ai-systems/privacy.md#application-layer)
 
 ## Mitigate
 

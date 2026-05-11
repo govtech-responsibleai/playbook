@@ -20,4 +20,4 @@ Document what happens at each band:
 | Medium | Warn or clarify |  |  |
 | High | Block or escalate |  |  |
 
-See [Threshold tuning](../mitigating-risks/threshold-tuning.md) and [Measuring guardrail impact](../mitigating-risks/measuring-impact.md).
+See [Threshold tuning](../mitigations-controls/threshold-tuning.md) and [Measuring guardrail impact](../mitigations-controls/measuring-impact.md).

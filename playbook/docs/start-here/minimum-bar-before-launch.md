@@ -20,7 +20,7 @@ At minimum, teams should check:
 - Failures are reviewed and categorized, not only counted.
 - The evaluation set includes realistic inputs, not only happy-path examples.
 
-Use [accuracy and task-quality evals](../evaluating-risks/functional.md) to define task-specific metrics. For RAG systems, also use [RAG and grounding evals](../evaluating-risks/functional.md).
+Use [accuracy and task-quality evals](../evaluating-ai-systems/functional.md) to define task-specific metrics. For RAG systems, also use [RAG and grounding evals](../evaluating-ai-systems/functional.md).
 
 ## 2. Safety Testing
 
@@ -34,7 +34,7 @@ At minimum, teams should check:
 - Privacy or PII leakage risks where the system handles user data, logs, documents, or retrieved sources.
 - Whether existing guardrails reduce the identified risks without unacceptable over-blocking.
 
-Use [safety evals](../evaluating-risks/safety.md), [privacy and PII leakage evals](../evaluating-risks/privacy.md), and [guardrails and mitigations](../mitigating-risks/index.md).
+Use [safety evals](../evaluating-ai-systems/safety.md), [privacy and PII leakage evals](../evaluating-ai-systems/privacy.md), and [guardrails and mitigations](../mitigations-controls/index.md).
 
 ## Minimum Launch Record
 
@@ -49,4 +49,4 @@ Before launch, keep a short record of:
 | Mitigations | Guardrails, UX changes, human review, or other controls |
 | Residual risks | Known gaps and how the team will monitor or manage them |
 
-For a structured way to record results, see [Designing an evaluation plan](../evaluating-risks/index.md#designing-an-evaluation-plan).
+For a structured way to record results, see [Designing an evaluation plan](../evaluating-ai-systems/index.md#designing-an-evaluation-plan).

@@ -4,7 +4,7 @@
 
     This page is new in the upcoming Responsible AI Playbook release. It is the dedicated tool page for RabakBench, replacing the earlier section in the GovTech Benchmarks page. Unhighlighted sections are migrated from the previously published [GovTech's Benchmarks: RabakBench](https://playbooks.aip.gov.sg/responsibleai/testing/safety_testing/govtech/#rabakbench) page; new prose is highlighted.
 
-RabakBench is a multilingual AI safety benchmark tailored to Singapore's linguistic landscape, covering Singlish, Chinese, Malay, and Tamil. It addresses gaps left by existing benchmarks, moving beyond Singlish hate speech to include broader risk categories such as insults, sexual content, and self-harm. These categories align with the GovTech [risk taxonomy](../defining-risks/risk-categories.md).
+RabakBench is a multilingual AI safety benchmark tailored to Singapore's linguistic landscape, covering Singlish, Chinese, Malay, and Tamil. It addresses gaps left by existing benchmarks, moving beyond Singlish hate speech to include broader risk categories such as insults, sexual content, and self-harm. These categories align with the GovTech [risk taxonomy](../understanding-risks/risk-categories.md).
 
 Use RabakBench to evaluate multilingual safety behaviour for LLMs, guardrails, or AI applications.
 

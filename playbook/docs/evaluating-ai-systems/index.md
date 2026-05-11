@@ -1,8 +1,8 @@
-# Evaluating Risks
+# Evaluating AI Systems
 
 !!! info "About this page"
 
-    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Evaluating Risks section: when and why to evaluate, how to design an evaluation plan, and where to find each evaluation area. All content is new.
+    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Evaluating AI Systems section: when and why to evaluate, how to design an evaluation plan, and where to find each evaluation area. All content is new.
 
 Evaluation is the process of defining what good behavior means, creating representative tests, measuring system performance, and analyzing failures. For AI applications, this includes both functional quality and Responsible AI risks.
 

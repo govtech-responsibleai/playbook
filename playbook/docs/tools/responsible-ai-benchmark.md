@@ -14,4 +14,4 @@ Use it as a rough guide when comparing models or applications, but do not treat 
 - A baseline view of safety, robustness, and fairness behavior.
 - A starting point for application-specific eval design.
 
-For application launch readiness, combine benchmark results with [Designing an evaluation plan](../evaluating-risks/index.md) and [Minimum bar before launch](../start-here/minimum-bar-before-launch.md).
+For application launch readiness, combine benchmark results with [Designing an evaluation plan](../evaluating-ai-systems/index.md) and [Minimum bar before launch](../start-here/minimum-bar-before-launch.md).

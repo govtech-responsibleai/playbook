@@ -64,7 +64,7 @@ Factuality refers to accuracy with respect to *world knowledge* (Wikipedia, Goog
 
 ## What to Measure
 
-Use [RAG and grounding evals](../evaluating-risks/functional.md) to measure faithfulness, citation correctness, and abstention. A grounding guardrail should improve those metrics without causing excessive over-refusal.
+Use [RAG and grounding evals](../evaluating-ai-systems/functional.md) to measure faithfulness, citation correctness, and abstention. A grounding guardrail should improve those metrics without causing excessive over-refusal.
 
 ## Code Example
 

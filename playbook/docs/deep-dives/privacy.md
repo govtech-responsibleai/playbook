@@ -8,7 +8,7 @@ Privacy focuses on whether systems handle personal and sensitive data appropriat
 
 In the near-term IA, privacy appears in two action-oriented places:
 
-- [Privacy and PII leakage evals](../evaluating-risks/privacy.md) for testing leakage and mishandling.
-- [PII guardrails](../mitigating-risks/pii-guardrails.md) for mitigation patterns.
+- [Privacy and PII leakage evals](../evaluating-ai-systems/privacy.md) for testing leakage and mishandling.
+- [PII guardrails](../mitigations-controls/pii-guardrails.md) for mitigation patterns.
 
 Future governance material can add policy, approval, and evidence requirements.

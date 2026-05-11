@@ -33,4 +33,4 @@ Return JSON with:
 }
 ```
 
-Validate the judge against human annotations before relying on it. See [LLM-as-judge evaluation](../evaluating-risks/methods.md).
+Validate the judge against human annotations before relying on it. See [LLM-as-judge evaluation](../evaluating-ai-systems/methods.md).

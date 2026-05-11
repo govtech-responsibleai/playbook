@@ -1,4 +1,4 @@
-# Tools, Benchmarks and Templates
+# Tools & Benchmarks
 
 !!! info "About this page"
 
@@ -8,7 +8,7 @@ This section collects practical implementation support for teams applying the pl
 
 Tools and templates are separated from conceptual methodology pages so readers can first learn the method, then choose the artefact that operationalizes it.
 
-## GovTech Tools and Benchmarks
+## GovTech Tools & Benchmarks
 
 | Item | Use for |
 | --- | --- |

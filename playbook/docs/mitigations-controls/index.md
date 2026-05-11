@@ -1,4 +1,4 @@
-# Guardrails and Mitigations
+# Mitigations & Controls
 
 !!! info "About this page"
 

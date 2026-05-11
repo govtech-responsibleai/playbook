@@ -29,13 +29,13 @@ The following diagram shows how Sentinel enhances the safety and security of an 
 
 | Type | Description | Input | Output |
 | --- | --- | --- | --- |
-| [Toxicity/Content Moderation](../mitigating-risks/content-safety.md) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
-| [Jailbreak/Prompt Injection](../mitigating-risks/prompt-injection-jailbreak.md) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
-| [PII](../mitigating-risks/pii-guardrails.md) | Information that can identify an individual | ✓ | ✓ |
-| [Off-Topic](../mitigating-risks/off-topic-scope.md) | Content irrelevant to the application's purpose | ✓ | ✓ |
-| [System-Prompt Leakage](../mitigating-risks/system-prompt-leakage.md) | Exposure of system prompts containing application information |  | ✓ |
-| [Hallucination](../mitigating-risks/hallucination-grounding.md) | Content not factual or grounded in source material |  | ✓ |
-| [Relevance](../mitigating-risks/off-topic-scope.md) | Responses not pertinent to user queries |  | ✓ |
+| [Toxicity/Content Moderation](../mitigations-controls/content-safety.md) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
+| [Jailbreak/Prompt Injection](../mitigations-controls/prompt-injection-jailbreak.md) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
+| [PII](../mitigations-controls/pii-guardrails.md) | Information that can identify an individual | ✓ | ✓ |
+| [Off-Topic](../mitigations-controls/off-topic-scope.md) | Content irrelevant to the application's purpose | ✓ | ✓ |
+| [System-Prompt Leakage](../mitigations-controls/system-prompt-leakage.md) | Exposure of system prompts containing application information |  | ✓ |
+| [Hallucination](../mitigations-controls/hallucination-grounding.md) | Content not factual or grounded in source material |  | ✓ |
+| [Relevance](../mitigations-controls/off-topic-scope.md) | Responses not pertinent to user queries |  | ✓ |
 
 *Note: The list is not meant to be exhaustive, more will be added on an ongoing basis.*
 

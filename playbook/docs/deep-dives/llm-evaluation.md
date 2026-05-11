@@ -2,7 +2,7 @@
 
 !!! info "About this page"
 
-    This page is new in the upcoming Responsible AI Playbook release. It is a short LLM-evaluation primer that points readers at the canonical Evaluating Risks pages. All content is new.
+    This page is new in the upcoming Responsible AI Playbook release. It is a short LLM-evaluation primer that points readers at the canonical Evaluating AI Systems pages. All content is new.
 
 LLM evaluation covers functional quality, safety, privacy, robustness, and fairness — plus the cross-cutting techniques (human review, LLM-as-judge, continuous evals) used across all of those.
 
@@ -12,10 +12,10 @@ LLM evaluation covers functional quality, safety, privacy, robustness, and fairn
 
 ## Where to Start
 
-- [Designing an evaluation plan](../evaluating-risks/index.md#designing-an-evaluation-plan) — system boundary, dimensions, eval set, metrics, failure analysis.
-- [Functional evals](../evaluating-risks/functional.md) — task quality, RAG/grounding, performance.
-- [Safety evals](../evaluating-risks/safety.md) — ASR, refusal taxonomy, benchmark leakage.
-- [Robustness](../evaluating-risks/robustness.md), [Fairness](../evaluating-risks/fairness.md), [Privacy](../evaluating-risks/privacy.md) — area-specific evaluation.
-- [Evaluation methods](../evaluating-risks/methods.md) — human evaluation, LLM-as-judge (with the Alternative Annotator Test), continuous evals and monitoring.
+- [Designing an evaluation plan](../evaluating-ai-systems/index.md#designing-an-evaluation-plan) — system boundary, dimensions, eval set, metrics, failure analysis.
+- [Functional evals](../evaluating-ai-systems/functional.md) — task quality, RAG/grounding, performance.
+- [Safety evals](../evaluating-ai-systems/safety.md) — ASR, refusal taxonomy, benchmark leakage.
+- [Robustness](../evaluating-ai-systems/robustness.md), [Fairness](../evaluating-ai-systems/fairness.md), [Privacy](../evaluating-ai-systems/privacy.md) — area-specific evaluation.
+- [Evaluation methods](../evaluating-ai-systems/methods.md) — human evaluation, LLM-as-judge (with the Alternative Annotator Test), continuous evals and monitoring.
 
 For external papers and tools, see [Papers and external tools](../resources.md).

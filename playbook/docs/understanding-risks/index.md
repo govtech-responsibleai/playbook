@@ -1,8 +1,8 @@
-# Defining Risks
+# Understanding Risks
 
 !!! info "About this page"
 
-    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Defining Risks section, covering intended/prohibited use, application risk profile, risk categories, and launch criteria. All content is new.
+    This page is new in the upcoming Responsible AI Playbook release. It is the entry point to the Understanding Risks section, covering intended/prohibited use, application risk profile, risk categories, and launch criteria. All content is new.
 
 Before choosing evals or guardrails, define what risks matter for the application. This section helps teams turn a broad Responsible AI concern into a concrete evaluation and mitigation scope.
 
@@ -36,4 +36,4 @@ Start here if your team is still deciding what to test or what controls are need
 3. [Risk categories](risk-categories.md)
 4. [Launch criteria and risk register](launch-criteria-risk-register.md)
 
-Then move to [Evaluating Risks](../evaluating-risks/index.md) and [Mitigating Risks](../mitigating-risks/index.md).
+Then move to [Evaluating AI Systems](../evaluating-ai-systems/index.md) and [Mitigations & Controls](../mitigations-controls/index.md).

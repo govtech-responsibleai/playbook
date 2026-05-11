@@ -20,4 +20,4 @@ Define:
 - Whether reviewers should see model identity or system metadata.
 - How disagreements will be resolved.
 
-See [Human evaluation](../evaluating-risks/methods.md).
+See [Human evaluation](../evaluating-ai-systems/methods.md).
