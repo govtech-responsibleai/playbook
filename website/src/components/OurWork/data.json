@@ -1,0 +1,99 @@
+[
+  {
+    "type": "project",
+    "icon": ":material-shield-check:",
+    "title": "LionGuard 2",
+    "summary": "Lightweight guardrail models for detecting safety risks across multilingual contexts and real deployment scenarios.",
+    "rai": "Safety",
+    "tags": [
+      "Guardrails",
+      "Multilingual"
+    ],
+    "pinned": true,
+    "links": [
+      {
+        "key": "medium",
+        "url": "https://medium.com/dsaid-govtech/lionguard-2-8066d4e20d16"
+      },
+      {
+        "key": "huggingface",
+        "url": "https://huggingface.co/govtech/lionguard-2"
+      },
+      {
+        "key": "paper",
+        "url": "https://arxiv.org/abs/2507.15339"
+      }
+    ]
+  },
+  {
+    "type": "project",
+    "icon": ":material-flask-outline:",
+    "title": "RabakBench",
+    "summary": "Multilingual AI safety benchmark for localized evaluation of LLM risks in Singapore contexts.",
+    "rai": "Safety",
+    "tags": [
+      "Benchmark",
+      "Multilingual"
+    ],
+    "links": [
+      {
+        "key": "paper",
+        "url": "https://arxiv.org/abs/2507.05980"
+      },
+      {
+        "key": "medium",
+        "url": "https://medium.com/dsaid-govtech/rabakbench-a-multilingual-ai-safety-benchmark-for-singapore-6b90f998430b"
+      },
+      {
+        "key": "huggingface",
+        "url": "https://huggingface.co/collections/govtech/rabakbench"
+      }
+    ]
+  },
+  {
+    "type": "project",
+    "icon": ":material-lightbulb-on-outline:",
+    "title": "KnowOrNot",
+    "summary": "Evaluation library and dataset for testing whether LLMs abstain appropriately when knowledge is insufficient in RAG and real-world settings.",
+    "rai": "Robustness",
+    "tags": [
+      "Benchmark",
+      "Hallucination"
+    ],
+    "links": [
+      {
+        "key": "paper",
+        "url": "https://arxiv.org/abs/2505.13545"
+      },
+      {
+        "key": "medium",
+        "url": "https://medium.com/dsaid-govtech/does-your-llm-know-when-to-say-i-dont-know-465b509505dc"
+      },
+      {
+        "key": "huggingface",
+        "url": "https://huggingface.co/collections/govtech/know-or-not"
+      }
+    ]
+  },
+  {
+    "type": "project",
+    "icon": ":material-account-child-outline:",
+    "title": "MinorBench",
+    "summary": "Benchmark for systematic evaluation of LLM safety risks involving minors.",
+    "rai": "Safety",
+    "tags": [
+      "Benchmark",
+      "Child Safety"
+    ],
+    "links": [
+      {
+        "key": "paper",
+        "url": "https://arxiv.org/abs/2503.10242"
+      },
+      {
+        "key": "huggingface",
+        "url": "https://huggingface.co/collections/govtech/minorbench"
+      }
+    ]
+  }
+]

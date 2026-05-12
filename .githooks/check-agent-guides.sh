@@ -7,7 +7,7 @@ if [ -z "$changed_files" ]; then
   exit 0
 fi
 
-big_change_files="$(printf '%s\n' "$changed_files" | grep -E '^(README\.md|requirements\.txt|playbook/mkdocs\.yml|playbook/main\.py|playbook/docs/[^/]+/|playbook/docs/stylesheets/|playbook/docs/javascripts/|\.github/workflows/)' || true)"
+big_change_files="$(printf '%s\n' "$changed_files" | grep -E '^(README\.md|requirements\.txt|playbook/mkdocs\.yml|playbook/main\.py|playbook/docs/[^/]+/|playbook/docs/stylesheets/|playbook/docs/javascripts/|website/docusaurus\.config\.ts|website/sidebars\.ts|website/package\.json|website/src/|website/docs/|\.github/workflows/)' || true)"
 
 if [ -z "$big_change_files" ]; then
   exit 0
