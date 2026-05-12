@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+
+.githooks/check-agent-guides.sh

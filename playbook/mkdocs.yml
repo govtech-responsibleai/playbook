@@ -1,6 +1,6 @@
 # Project Information
 site_name: Responsible AI Playbook
-site_description: A playbook for Responsible AI in the Singapore Public Service
+site_description: A technical playbook for evaluating, testing, and mitigating risks in AI systems
 site_author: GovTech Singapore AI Practice
 docs_dir: docs
 
@@ -8,16 +8,20 @@ docs_dir: docs
 theme:
   name: material
   language: en
+  favicon: assets/favicons/favicon.ico
+  logo: assets/favicons/logo.png
+  font:
+    text: Lato
   palette:
     - scheme: default
-      primary: indigo
-      accent: cyan
+      primary: custom
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: cyan
+      primary: custom
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -25,7 +29,7 @@ theme:
     - navigation.tabs
     - navigation.footer
     - navigation.top
-    - content.last_updated 
+    - content.last_updated
 
 # Extra Configuration
 extra:
@@ -44,11 +48,10 @@ extra:
       link: https://www.linkedin.com/company/govtech-singapore
     - icon: fontawesome/brands/twitter
       link: https://x.com/GovTechSG
-
   analytics:
     provider: google
     property: G-D8325S860G
-    feedback: 
+    feedback:
       title: Was this page helpful?
       ratings:
         - icon: material/emoticon-happy-outline
@@ -59,17 +62,15 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page could be improved
           data: 0
-          note: >- 
+          note: >-
             Thanks for your feedback! Help us improve this page by
             using our <a href="https://forms.gle/v8bB9pNAARDctmpT6" target="_blank" rel="noopener">feedback form</a>.
 copyright: Copyright &copy; 2025 - 2026 Government Technology Agency of Singapore
-  
 extra_css:
   - stylesheets/home.css
   - stylesheets/typography.css
 extra_javascript:
   - javascripts/home-page.js
-# Markdown Extensions
 markdown_extensions:
   - admonition
   - attr_list
@@ -82,53 +83,86 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.blocks.caption
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-    
-# Navigation
 nav:
-  - Home: index.md
-  - Getting Started:
-      - About this playbook: getting-started/about.md
-      - What is Responsible AI: getting-started/responsibleai.md
+  - Home:
+      - Overview: index.md
+      - Start Here:
+          - Choose your path: start-here/choose-your-path.md
+          - Minimum bar before launch: start-here/minimum-bar-before-launch.md
+          - AI evaluation and safety lifecycle: start-here/lifecycle.md
+          - Common AI application types: start-here/application-types.md
+          - Glossary: start-here/glossary.md
+  - Understanding Risks:
+      - Overview: understanding-risks/index.md
+      - Intended and prohibited use: understanding-risks/intended-prohibited-use.md
+      - Application risk profile: understanding-risks/application-risk-profile.md
+      - Risk categories: understanding-risks/risk-categories.md
+      - Agentic risk model: understanding-risks/agentic-risk-model.md
+      - Agentic risk categories: understanding-risks/agentic-risk-categories.md
+      - Launch criteria and risk register: understanding-risks/launch-criteria-risk-register.md
+  - Evaluating AI Systems:
+      - Overview: evaluating-ai-systems/index.md
+      - Functional evals: evaluating-ai-systems/functional.md
+      - Safety evals: evaluating-ai-systems/safety.md
+      - Robustness evals: evaluating-ai-systems/robustness.md
+      - Fairness evals: evaluating-ai-systems/fairness.md
+      - Privacy evals: evaluating-ai-systems/privacy.md
+      - Agentic evals: evaluating-ai-systems/agentic-evals.md
+      - Evaluation methods: evaluating-ai-systems/methods.md
+  - Mitigations & Controls:
+      - Overview: mitigations-controls/index.md
+      - Guardrail architecture: mitigations-controls/guardrail-architecture.md
+      - PII guardrails: mitigations-controls/pii-guardrails.md
+      - Content safety guardrails: mitigations-controls/content-safety.md
+      - Prompt injection and jailbreak guardrails: mitigations-controls/prompt-injection-jailbreak.md
+      - Hallucination and grounding guardrails: mitigations-controls/hallucination-grounding.md
+      - Off-topic and scope guardrails: mitigations-controls/off-topic-scope.md
+      - System-prompt leakage guardrails: mitigations-controls/system-prompt-leakage.md
+      - Threshold tuning: mitigations-controls/threshold-tuning.md
+      - Measuring guardrail impact: mitigations-controls/measuring-impact.md
+      - Building your own guardrail: mitigations-controls/building-your-own-guardrail.md
+      - Production integration: mitigations-controls/production-integration.md
+      - Agentic safety controls: mitigations-controls/agentic-safety-controls.md
+      - Monitoring and incident response: mitigations-controls/monitoring-incident-response.md
+  - Tools & Benchmarks:
+      - Overview: tools/index.md
+      - Litmus: tools/litmus.md
+      - Sentinel: tools/sentinel.md
+      - LionGuard: tools/lionguard.md
+      - RabakBench: tools/rabakbench.md
+      - MinorBench: tools/minorbench.md
+      - Responsible AI Benchmark: tools/responsible-ai-benchmark.md
+      - PII test set template: tools/pii-test-set-template.md
+      - Eval dataset template: tools/eval-dataset-template.md
+      - Human annotation template: tools/human-annotation-template.md
+      - LLM-as-judge template: tools/llm-as-judge-template.md
+      - Guardrail tuning template: tools/guardrail-tuning-template.md
+      - Agentic risk assessment template: tools/agentic-risk-assessment-template.md
+  - Resources:
+      - Overview: deep-dives/index.md
+      - Safety: deep-dives/safety.md
+      - Fairness: deep-dives/fairness.md
+      - Robustness: deep-dives/robustness.md
+      - Privacy: deep-dives/privacy.md
+      - Interpretability: deep-dives/interpretability.md
+      - LLM evaluation: deep-dives/llm-evaluation.md
+      - Guardrails: deep-dives/guardrails.md
+      - Agentic safety: deep-dives/agentic-safety.md
+      - Papers and external tools: resources.md
+      - Our Work: our-work/index.md
       - Contributing: getting-started/contributing.md
-  - Testing: 
-      - Introduction: testing.md
-      - Fairness:
-          - Discriminative: testing/fairness_testing/fairness_discriminative.md
-          - Generative: testing/fairness_testing/fairness_generative.md
-      - Safety:
-          - Introduction: testing/safety_testing/safety_testing.md
-          - Benchmarks and Tools: testing/safety_testing/diff_safety.md
-          - Taxonomy: testing/safety_testing/taxonomy.md
-          - GovTech Benchmarks: testing/safety_testing/govtech.md
-      - Robustness:
-          - Introduction: testing/robustness_testing/robustness_testing.md
-      - Agentic AI:
-          - Introduction: testing/agentic_testing/agentic_testing.md
-      - Litmus: testing/litmus.md
-  - Guardrails:
-      - Introduction: guardrails.md
-      - Quick Start: guardrails/quick_start.md
-      - Sentinel: guardrails/sentinel.md
-      - Different Types of Guardrails: guardrails/diff_guardrails.md
-      - Best Practices When Integrating Guardrails: guardrails/best_practices.md
-      - Building Your Own Guardrails: guardrails/byog.md
-      - GovTech Guardrails: guardrails/govtech.md
-  - Resources: resources.md
-  - Our Work: our-work/index.md
-
-# Plugins
+      - Page standards: contributing/page-standards.md
 plugins:
-  # - d2:
-  #     theme: 0
-  #     dark_theme: -1
-  #     pad: 20
   - search
   - section-index
   - git-revision-date-localized:
-      type: date  # or datetime if you want the time too
+      type: date
       fallback_to_build_date: true
       strict: false
   - exclude:

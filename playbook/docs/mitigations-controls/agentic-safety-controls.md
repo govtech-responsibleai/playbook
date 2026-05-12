@@ -1,0 +1,71 @@
+# Agentic Safety Controls
+
+!!! info "About this page"
+
+    This page is new in the upcoming Responsible AI Playbook release. It covers core controls (least privilege, allowlists, approval gates, sandboxing, kill switches), placeholder sections for sandboxing patterns / HITL architectures / approval-gate UX, and a General/Sentinel allowlist+approval code example. All content is new.
+
+Agentic systems need controls that limit what they can do, not only what they can say.
+
+## Core Controls
+
+- Least privilege for tools and data access.
+- Tool allowlists and argument validation.
+- Approval gates for high-impact actions.
+- Sandboxing for code execution or external side effects.
+- Memory controls for retention and retrieval.
+- Traceability for plans, tool calls, and decisions.
+- Kill switches or safe shutdown paths.
+- Human escalation for ambiguous or high-risk states.
+
+## Design Principle
+
+Do not rely on prompting alone for high-impact controls. Use system-level permissions, validation, and workflow design wherever possible.
+
+## Sandboxing Patterns
+
+<mark class="new-since-v1">*Coming soon — this section will cover sandboxing patterns for tool execution (containerised runners, ephemeral file systems, network egress restrictions) and when each is appropriate.*</mark>
+
+## Mid-loop Human Review (HITL) Architectures
+
+<mark class="new-since-v1">*Coming soon — this section will cover architectures that interrupt the agent loop for human approval, including step-by-step approval, batched checkpoint review, and exception-only escalation.*</mark>
+
+## Approval-gate UX
+
+<mark class="new-since-v1">*Coming soon — this section will cover how to present approval gates to users and operators — what context to show, how to make denials safe, and how to avoid approval-fatigue rubber-stamping.*</mark>
+
+## Code Example
+
+=== "General (allowlist + approval wrapper)"
+
+    ```python
+    # A minimal wrapper that enforces an allowlist and routes
+    # high-impact actions through a human approval callback.
+    ALLOWED_TOOLS = {"search_kb", "draft_reply"}
+    HIGH_IMPACT = {"send_email", "issue_refund"}
+
+    def safe_dispatch(tool_name, tool_args, request_approval):
+        if tool_name not in ALLOWED_TOOLS and tool_name not in HIGH_IMPACT:
+            raise PermissionError(f"Tool {tool_name!r} not permitted.")
+        if tool_name in HIGH_IMPACT:
+            decision = request_approval(tool_name, tool_args)
+            if not decision.approved:
+                return {"status": "denied", "reason": decision.reason}
+        return TOOLS[tool_name](**tool_args)
+    ```
+
+=== "Sentinel"
+
+    ```python
+    # Pair the wrapper above with Sentinel input/output guardrails on
+    # the tool arguments and outputs to catch prompt injection and PII
+    # leakage that the allowlist alone cannot.
+    def safe_dispatch_with_sentinel(tool_name, tool_args, request_approval):
+        # Pre-flight: scan tool args for PII / prompt-injection attempts.
+        check = requests.post(SENTINEL_BASE_URL, headers=HEADERS, data=json.dumps({
+            "text": json.dumps(tool_args),
+            "guardrails": {"aws": {}, "system-prompt-leakage": {"system_prompt": SYSTEM}},
+        })).json()["results"]
+        if check["aws/prompt_attack"]["score"] > 0.5:
+            return {"status": "blocked", "reason": "Prompt injection detected in tool args."}
+        return safe_dispatch(tool_name, tool_args, request_approval)
+    ```
