@@ -2,7 +2,7 @@
 
 !!! info "About this page"
 
-    This page is new in the upcoming Responsible AI Playbook release. It covers how to evaluate agentic systems through end-to-end task scenarios, with placeholder sections for upcoming work on tool-call attack surface, memory and state evals, and multi-agent / delegated-task evals. All content is new.
+    This page is new in the upcoming Responsible AI Playbook release. It covers how to evaluate agentic systems through end-to-end task scenarios, tool-use and planning checks, with placeholder sections for upcoming work on tool-call attack surface, memory and state evals, multi-agent / delegated-task evals, tool argument-injection tests, and permission-boundary scenarios. All content is new.
 
 Agentic evals check whether a system can complete tasks safely and reliably across multiple steps.
 
@@ -23,7 +23,27 @@ Use realistic task scenarios, not only isolated prompts. Each scenario should de
 
 Include failure cases: unavailable tools, ambiguous user requests, malicious retrieved content, conflicting instructions, and attempts to exceed permissions.
 
-For risk framing, see the [Agentic risk model](risk-model.md), which references the GovTech [Agentic Risk and Capability Framework](http://go.gov.sg/agentic-risk-capability).
+For risk framing, see the [Agentic risk model](../understanding-risks/agentic-risk-model.md), which references the GovTech [Agentic Risk and Capability Framework](http://go.gov.sg/agentic-risk-capability).
+
+## Tool-Use Checks
+
+- Calls the right tool for the task.
+- Passes valid and safe arguments.
+- Does not call tools when information is insufficient.
+- Handles tool errors without unsafe retries.
+- Does not expose tool outputs to unauthorized users.
+
+## Planning Checks
+
+- Breaks tasks into sensible steps.
+- Does not skip required approvals.
+- Revises plans when observations change.
+- Stops when goals are impossible or unsafe.
+- Keeps user intent and system constraints aligned.
+
+## Scenario Design
+
+Create scenarios with normal tasks, ambiguous tasks, malicious instructions, partial tool failures, and permission boundaries.
 
 ## End-to-end Task Scenarios
 
@@ -40,6 +60,14 @@ For risk framing, see the [Agentic risk model](risk-model.md), which references 
 ## Multi-agent and Delegated-task Evals
 
 <mark class="new-since-v1">*Coming soon — this section will cover how to evaluate multi-agent systems and delegated subtasks, where one agent invokes another or instructions cross trust boundaries.*</mark>
+
+## Tool Argument-Injection Tests
+
+<mark class="new-since-v1">*Coming soon — this section will cover specific argument-injection test patterns: shell injection via filename arguments, SQL injection in query parameters, SSRF via URL arguments, path traversal via path arguments, and how to detect each in a scenario harness.*</mark>
+
+## Permission-Boundary Scenarios
+
+<mark class="new-since-v1">*Coming soon — this section will cover scenarios that probe permission edges: cross-tenant access attempts, requests for tools not in the allowlist, attempts to invoke high-impact tools without approval, and validation that least-privilege defaults hold under adversarial input.*</mark>
 
 ## Code Example
 

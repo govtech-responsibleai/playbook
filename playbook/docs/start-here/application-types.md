@@ -13,6 +13,6 @@ Different application types need different evals and mitigations. Use this page 
 | Summarisation | Completeness, distortion, omission, sensitive information exposure | [Accuracy and task-quality evals](../evaluating-ai-systems/functional.md), [Privacy and PII leakage evals](../evaluating-ai-systems/privacy.md) |
 | Information extraction | Schema adherence, missing fields, false positives, confidence thresholds | [Accuracy and task-quality evals](../evaluating-ai-systems/functional.md), [Human evaluation](../evaluating-ai-systems/methods.md) |
 | Classification or triage | Calibration, false positives, false negatives, fairness | [Fairness evals](../evaluating-ai-systems/fairness.md), [Threshold tuning](../mitigations-controls/threshold-tuning.md) |
-| Agentic workflow | Tool misuse, planning failures, privilege misuse, hard-to-monitor actions | [Agentic risk model](../agentic-ai/risk-model.md), [Tool-use and planning evals](../agentic-ai/tool-use-planning-evals.md), [Agentic safety controls](../agentic-ai/safety-controls.md) |
+| Agentic workflow | Tool misuse, planning failures, privilege misuse, hard-to-monitor actions | [Agentic risk model](../understanding-risks/agentic-risk-model.md), [Agentic evals](../evaluating-ai-systems/agentic-evals.md), [Agentic safety controls](../mitigations-controls/agentic-safety-controls.md) |
 
 Use-case playbooks are KIV, but these mappings provide a lightweight route for now.

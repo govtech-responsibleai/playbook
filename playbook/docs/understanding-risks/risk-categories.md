@@ -17,7 +17,7 @@ Risk categories help teams decide what to evaluate and mitigate. Start broad, th
 | Robustness | The system fails on realistic variation, ambiguity, or out-of-scope inputs | [Robustness evals](../evaluating-ai-systems/robustness.md) |
 | Fairness | The system behaves differently or unfairly across groups or attributes | [Fairness evals](../evaluating-ai-systems/fairness.md) |
 | Performance | The system is too slow, costly, unreliable, or error-prone for production | [Performance evals](../evaluating-ai-systems/functional.md) |
-| Agentic behavior | The system misuses tools, plans poorly, exceeds permissions, or acts without approval | [Agentic AI](../agentic-ai/what-makes-agentic.md) |
+| Agentic behavior | The system misuses tools, plans poorly, exceeds permissions, or acts without approval | [Agentic risk model](agentic-risk-model.md) |
 
 ## Choosing Categories
 

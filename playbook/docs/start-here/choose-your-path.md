@@ -16,7 +16,7 @@ Start with the question closest to your current task. You do not need to read th
 | Is the system safe enough for expected users? | [Safety evals](../evaluating-ai-systems/safety.md) |
 | Could the system expose personal data? | [Privacy and PII leakage evals](../evaluating-ai-systems/privacy.md) |
 | What should we block, warn, redact, or escalate? | [Mitigations & Controls](../mitigations-controls/index.md) |
-| Is this an agentic system? | [What makes a system agentic?](../agentic-ai/what-makes-agentic.md) |
+| Is this an agentic system? | [What makes a system agentic?](../understanding-risks/index.md#what-makes-a-system-agentic) |
 | Which GovTech tools or templates can help? | [Tools & Benchmarks](../tools/index.md) |
 
 ## Suggested Reading Paths
@@ -40,8 +40,8 @@ Start with the question closest to your current task. You do not need to read th
 
 ### Building or reviewing an agentic system
 
-1. [What makes a system agentic?](../agentic-ai/what-makes-agentic.md)
-2. [Agentic risk model](../agentic-ai/risk-model.md)
-3. [Capability assessment](../agentic-ai/capability-assessment.md)
-4. [Agentic evals](../agentic-ai/evals.md)
-5. [Agentic safety controls](../agentic-ai/safety-controls.md)
+1. [What makes a system agentic?](../understanding-risks/index.md#what-makes-a-system-agentic)
+2. [Agentic risk model](../understanding-risks/agentic-risk-model.md)
+3. [Agentic risk categories](../understanding-risks/agentic-risk-categories.md)
+4. [Agentic evals](../evaluating-ai-systems/agentic-evals.md)
+5. [Agentic safety controls](../mitigations-controls/agentic-safety-controls.md)

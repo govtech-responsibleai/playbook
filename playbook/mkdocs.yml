@@ -103,6 +103,8 @@ nav:
       - Intended and prohibited use: understanding-risks/intended-prohibited-use.md
       - Application risk profile: understanding-risks/application-risk-profile.md
       - Risk categories: understanding-risks/risk-categories.md
+      - Agentic risk model: understanding-risks/agentic-risk-model.md
+      - Agentic risk categories: understanding-risks/agentic-risk-categories.md
       - Launch criteria and risk register: understanding-risks/launch-criteria-risk-register.md
   - Evaluating AI Systems:
       - Overview: evaluating-ai-systems/index.md
@@ -111,6 +113,7 @@ nav:
       - Robustness evals: evaluating-ai-systems/robustness.md
       - Fairness evals: evaluating-ai-systems/fairness.md
       - Privacy evals: evaluating-ai-systems/privacy.md
+      - Agentic evals: evaluating-ai-systems/agentic-evals.md
       - Evaluation methods: evaluating-ai-systems/methods.md
   - Mitigations & Controls:
       - Overview: mitigations-controls/index.md
@@ -125,15 +128,8 @@ nav:
       - Measuring guardrail impact: mitigations-controls/measuring-impact.md
       - Building your own guardrail: mitigations-controls/building-your-own-guardrail.md
       - Production integration: mitigations-controls/production-integration.md
-  - Agentic AI:
-      - What makes a system agentic?: agentic-ai/what-makes-agentic.md
-      - Agentic risk model: agentic-ai/risk-model.md
-      - Capability assessment: agentic-ai/capability-assessment.md
-      - Agentic evals: agentic-ai/evals.md
-      - Tool-use and planning evals: agentic-ai/tool-use-planning-evals.md
-      - Agentic safety controls: agentic-ai/safety-controls.md
-      - Monitoring and incident response: agentic-ai/monitoring-incident-response.md
-      - Agentic system checklist: agentic-ai/checklist.md
+      - Agentic safety controls: mitigations-controls/agentic-safety-controls.md
+      - Monitoring and incident response: mitigations-controls/monitoring-incident-response.md
   - Tools & Benchmarks:
       - Overview: tools/index.md
       - Litmus: tools/litmus.md

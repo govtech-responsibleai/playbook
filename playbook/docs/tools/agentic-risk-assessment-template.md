@@ -23,4 +23,4 @@ Use this template to map capabilities to risks, evals, and controls.
 - Are prompt injection scenarios tested?
 - Is there a safe stop or rollback path?
 
-See [Agentic risk model](../agentic-ai/risk-model.md) and [Agentic system checklist](../agentic-ai/checklist.md).
+See [Agentic risk model](../understanding-risks/agentic-risk-model.md), [Agentic risk categories](../understanding-risks/agentic-risk-categories.md), and [Agentic safety controls](../mitigations-controls/agentic-safety-controls.md).

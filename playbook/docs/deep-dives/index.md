@@ -11,6 +11,6 @@ Use the action-oriented sections first when you are trying to launch or evaluate
 - [Start Here](../start-here/choose-your-path.md)
 - [Evaluating AI Systems](../evaluating-ai-systems/index.md)
 - [Mitigations & Controls](../mitigations-controls/index.md)
-- [Agentic AI](../agentic-ai/what-makes-agentic.md)
+- [Agentic safety](agentic-safety.md)
 
 Use deep dives when you need more conceptual grounding or research context.

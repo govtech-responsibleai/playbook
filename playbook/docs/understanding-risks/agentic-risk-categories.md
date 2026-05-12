@@ -1,4 +1,4 @@
-# Capability Assessment
+# Agentic Risk Categories
 
 !!! info "About this page"
 
@@ -26,4 +26,4 @@ The output should be a capability table:
 | Memory |  |  |  |  |
 | External action |  |  |  |  |
 
-Use the result to scope [agentic evals](evals.md) and [agentic safety controls](safety-controls.md).
+Use the result to scope [agentic evals](../evaluating-ai-systems/agentic-evals.md) and [agentic safety controls](../mitigations-controls/agentic-safety-controls.md).
