@@ -17,23 +17,22 @@ if [ "${AGENT_GUIDES_REVIEWED:-}" = "1" ]; then
   exit 0
 fi
 
-agent_guides="$(printf '%s\n' "$changed_files" | grep -E '^(AGENTS\.md|CLAUDE\.md)$' || true)"
+canonical_guide="$(printf '%s\n' "$changed_files" | grep -x 'AGENTS.md' || true)"
 
-if printf '%s\n' "$agent_guides" | grep -qx 'AGENTS.md' && \
-   printf '%s\n' "$agent_guides" | grep -qx 'CLAUDE.md'; then
+if printf '%s\n' "$canonical_guide" | grep -qx 'AGENTS.md'; then
   exit 0
 fi
 
 cat <<'EOF'
-Commit blocked: this looks like a repository-level change, but AGENTS.md and CLAUDE.md are not both staged.
+Commit blocked: this looks like a repository-level change, but AGENTS.md is not staged.
 
-Update both contributor/agent guides when changing site structure, navigation, dependencies,
+Update the canonical contributor/agent guide when changing site structure, navigation, dependencies,
 macros, workflows, styles, scripts, or major docs sections.
 
 After updating, stage the files and commit again:
-  git add AGENTS.md CLAUDE.md
+  git add AGENTS.md
 
-If you checked both guides and no update is needed:
+If you checked AGENTS.md and no update is needed:
   AGENT_GUIDES_REVIEWED=1 git commit
 
 To bypass all pre-commit hooks for a deliberate exception:
