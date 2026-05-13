@@ -11,45 +11,80 @@ Canonical repository instructions for coding assistants working in this reposito
 
 ## What this is
 
-MkDocs Material documentation site for the **Responsible AI Playbook**, maintained by GovTech AI Practice for Singapore public service.
+Documentation site for the **Responsible AI Playbook**, maintained by GovTech AI Practice for Singapore public service. The site is being migrated from MkDocs Material to **Docusaurus 3** (in progress on the `docusaurus` branch). Both setups coexist in the repository during the migration.
 
 - Production branch: `main`
 - Staging branch: `staging`
+- Docusaurus migration branch: `docusaurus`
 - Production site: https://playbooks.aip.gov.sg/responsibleai/
 - Staging site: https://govtech-responsibleai.github.io/playbook/
 
 ## Repository structure
 
-The site root is `playbook/`.
+The repository has two parallel documentation setups during migration:
 
 ```text
-playbook/
-├── mkdocs.yml
-├── main.py
-└── docs/
-    ├── index.md
-    ├── start-here/
-    ├── understanding-risks/
-    ├── evaluating-ai-systems/
-    ├── mitigations-controls/
-    ├── tools/
-    ├── deep-dives/
-    ├── our-work/
-    ├── contributing/
-    ├── stylesheets/
-    └── javascripts/
+repo root/
+├── playbook/          ← MkDocs (current production, on main/staging)
+│   ├── mkdocs.yml
+│   ├── main.py
+│   └── docs/
+│       ├── index.md
+│       ├── start-here/
+│       ├── understanding-risks/
+│       ├── evaluating-ai-systems/
+│       ├── mitigations-controls/
+│       ├── tools/
+│       ├── deep-dives/
+│       ├── our-work/
+│       ├── contributing/
+│       ├── stylesheets/
+│       └── javascripts/
+└── website/           ← Docusaurus 3 (migration target, on docusaurus branch)
+    ├── docusaurus.config.ts
+    ├── sidebars.ts
+    ├── package.json
+    ├── src/
+    │   ├── pages/index.tsx        ← custom home page (React)
+    │   ├── css/custom.css
+    │   └── components/
+    │       └── OurWork/           ← project card grid component
+    ├── docs/                      ← migrated content (MDX/MD)
+    ├── static/                    ← images, favicons
+    └── scripts/migrate.py         ← MkDocs → Docusaurus conversion script
 ```
 
-Key locations:
+Key locations (MkDocs):
 
 - `playbook/mkdocs.yml`: site nav, theme, plugins, and Markdown extensions.
 - `playbook/docs/`: reader-facing content only.
 - `playbook/main.py`: MkDocs macros hooks.
-- `playbook/docs/our-work/_data.yml`: example of page-local structured data used by macros.
+- `playbook/docs/our-work/_data.yml`: structured data used by macros (source for `website/src/components/OurWork/data.json`).
 - `playbook/docs/contributing/page-standards.md`: source of truth for page structure and release-marking conventions.
 - `CONTRIBUTING.md`: contributor workflow, PR expectations, and release-note process for GitHub collaborators.
 
+Key locations (Docusaurus):
+
+- `website/docusaurus.config.ts`: site config (URL, analytics, mermaid, sidebars).
+- `website/sidebars.ts`: explicit sidebar ordering mirroring MkDocs nav.
+- `website/src/css/custom.css`: dark-teal theme CSS variables and custom highlight classes.
+- `website/src/components/OurWork/`: React component rendering project cards from `data.json`.
+- `website/scripts/migrate.py`: one-shot migration script (admonitions, tabs, image paths, frontmatter).
+
 ## Development commands
+
+**Docusaurus** (`website/` directory):
+
+```bash
+cd website
+npm install          # first time only
+npm run start        # dev server at localhost:3000
+npm run build        # production build → website/build/
+```
+
+Required validation for content or component changes: successful `npm run build` and, for visible changes, visual review in the dev server.
+
+**MkDocs** (legacy, `playbook/` directory):
 
 Create and activate the virtual environment first:
 
@@ -66,7 +101,7 @@ mkdocs serve --config-file playbook/mkdocs.yml
 mkdocs build --clean --config-file playbook/mkdocs.yml
 ```
 
-There is no separate test suite or linter. Required validation is a successful MkDocs build and, for visible changes, a visual review in the local dev server.
+There is no separate test suite or linter. Required validation for MkDocs changes is a successful build and, for visible changes, a visual review in the local dev server.
 
 ## Branch and release model
 
@@ -81,8 +116,9 @@ There is no separate test suite or linter. Required validation is a successful M
 - Write concise Markdown with sentence-case headings and practitioner-focused guidance.
 - New pages should usually include purpose, when to use it, application steps, pitfalls, and relevant tools or templates.
 - Use lowercase, hyphenated filenames.
-- Adding a new page requires updating `nav:` in `playbook/mkdocs.yml`.
-- Prefer existing Material for MkDocs patterns such as admonitions, details blocks, tabbed content, and fenced code blocks.
+- **MkDocs**: adding a new page requires updating `nav:` in `playbook/mkdocs.yml`.
+- **Docusaurus**: adding a new page requires updating `website/sidebars.ts` and setting `sidebar_position` in the file's frontmatter.
+- Prefer admonitions, details blocks, tabbed content, and fenced code blocks.
 - Do not reorganize top-level sections unless the change reflects a major practitioner workflow.
 
 ## Page standards
@@ -95,12 +131,14 @@ Follow `playbook/docs/contributing/page-standards.md` for:
 - ownership and review notes,
 - linking principles.
 
+In the Docusaurus site (`website/`), admonitions use `:::info[title]` syntax (not `!!! info "title"`). Tabs use `<Tabs><TabItem>` JSX (files must be `.mdx`). Custom highlight classes are defined in `website/src/css/custom.css`.
+
 ## Macros and content behavior
 
-- `playbook/main.py` defines `define_env()` hooks for `mkdocs-macros-plugin`.
+- `playbook/main.py` defines `define_env()` hooks for `mkdocs-macros-plugin` (MkDocs only).
 - Structured page data should live beside the page that uses it.
-- Markdown extensions in use include `admonition`, `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.superfences`, and `pymdownx.tabbed`.
-- `git-revision-date-localized` is enabled, so pages show last-updated dates from Git history.
+- Markdown extensions in use (MkDocs) include `admonition`, `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.superfences`, and `pymdownx.tabbed`.
+- `git-revision-date-localized` is enabled (MkDocs) / `showLastUpdateTime: true` is set (Docusaurus), so pages show last-updated dates from Git history.
 
 ## GitHub collaboration conventions
 

@@ -1,0 +1,66 @@
+/* ─── Brand colours ─────────────────────────────────────────────────────────
+   Generated from MkDocs Material palette (#0d363b dark-teal primary).
+   Docusaurus requires 7 shades per colour family.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --ifm-color-primary: #0d363b;
+  --ifm-color-primary-dark: #0b2f33;
+  --ifm-color-primary-darker: #0a2c30;
+  --ifm-color-primary-darkest: #082427;
+  --ifm-color-primary-light: #0f3d43;
+  --ifm-color-primary-lighter: #104046;
+  --ifm-color-primary-lightest: #145c64;
+
+  --ifm-font-family-base: 'Lato', system-ui, -apple-system, sans-serif;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #4db8c0;
+  --ifm-color-primary-dark: #37b1ba;
+  --ifm-color-primary-darker: #2eadb6;
+  --ifm-color-primary-darkest: #239198;
+  --ifm-color-primary-light: #63bfc7;
+  --ifm-color-primary-lighter: #6cc2ca;
+  --ifm-color-primary-lightest: #8acdd3;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+
+body {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* Images fill container width by default */
+.markdown img {
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Release / highlight markers ───────────────────────────────────────────
+   Ported from MkDocs typography.css.
+   Removed when a page is promoted to stable.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+mark.new-since-v1,
+.new-since-v1 {
+  background-color: #fff3cd;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+mark.privacy-additions,
+.privacy-additions {
+  background-color: #d1ecf1;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+.new-since-v1 p,
+.privacy-additions p {
+  background-color: inherit;
+}

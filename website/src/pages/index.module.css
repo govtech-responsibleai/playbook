@@ -1,0 +1,216 @@
+/* ─── Hero ─────────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  /* background-image set via inline style in index.tsx using useBaseUrl */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+    linear-gradient(to top right, rgba(186, 47, 162, 0.2) 0%, rgba(0, 192, 243, 0.2) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: white;
+  max-width: 640px;
+  padding: 2rem;
+}
+
+.heroContent h1 {
+  font-size: clamp(1.8rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.playbookTitle {
+  background: rgba(0, 0, 0, 0.72);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.08em 0.18em;
+}
+
+.playbookTagline {
+  display: block;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.72);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.08em 0.25em;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--ifm-color-primary);
+  color: #fff !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.ctaButton:hover {
+  background: var(--ifm-color-primary-light);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* ─── Typing animation ───────────────────────────────────────────────────── */
+
+.typedWrapper {
+  display: inline;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  margin-right: 0.25em;
+}
+
+.typedAreas {
+  color: #fff;
+}
+
+.typedCaret {
+  display: inline-block;
+  margin-left: 2px;
+  color: #fff;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ─── Key areas section ───────────────────────────────────────────────────── */
+
+.keyAreasSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.keyAreasSection h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.keyAreasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.keyAreaCard {
+  background: var(--ifm-card-background-color, var(--ifm-background-color));
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.keyAreaCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--ifm-color-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.keyAreaCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
+}
+
+.keyAreaCard:hover::before {
+  transform: scaleX(1);
+}
+
+.keyAreaIcon {
+  font-size: 2rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.keyAreaCard h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.keyAreaCard p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .playbookTagline {
+    white-space: normal;
+  }
+
+  .keyAreasGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .keyAreasSection h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 60svh;
+  }
+
+  .heroContent h1 {
+    font-size: 1.6rem;
+  }
+}
