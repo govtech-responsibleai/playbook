@@ -10,4 +10,4 @@ Contributions are especially useful when they improve practitioner guidance: eva
 
 You can contribute in several ways: report bugs, suggest improvements, or help refine the documentation by opening an [issue](https://github.com/govtech-responsibleai/playbook/issues) in our public tracker. If you prefer to contribute directly, submit a [pull request](https://github.com/govtech-responsibleai/playbook/pulls) with proposed changes.
 
-Before adding a new page, review the [page standards](/responsibleai/contributing/page-standards/) so the playbook stays consistent as it grows.
+Before adding a new page, review the [page standards](/contributing/page-standards/) so the playbook stays consistent as it grows.

@@ -2,13 +2,28 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const normalizeBaseUrl = (value: string): string => {
+  if (!value || value === '/') {
+    return '/';
+  }
+
+  const trimmed = value.replace(/^\/+|\/+$/g, '');
+  return `/${trimmed}/`;
+};
+
+const isProductionBuild = process.env.NODE_ENV === 'production';
+const siteUrl = process.env.DOCUSAURUS_SITE_URL ?? 'https://playbooks.aip.gov.sg';
+const baseUrl = normalizeBaseUrl(
+  process.env.DOCUSAURUS_BASE_URL ?? (isProductionBuild ? '/responsibleai/' : '/'),
+);
+
 const config: Config = {
   title: 'Responsible AI Playbook',
   tagline: 'Evaluating, testing, and mitigating risks in AI systems',
   favicon: 'assets/favicons/favicon.ico',
 
-  url: 'https://playbooks.aip.gov.sg',
-  baseUrl: '/',
+  url: siteUrl,
+  baseUrl,
 
   organizationName: 'govtech-responsibleai',
   projectName: 'playbook',

@@ -4,28 +4,28 @@ This repository contains the source for the Responsible AI Playbook. Contributor
 
 ## Scope
 
-Use `playbook/docs/` for reader-facing content only. Keep contributor process, release mechanics, and GitHub workflow guidance in repository files such as this one and files under `.github/`.
+Use `website/docs/` for reader-facing content. Keep contributor process, release mechanics, and GitHub workflow guidance in repository files such as this one and files under `.github/`.
 
 ## Content standards
 
 Before adding or revising pages, review:
 
 - `AGENTS.md` for repository-specific working conventions.
-- `playbook/docs/contributing/page-standards.md` for page structure, release-marking, ownership, and linking rules.
+- `website/docs/contributing/page-standards.md` for page structure, release-marking, ownership, and linking rules.
 
 When you add a new page:
 
-1. Put the Markdown file under `playbook/docs/`.
-2. Add it to `playbook/mkdocs.yml`.
+1. Put the Markdown or MDX file under `website/docs/`.
+2. Add it to `website/sidebars.ts` and set `sidebar_position` in frontmatter.
 3. Use lowercase, hyphenated filenames.
-4. Prefer existing Material for MkDocs patterns such as admonitions, details blocks, tabbed content, and fenced code blocks.
+4. Prefer existing Docusaurus patterns such as admonitions, details blocks, tabs, and fenced code blocks.
 
 ## Local validation
 
 Before opening or updating a PR:
 
-1. Run `mkdocs build --clean --config-file playbook/mkdocs.yml`.
-2. Check affected pages visually when the change affects layout, navigation, styling, interactive elements, or rendering details. `mkdocs serve --config-file playbook/mkdocs.yml` is the usual way to do that.
+1. Run `cd website && npm run build`.
+2. Check affected pages visually when the change affects layout, navigation, styling, interactive elements, or rendering details. `cd website && npm run start` is the usual way to do that.
 
 ## Commit hooks
 
@@ -38,13 +38,12 @@ git config core.hooksPath .githooks
 The shared pre-commit hook treats some files and directories as repository-level areas rather than ordinary page edits. These include:
 
 - `README.md`
-- `requirements.txt`
-- `playbook/mkdocs.yml`
-- `playbook/main.py`
 - `.github/workflows/`
-- `playbook/docs/stylesheets/`
-- `playbook/docs/javascripts/`
-- structural changes inside top-level docs sections under `playbook/docs/`
+- `website/docusaurus.config.ts`
+- `website/sidebars.ts`
+- `website/package.json`
+- `website/src/`
+- structural changes inside top-level docs sections under `website/docs/`
 
 If you stage changes in those areas, the hook expects you to review and stage `AGENTS.md`, because it is the canonical assistant-instruction file for the repository.
 
@@ -95,7 +94,7 @@ If contributors do not add labels themselves, maintainers should add them during
 
 ## Release notes
 
-Do not maintain a reader-facing changelog page in the MkDocs site.
+Do not maintain a reader-facing changelog page in the published site.
 
 Instead, use GitHub Releases as the final release summary:
 

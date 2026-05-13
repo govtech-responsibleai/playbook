@@ -11,69 +11,51 @@ Canonical repository instructions for coding assistants working in this reposito
 
 ## What this is
 
-Documentation site for the **Responsible AI Playbook**, maintained by GovTech AI Practice for Singapore public service. The site is being migrated from MkDocs Material to **Docusaurus 3** (in progress on the `docusaurus` branch). Both setups coexist in the repository during the migration.
+Documentation site for the **Responsible AI Playbook**, maintained by GovTech AI Practice for Singapore public service. The active site is built with **Docusaurus 3**. MkDocs is deprecated and should be treated as legacy reference material only.
 
 - Production branch: `main`
 - Staging branch: `staging`
-- Docusaurus migration branch: `docusaurus`
 - Production site: https://playbooks.aip.gov.sg/responsibleai/
 - Staging site: https://govtech-responsibleai.github.io/playbook/
 
 ## Repository structure
 
-The repository has two parallel documentation setups during migration:
+The active documentation setup on this branch is:
 
 ```text
 repo root/
-├── playbook/          ← MkDocs (current production, on main/staging)
-│   ├── mkdocs.yml
-│   ├── main.py
-│   └── docs/
-│       ├── index.md
-│       ├── start-here/
-│       ├── understanding-risks/
-│       ├── evaluating-ai-systems/
-│       ├── mitigations-controls/
-│       ├── tools/
-│       ├── deep-dives/
-│       ├── our-work/
-│       ├── contributing/
-│       ├── stylesheets/
-│       └── javascripts/
-└── website/           ← Docusaurus 3 (migration target, on docusaurus branch)
-    ├── docusaurus.config.ts
-    ├── sidebars.ts
-    ├── package.json
-    ├── src/
-    │   ├── pages/index.tsx        ← custom home page (React)
-    │   ├── css/custom.css
-    │   └── components/
-    │       └── OurWork/           ← project card grid component
-    ├── docs/                      ← migrated content (MDX/MD)
-    ├── static/                    ← images, favicons
-    └── scripts/migrate.py         ← MkDocs → Docusaurus conversion script
+├── website/
+│   ├── docusaurus.config.ts
+│   ├── sidebars.ts
+│   ├── package.json
+│   ├── src/
+│   │   ├── pages/index.tsx        ← custom home page (React)
+│   │   ├── css/custom.css
+│   │   └── components/
+│   │       └── OurWork/           ← project card grid component
+│   ├── docs/                      ← reader-facing content (MD/MDX)
+│   ├── static/                    ← images, favicons
+│   └── scripts/migrate.py         ← legacy migration script
+├── .github/workflows/
+│   └── pages-staging.yml          ← staging deploy configuration
+├── README.md
+├── CONTRIBUTING.md
+└── AGENTS.md
 ```
-
-Key locations (MkDocs):
-
-- `playbook/mkdocs.yml`: site nav, theme, plugins, and Markdown extensions.
-- `playbook/docs/`: reader-facing content only.
-- `playbook/main.py`: MkDocs macros hooks.
-- `playbook/docs/our-work/_data.yml`: structured data used by macros (source for `website/src/components/OurWork/data.json`).
-- `playbook/docs/contributing/page-standards.md`: source of truth for page structure and release-marking conventions.
-- `CONTRIBUTING.md`: contributor workflow, PR expectations, and release-note process for GitHub collaborators.
 
 Key locations (Docusaurus):
 
-- `website/docusaurus.config.ts`: site config (URL, analytics, mermaid, sidebars).
-- `website/sidebars.ts`: explicit sidebar ordering mirroring MkDocs nav.
+- `website/docusaurus.config.ts`: site config, including environment-specific `url` and `baseUrl`.
+- `website/sidebars.ts`: explicit sidebar ordering.
 - `website/src/css/custom.css`: dark-teal theme CSS variables and custom highlight classes.
 - `website/src/components/OurWork/`: React component rendering project cards from `data.json`.
-- `website/scripts/migrate.py`: one-shot migration script (admonitions, tabs, image paths, frontmatter).
+- `website/docs/contributing/page-standards.md`: source of truth for page structure and release-marking conventions.
+- `.github/workflows/pages-staging.yml`: staging deploy workflow with GitHub Pages path settings.
+- `CONTRIBUTING.md`: contributor workflow, PR expectations, and release-note process for GitHub collaborators.
 
 ## Development commands
 
-**Docusaurus** (`website/` directory):
+Run all active site commands from `website/`:
 
 ```bash
 cd website
@@ -82,26 +64,7 @@ npm run start        # dev server at localhost:3000
 npm run build        # production build → website/build/
 ```
 
-Required validation for content or component changes: successful `npm run build` and, for visible changes, visual review in the dev server.
-
-**MkDocs** (legacy, `playbook/` directory):
-
-Create and activate the virtual environment first:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-Common commands:
-
-```bash
-mkdocs serve --config-file playbook/mkdocs.yml
-mkdocs build --clean --config-file playbook/mkdocs.yml
-```
-
-There is no separate test suite or linter. Required validation for MkDocs changes is a successful build and, for visible changes, a visual review in the local dev server.
+Required validation for content or component changes: successful `npm run build` and, for visible changes, visual review in the dev server. There is no separate test suite or linter configured in this repository.
 
 ## Branch and release model
 
@@ -116,14 +79,13 @@ There is no separate test suite or linter. Required validation for MkDocs change
 - Write concise Markdown with sentence-case headings and practitioner-focused guidance.
 - New pages should usually include purpose, when to use it, application steps, pitfalls, and relevant tools or templates.
 - Use lowercase, hyphenated filenames.
-- **MkDocs**: adding a new page requires updating `nav:` in `playbook/mkdocs.yml`.
-- **Docusaurus**: adding a new page requires updating `website/sidebars.ts` and setting `sidebar_position` in the file's frontmatter.
+- Adding a new page requires updating `website/sidebars.ts` and setting `sidebar_position` in the file's frontmatter.
 - Prefer admonitions, details blocks, tabbed content, and fenced code blocks.
 - Do not reorganize top-level sections unless the change reflects a major practitioner workflow.
 
 ## Page standards
 
-Follow `playbook/docs/contributing/page-standards.md` for:
+Follow `website/docs/contributing/page-standards.md` for:
 
 - top-of-page release admonitions,
 - inline highlight classes such as `.new-since-v1` and `.privacy-additions`,
@@ -131,14 +93,19 @@ Follow `playbook/docs/contributing/page-standards.md` for:
 - ownership and review notes,
 - linking principles.
 
-In the Docusaurus site (`website/`), admonitions use `:::info[title]` syntax (not `!!! info "title"`). Tabs use `<Tabs><TabItem>` JSX (files must be `.mdx`). Custom highlight classes are defined in `website/src/css/custom.css`.
+In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs><TabItem>` JSX, which requires `.mdx` files. Custom highlight classes are defined in `website/src/css/custom.css`.
 
-## Macros and content behavior
+## Content behavior
 
-- `playbook/main.py` defines `define_env()` hooks for `mkdocs-macros-plugin` (MkDocs only).
-- Structured page data should live beside the page that uses it.
-- Markdown extensions in use (MkDocs) include `admonition`, `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.superfences`, and `pymdownx.tabbed`.
-- `git-revision-date-localized` is enabled (MkDocs) / `showLastUpdateTime: true` is set (Docusaurus), so pages show last-updated dates from Git history.
+- Structured page data should live beside the page that uses it or in the relevant `website/src/components/` directory.
+- `showLastUpdateTime: true` is enabled, so pages show last-updated dates from Git history.
+
+## Deployment configuration
+
+- Staging is deployed from `.github/workflows/pages-staging.yml` on pushes to `staging`.
+- Because staging and production are hosted under different public subpaths, Docusaurus `url` and `baseUrl` are environment-specific build settings, not constants.
+- Staging build settings: `DOCUSAURUS_SITE_URL=https://govtech-responsibleai.github.io` and `DOCUSAURUS_BASE_URL=/playbook/`.
+- Production is not currently deployed by GitHub Actions on this branch. Production build settings remain `DOCUSAURUS_SITE_URL=https://playbooks.aip.gov.sg` and `DOCUSAURUS_BASE_URL=/responsibleai/`.
 
 ## GitHub collaboration conventions
 

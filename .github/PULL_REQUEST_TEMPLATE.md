@@ -9,7 +9,7 @@
 
 ## Validation
 
-- [ ] Ran `cd website && npm run build` (Docusaurus) or `mkdocs build --clean --config-file playbook/mkdocs.yml` (MkDocs) — whichever applies
+- [ ] Ran `cd website && npm run build`
 - [ ] Checked visually if relevant
 
 ## Screenshots (optional)

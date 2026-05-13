@@ -7,7 +7,7 @@ if [ -z "$changed_files" ]; then
   exit 0
 fi
 
-big_change_files="$(printf '%s\n' "$changed_files" | grep -E '^(README\.md|requirements\.txt|playbook/mkdocs\.yml|playbook/main\.py|playbook/docs/[^/]+/|playbook/docs/stylesheets/|playbook/docs/javascripts/|website/docusaurus\.config\.ts|website/sidebars\.ts|website/package\.json|website/src/|website/docs/|\.github/workflows/)' || true)"
+big_change_files="$(printf '%s\n' "$changed_files" | grep -E '^(README\.md|requirements\.txt|website/docusaurus\.config\.ts|website/sidebars\.ts|website/package\.json|website/src/|website/docs/|\.github/workflows/)' || true)"
 
 if [ -z "$big_change_files" ]; then
   exit 0
@@ -27,7 +27,7 @@ cat <<'EOF'
 Commit blocked: this looks like a repository-level change, but AGENTS.md is not staged.
 
 Update the canonical contributor/agent guide when changing site structure, navigation, dependencies,
-macros, workflows, styles, scripts, or major docs sections.
+workflows, styles, scripts, or major docs sections.
 
 After updating, stage the files and commit again:
   git add AGENTS.md

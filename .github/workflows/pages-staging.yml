@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DOCUSAURUS_SITE_URL: https://govtech-responsibleai.github.io
+      DOCUSAURUS_BASE_URL: /playbook/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
