@@ -1,9 +1,9 @@
 ---
-sidebar_label: "Papers and external tools"
+sidebar_label: "External resources"
 sidebar_position: 10
 ---
 
-# Papers and External Tools
+# External Resources
 
 :::info[What's changed in this release]
 
@@ -70,6 +70,6 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 
 ## Blogs and Guides
 
-- [Frequently Asked Questions (And Answers) About AI Evals](https://hamel.dev/blog/posts/evals-faq/) and [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) by Hamel Husain - practical tips on iterative evaluations for AI applications
+- [Frequently Asked Questions (And Answers) About AI Evals](https://hamel.dev/blog/posts/evals-faq/) and [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) by Hamel Husain - practical tips on iterative evaluations for AI systems
 - [Simon Willison's Weblog](https://simonwillison.net/) - practical writing on AI systems and prompt injection
 - [OpenAI's Practices for Governing Agentic AI Systems](https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf) - recommendations and open questions for agentic AI systems

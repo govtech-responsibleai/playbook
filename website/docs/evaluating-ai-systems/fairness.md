@@ -11,7 +11,7 @@ This page is new at this URL in the upcoming Responsible AI Playbook release. It
 
 :::
 
-Fairness evals check whether system behavior differs unfairly across protected or sensitive attributes, groups, languages, or user contexts.
+Fairness evals check whether system behaviour differs unfairly across protected or sensitive attributes, groups, languages, or user contexts.
 
 ## When to Run Fairness Evals
 

@@ -11,15 +11,15 @@ This page is new at this URL in the upcoming Responsible AI Playbook release. It
 
 :::
 
-Litmus is a Testing-as-a-Service (TaaS) platform that allows development teams building Generative AI applications to perform frequent and seamless AI safety and security testing. By having the ability to perform testing within the CI/CD pipeline as well as through a Web App, Litmus provides application teams and business owners with a near real-time awareness of AI application and model risks in this ever-changing landscape, without the need for extensive setup or infrastructure management. Through Litmus, we hope to empower teams to make informed decisions in the AI applications, and react to AI-related risks in an agile manner.
+Litmus is a Testing-as-a-Service (TaaS) platform that allows development teams building Generative AI systems to perform frequent and seamless AI safety and security testing. By having the ability to perform testing within the CI/CD pipeline as well as through a Web App, Litmus provides application teams and business owners with a near real-time awareness of AI system and model risks in this ever-changing landscape, without the need for extensive setup or infrastructure management. Through Litmus, we hope to empower teams to make informed decisions in the AI systems, and react to AI-related risks in an agile manner.
 
 
 ### Why Use Litmus?
 
-Litmus ensures that AI applications used in Singapore's public services meet the highest safety standards, providing confidence to both government agencies and citizens in the reliability of AI-powered solutions.
+Litmus ensures that AI systems used in Singapore's public services meet the highest safety standards, providing confidence to both government agencies and citizens in the reliability of AI-powered solutions.
 
 - Multi-tenant SaaS architecture compliant with government security standards
-- Frequent and automated safety checks for all public sector AI applications
+- Frequent and automated safety checks for all public sector AI systems
 - Comprehensive risk and behaviour analysis aligned with public sector AI ethics, policies, and guidelines
 - Customisable testing scenarios for diverse government use cases (e.g., chatbots, document processing, policy analysis)
 
@@ -29,7 +29,7 @@ The following diagram shows how Litmus enhances the safety and security of an AI
 
 ## Features
 - **Comprehensive baseline security and safety testing**  
-  Get access to NAIG sanctioned list of baseline safety and security tests to identify–and mitigate against–baseline risks found in your AI application.
+  Get access to NAIG sanctioned list of baseline safety and security tests to identify–and mitigate against–baseline risks found in your AI system.
 - **Automated Test Execution**  
   Schedule automated testing, run tests in parallel, and receive detailed reports on performance, UI issues, and bugs.
 - **Continuous Integration Support**  

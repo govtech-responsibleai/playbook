@@ -26,11 +26,3 @@ Tools and templates are separated from conceptual methodology pages so readers c
 | [MinorBench](minorbench.md) | Child-specific safety benchmarking |
 | [Responsible AI Benchmark](responsible-ai-benchmark.md) | Comparing application-level safety, robustness, and fairness performance |
 
-## Templates
-
-- [PII test set template](pii-test-set-template.md)
-- [Eval dataset template](eval-dataset-template.md)
-- [Human annotation template](human-annotation-template.md)
-- [LLM-as-judge template](llm-as-judge-template.md)
-- [Guardrail tuning template](guardrail-tuning-template.md)
-- [Agentic risk assessment template](agentic-risk-assessment-template.md)

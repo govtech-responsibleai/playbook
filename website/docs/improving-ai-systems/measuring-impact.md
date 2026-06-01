@@ -26,7 +26,7 @@ Measure:
 
 ## Evaluation Design
 
-Test the full application with and without the guardrail when possible. A guardrail that performs well in isolation may still create poor behavior when combined with prompts, retrieval, tools, or other guardrails.
+Test the full application with and without the guardrail when possible. A guardrail that performs well in isolation may still create poor behaviour when combined with prompts, retrieval, tools, or other guardrails.
 
 ## Failure Review
 
