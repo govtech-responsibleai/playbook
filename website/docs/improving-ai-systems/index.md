@@ -3,15 +3,9 @@ sidebar_label: "Overview"
 sidebar_position: 1
 ---
 
-# Mitigations & Controls
+# Improving AI Systems
 
-:::info[About this page]
-
-This page is new at this URL in the upcoming Responsible AI Playbook release. It covers what guardrails are, how to choose between mitigation types, and the three principles for effective guardrails. Unhighlighted sections are migrated from the previously published [Guardrails](https://playbooks.aip.gov.sg/responsibleai/guardrails/) page; new prose is highlighted.
-
-:::
-
-Guardrails are one kind of mitigation, but not every mitigation is a guardrail. AI safety work may also require UX changes, retrieval constraints, access controls, prompt design, tool permissioning, human review, logging, rate limits, and operational controls.
+Improvements take three broad forms: **guardrails** (separate components that filter, adjust, or block content), **finetuning** (changing model weights to shape behaviour), and **principle-specific improvements** organised around the Responsible AI principles (functional, safety, robustness, fairness, privacy, agentic). AI safety work may also require UX changes, retrieval constraints, access controls, prompt design, tool permissioning, human review, logging, rate limits, and operational controls.
 
 :::tip[Key message]
 
@@ -52,12 +46,12 @@ For an ML mindset, guardrails can be thought of as binary classification: is the
 
 | Type | Description | Input | Output |
 |------|-------------|:-----:|:------:|
-| [Toxicity / content moderation](content-safety.mdx) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
-| [Jailbreak / prompt injection](prompt-injection-jailbreak.mdx) | Attempts to bypass system constraints or inject malicious prompts | ✓ | |
-| [PII](pii-guardrails.mdx) | Information that can identify an individual | ✓ | ✓ |
-| [Off-topic](off-topic-scope.mdx) | Content irrelevant to the application's purpose | ✓ | ✓ |
-| [System-prompt leakage](system-prompt-leakage.md) | Exposure of system prompts containing application information | | ✓ |
-| [Hallucination](hallucination-grounding.mdx) | Content not factual or grounded in source material | | ✓ |
+| [Toxicity / content moderation](safety-improvements.mdx#content-safety) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
+| [Jailbreak / prompt injection](safety-improvements.mdx#prompt-injection-and-jailbreaks) | Attempts to bypass system constraints or inject malicious prompts | ✓ | |
+| [PII](privacy-improvements.mdx#pii-protection) | Information that can identify an individual | ✓ | ✓ |
+| [Off-topic](robustness-improvements.mdx) | Content irrelevant to the application's purpose | ✓ | ✓ |
+| [System-prompt leakage](privacy-improvements.mdx#system-prompt-leakage) | Exposure of system prompts containing application information | | ✓ |
+| Hallucination | Content not factual or grounded in source material | | ✓ |
 
 ## Principles for Effective Guardrails
 

@@ -23,7 +23,7 @@ In the era of generative AI and foundation models, privacy can no longer be trea
 
 <div class="privacy-additions" markdown>
 
-The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion become fundamentally baked into the model's weights. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymized prior to training, models can memorize and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
+The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion become fundamentally baked into the model's weights. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymized prior to training, models can memorise and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
 
 The primary goal at this layer is to measure the risk of individual-level linkage — the ability to connect data back to a specific person. Concrete techniques:
 
@@ -74,7 +74,7 @@ Include examples with:
 
 ## Link to Mitigations
 
-Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../mitigations-controls/pii-guardrails.mdx), [system-prompt leakage guardrails](../mitigations-controls/system-prompt-leakage.md), and [production integration](../mitigations-controls/production-integration.md).
+Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../improving-ai-systems/privacy-improvements.mdx#pii-protection), [system-prompt leakage guardrails](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage), and [production integration](../improving-ai-systems/production-integration.md).
 
 <div class="privacy-additions" markdown>
 

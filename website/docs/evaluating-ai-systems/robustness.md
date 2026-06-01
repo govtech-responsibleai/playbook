@@ -19,12 +19,12 @@ Robustness evals check whether the application behaves consistently under realis
 - Out-of-knowledge-base queries.
 - Ambiguous or underspecified requests.
 - Noisy, misspelled, multilingual, or code-mixed inputs.
-- Distribution shift from development examples to real user behavior.
+- Distribution shift from development examples to real user behaviour.
 - Adversarial perturbations where relevant.
 
 ## Practical Advice
 
-Robustness evals should include both non-malicious variation and foreseeable misuse. For high-stakes applications, pay special attention to whether the system recognizes uncertainty and abstains appropriately.
+Robustness evals should include both non-malicious variation and foreseeable misuse. For high-stakes applications, pay special attention to whether the system recognises uncertainty and abstains appropriately.
 
 ## Adversarial vs. Distributional Robustness
 

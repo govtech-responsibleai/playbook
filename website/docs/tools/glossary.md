@@ -17,7 +17,7 @@ A broad measure of whether the system gives correct or acceptable outputs for th
 
 ## Evaluation
 
-A structured process for measuring system behavior against defined criteria, datasets, metrics, rubrics, or human judgments.
+A structured process for measuring system behaviour against defined criteria, datasets, metrics, rubrics, or human judgments.
 
 ## Functional testing
 
@@ -25,7 +25,7 @@ Testing that checks whether the system performs its intended task across realist
 
 ## Guardrail
 
-A component or process that detects, blocks, redacts, warns, escalates, or otherwise constrains risky system behavior.
+A component or process that detects, blocks, redacts, warns, escalates, or otherwise constrains risky system behaviour.
 
 ## Grounding
 
@@ -45,7 +45,7 @@ Retrieval-augmented generation: an architecture where the model is provided retr
 
 ## Safety testing
 
-Testing that checks whether a system avoids harmful, prohibited, adversarial, privacy-invasive, or otherwise unacceptable behavior.
+Testing that checks whether a system avoids harmful, prohibited, adversarial, privacy-invasive, or otherwise unacceptable behaviour.
 
 ## Task-quality eval
 

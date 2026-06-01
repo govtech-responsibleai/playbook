@@ -65,34 +65,33 @@ function TypedText(): React.ReactElement {
 
 const STARTING_POINTS = [
   {
-    icon: '🚀',
-    question: 'Getting ready to launch?',
-    description: 'Check what\'s required before going live with an AI product.',
-    href: '/start-here/minimum-bar-before-launch/',
-  },
-  {
-    icon: '🗺️',
-    question: 'Mapping your risks?',
-    description: 'Understand risk categories and build a risk profile for your application.',
-    href: '/understanding-risks/',
-  },
-  {
     icon: '🧪',
-    question: 'Planning evaluations?',
-    description: 'Design evaluation frameworks for safety, robustness, fairness, and privacy.',
+    question: 'Evaluating AI Systems',
+    description: 'Design evaluation frameworks across RAI principles, with methods and pre/post-evaluation guidance.',
     href: '/evaluating-ai-systems/',
   },
   {
     icon: '🛡️',
-    question: 'Adding guardrails?',
-    description: 'Implement mitigations and controls for production AI systems.',
-    href: '/mitigations-controls/',
+    question: 'Improving AI Systems',
+    description: 'Apply guardrails, finetuning, and principle-specific improvements to ship more responsibly.',
+    href: '/improving-ai-systems/',
+  },
+  {
+    icon: '🧰',
+    question: 'Tools & Resources',
+    description: 'Open-source tools, benchmarks, the glossary, and a curated external reading list.',
+    href: '/tools/',
   },
 ];
 
 export default function Home(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
   const heroBgUrl = useBaseUrl('/images/responsibleai.png');
+
+  useEffect(() => {
+    document.body.classList.add('home-page');
+    return () => document.body.classList.remove('home-page');
+  }, []);
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline} noFooter={false}>
@@ -107,16 +106,16 @@ export default function Home(): React.ReactElement {
               <span className={styles.playbookTitle}>Responsible AI Playbook</span>
             </h1>
             <p className={styles.playbookTagline}>
-              Guidance for <TypedText /> in AI systems
+              Building <TypedText /> for AI systems
             </p>
-            <Link className={styles.ctaButton} to="/start-here/choose-your-path/">
-              Choose your path →
+            <Link className={styles.ctaButton} to="/start-here/getting-started/">
+              Let's get started →
             </Link>
           </div>
         </section>
 
         <section className={styles.keyAreasSection}>
-          <h2>Where would you like to start?</h2>
+          <h2>Or dive right in to a specific section</h2>
           <div className={styles.keyAreasGrid}>
             {STARTING_POINTS.map(({icon, question, description, href}) => (
               <Link key={question} to={href} className={styles.keyAreaCard}>

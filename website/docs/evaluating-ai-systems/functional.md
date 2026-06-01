@@ -11,7 +11,7 @@ This page is new in the upcoming Responsible AI Playbook release. It combines ta
 
 :::
 
-For AI applications, "accuracy" is often too narrow. Functional evaluation asks whether the system performs the intended task well enough for its users and risk context. It covers task quality, retrieval-augmented generation (RAG), and operational performance.
+For AI systems, "accuracy" is often too narrow. Functional evaluation asks whether the system performs the intended task well enough for its users and risk context. It covers task quality, retrieval-augmented generation (RAG), and operational performance.
 
 ## Task Quality
 
@@ -63,7 +63,7 @@ Include:
 - Out-of-knowledge-base questions.
 - Questions involving stale, sensitive, or conflicting sources.
 
-For out-of-knowledge-base behavior, see [Robustness evals](robustness.md).
+For out-of-knowledge-base behaviour, see [Robustness evals](robustness.md).
 
 ### Common Failure Modes
 
@@ -75,7 +75,7 @@ For out-of-knowledge-base behavior, see [Robustness evals](robustness.md).
 
 ## Performance
 
-Performance evals check whether an AI application is operationally viable, not only whether it is correct.
+Performance evals check whether an AI system is operationally viable, not only whether it is correct.
 
 ### What to Measure
 
@@ -83,7 +83,7 @@ Performance evals check whether an AI application is operationally viable, not o
 - Cost per request or completed task.
 - Throughput under expected load.
 - Error rates and timeout rates.
-- Retry behavior and fallback behavior.
+- Retry behaviour and fallback behaviour.
 - Provider or model differences.
 
 ### Why This Matters

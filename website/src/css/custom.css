@@ -12,6 +12,9 @@
   --ifm-color-primary-lighter: #104046;
   --ifm-color-primary-lightest: #145c64;
 
+  --ifm-link-color: #007aa8;
+  --ifm-link-hover-color: #005f86;
+
   --ifm-font-family-base: 'Lato', system-ui, -apple-system, sans-serif;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -26,6 +29,9 @@
   --ifm-color-primary-lighter: #6cc2ca;
   --ifm-color-primary-lightest: #8acdd3;
 
+  --ifm-link-color: #4dd4f6;
+  --ifm-link-hover-color: #80e0fa;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -39,6 +45,25 @@ body {
 .markdown img {
   width: 100%;
   height: auto;
+}
+
+/* Two-column "dimension/value" tables inside admonitions:
+   constrain the first column so the value column gets the rest. */
+.theme-admonition table {
+  table-layout: fixed;
+  width: 100%;
+}
+.theme-admonition table th:first-child,
+.theme-admonition table td:first-child {
+  width: 35%;
+}
+.theme-admonition table td {
+  word-wrap: break-word;
+}
+
+/* Hide the top navbar on the home page only */
+body.home-page .navbar {
+  display: none;
 }
 
 /* ─── Release / highlight markers ───────────────────────────────────────────

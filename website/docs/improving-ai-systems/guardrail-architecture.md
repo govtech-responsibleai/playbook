@@ -37,4 +37,4 @@ flowchart LR
 - Is it applied to input, output, retrieval, tools, or logs?
 - What happens on low, medium, and high confidence detections?
 - How will false positives and false negatives be measured?
-- Can the guardrail be bypassed through multi-turn behavior or tool use?
+- Can the guardrail be bypassed through multi-turn behaviour or tool use?

@@ -29,7 +29,7 @@ Production integration is where mitigations become part of the application workf
 - Treating provider safety filters as the only mitigation.
 - Logging raw PII while trying to detect PII leakage.
 - Applying the same threshold to every user journey.
-- Not testing multi-turn and tool-use behavior.
+- Not testing multi-turn and tool-use behaviour.
 
 ## Best Practices for Integration
 
@@ -71,7 +71,7 @@ Stacking guardrails covers each one's weaknesses (the Swiss cheese model). Combi
 
 ### 4. Need speed? Go async
 
-To minimize latency impact when using multiple guardrails:
+To minimise latency impact when using multiple guardrails:
 
 - Process guardrail checks **asynchronously in parallel**.
 - Run LLM generation alongside guardrail detection. See [OpenAI's cookbook](https://cookbook.openai.com/examples/how_to_use_guardrails#mitigations) for an implementation pattern.
