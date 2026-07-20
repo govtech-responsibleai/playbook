@@ -50,6 +50,22 @@ Enforces:
 - `AGENTS.md` must be staged when repository-level files change.
 - `CLAUDE.md` and `AGENTS.md` must have identical content.
 
+## Local hooks
+
+Optional shared hooks can be enabled with:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+The pre-commit hook blocks commits that touch repository-level files (config, workflows, `website/src/`, etc.) unless `AGENTS.md` is also staged. If you reviewed `AGENTS.md` and no update is needed:
+
+```bash
+AGENT_GUIDES_REVIEWED=1 git commit
+```
+
+See `CONTRIBUTING.md` for the full list of monitored paths.
+
 ## Deployment
 
 | Environment | Trigger | `DOCUSAURUS_SITE_URL` | `DOCUSAURUS_BASE_URL` |
