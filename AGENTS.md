@@ -1,13 +1,12 @@
 # AGENTS.md
 
-Canonical repository instructions for coding assistants working in this repository. `CLAUDE.md` should remain a thin pointer to this file for tools that expect a different filename.
+Canonical repository instructions for coding assistants working in this repository.
 
 ## Canonical instruction file
 
-- `AGENTS.md` is the single source of truth for shared repository instructions.
-- `CLAUDE.md` must remain a thin pointer to `AGENTS.md`.
-- When updating assistant guidance, edit `AGENTS.md` only.
-- Do not expand, replace, or duplicate the instructions inside `CLAUDE.md` unless the team has explicitly decided to change the repository's assistant-instruction convention.
+- `AGENTS.md` and `CLAUDE.md` must always have identical content.
+- When updating assistant guidance, edit both files (or edit one and copy to the other).
+- A pre-commit hook enforces this: commits are blocked if the two files differ.
 
 ## What this is
 
@@ -32,15 +31,19 @@ repo root/
 │   │   ├── pages/index.tsx        ← custom home page (React)
 │   │   ├── css/custom.css
 │   │   └── components/
-│   │       └── OurWork/           ← project card grid component
+│   │       ├── OurWork/           ← project card grid component
+│   │       └── FeedbackWidget/    ← thumbs up/down per-page feedback
 │   ├── docs/                      ← reader-facing content (MD/MDX)
 │   ├── static/                    ← images, favicons
 │   └── scripts/migrate.py         ← legacy migration script
+├── .agents/skills/                ← Claude Code skills (write-page, polish-page)
+├── .githooks/                     ← shared pre-commit hooks
 ├── .github/workflows/
 │   └── pages-staging.yml          ← staging deploy configuration
 ├── README.md
 ├── CONTRIBUTING.md
-└── AGENTS.md
+├── AGENTS.md
+└── CLAUDE.md                      ← must be identical to AGENTS.md
 ```
 
 Key locations (Docusaurus):
@@ -49,6 +52,7 @@ Key locations (Docusaurus):
 - `website/sidebars.ts`: explicit sidebar ordering.
 - `website/src/css/custom.css`: dark-teal theme CSS variables and custom highlight classes.
 - `website/src/components/OurWork/`: React component rendering project cards from `data.json`.
+- `website/src/components/FeedbackWidget/`: thumbs up/down widget that fires GA4 custom events.
 - `website/docs/contributing/page-standards.md`: source of truth for page structure and release-marking conventions.
 - `.github/workflows/pages-staging.yml`: staging deploy workflow with GitHub Pages path settings.
 - `CONTRIBUTING.md`: contributor workflow, PR expectations, and release-note process for GitHub collaborators.
@@ -71,6 +75,7 @@ Required validation for content or component changes: successful `npm run build`
 - Branch from `staging`.
 - Open pull requests into `staging`.
 - Merge `staging` into `main` for production release.
+- `main` is a protected branch: direct commits are blocked, PRs require at least one approving review with code owner approval, and force pushes are disallowed.
 - Use GitHub Releases, not a published docs page, for final release summaries.
 - Configure generated release notes through `.github/release.yml`.
 
@@ -94,6 +99,12 @@ Follow `website/docs/contributing/page-standards.md` for:
 - linking principles.
 
 In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs><TabItem>` JSX, which requires `.mdx` files. Custom highlight classes are defined in `website/src/css/custom.css`.
+
+## Analytics
+
+- GA4 property `G-D8325S860G` is configured via the `@docusaurus/plugin-google-gtag` plugin in `docusaurus.config.ts`.
+- The `FeedbackWidget` component sends custom GA4 events (`page_feedback`) with thumbs-up/down values. It is rendered at the bottom of doc pages.
+- When adding new interactive components, prefer GA4 custom events over third-party analytics.
 
 ## Content behavior
 
@@ -122,8 +133,23 @@ Optional local hooks can be enabled with:
 git config core.hooksPath .githooks
 ```
 
-The shared pre-commit hook runs `.githooks/check-agent-guides.sh`. It blocks certain repository-level changes unless `AGENTS.md` is staged. If `AGENTS.md` was reviewed and no edit is needed, commit with:
+The shared pre-commit hook runs two checks:
 
-```bash
-AGENT_GUIDES_REVIEWED=1 git commit
-```
+1. **`.githooks/check-agent-guides.sh`** — blocks repository-level changes unless `AGENTS.md` is staged. If `AGENTS.md` was reviewed and no edit is needed, commit with:
+
+   ```bash
+   AGENT_GUIDES_REVIEWED=1 git commit
+   ```
+
+2. **`.githooks/check-claude-agents-sync.sh`** — blocks commits if `CLAUDE.md` and `AGENTS.md` have different content. Fix with:
+
+   ```bash
+   cp AGENTS.md CLAUDE.md && git add CLAUDE.md AGENTS.md
+   ```
+
+3. **`.githooks/check-skills-sync.sh`** — blocks commits if `.agents/skills/` and `.claude/skills/` have different content. Fix with:
+
+   ```bash
+   rm -rf .agents/skills && cp -r .claude/skills .agents/skills
+   git add .agents/skills .claude/skills
+   ```

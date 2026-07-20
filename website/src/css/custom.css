@@ -47,6 +47,63 @@ body {
   height: auto;
 }
 
+/* Navbar logo sizing */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  height: 4.2rem;
+  width: auto;
+  vertical-align: middle;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__title {
+  line-height: 1;
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Footer styling */
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer__links {
+    gap: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Hide logo and title inside mobile sidebar but keep close button and dark mode toggle */
+@media (max-width: 996px) {
+  .navbar-sidebar__brand .navbar__logo,
+  .navbar-sidebar__brand .navbar__title {
+    display: none;
+  }
+}
+
+.footer__link-item svg {
+  display: none;
+}
+
+.footer__copyright {
+  font-size: 0.75rem;
+}
+
 /* Two-column "dimension/value" tables inside admonitions:
    constrain the first column so the value column gets the rest. */
 .theme-admonition table {
@@ -65,7 +122,6 @@ body {
 body.home-page .navbar {
   display: none;
 }
-
 /* ─── Release / highlight markers ───────────────────────────────────────────
    Ported from MkDocs typography.css.
    Removed when a page is promoted to stable.

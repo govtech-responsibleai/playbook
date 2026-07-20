@@ -20,7 +20,7 @@ const baseUrl = normalizeBaseUrl(
 const config: Config = {
   title: 'Responsible AI Playbook',
   tagline: 'Evaluating, testing, and mitigating risks in AI systems',
-  favicon: 'assets/favicons/favicon.ico',
+  favicon: undefined,
 
   url: siteUrl,
   baseUrl,
@@ -52,7 +52,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
           showLastUpdateAuthor: false,
           editUrl: undefined,
         },
@@ -80,38 +80,21 @@ const config: Config = {
     navbar: {
       title: 'Responsible AI Playbook',
       logo: {
-        alt: 'GovTech Responsible AI Playbook',
-        src: 'assets/favicons/logo.png',
+        alt: 'GovTech Singapore',
+        src: 'images/govtech-black.gif',
+        srcDark: 'images/govtech-white.gif',
       },
       items: [],
     },
     footer: {
       style: 'dark',
       links: [
-        {
-          label: 'Email',
-          href: 'mailto:aipractice@tech.gov.sg',
-        },
-        {
-          label: 'Medium',
-          href: 'https://medium.com/dsaid-govtech',
-        },
-        {
-          label: 'Hugging Face',
-          href: 'https://huggingface.co/govtech',
-        },
-        {
-          label: 'GitHub',
-          href: 'https://github.com/orgs/govtech-responsibleai/',
-        },
-        {
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/company/govtech-singapore',
-        },
-        {
-          label: 'X',
-          href: 'https://x.com/GovTechSG',
-        },
+        { label: 'Blog', href: 'https://blog.ai.gov.sg' },
+        { label: 'Hugging Face', href: 'https://huggingface.co/govtech' },
+        { label: 'GitHub', href: 'https://github.com/orgs/govtech-responsibleai/' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/company/govtech-singapore' },
+        { label: 'X', href: 'https://x.com/GovTechSG' },
+        { label: 'Email', href: 'mailto:aipractice@tech.gov.sg' },
       ],
       copyright: `Copyright © 2025–${new Date().getFullYear()} Government Technology Agency of Singapore`,
     },

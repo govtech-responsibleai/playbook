@@ -1,63 +1,74 @@
-# Responsible AI Playbook
+<p align="center">
+  <img src="website/static/images/govtech-white.gif" alt="GovTech" width="300" />
+</p>
 
-This is a playbook for Responsible AI in the Singapore Public Service, maintained by GovTech Singapore's AI Practice.
+<h1 align="center">Responsible AI Playbook</h1>
 
-- [Prod (`main`)](https://playbooks.aip.gov.sg/responsibleai/)
-- [Staging (`staging`)](https://govtech-responsibleai.github.io/playbook/)
+<p align="center">
+  Practical guidance for responsible AI in the Singapore Public Service.<br/>
+  Maintained by <strong>GovTech AI Practice</strong>.
+</p>
+
+<p align="center">
+  <a href="https://playbooks.aip.gov.sg/responsibleai/"><strong>Production</strong></a> · <a href="https://govtech-responsibleai.github.io/playbook/"><strong>Staging</strong></a>
+</p>
+
+---
+
+## Quick start
+
+```bash
+cd website
+npm install
+npm run start        # dev server at localhost:3000
+npm run build        # production build
+```
 
 ## Repository structure
 
-This repository uses **Docusaurus 3** for local development and deployment. MkDocs is deprecated and should not be used for new work on this branch.
+```text
+website/             Docusaurus 3 site source
+├── docs/            Reader-facing content (MD/MDX)
+├── src/components/  React components (OurWork, FeedbackWidget)
+├── src/pages/       Custom pages (landing page)
+└── static/          Images, favicons, GIFs
+.github/workflows/   CI/CD (staging deploy)
+.githooks/           Shared pre-commit hooks
+.agents/skills/      Claude Code skills (write-page, polish-page)
+AGENTS.md            Repository instructions for coding assistants
+CLAUDE.md            Identical to AGENTS.md (enforced by hook)
+CONTRIBUTING.md      Contributor workflow and PR expectations
+```
 
-- `website/`: Docusaurus site source
-- `.github/workflows/pages-staging.yml`: GitHub Actions workflow for the staging deployment
-- `AGENTS.md`: canonical repository instructions for coding assistants
+## Local hooks
 
-## Set-up
+```bash
+git config core.hooksPath .githooks
+```
 
-1. Install dependencies:
-
-   ```bash
-   cd website
-   npm install
-   ```
-
-2. Run the development server:
-
-   ```bash
-   npm run start
-   ```
-
-3. Create a production build:
-
-   ```bash
-   npm run build
-   ```
-
-## Contributing
-
-1. Branch off `staging`.
-
-2. Add or update documentation in `website/docs`.
-
-3. If you add a new page, update `website/sidebars.ts` and set `sidebar_position` in the page frontmatter.
-
-4. Validate changes locally with `npm run build`. For visible changes, also review them in the local dev server with `npm run start`.
-
-5. Commit and push your changes, then raise a PR into `staging` for review. Pushes to `staging` trigger the GitHub Actions workflow that deploys the staging site.
-
-6. Once approved, merge `staging` into `main` to promote to production.
-
-`main` should only ever receive merges from `staging`.
+Enforces:
+- `AGENTS.md` must be staged when repository-level files change.
+- `CLAUDE.md` and `AGENTS.md` must have identical content.
 
 ## Deployment
 
-GitHub Actions deployment is defined in:
+| Environment | Trigger | `DOCUSAURUS_SITE_URL` | `DOCUSAURUS_BASE_URL` |
+|---|---|---|---|
+| Staging | Merge to `staging` | `https://govtech-responsibleai.github.io` | `/playbook/` |
+| Production | Merge to `main` | `https://playbooks.aip.gov.sg` | `/responsibleai/` |
 
-- `.github/workflows/pages-staging.yml`: triggered by pushes to `staging`, builds with `DOCUSAURUS_SITE_URL=https://govtech-responsibleai.github.io` and `DOCUSAURUS_BASE_URL=/playbook/`
+## Contributing
 
-Production is not currently deployed via GitHub Actions. When producing a production build, use `DOCUSAURUS_SITE_URL=https://playbooks.aip.gov.sg` and `DOCUSAURUS_BASE_URL=/responsibleai/`.
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for branching, PR workflow, and page authoring details.
 
-The staging workflow builds from `website/` with `npm run build` and publishes `website/build`.
+### Made possible by
 
-Updating `README.md` does not affect deployment unless the workflow file or site build configuration also changes.
+<a href="https://github.com/govtech-responsibleai/playbook/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=govtech-responsibleai/playbook&max=100&columns=12" width="200" />
+</a>
+
+---
+
+<p align="center">
+  <sub>Built with <a href="https://docusaurus.io/">Docusaurus</a></sub>
+</p>

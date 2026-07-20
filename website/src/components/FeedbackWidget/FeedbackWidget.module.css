@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.prompt {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.thanks {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.button:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-400);
+  color: var(--ifm-color-primary);
+}
+
+.containerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.textInputRow {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.textInput {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.textInput::placeholder {
+  color: var(--ifm-color-emphasis-500);
+}
+
+.submitButton {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.submitButton:hover {
+  opacity: 0.85;
+}
+
+.skipButton {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.skipButton:hover {
+  color: var(--ifm-color-emphasis-700);
+}

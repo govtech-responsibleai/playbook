@@ -2,3 +2,5 @@
 set -eu
 
 .githooks/check-agent-guides.sh
+.githooks/check-claude-agents-sync.sh
+.githooks/check-skills-sync.sh
