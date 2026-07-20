@@ -1,5 +1,5 @@
 ---
-sidebar_label: "WOG safety testing"
+sidebar_label: "[T] WOG safety testing"
 sidebar_position: 1
 ---
 

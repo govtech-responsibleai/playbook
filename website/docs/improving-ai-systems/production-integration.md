@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Production integration"
+sidebar_label: "[JY] Production integration"
 sidebar_position: 12
 ---
 

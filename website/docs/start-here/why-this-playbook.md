@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Why this playbook"
+sidebar_label: "[ALL] Why this playbook"
 sidebar_position: 3
 ---
 

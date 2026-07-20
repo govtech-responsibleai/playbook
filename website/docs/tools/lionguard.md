@@ -1,5 +1,5 @@
 ---
-sidebar_label: "LionGuard"
+sidebar_label: "[L] LionGuard"
 sidebar_position: 4
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Measuring guardrail impact"
+sidebar_label: "[JY] Measuring guardrail impact"
 sidebar_position: 10
 ---
 

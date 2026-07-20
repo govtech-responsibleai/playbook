@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Agentic Risk & Capability Framework"
+sidebar_label: "[S] Agentic Risk & Capability Framework"
 sidebar_position: 2
 ---
 

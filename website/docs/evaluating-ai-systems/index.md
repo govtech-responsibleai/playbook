@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Overview"
+sidebar_label: "[JY] Overview"
 sidebar_position: 1
 ---
 

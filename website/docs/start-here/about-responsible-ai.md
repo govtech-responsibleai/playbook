@@ -1,5 +1,5 @@
 ---
-sidebar_label: "About Responsible AI"
+sidebar_label: "[ALL] About Responsible AI"
 sidebar_position: 2
 ---
 

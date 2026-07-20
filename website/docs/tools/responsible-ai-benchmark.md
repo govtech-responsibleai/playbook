@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Responsible AI Benchmark"
+sidebar_label: "[R] Responsible AI Benchmark"
 sidebar_position: 7
 ---
 

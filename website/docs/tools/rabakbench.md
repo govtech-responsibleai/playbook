@@ -1,5 +1,5 @@
 ---
-sidebar_label: "RabakBench"
+sidebar_label: "[L] RabakBench"
 sidebar_position: 5
 ---
 

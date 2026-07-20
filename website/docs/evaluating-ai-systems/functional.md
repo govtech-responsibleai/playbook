@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Functional evals"
+sidebar_label: "[L] Functional evals"
 sidebar_position: 2
 ---
 

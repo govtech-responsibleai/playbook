@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Sentinel"
+sidebar_label: "[S] Sentinel"
 sidebar_position: 3
 ---
 

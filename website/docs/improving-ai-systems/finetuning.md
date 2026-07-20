@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Finetuning"
+sidebar_label: "[S] Finetuning"
 sidebar_position: 2
 ---
 

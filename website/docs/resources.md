@@ -1,5 +1,5 @@
 ---
-sidebar_label: "External resources"
+sidebar_label: "[S] External resources"
 sidebar_position: 10
 ---
 
