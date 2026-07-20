@@ -14,7 +14,7 @@ This page is new at this URL in the upcoming Responsible AI Playbook release. It
 
 :::
 
-Safety evals check whether the system avoids harmful, prohibited, adversarial, or otherwise unacceptable behavior.
+Safety evals check whether the system avoids harmful, prohibited, adversarial, or otherwise unacceptable behaviour.
 
 Safety testing is the process of assessing an LLM product (via API) using prompts designed to elicit unsafe responses, in order to provide a rough empirical assessment of how resistant the LLM product is to common safety attacks. Note the distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features) — our safety testing is focused on **LLM products**.
 
@@ -26,9 +26,9 @@ Safety testing is **not** red-teaming. Red-teaming generates novel prompts to pr
 - Jailbreak and prompt injection attempts.
 - Prohibited use cases.
 - Toxicity, harassment, hate, sexual content, self-harm, or violence risks where relevant.
-- Unsafe behavior specific to the application's domain or users.
+- Unsafe behaviour specific to the application's domain or users.
 
-In our practice we focus on toxic/hateful/sexual/violent content, illegal activities or self-harm, factually incorrect or misleading statements, discriminatory decision-making, and CBRNE-related risks. See [Risk categories](../understanding-risks/risk-categories.md) for the GovTech risk taxonomy.
+In our practice we focus on toxic/hateful/sexual/violent content, illegal activities or self-harm, factually incorrect or misleading statements, discriminatory decision-making, and CBRNE-related risks. See the [WOG safety testing framework](../tools/wog-safety-testing.md) for the GovTech risk taxonomy.
 
 ## Minimum Launch Expectation
 
@@ -75,12 +75,12 @@ The following datasets are known to be more comprehensive, covering several risk
 | Dataset | Description |
 |---|---|
 | [Do-Not-Answer](https://github.com/Libr-AI/do-not-answer) | ~1k naturally-occurring questions spanning different risk categories. The process of defining categories and using an LLM to generate questions/templates via iterative dialogue can be adapted. |
-| [SALAD-Bench](https://github.com/Libr-AI/do-not-answer) | ~21k samples from 6 risk categories. Approach of fine-tuning GPT-3.5-turbo on harmful QA-pairs to generate more unsafe data, plus prompt expansion with attack/defense modifications, is easily adapted. |
+| [SALAD-Bench](https://github.com/Libr-AI/do-not-answer) | ~21k samples from 6 risk categories. Approach of fine-tuning GPT-3.5-turbo on harmful QA-pairs to generate more unsafe data, plus prompt expansion with attack/defence modifications, is easily adapted. |
 | [RealToxicityPrompts](https://github.com/allenai/real-toxicity-prompts) | ~100k naturally occurring sentence-level prompts from English web text, paired with toxicity scores. Frequently used for safety-tuning so data leakage is likely. |
 | [TruthfulQA](https://github.com/sylinrl/TruthfulQA) | 817 questions across 38 categories (health, law, finance, politics) intentionally crafted to be difficult for humans. |
 | [Do Anything Now (In The Wild)](https://github.com/verazuo/jailbreak_llms) | Templates to prompt LLMs to disregard system prompts. Standard DAN templates have largely been safety-aligned, but variants (e.g. AutoDAN) can still jailbreak. |
 | [PromptInject](https://github.com/agencyenterprise/PromptInject) | Prompts for goal hijacking and prompt leaking. The initial dataset is mostly safety-aligned but can be used as few-shot examples. |
-| [AdvBench / GCG](https://github.com/llm-attacks/llm-attacks) | 500 harmful behaviors with adversarial suffixes derived via gradient search. Suffixes tend to be gibberish and easily defended via perplexity guards, but the seed behaviors are useful. |
+| [AdvBench / GCG](https://github.com/llm-attacks/llm-attacks) | 500 harmful behaviours with adversarial suffixes derived via gradient search. Suffixes tend to be gibberish and easily defended via perplexity guards, but the seed behaviours are useful. |
 | [Tree of Attacks with Pruning (TAP)](https://github.com/RICommunity/TAP) | Iteratively refines candidate attack prompts using Tree-of-Thought. Expensive but the multi-LLM generate/curate/refine pattern is adaptable. |
 | [SafeBench-MM](https://safebench-mm.github.io/) | ~2k multi-modal harmful query pairs across 23 risk scenarios. |
 
@@ -113,7 +113,7 @@ Common classifiers and methods for detecting rejections:
 
 ### Toxicity Measurement
 
-If the LLM application does not refuse to answer, analyse the content of the response itself. Measuring toxicity gives a more holistic view of safety than refusal alone, especially when the model steers conversation rather than refusing outright. See the [Content safety guardrails](../mitigations-controls/content-safety.mdx) page for classifiers.
+If the LLM application does not refuse to answer, analyse the content of the response itself. Measuring toxicity gives a more holistic view of safety than refusal alone, especially when the model steers conversation rather than refusing outright. See the [Content safety guardrails](../improving-ai-systems/safety-improvements.mdx#content-safety) page for classifiers.
 
 ## Benchmark-Leakage Handling
 
@@ -134,7 +134,7 @@ Open-source SDKs and platforms that aggregate safety datasets and provide higher
 | [Giskard](https://github.com/Giskard-AI/giskard) | Open-source Python library with testing benchmarks and automated test-data generation. Heavy LLM-based generation; SaaS also available. |
 | [Garak](https://github.com/NVIDIA/garak) | Open-source Python library combining static, dynamic, and adaptive probes for LLM and dialog system vulnerabilities. |
 | [Moonshot](https://github.com/aiverify-foundation/moonshot) | Open-source Python library with datasets and automated attack modules. Includes Singapore-contextualised datasets. |
-| [Haize](https://platform.haizelabs.com/app/) | Web platform that auto-generates test data based on user-defined behaviors and a "Code of Conduct". Diverse jailbreaking templates; not open-source. |
+| [Haize](https://platform.haizelabs.com/app/) | Web platform that auto-generates test data based on user-defined behaviours and a "Code of Conduct". Diverse jailbreaking templates; not open-source. |
 | [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) | Evaluation toolkit by UK AI Security Institute, with built-in tool-use and agent components. Comprehensive for research use. |
 
 :::warning[Selecting the right tool]

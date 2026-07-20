@@ -30,7 +30,7 @@
   z-index: 2;
   text-align: left;
   color: white;
-  max-width: 900px;
+  max-width: min(900px, calc(100% - 4rem));
   padding: 2rem;
 }
 
@@ -62,7 +62,11 @@
 }
 
 .playbookTitle {
-  color: #fff;
+  background: rgba(0, 0, 0, 0.72);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.08em 0.18em;
+  white-space: nowrap;
 }
 
 .playbookTagline {
@@ -162,8 +166,8 @@
 
 .keyAreasGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-bottom: 4rem;
 }
 
@@ -293,5 +297,9 @@
   .ctaButton {
     padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
+  }
+
+  .playbookTitle {
+    white-space: normal;
   }
 }

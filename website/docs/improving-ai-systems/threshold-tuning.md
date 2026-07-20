@@ -30,7 +30,7 @@ Choose thresholds based on:
 | Score range | Example action |
 | --- | --- |
 | Low | Allow and log aggregate metrics |
-| Medium | Warn, ask for clarification, or route to safer behavior |
+| Medium | Warn, ask for clarification, or route to safer behaviour |
 | High | Block or escalate |
 
 Validate thresholds using held-out examples and ongoing monitoring.
