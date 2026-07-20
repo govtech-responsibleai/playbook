@@ -88,11 +88,6 @@ export default function Home(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
   const heroBgUrl = useBaseUrl('/images/responsibleai.png');
 
-  useEffect(() => {
-    document.body.classList.add('home-page');
-    return () => document.body.classList.remove('home-page');
-  }, []);
-
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline} noFooter={false}>
       <main>
