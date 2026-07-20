@@ -41,6 +41,32 @@ body {
   height: auto;
 }
 
+/* Navbar logo sizing */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  height: 4.2rem;
+  width: auto;
+  vertical-align: middle;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__title {
+  line-height: 1;
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 /* ─── Release / highlight markers ───────────────────────────────────────────
    Ported from MkDocs typography.css.
    Removed when a page is promoted to stable.

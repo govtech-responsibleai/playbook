@@ -20,7 +20,7 @@ const baseUrl = normalizeBaseUrl(
 const config: Config = {
   title: 'Responsible AI Playbook',
   tagline: 'Evaluating, testing, and mitigating risks in AI systems',
-  favicon: 'assets/favicons/favicon.ico',
+  favicon: 'images/govtech-black.gif',
 
   url: siteUrl,
   baseUrl,
@@ -52,7 +52,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
           showLastUpdateAuthor: false,
           editUrl: undefined,
         },
@@ -80,8 +80,9 @@ const config: Config = {
     navbar: {
       title: 'Responsible AI Playbook',
       logo: {
-        alt: 'GovTech Responsible AI Playbook',
-        src: 'assets/favicons/logo.png',
+        alt: 'GovTech Singapore',
+        src: 'images/govtech-black.gif',
+        srcDark: 'images/govtech-white.gif',
       },
       items: [],
     },

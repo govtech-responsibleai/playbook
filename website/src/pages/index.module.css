@@ -33,6 +33,12 @@
   padding: 2rem;
 }
 
+.heroLogo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1.5rem;
+}
+
 .heroContent h1 {
   font-size: clamp(1.8rem, 4.5vw, 3.1rem);
   font-weight: 800;

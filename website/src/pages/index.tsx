@@ -103,6 +103,11 @@ export default function Home(): React.ReactElement {
         >
           <div className={styles.heroOverlay} aria-hidden="true" />
           <div className={styles.heroContent}>
+            <img
+              src={useBaseUrl('/images/govtech-white.gif')}
+              alt="GovTech Singapore"
+              className={styles.heroLogo}
+            />
             <h1>
               <span className={styles.playbookTitle}>Responsible AI Playbook</span>
             </h1>
