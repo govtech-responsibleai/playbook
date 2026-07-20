@@ -87,13 +87,17 @@ const STARTING_POINTS = [
 export default function Home(): React.ReactElement {
   const {siteConfig} = useDocusaurusContext();
   const heroBgUrl = useBaseUrl('/images/responsibleai.png');
+  const heroMobileBgUrl = useBaseUrl('/images/responsibleai-mobile.png');
 
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline} noFooter={false}>
       <main>
         <section
           className={styles.hero}
-          style={{backgroundImage: `url(${heroBgUrl})`}}
+          style={{
+            '--hero-background': `url(${heroBgUrl})`,
+            '--hero-background-mobile': `url(${heroMobileBgUrl})`,
+          } as React.CSSProperties}
         >
           <div className={styles.heroOverlay} aria-hidden="true" />
           <div className={styles.heroContent}>
