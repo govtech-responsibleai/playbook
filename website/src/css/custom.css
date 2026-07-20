@@ -67,6 +67,16 @@ body {
   padding-bottom: 0.5rem;
 }
 
+/* Hide external link icons in footer */
+.footer__link-item svg {
+  display: none;
+}
+
+/* Smaller copyright text */
+.footer__copyright {
+  font-size: 0.75rem;
+}
+
 /* ─── Release / highlight markers ───────────────────────────────────────────
    Ported from MkDocs typography.css.
    Removed when a page is promoted to stable.

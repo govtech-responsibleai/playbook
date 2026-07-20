@@ -20,7 +20,7 @@ const baseUrl = normalizeBaseUrl(
 const config: Config = {
   title: 'Responsible AI Playbook',
   tagline: 'Evaluating, testing, and mitigating risks in AI systems',
-  favicon: 'images/govtech-black.gif',
+  favicon: undefined,
 
   url: siteUrl,
   baseUrl,
@@ -90,12 +90,8 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          label: 'Email',
-          href: 'mailto:aipractice@tech.gov.sg',
-        },
-        {
-          label: 'Medium',
-          href: 'https://medium.com/dsaid-govtech',
+          label: 'Blog',
+          href: 'https://blog.ai.gov.sg',
         },
         {
           label: 'Hugging Face',
@@ -112,6 +108,10 @@ const config: Config = {
         {
           label: 'X',
           href: 'https://x.com/GovTechSG',
+        },
+        {
+          label: 'Email',
+          href: 'mailto:aipractice@tech.gov.sg',
         },
       ],
       copyright: `Copyright © 2025–${new Date().getFullYear()} Government Technology Agency of Singapore`,
