@@ -20,7 +20,7 @@ const baseUrl = normalizeBaseUrl(
 const config: Config = {
   title: 'Responsible AI Playbook',
   tagline: 'Evaluating, testing, and mitigating risks in AI systems',
-  favicon: undefined,
+  favicon: 'rai.ico',
 
   url: siteUrl,
   baseUrl,
