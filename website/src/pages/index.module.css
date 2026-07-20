@@ -7,7 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* background-image set via inline style in index.tsx using useBaseUrl */
+  background-image: var(--hero-background);
+  background-color: #c5c3bd;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,10 +63,6 @@
 }
 
 .playbookTitle {
-  background: rgba(0, 0, 0, 0.72);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  padding: 0.08em 0.18em;
   white-space: nowrap;
 }
 
@@ -233,6 +230,7 @@
 
 @media (max-width: 768px) {
   .hero {
+    background-image: var(--hero-background-mobile);
     padding: 2rem 1.5rem;
     align-items: flex-end;
   }

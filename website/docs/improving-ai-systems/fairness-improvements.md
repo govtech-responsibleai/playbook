@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Fairness improvements"
+sidebar_label: "[S] Fairness improvements"
 sidebar_position: 4
 ---
 

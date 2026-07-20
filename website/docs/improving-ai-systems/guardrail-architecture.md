@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Guardrail architecture"
+sidebar_label: "[JY] Guardrail architecture"
 sidebar_position: 2
 ---
 

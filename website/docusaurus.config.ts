@@ -20,7 +20,7 @@ const baseUrl = normalizeBaseUrl(
 const config: Config = {
   title: 'Responsible AI Playbook',
   tagline: 'Evaluating, testing, and mitigating risks in AI systems',
-  favicon: undefined,
+  favicon: 'rai.ico',
 
   url: siteUrl,
   baseUrl,
@@ -60,7 +60,7 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-        ...(process.env.NODE_ENV === 'production' ? {
+        ...(process.env.NODE_ENV === 'production' && !process.env.DOCUSAURUS_SITE_URL ? {
           gtag: {
             trackingID: 'G-D8325S860G',
             anonymizeIP: true,

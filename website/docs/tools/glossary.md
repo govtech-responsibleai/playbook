@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Glossary"
+sidebar_label: "[S] Glossary"
 sidebar_position: 5
 ---
 

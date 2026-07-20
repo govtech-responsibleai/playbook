@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Threshold tuning"
+sidebar_label: "[JY] Threshold tuning"
 sidebar_position: 9
 ---
 

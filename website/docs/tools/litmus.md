@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Litmus"
+sidebar_label: "[S] Litmus"
 sidebar_position: 2
 ---
 

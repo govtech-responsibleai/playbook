@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Fairness evals"
+sidebar_label: "[S] Fairness evals"
 sidebar_position: 5
 ---
 

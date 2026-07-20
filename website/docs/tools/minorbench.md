@@ -1,5 +1,5 @@
 ---
-sidebar_label: "MinorBench"
+sidebar_label: "[S] MinorBench"
 sidebar_position: 6
 ---
 

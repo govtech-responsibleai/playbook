@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Monitoring and incident response"
+sidebar_label: "[JY] Monitoring and incident response"
 sidebar_position: 14
 ---
 

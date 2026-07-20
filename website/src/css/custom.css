@@ -118,10 +118,6 @@ body {
   word-wrap: break-word;
 }
 
-/* Hide the top navbar on the home page only */
-body.home-page .navbar {
-  display: none;
-}
 /* ─── Release / highlight markers ───────────────────────────────────────────
    Ported from MkDocs typography.css.
    Removed when a page is promoted to stable.
