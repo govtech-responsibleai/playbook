@@ -67,12 +67,34 @@ body {
   padding-bottom: 0.5rem;
 }
 
-/* Hide external link icons in footer */
+/* Footer styling */
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer__links {
+    gap: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Hide logo and title inside mobile sidebar but keep close button and dark mode toggle */
+@media (max-width: 996px) {
+  .navbar-sidebar__brand .navbar__logo,
+  .navbar-sidebar__brand .navbar__title {
+    display: none;
+  }
+}
+
+
 .footer__link-item svg {
   display: none;
 }
 
-/* Smaller copyright text */
 .footer__copyright {
   font-size: 0.75rem;
 }

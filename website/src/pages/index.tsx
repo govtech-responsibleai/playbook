@@ -104,7 +104,7 @@ export default function Home(): React.ReactElement {
           <div className={styles.heroOverlay} aria-hidden="true" />
           <div className={styles.heroContent}>
             <h1>
-              <span className={styles.responsibleAi}>Responsible AI</span>{' '}
+              <span className={styles.responsibleAi}>Responsible AI</span><br />
               <span className={styles.playbookTitle}>Playbook</span>
             </h1>
             <p className={styles.playbookTagline}>

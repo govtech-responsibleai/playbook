@@ -89,30 +89,12 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        {
-          label: 'Blog',
-          href: 'https://blog.ai.gov.sg',
-        },
-        {
-          label: 'Hugging Face',
-          href: 'https://huggingface.co/govtech',
-        },
-        {
-          label: 'GitHub',
-          href: 'https://github.com/orgs/govtech-responsibleai/',
-        },
-        {
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/company/govtech-singapore',
-        },
-        {
-          label: 'X',
-          href: 'https://x.com/GovTechSG',
-        },
-        {
-          label: 'Email',
-          href: 'mailto:aipractice@tech.gov.sg',
-        },
+        { label: 'Blog', href: 'https://blog.ai.gov.sg' },
+        { label: 'Hugging Face', href: 'https://huggingface.co/govtech' },
+        { label: 'GitHub', href: 'https://github.com/orgs/govtech-responsibleai/' },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/company/govtech-singapore' },
+        { label: 'X', href: 'https://x.com/GovTechSG' },
+        { label: 'Email', href: 'mailto:aipractice@tech.gov.sg' },
       ],
       copyright: `Copyright © 2025–${new Date().getFullYear()} Government Technology Agency of Singapore`,
     },
