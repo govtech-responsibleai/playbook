@@ -30,6 +30,35 @@ Safety testing is **not** red-teaming. Red-teaming generates novel prompts to pr
 
 In our practice we focus on toxic/hateful/sexual/violent content, illegal activities or self-harm, factually incorrect or misleading statements, discriminatory decision-making, and CBRNE-related risks. See the [WOG safety testing framework](../tools/wog-safety-testing.md) for the GovTech risk taxonomy.
 
+### Safety Taxonomy
+
+| Risk Category | Level | Definition |
+|---|---|---|
+| Hateful | L1 | Derogatory statements or negative stereotypes directed at a protected group based on legally protected characteristics. |
+| Hateful | L2 | Explicit calls for harm or violence against a protected group; language praising or justifying violence against such groups. |
+| Insults & Toxic | — | Mocking or demeaning of individuals or groups without referencing legally protected traits. |
+| Sexual | L1 | Non-graphic descriptions of consensual sexual behaviour or activities, or suggestive context without explicit content. |
+| Sexual | L2 | Explicit descriptions of genitalia, or non-criminal sexual behaviour, activities, or content in graphic detail. |
+| Self-Harm | L1 | Expressions, discussions, or endorsement of self-harm without suicide ideation; descriptions of intent to engage in self-harm. |
+| Self-Harm | L2 | Descriptions or indications of ongoing or imminent self-harm behaviour; content that could serve as instruction. |
+| Graphic Content | — | Profane, violent, or disturbing content that is not illegal, sexual, discriminatory, or contemptuous in nature. |
+| Misconduct | L1 | Discussion or instruction providing operational utility for dangerous, deceptive, harmful, or highly uncivil non-illegal conduct. |
+| Misconduct | L2 | Discussion or instruction on illegal activities; development of dangerous devices, substances, or products; large-scale exploitative or manipulative activities. |
+| Financial Advice | — | Financial topics such as personal finance, banking, investments, markets, or economic conditions. |
+| Legal Advice | — | Legal matters, such as rights, procedures, regulations, or disputes. |
+| Medical Advice | — | Medical or health-related issues, including symptoms, conditions, treatments, or healthcare access. |
+
+### Harm Categories
+
+| Category | Subcategory | Definition |
+|---|---|---|
+| Harm to Individuals | Direct Harm | Responses likely to cause immediate psychological distress, emotional harm, or serious offence, such as graphic content or abusive language. |
+| Harm to Individuals | Harm Enablement | Responses providing operational guidance beyond what is commonly available through general educational resources, such as instructions for misconduct or disclosure of personal information. |
+| Harm to Individuals | Epistemic Harm | Responses that impair a user's ability to form accurate beliefs or make informed decisions, including misleading or unqualified professional advice. |
+| Harm to Organisation and Society | Harm to Public Trust | Responses that undermine confidence in institutions by endorsing factually incorrect claims, presenting misleading information as authoritative, or generating content that discredits the organisation. |
+| Harm to Organisation and Society | Harm to Public Cohesion | Responses likely to inflame social tensions, encourage hostility between communities, or otherwise undermine social harmony. |
+| Harm to International Relations | Harm to Diplomatic Relations | Responses that could reasonably undermine diplomatic standing or adversely affect relationships with foreign governments or international partners. |
+
 ## Minimum Launch Expectation
 
 Safety testing is part of the minimum bar before launch. Teams should define the safety categories that matter, run representative tests, review failures, and decide whether mitigations are required before release.
