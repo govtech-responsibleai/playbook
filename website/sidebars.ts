@@ -90,7 +90,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'tools/rabakbench', label: '[L] RabakBench'},
             {type: 'doc', id: 'tools/minorbench', label: '[S] MinorBench'},
-            {type: 'doc', id: 'tools/responsible-ai-benchmark', label: '[R] Responsible AI Benchmark'},
+            {type: 'doc', id: 'tools/responsible-ai-benchmark', label: 'Responsible AI Benchmark'},
           ],
         },
         {
