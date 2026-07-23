@@ -47,6 +47,30 @@ body {
   height: auto;
 }
 
+/* Opt-out for small inline logos, e.g. the LionGuard tool logo */
+.markdown img.tool-logo {
+  width: 200px;
+  max-width: 100%;
+}
+
+/* Logo left, intro text right; stacks on narrow viewports */
+.tool-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.tool-intro img.tool-logo {
+  flex-shrink: 0;
+}
+
+.tool-intro p {
+  flex: 1 1 260px;
+  margin: 0;
+}
+
 /* Navbar logo sizing */
 .navbar__logo {
   display: flex;
