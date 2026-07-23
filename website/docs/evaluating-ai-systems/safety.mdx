@@ -18,7 +18,7 @@ Safety evals check whether the system avoids harmful, prohibited, adversarial, o
 
 Safety testing is the process of assessing an LLM product (via API) using prompts designed to elicit unsafe responses, in order to provide a rough empirical assessment of how resistant the LLM product is to common safety attacks. Note the distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features) — our safety testing is focused on **LLM products**.
 
-Safety testing is **not** red-teaming. Red-teaming generates novel prompts to probe LLMs for vulnerabilities, usually customised to the LLM/product. Safety testing focuses on common attacks and is kept deliberately generic. We also do not focus on existential risk or benchmark foundation models for intrinsic properties; we are interested in how safe an LLM product is when responding to conversational prompts.
+Safety testing is distinct from red-teaming, though the two are complementary. Red-teaming generates novel prompts to probe LLMs for vulnerabilities, usually customised to the LLM/product, while safety testing focuses on common attacks and is kept deliberately generic. In practice, red-teaming techniques are useful for generating and refreshing the adversarial prompts used in safety testing. We also do not focus on existential risk or benchmark foundation models for intrinsic properties; we are interested in how safe an LLM product is when responding to conversational prompts.
 
 ## What to Test
 
@@ -79,7 +79,68 @@ The most common way to measure how "safe" an LLM product is to measure how frequ
 
 ## Adversarial / Red-team Prompt Generation
 
-<mark className="new-since-v1">*Coming soon — this section will cover how to generate adversarial prompts beyond off-the-shelf benchmarks, including LLM-assisted prompt mutation and team-led red-team exercises.*</mark>
+Well-known safety benchmarks provide an important baseline, but they are inherently static. As models improve, benchmark prompts often become less effective due to model updates, fine-tuning, or benchmark leakage. Effective red teaming relies on continuously generating and evolving prompts that reflect how real adversaries adapt.
+
+### LLM-Assisted Prompt Mutation
+
+Modern red teaming increasingly uses LLMs to generate, evaluate, and refine adversarial prompts automatically. Rather than manually writing thousands of prompts, an LLM proposes attack variants, tests them against a target model, and iteratively improves unsuccessful attempts based on the model's responses.
+
+Several mutation strategies are particularly effective:
+
+- **Iterative refinement** — generate an initial adversarial prompt, evaluate the model's response, and rewrite the prompt to explore alternative phrasings, personas, or reasoning strategies until either the objective succeeds or the search converges. Early examples of this approach are described in PAIR, with later work extending it to more efficient search strategies (see the research table below).
+- **Multi-turn escalation** — instead of placing the entire attack in a single prompt, gradually steer the conversation toward the target behaviour over multiple turns. This mirrors how real users build context and often exposes weaknesses that single-turn evaluations miss. Research such as Crescendo demonstrates the effectiveness of conversational, multi-turn jailbreaks.
+- **Evolutionary mutation** — treat prompts as evolving candidates by applying systematic transformations (paraphrasing, restructuring instructions, changing roles, or combining successful patterns) and retaining the variants that are most effective. Evolutionary search methods such as AutoDAN show how this approach can efficiently discover prompts that preserve malicious intent while avoiding simple lexical defences.
+
+:::tip[Tip: Automated mutation at scale]
+
+Automated prompt mutation enables high-throughput exploration of a model's behaviour and often uncovers vulnerabilities that would be impractical to find through manual testing alone. Start with iterative refinement for quick coverage, then layer in multi-turn and evolutionary methods for deeper probing.
+
+:::
+
+### Team-Led Red Teaming
+
+Automation is effective for scaling exploration, but human expertise remains essential for discovering novel attack strategies. Human red teamers are particularly valuable for identifying context-dependent failures, social engineering techniques, and domain-specific weaknesses that automated systems may overlook.
+
+Effective red teams are typically multidisciplinary, bringing together expertise from security, linguistics, product domains, and human behaviour. Different perspectives help uncover attacks based on language variation, cultural context, technical jargon, or application-specific workflows.
+
+Red-team exercises should also be tailored to the capabilities of the system being evaluated. For example, retrieval-augmented systems should be tested for prompt injection and unintended information disclosure, while agentic systems require evaluation of tool misuse, unauthorised actions, and privilege escalation.
+
+### Combining Human Creativity with Automated Scale
+
+A practical workflow combines both approaches:
+
+1. Human red teamers identify promising attack strategies through exploratory testing.
+2. Once an effective pattern is found, automated prompt mutation generates large numbers of variations to systematically map the boundaries of the vulnerability.
+3. Results are reviewed and fed back into the next round of human exploration.
+
+This hybrid workflow combines human creativity with algorithmic scale, allowing organisations to discover novel attack vectors while thoroughly characterising their impact.
+
+### Key Research
+
+The following papers have significantly influenced modern adversarial prompt generation and LLM red teaming:
+
+| Paper | Key contribution |
+|---|---|
+| **PAIR** (Prompt Automatic Iterative Refinement) | Introduced iterative attacker–target refinement, where an LLM repeatedly improves adversarial prompts using feedback from previous attempts. |
+| **TAP** (Tree of Attacks with Pruning) | Extended iterative refinement by exploring multiple attack branches simultaneously and pruning unsuccessful strategies to improve search efficiency. |
+| **Crescendo** | Demonstrated how gradual, multi-turn conversations can outperform many single-turn jailbreak techniques by incrementally steering the model toward restricted behaviours. |
+| **Many-shot jailbreaking** (Anthropic, 2024) | Exploits long context windows by providing many examples of harmful behaviour in-context, overwhelming safety training through sheer volume of demonstrations. |
+| **Skeleton Key** (Microsoft, 2024) | Instructs the model to add a safety warning prefix rather than refuse outright, effectively bypassing alignment with minimal prompt engineering. |
+| **Multilingual / low-resource language attacks** | Safety training is significantly weaker in non-English and low-resource languages. Translating harmful prompts into these languages often bypasses refusal mechanisms entirely. |
+
+<details>
+<summary>Additional and historical methods</summary>
+
+| Paper | Key contribution |
+|---|---|
+| **AutoDAN** | Applied evolutionary and genetic search techniques to generate semantically consistent adversarial prompts that evade simple lexical or template-based defences. |
+| **Best-of-N (BoN) jailbreaking** (Anthropic, 2024) | Statistical brute-force approach — sample many outputs at high temperature and select the harmful completion. Simple but effective at scale. |
+| **GPTFuzzer** (Yu et al., 2023) | Mutation-based fuzzing of jailbreak templates, applying systematic transformations to discover effective variants automatically. |
+| **DeepInception** (Li et al., 2023) | Nested fictional scenarios ("a story within a story") to psychologically distance the model from its safety training. |
+| **Cipher / encoding attacks** (Yuan et al., 2023) | Using base64, ROT13, pig latin, or other encodings to bypass keyword-level safety filters. Effectiveness varies as models improve at detecting encoded content. |
+| **GCG** (Zou et al., 2023) | Gradient-based adversarial suffix optimisation. Requires white-box access; largely patched in production models but foundational for the field. |
+
+</details>
 
 ### Building Your Testing Dataset
 
@@ -89,7 +150,7 @@ Using off-the-shelf safety benchmarks is possible, but they are not always fit-f
 
 - **Limited coverage of safety risks** — there are plenty of datasets for hate speech, toxicity, and self-harm, but fewer for sexual, violent, political, or illegal content.
 - **Varying definitions of safety risks** — each organisation has a different view of what is hateful or toxic. Singapore government has its own definitions and risks to cater to.
-- **Reduced effectiveness of open-source benchmarks** — there is considerable *leakage* of open-source benchmarks into LLM training data. For a benchmark to correctly test for safety, the prompts need to be novel to the LLM.
+- **Reduced effectiveness of open-source benchmarks** — there is considerable *leakage* of open-source benchmarks into LLM training data. See [Benchmark-Leakage Handling](#benchmark-leakage-handling) for detection and mitigation strategies.
 
 :::tip[Tip: Building your testing dataset]
 
@@ -159,7 +220,59 @@ If the LLM application does not refuse to answer, analyse the content of the res
 
 ## Benchmark-Leakage Handling
 
-<mark className="new-since-v1">*Coming soon — this section will cover concrete strategies for detecting benchmark leakage and rotating proprietary prompts to keep evals meaningful as models evolve.*</mark>
+Reliable evaluation depends on ensuring benchmarks remain independent from training data. When benchmark prompts are unintentionally included during training, models can appear stronger than they actually are — inflating scores and reducing confidence that results will generalise to new tasks.
+
+Leakage occurs at several levels. Benchmark questions may appear verbatim in training data, but more subtle forms include reworded versions of the same questions, semantically equivalent tasks with different surface details, or synthetic data derived from benchmark prompts that later enters fine-tuning datasets.
+
+:::note[Contamination vs. overfitting]
+
+**Benchmark contamination** occurs when evaluation data enters a model's training pipeline. **Evaluation overfitting** occurs when developers repeatedly optimise prompts, agents, or application logic against a fixed evaluation suite. Both inflate scores without improving real-world capability, but require different mitigations.
+
+:::
+
+### Detecting Leakage
+
+**Perturbation testing** provides a useful signal without requiring access to model internals. Small, meaning-preserving changes — such as shuffling multiple-choice options, swapping names or numbers, or paraphrasing questions — should have little effect on a model that has learnt the underlying task. Large performance drops after these changes suggest reliance on memorised benchmark text rather than genuine generalisation.
+
+**Likelihood and perplexity analyses** measure how confidently a model predicts benchmark text. Unusually high confidence on benchmark examples compared with similar unseen text can indicate memorisation. These methods require white-box access to model logits.
+
+| Detection Approach | Access Required | What it reveals |
+|---|---|---|
+| Perturbation testing | Black-box (API access) | Whether small non-semantic prompt changes cause unexpected performance drops. |
+| Likelihood / perplexity analysis | White-box (logits or token probabilities) | Unusually confident predictions that may indicate memorisation. |
+| Statistical comparison | White-box or reference models | Anomalous benchmark behaviour relative to clean baselines. |
+
+Where clean reference models are available, statistical comparisons can strengthen the analysis — comparing behaviour across original benchmarks and newly generated reference variants helps distinguish real capability improvements from contamination.
+
+**Proactive safeguards** reduce the likelihood of undetected leakage. Benchmark creators may embed subtle statistical watermarks or unique canary strings into evaluation datasets, allowing accidental ingestion to be detected later. These require planning before a benchmark is released but provide stronger evidence than post-hoc analysis alone.
+
+### Rotating Proprietary Evaluation Prompts
+
+Even proprietary evaluation suites lose effectiveness over time. Models may overfit to static prompts, synthetic training pipelines may inadvertently reproduce internal evaluation patterns, and mature models can eventually solve fixed prompts so consistently that they no longer distinguish capability. This is sometimes called **evaluation decay**.
+
+To address this, teams adopt **dynamic evaluation** — refreshing prompts continuously while keeping the underlying task constant. Practical approaches include:
+
+- **Parameterised or generated prompts** — produce fresh evaluation cases while preserving the underlying task. For domains such as coding or information extraction, cases can be generated programmatically with automatically computed ground-truth answers.
+- **Prompt paraphrasing** — prevent memorisation of fixed wording without changing intent.
+- **Sampling from a larger pool** — draw evaluation cases from a proprietary prompt bank rather than using the full set each time.
+
+:::warning[Calibration is essential]
+
+Prompt rotation introduces a risk: score changes may reflect differences in prompt difficulty rather than model performance. Mitigate this by evaluating new prompt variants against baseline model versions before introducing them into production evaluations.
+
+:::
+
+| Practice | Purpose |
+|---|---|
+| Parameterised / generated prompts | Produce fresh evaluation cases while preserving the underlying task. |
+| Prompt paraphrasing | Prevent memorisation of fixed wording without changing intent. |
+| Anchor prompt set | Maintain score continuity across evaluation cycles. |
+| Prompt calibration | Ensure score changes reflect model quality rather than prompt difficulty. |
+| Prompt versioning | Preserve traceability and reproducibility when investigating failures. |
+
+### Putting It Together
+
+No single technique can conclusively prove benchmark leakage or guarantee evaluation integrity. In practice, combine multiple approaches: perturbation tests to identify memorisation, statistical analyses to detect anomalous performance, proactive safeguards such as watermarking, and continuous rotation of proprietary prompts to prevent evaluation decay.
 
 ## Evaluator-LLM Validation
 
