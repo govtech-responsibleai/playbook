@@ -108,6 +108,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'tools/wog-safety-testing', label: '[T] WOG Safety Testing Framework'},
             {type: 'doc', id: 'tools/agentic-risk-capability-framework', label: '[S] Agentic Risk & Capability Framework'},
+            {type: 'doc', id: 'tools/knowornot', label: 'KnowOrNot'},
           ],
         },
         {
