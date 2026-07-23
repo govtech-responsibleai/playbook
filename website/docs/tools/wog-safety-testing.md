@@ -93,6 +93,10 @@ Unlike static evaluations, safety benchmarks must be continuously updated to ref
 
 Attack Success Rate (ASR) measures how often a chatbot produces an unsafe response when given an adversarial prompt. It is calculated as the number of unsafe responses divided by the total number of adversarial prompts tested. A lower ASR indicates a safer system — the chatbot successfully refuses or redirects more attacks.
 
+$$
+\text{ASR} = \frac{\text{Number of unsafe responses}}{\text{Total number of adversarial prompts}}
+$$
+
 As this benchmark consists exclusively of adversarial prompts designed to elicit unsafe responses, the unsafe engagement rate is equivalent to the ASR. The benchmark is able to distinguish between chatbot systems with different levels of safety performance, providing evidence of its discriminative validity.
 
 ## Where to Go Next
