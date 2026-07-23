@@ -1,29 +1,22 @@
 ---
-sidebar_label: "[L] RabakBench"
+sidebar_label: "RabakBench"
 sidebar_position: 5
 ---
-
 # RabakBench
-
-:::info[About this page]
-
-This page is new in the upcoming Responsible AI Playbook release. It is the dedicated tool page for RabakBench, replacing the earlier section in the GovTech Benchmarks page. Unhighlighted sections are migrated from the previously published [GovTech's Benchmarks: RabakBench](https://playbooks.aip.gov.sg/responsibleai/testing/safety_testing/govtech/#rabakbench) page; new prose is highlighted.
-
-:::
 
 RabakBench is a multilingual AI safety benchmark tailored to Singapore's linguistic landscape, covering Singlish, Chinese, Malay, and Tamil. It addresses gaps left by existing benchmarks, moving beyond Singlish hate speech to include broader risk categories such as insults, sexual content, and self-harm. These categories align with the GovTech [risk taxonomy](./wog-safety-testing.md).
 
 Use RabakBench to evaluate multilingual safety behaviour for LLMs, guardrails, or AI systems.
 
 ![RabakBench](/images/rabakbench.png)
-_RabakBench — using Singapore's unique multilingual landscape as a stress test for AI safety_
+*RabakBench — using Singapore's unique multilingual landscape as a stress test for AI safety*
 
 ## What It Reveals
 
 RabakBench can evaluate guardrails, LLMs as models, and LLM applications. We evaluated widely-used guardrails and identified significant multilingual performance disparities — underscoring the need for localised benchmarks that uncover specific linguistic blind spots.
 
 ![RabakBench Results](/images/rabakbench_results.png)
-_Results of evaluating 11 widely-used guardrails on RabakBench_
+*Results of evaluating 11 widely-used guardrails on RabakBench*
 
 ## How It Was Built
 
@@ -35,6 +28,11 @@ The creation of RabakBench followed a three-stage pipeline that carefully used L
 
 ## Access
 
-- [Blog post](https://go.gov.sg/rabakbench-blog)
-- [Paper](https://go.gov.sg/rabakbench-report)
-- [Public benchmark](https://go.gov.sg/rabakbench)
+<div class="access-grid">
+
+  <a class="access-card access-card--paper" href="https://go.gov.sg/rabakbench-report"><strong>Paper</strong><span>Methodology and results</span></a>
+  <a class="access-card access-card--dataset" href="https://go.gov.sg/rabakbench"><strong>Public benchmark</strong><span>Multilingual safety dataset</span></a>
+  <a class="access-card access-card--blog" href="https://go.gov.sg/rabakbench-blog"><strong>Blog</strong><span>Why we built RabakBench</span></a>
+
+</div>
+
