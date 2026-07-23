@@ -49,3 +49,7 @@ local_settings.py
 
 # MkDocs build output
 site/
+
+# Agents
+openspec
+.superpowers

@@ -90,7 +90,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'tools/rabakbench', label: '[L] RabakBench'},
             {type: 'doc', id: 'tools/minorbench', label: '[S] MinorBench'},
-            {type: 'doc', id: 'tools/responsible-ai-benchmark', label: '[R] Responsible AI Benchmark'},
+            {type: 'doc', id: 'tools/responsible-ai-benchmark', label: 'Responsible AI Benchmark'},
           ],
         },
         {
@@ -108,6 +108,16 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'tools/wog-safety-testing', label: '[T] WOG Safety Testing Framework'},
             {type: 'doc', id: 'tools/agentic-risk-capability-framework', label: '[S] Agentic Risk & Capability Framework'},
+            {type: 'doc', id: 'tools/knowornot', label: 'KnowOrNot'},
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Tools',
+          collapsed: true,
+          items: [
+            {type: 'doc', id: 'tools/kaleidoscope', label: 'Kaleidoscope'},
+            {type: 'doc', id: 'tools/metaevaluator', label: 'MetaEvaluator'},
           ],
         },
         {type: 'doc', id: 'resources', label: '[S] External resources'},
