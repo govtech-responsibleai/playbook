@@ -110,6 +110,14 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'tools/agentic-risk-capability-framework', label: '[S] Agentic Risk & Capability Framework'},
           ],
         },
+        {
+          type: 'category',
+          label: 'Tools',
+          collapsed: true,
+          items: [
+            {type: 'doc', id: 'tools/kaleidoscope', label: 'Kaleidoscope'},
+          ],
+        },
         {type: 'doc', id: 'resources', label: '[S] External resources'},
         {type: 'doc', id: 'tools/glossary', label: '[S] Glossary'},
       ],

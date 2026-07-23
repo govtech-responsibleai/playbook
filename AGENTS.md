@@ -68,7 +68,19 @@ npm run start        # dev server at localhost:3000
 npm run build        # production build → website/build/
 ```
 
-Required validation for content or component changes: successful `npm run build` and, for visible changes, visual review in the dev server. There is no separate test suite or linter configured in this repository.
+## Validation
+
+**This repository has no test suite and no linter, and none should be added for content work.** It is a documentation site: Markdown/MDX pages plus a small amount of React, published for reading. "Does it pass?" means the docs compile and the page renders correctly — not that a test run went green.
+
+Validate changes this way:
+
+1. **Docs compile.** Run `npm run build` from `website/`. It must end with `[SUCCESS] Generated static files in "build"`.
+2. **Links actually resolve.** A green build does *not* prove this: `onBrokenLinks` and `onBrokenMarkdownLinks` are both set to `warn` in `docusaurus.config.ts`, so broken links only produce warnings. Read the build output for warnings, or check the rendered HTML under `website/build/` directly.
+3. **Assets actually render.** Confirm images resolve rather than trusting the Markdown source. Docusaurus rewrites `/images/foo.png` to a content-hashed path under `build/assets/images/` and only emits that path when the source file exists in `website/static/`, so finding the hashed reference in the built HTML is proof the image will display.
+4. **Visual review for visible changes.** Use `npm run start` for layout, styling, or component work.
+5. **Navigation is wired.** A new page must appear in `website/sidebars.ts`; otherwise the build warns that the doc is not in any sidebar and readers cannot reach it.
+
+Because there are no tests, review attention belongs on factual accuracy, tone, heading conventions, and whether links and images resolve — the failure modes this repository actually has.
 
 ## Branch and release model
 
