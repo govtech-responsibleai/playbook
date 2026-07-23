@@ -23,6 +23,7 @@ Tools and templates are separated from conceptual methodology pages so readers c
 | [Sentinel](../tools/sentinel.md) | Input and output guardrails |
 | [LionGuard](lionguard.md) | Localized content moderation |
 | [Kaleidoscope](kaleidoscope.md) | Automated evaluation of AI applications with reliability-scored LLM judges |
+| [MetaEvaluator](metaevaluator.md) | Measuring how well LLM judges align with human annotations |
 | [RabakBench](rabakbench.md) | Multilingual safety benchmarking for Singapore context |
 | [MinorBench](minorbench.md) | Child-specific safety benchmarking |
 | [Responsible AI Benchmark](responsible-ai-benchmark.md) | Comparing application-level safety, robustness, and fairness performance |

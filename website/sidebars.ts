@@ -116,6 +116,7 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           items: [
             {type: 'doc', id: 'tools/kaleidoscope', label: 'Kaleidoscope'},
+            {type: 'doc', id: 'tools/metaevaluator', label: 'MetaEvaluator'},
           ],
         },
         {type: 'doc', id: 'resources', label: '[S] External resources'},
