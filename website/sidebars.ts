@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         {type: 'doc', id: 'evaluating-ai-systems/index', label: '[JY] Overview'},
-        {type: 'doc', id: 'evaluating-ai-systems/methods', label: '[L] Evaluation methods'},
+        {type: 'doc', id: 'evaluating-ai-systems/methods', label: 'Evaluation methods'},
         {
           type: 'category',
           label: 'Evals for RAI principles',

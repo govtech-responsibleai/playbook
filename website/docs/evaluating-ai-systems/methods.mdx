@@ -1,133 +1,356 @@
 ---
-sidebar_label: "[L] Evaluation methods"
+sidebar_label: "Evaluation methods"
 sidebar_position: 8
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Evaluation Methods
+# Evaluation methods
 
-:::info[About this page]
+After defining your evaluation criteria and scoring scale in your [evaluation plan](./index.md), you may set up your evaluation method. The right method depends on what you're trying to test and what level of automation you need.
 
-This page is new in the upcoming Responsible AI Playbook release. It collects the cross-cutting evaluation methods (human evaluation, LLM-as-judge with Alt-Test, continuous evals) used across all five area pages. All content is new.
+## Choose an evaluation method
 
-:::
+<div className="evaluation-method-spectrum">
+  <div className="evaluation-method-spectrum__axis" aria-hidden="true">
+    <span><strong>More rigid</strong><small>More automation</small></span>
+    <span><strong>More flexible</strong><small>Less automation</small></span>
+  </div>
+  <ol className="evaluation-method-spectrum__methods" aria-label="Evaluation methods ordered from more rigid and automated to more flexible and manual">
+    <li>
+      <span className="evaluation-method-spectrum__number">1</span>
+      <strong>Deterministic checks</strong>
+      <small>Exact match, regular expressions (regex) </small>
+    </li>
+    <li>
+      <span className="evaluation-method-spectrum__number">2</span>
+      <strong>Embedding similarity</strong>
+      <small>Semantic similarity to a reference</small>
+    </li>
+    <li>
+      <span className="evaluation-method-spectrum__number">3</span>
+      <strong>LLM-as-a-judge</strong>
+      <small>Policy-based model scoring</small>
+    </li>
+    <li>
+      <span className="evaluation-method-spectrum__number">4</span>
+      <strong>Human evaluation</strong>
+      <small>Contextual expert judgement</small>
+    </li>
+  </ol>
+</div>
 
-These methods are used across all five evaluation areas (functional, safety, robustness, fairness, privacy). They are not areas in themselves — they are how you score outputs and keep evaluations running.
+The methods are not mutually exclusive. For example, you might check an output with deterministic rules or an LLM-as-a-Judge before escalating ambiguous cases for human review.
 
-## Human Evaluation
+<div className="evaluation-method-comparison">
 
-Human evaluation is useful when outputs are open-ended, contextual, or hard to score automatically.
+| Method | Best suited to | Advantages | Limitations |
+| --- | --- | --- | --- |
+| Deterministic checks | Outputs with a known format or set of permitted values | Fast, inexpensive, repeatable, and easy to audit | Brittle for open-ended responses; checks do not account for meaning and context |
+| Embedding similarity | Tasks where a correct answer should be semantically close to a reference | Scales well and recognises paraphrases that exact match would reject | Similarity is not correctness or completeness and can only be applied to certain criteria |
+| LLM-as-a-judge | Open-ended outputs that can be assessed against a rubric | Flexible, scalable, and able to consider several aspects of an answer | Subject to LLM biases and inconsistencies |
+| Human evaluation | Contextual, subjective, or high-risk judgements | Most reliable and captures nuances well | Slow and costly; human fatigue; reviewers can disagree or apply the rubric inconsistently |
 
-### When to Use Human Evaluation
+</div>
 
-Use human review when:
+## Deterministic checks
 
-- The task requires domain judgment.
-- Multiple answers may be acceptable.
-- The risk of a false pass is high.
-- You are validating an LLM-as-judge or automated metric.
-- You need qualitative failure analysis before automation.
+- **Exact match** compares the output with an expected answer. Normalise permitted differences such as whitespace or letter case before comparing.
+- **Regular expressions** check for defined formats, required phrases, or prohibited strings.
 
-### Designing Human Review
-
-Define:
-
-- The rubric and scoring scale.
-- Reviewer qualifications.
-- Examples of pass, partial pass, and fail.
-- How disagreements will be resolved.
-- How many samples each reviewer sees.
-- How results feed into mitigation decisions.
-
-### Validate Agreement
-
-Track agreement between reviewers. When using LLM judges, compare them against human annotations rather than assuming that model-based scores are correct.
-
-### Alternative Annotator Test (Alt-Test)
-
-The Alt-Test is one way to robustly validate an LLM-as-judge. It reframes the goal from "Is the model correct?" to "To what extent do LLMs concur with human annotations?"
-
-It is a **leave-one-annotator-out** hypothesis test that measures whether an LLM judge agrees with the remaining human consensus **at least as well as** the left-out human does.
-
-This is an improvement over traditional metrics: agreement measures (Cohen's kappa, Krippendorff) only assess agreement among annotators, and performance metrics (Accuracy, F1) only evaluate whether the LLM matches human performance. The Alt-Test:
-
-- Is actionable: a high *winning rate* provides statistical evidence that the model can stand in for human annotators, and the *advantage probability* lets you compare models.
-- Captures the variability among humans themselves, accounting for the fact that humans disagree with each other.
-
-:::note[The Test in Action]
-
-A hands-on implementation and extension of the Alt-Test is in this [blog post](https://medium.com/dsaid-govtech/validating-annotation-agreement-between-humans-and-llms-bc334245b1d9). For more details, see the [original Alt-Test paper](https://arxiv.org/abs/2501.10970).
-
-:::
-
-## LLM-as-Judge
-
-LLM-as-judge methods use a language model to evaluate outputs against a rubric, reference answer, or preference criteria.
-
-### Useful For
-
-- Open-ended quality scoring.
-- Comparing candidate models or prompts.
-- Checking faithfulness, completeness, or relevance.
-- Scaling review after a smaller human-labeled set is available.
-
-### Risks
-
-LLM judges can be biased, inconsistent, sensitive to prompt wording, and overconfident. They may also prefer verbose or stylistically familiar answers.
-
-### Minimum Validation
-
-Before relying on an LLM judge:
-
-1. Write a clear rubric.
-2. Test the judge on examples with known human labels.
-3. Measure agreement with humans.
-4. Inspect disagreements.
-5. Revalidate when the task, model, rubric, or data distribution changes.
-
-### Code Example
+<details>
+<summary><strong>Example: Apply deterministic checks</strong></summary>
 
 <Tabs>
-<TabItem value="general" label="General">
+<TabItem value="reference-format" label="Reference format">
 
-```python
-# Score model responses against a rubric using a pinned judge.
-JUDGE_MODEL = "claude-sonnet-4-6"  # pin the version explicitly
+GrantsAssist requires application references to use `GRANT-` followed by six digits. The team checks each reference with:
 
-RUBRIC = """
-Score the assistant's answer 1–5 against the rubric below.
-1: incorrect or harmful  2: misleading  3: partial  4: good  5: correct and complete.
-Respond with JSON: {"score": <int>, "reason": "<short>"}.
-"""
-
-def judge(question: str, answer: str, reference: str) -> dict:
-    prompt = f"{RUBRIC}\n\nQ: {question}\nA: {answer}\nRef: {reference}"
-    out = client.messages.create(
-        model=JUDGE_MODEL,
-        max_tokens=300,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return json.loads(out.content[0].text)
+```text
+^GRANT-\d{6}$
 ```
 
+This accepts `GRANT-482193` and rejects values such as `482193`, `GRANT-48219`, or `GRANT-ABC123`.
+
 </TabItem>
-<TabItem value="litmus" label="Litmus">
+<TabItem value="response-structure" label="Response structure">
+
+GrantsAssist must return an eligibility summary in this structure:
+
+```md
+## Eligibility
+Based on the information provided, ...
+
+## Next steps
+To continue, ...
+```
 
 ```python
-# Litmus exposes a managed LLM-as-judge with versioned rubrics
-# so eval results stay comparable across runs.
-# Coming soon — reach out via AIGuardian for early access.
+assert headings == ["## Eligibility", "## Next steps"]
+assert paragraphs[0].startswith("Based on the information provided,")
+assert paragraphs[1].startswith("To continue,")
 ```
 
 </TabItem>
 </Tabs>
 
-### Pinning Judge Models
+</details>
+
+## Embedding similarity
+
+Compare the generated output with a reference using an embedding model. Treat the result as semantic similarity, not proof of correctness. A similar answer can still contain incorrect details.
+
+<details>
+<summary><strong>Example: Compare an answer with a reference</strong></summary>
+
+```python
+import numpy as np
+
+reference = "Applicants must be at least 65 years old."
+response = "Applicants aged 65 and above qualify."
+
+# Apply your preferred embedding model
+reference_vector = embed(reference)
+response_vector = embed(response)
+
+similarity = np.dot(reference_vector, response_vector) / (
+    np.linalg.norm(reference_vector) * np.linalg.norm(response_vector)
+)
+
+print(f"Cosine similarity: {similarity:.3f}")
+# Example output: Cosine similarity: 0.820
+# Set the similarity threshold using annotated examples.
+```
+
+</details>
+
+## LLM-as-a-judge
+
+An LLM-as-a-judge uses a language model to score another model's output. It can scale open-ended evaluation beyond what deterministic checks and embedding similarity can capture, but its scores are useful only after the judge has been well validated.
+
+### Set up an LLM judge
+
+1. **Use an independent judge where possible.**
+
+   - To reduce self-preference bias, select a model from a different model family from the one that generated the response.
+
+2. **Evaluate one criterion at a time.**
+
+   - Asking one judge call to score several criteria can reduce performance.
+   - Ask the judge to return a structured response based on your policy.
+
+3. **Provide evidence and representative examples.**
+
+   - Give the judge the full context about the application, its target users, and all its inputs.
+   - Include reference few-shot examples.
+
+4. **Set the temperature to `0` where possible.**
+
+   - Although a temperature of `0` does not guarantee identical results, judge calls should be as consistent as possible.
+
+**Other tips**
+
+- Run the same examples more than once to ensure that the judge is consistent.
+- Run multiple judges on the same task to reduce dependence on one model's biases.
+- You may include a confidence score in the judge output, but treat self-reported confidence with caution because it may not be reliable.
+- Consider pairwise comparison when choosing between two candidate outputs instead of asking for a zero-shot rating.
+
+<details>
+<summary><strong>Example: Score answer accuracy</strong></summary>
+
+```python
+import json
+
+JUDGE_MODEL = "your-pinned-judge-model-version"
+
+# Example labels: accurate | partially_accurate | not_accurate
+JUDGE_PROMPT = """
+## Instructions
+Evaluate the candidate response.
+
+<policy> {evaluation_policy} </policy>
+
+## Reference
+<context> {application_context} </context>
+<input> {inputs} </input>
+
+## Response
+<response> {response_to_evaluate} </response>
+
+## Evaluation criteria
+<criteria> {evaluation_criteria} </criteria>
+
+Return JSON only:
+{{
+    "score": "<label defined in evaluation_criteria>",
+    "reason": "<brief reason>"
+}}
+"""
+
+def judge(...):
+    judge_prompt = JUDGE_PROMPT.format(...)
+    result = client.messages.create(
+        model=JUDGE_MODEL,
+        temperature=0,
+        max_tokens=300,
+        messages=[{"role": "user", "content": judge_prompt}],
+    )
+    return json.loads(result.content[0].text)
+```
+
+</details>
+
+### What to watch out for
+
+LLM judges can be influenced by factors unrelated to the evaluation criteria. Understanding these limitations can help you configure your judge more carefully.
+
+- **Self-preference bias:** The judge favours outputs produced by itself or a related model.
+- **Inherited bias:** Biases from training data affect judgements across demographic, cultural, or language groups.
+- **Position bias:** The judge favours an answer because it appears first or second.
+- **Style bias:** The judge rewards a familiar tone, format, or writing style over substance.
+- **Verbosity bias:** The judge rewards a longer answer even when it is no more correct.
+- **Authority bias:** Confident, concrete, or authoritative-sounding details receive undue weight.
+- **Inconsistency:** Repeated calls produce different scores for the same example.
+- **Overconfidence:** The judge reports high confidence for an incorrect or weakly supported score.
+- **Sycophancy:** The judge mirrors a stated preference instead of applying the criteria independently.
+
+For an overview of known biases and reliability challenges, see [A Survey on LLM-as-a-Judge](https://arxiv.org/pdf/2411.15594).
+
+### Judge Calibration (Measurement)
+
+This step requires human review on a subset of examples.
+
+**How many examples should you review?**
+
+At the very least, we recommend preparing a human-reviewed dataset of **30–50 examples**. Based on research and practical experience, this provides a reasonable balance between annotator fatigue and sample size. Use the annotated set to calculate agreement between the reviewers and the judge.
+
+<details>
+<summary><strong>What is annotator fatigue?</strong></summary>
+
+Human review can suffer from fatigue-related inconsistencies. While larger review sets can produce more robust reliability estimates, reviewing large sets frequently can become impractical and may lead reviewers to skip calibration altogether.
+
+</details>
+
+:::note[This is not a hard rule.]
+
+The amount of data needed depends on the use case and scoring rubric -- for instance, subjective tasks or multi-class labels may require more examples for calibration, and subjective tasks may require more annotators. More advanced teams should run statistical tests to estimate the sample size needed for their use case.
+
+With a small sample, a few disagreements or rare cases can substantially change agreement scores. Prepare more annotated examples where possible, provided they are meaningful and representative of the target population.
+
+:::
+
+
+#### Classification metrics
+
+Measure categorical judgements with traditional classification metrics, depending on your use case.
+
+<div className="metric-disclosures">
+
+  <details className="metric-disclosure">
+    <summary>True positive rate (TPR) and true negative rate (TNR)</summary>
+    <p>TPR, also known as Recall, and TNR measure how often the judge correctly identifies passing and failing responses, respectively. Reporting them separately can reveal a judge that favours one label.</p>
+  </details>
+
+  <details className="metric-disclosure">
+    <summary>Accuracy</summary>
+    <p>The overall proportion of human labels the judge matches.</p>
+  </details>
+
+  <details className="metric-disclosure">
+    <summary>Precision</summary>
+    <p>Useful for important classes, especially when some labels are uncommon or some errors are more serious than others.</p>
+  </details>
+
+  <details className="metric-disclosure">
+    <summary>F1 score</summary>
+    <p>Combines precision and recall into one score using their harmonic mean. It is useful when both missed positives and false alarms matter, especially when classes are imbalanced.</p>
+  </details>
+
+</div>
+
+#### Inter-annotator Agreement Metrics
+
+Measure how consistently human and LLM annotators agree on the same labels.
+
+<div className="metric-disclosures">
+
+  <details className="metric-disclosure">
+    <summary>Cohen's kappa</summary>
+    <p>Measures agreement between two annotators on categorical labels while accounting for agreement that could occur by chance. This gives a more informative result than raw percentage agreement when one label is especially common.</p>
+  </details>
+
+  <details className="metric-disclosure">
+    <summary>Krippendorff's alpha</summary>
+    <p>Like Cohen's kappa, Krippendorff's alpha accounts for chance by comparing observed disagreement with the disagreement expected by chance. Use it instead of Cohen's kappa when you have more than two annotators, some annotations are missing, or your scores are ordinal or continuous rather than categorical.</p>
+  </details>
+
+  <details className="metric-disclosure">
+    <summary>Alternative Annotator Test (Alt-Test)</summary>
+    <p>The Alt-Test is one way to measure the alignment of your LLM-as-a-Judge. It reframes the goal of evaluation from "Is the model correct?" to "To what extent to LLMs concur with human annotations?"</p>
+    <p>Essentially, it is a leave-one-annotator-out hypothesis test that measures whether an LLM judge agrees with the remaining human consensus at least as well as the left-out human does.</p>
+    <p>How is this better than traditional metrics? Commonly used agreement measures (e.g. Cohen's kappa, Krippendorff) only assess agreement among annotators, and performance metrics (e.g. Accuracy, F1 Score) only evaluate whether the LLM matches human performance. The Alt-Test provides two key advantages:</p>
+    <ul>
+      <li>It is actionable: a high winning rate provides statistical evidence that the model can stand in for human annotators, and the advantage probability provides a measure to compare between models.</li>
+      <li>It captures the variability amongst humans themselves, accounting for the fact that humans disagree with each other.</li>
+    </ul>
+  </details>
+
+</div>
+
+:::note[Apply these metrics]
+
+See the [hands-on implementation and extension](https://medium.com/dsaid-govtech/validating-annotation-agreement-between-humans-and-llms-bc334245b1d9), the [original Alt-Test paper](https://arxiv.org/abs/2501.10970), and GovTech's [MetaEvaluator](../tools/metaevaluator.md) for tools and further detail.
+
+:::
+
+### Judge calibration (optimisation)
+
+Using the set of human-reviewed examples, calibrate the judge to be aligned to your annotations. Re-run the alignment metrics after each material change to measure judge improvements.
+
+<details>
+<summary><strong>Judge optimisation approaches</strong></summary>
+
+The approaches below include prompt optimisers from the [DSPy library](https://dspy.ai/).
+
+| Approach | How it improves the judge | Data guidance |
+| --- | --- | --- |
+| Few-shot examples | Demonstrate how human reviewers apply the criteria | 3-5 examples covering key labels |
+| [COPRO](https://dspy.ai/api/optimizers/COPRO/) | Refines judge instructions | No fixed minimum; use a representative optimisation set |
+| [MIPROv2](https://dspy.ai/api/optimizers/MIPROv2/) | Optimises instructions and few-shot examples together | No fixed minimum; the default configuration requires at least 35 validation examples |
+| [GEPA](https://dspy.ai/api/optimizers/GEPA/overview/) | Uses execution feedback to improve prompts | No fixed minimum; use the smallest representative validation set and keep the training set as large as practical |
+| [MemAlign](https://mlflow.org/docs/latest/genai/eval-monitor/scorers/llm-judge/memalign/) | Learns principles and examples from human feedback | Start with at least 10 examples containing human feedback, with a mix of positive and negative labels |
+
+</details>
+
+:::warning[Avoid optimising on your test set]
+
+Use separate sets for prompt optimisation and final validation. Reporting performance on the same examples used to optimise the judge will overstate how well it generalises.
+
+:::
+
+<!-- ### Pinning judge models
 
 <mark className="new-since-v1">*Coming soon — this section will cover how to version-pin judge models so eval results stay comparable over time.*</mark>
 
-### Judge Drift and Re-validation
+### Judge drift and revalidation
 
-<mark className="new-since-v1">*Coming soon — this section will cover how to detect when an LLM judge's behaviour has drifted, and the cadence for re-validating against human annotations.*</mark>
+<mark className="new-since-v1">*Coming soon — this section will cover how to detect when an LLM judge's behaviour has drifted, and the cadence for re-validating against human annotations.*</mark> -->
+
+## Human evaluation
+
+Human evaluation is appropriate when outputs are open-ended, contextual, or difficult to score reliably through automated methods.
+
+### When to use human evaluation
+
+Human review is especially important:
+
+- In high-risk use cases where the consequences of an incorrect judgement are serious.
+- When the task requires domain expertise or specific contextual judgement.
+- When the assessment is subjective.
+
+### Before starting the human review...
+
+- Align annotators on the product use case, evaluation criteria, policy and taxonomy. **Give them the full context, including the same information that an LLM judge would receive.**
+- Set a manageable review load and allow breaks to reduce fatigue.
+- When using multiple annotators, define how disagreements will be adjudicated, but retain and examine them: disagreement may reveal unclear criteria, gaps in reviewer alignment, or cases that require specialist judgement.

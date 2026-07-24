@@ -297,3 +297,214 @@ mark.privacy-additions,
 .access-card:hover::after {
   background-color: #fff;
 }
+
+/* ─── Evaluation method spectrum ───────────────────────────────────────────
+   Ordered comparison on evaluating-ai-systems/methods.mdx. The text labels
+   carry the meaning; colour and direction are supporting cues only.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.evaluation-method-spectrum {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background: linear-gradient(
+    110deg,
+    var(--ifm-color-emphasis-100),
+    color-mix(in srgb, var(--ifm-color-primary-lightest) 18%, var(--ifm-background-surface-color))
+  );
+}
+
+.evaluation-method-spectrum__axis {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.evaluation-method-spectrum__axis span {
+  display: flex;
+  flex-direction: column;
+}
+
+.evaluation-method-spectrum__axis span:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.evaluation-method-spectrum__axis strong {
+  color: var(--ifm-color-primary);
+  font-size: 0.9rem;
+}
+
+.evaluation-method-spectrum__axis small {
+  font-size: 0.75rem;
+}
+
+.evaluation-method-spectrum__methods {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.evaluation-method-spectrum__methods li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+}
+
+.evaluation-method-spectrum__methods li:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 0.4rem);
+  width: 0.8rem;
+  color: var(--ifm-color-primary);
+  content: "→";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.evaluation-method-spectrum__methods strong {
+  margin-bottom: 0.3rem;
+  color: var(--ifm-color-emphasis-900);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.evaluation-method-spectrum__methods small {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.evaluation-method-spectrum__number {
+  display: inline-grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-bottom: 0.65rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.evaluation-method-comparison tbody td:first-child {
+  font-weight: 700;
+}
+
+.markdown details.metric-disclosure {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-left-width: 0;
+  --ifm-alert-border-width: 0;
+  --ifm-alert-shadow: none;
+  margin: 0.25rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ifm-font-color-base);
+}
+
+.markdown details.metric-disclosure > summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+  padding-left: 0;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.markdown details.metric-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown details.metric-disclosure > summary::before {
+  position: static;
+  top: auto;
+  left: auto;
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+  border: 0;
+  color: var(--ifm-font-color-base);
+  content: "•";
+  font-weight: 400;
+  text-align: center;
+  transform: none !important;
+  transition: none;
+}
+
+.markdown details.metric-disclosure > summary::after {
+  margin-left: auto;
+  color: var(--ifm-color-emphasis-600);
+  content: "›";
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1;
+  transform-origin: center;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.markdown details.metric-disclosure[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+.markdown details.metric-disclosure > summary:hover::after {
+  color: var(--ifm-color-primary);
+}
+
+.markdown details.metric-disclosure > summary:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+.markdown details.metric-disclosure > div > div {
+  margin-top: 0.25rem;
+  padding: 0 0 0 var(--ifm-list-left-padding);
+  border-top: 0;
+}
+
+.markdown details.metric-disclosure > div > div > p,
+.markdown details.metric-disclosure > div > div > ul {
+  margin: 0 0 0.75rem;
+}
+
+.markdown details.metric-disclosure > div > div > ul {
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .evaluation-method-spectrum__methods li:not(:last-child)::after {
+    top: calc(100% + 0.25rem);
+    left: 50%;
+    width: 1rem;
+    content: "↓";
+    transform: translateX(-50%);
+  }
+}
