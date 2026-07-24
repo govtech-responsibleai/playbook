@@ -1,4 +1,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
@@ -55,6 +57,8 @@ const config: Config = {
           showLastUpdateTime: false,
           showLastUpdateAuthor: false,
           editUrl: undefined,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
@@ -110,6 +114,16 @@ const config: Config = {
     //   indexName: 'responsible-ai-playbook',
     // },
   } satisfies Preset.ThemeConfig,
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.18.1/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-1vdNCNel6Tx/NQa8IR1mGOGKsbGreCkOPfbtPPnUURJ5Tu2PRVfQ/7KLZC+Pi1p1',
+      crossorigin: 'anonymous',
+    },
+  ],
 
   headTags: [
     {
