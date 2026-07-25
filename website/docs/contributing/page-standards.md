@@ -39,7 +39,7 @@ refreshed the recommended benchmarks table.
 :::
 ```
 
-- Open with "New in this release: …" for wholly new pages, or "Updated for the <release> release: …" for existing pages.
+- Open with "New in this release: …" for wholly new pages, or "Updated for the `<release>` release: …" for existing pages.
 - Keep it to one sentence or one to three bullets, written for readers.
 - Credit contributing teams here where relevant (e.g. "contributed by GovTech Data Practice").
 - No git archaeology: no branch names, no links to previous page URLs, no editing history.

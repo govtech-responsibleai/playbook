@@ -3,7 +3,7 @@ sidebar_label: "[S] External resources"
 sidebar_position: 10
 ---
 
-# External Resources
+# External resources
 
 :::info[What's changed in this release]
 
@@ -29,7 +29,7 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Libra-Leaderboard: Towards Responsible AI through a Balanced Leaderboard of Safety and Capability (Dec 2024)](https://arxiv.org/pdf/2412.18551) - uses a distance-to-optimal-score method to calculate overall rankings, balancing performance and safety
 - [DarkBench: Benchmarking Dark Patterns in Large Language Models (Mar 2025)](https://arxiv.org/abs/2503.10728) - benchmark to detect manipulative LLM outputs across six categories
 
-## Testing and Red-Teaming
+## Testing and red-teaming
 
 - [Red Teaming Language Models with Language Models (Feb 2022)](https://aclanthology.org/2022.emnlp-main.225.pdf) - generating red-teaming test cases with another language model
 - [Universal and Transferable Adversarial Attacks on Aligned Language Models (Jul 2023)](https://github.com/llm-attacks/llm-attacks) - finds transferable adversarial suffixes
@@ -58,7 +58,7 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 
 - [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet (May 2024)](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) - sparse autoencoders for interpretable features in model activations
 
-## Agentic Safety
+## Agentic safety
 
 - [Progent: Programmable Privilege Control for LLM Agents (Apr 2025)](https://arxiv.org/abs/2504.11703) - privilege control policies for agent execution
 - [Design Patterns for Securing LLM Agents against Prompt Injections (Jun 2025)](https://arxiv.org/abs/2506.08837) - design patterns for prompt-injection resistant agents
@@ -68,7 +68,7 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Awesome-LM-SSP](https://github.com/ThuCCSLab/Awesome-LM-SSP/tree/main) - reading list for safety, security, and privacy in large models
 - [Awesome-LLM-Judges](https://github.com/haizelabs/Awesome-LLM-Judges) - research on using LLM judges for automated evaluation
 
-## Blogs and Guides
+## Blogs and guides
 
 - [Frequently Asked Questions (And Answers) About AI Evals](https://hamel.dev/blog/posts/evals-faq/) and [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) by Hamel Husain - practical tips on iterative evaluations for AI systems
 - [Simon Willison's Weblog](https://simonwillison.net/) - practical writing on AI systems and prompt injection

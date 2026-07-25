@@ -6,7 +6,7 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Safety Evals
+# Safety evals
 
 :::info[About this page]
 
@@ -20,7 +20,7 @@ Safety testing is the process of assessing an LLM product (via API) using prompt
 
 Safety testing is distinct from red-teaming, though the two are complementary. Red-teaming generates novel prompts to probe LLMs for vulnerabilities, usually customised to the LLM/product, while safety testing focuses on common attacks and is kept deliberately generic. In practice, red-teaming techniques are useful for generating and refreshing the adversarial prompts used in safety testing. We also do not focus on existential risk or benchmark foundation models for intrinsic properties; we are interested in how safe an LLM product is when responding to conversational prompts.
 
-## What to Test
+## What to test
 
 - Harmful content or unsafe compliance.
 - Jailbreak and prompt injection attempts.
@@ -30,7 +30,7 @@ Safety testing is distinct from red-teaming, though the two are complementary. R
 
 In our practice we focus on toxic/hateful/sexual/violent content, illegal activities or self-harm, factually incorrect or misleading statements, discriminatory decision-making, and CBRNE-related risks. See the [WOG safety testing framework](../tools/wog-safety-testing.md) for the GovTech risk taxonomy.
 
-### Safety Taxonomy
+### Safety taxonomy
 
 | Risk Category | Level | Definition |
 |---|---|---|
@@ -48,7 +48,7 @@ In our practice we focus on toxic/hateful/sexual/violent content, illegal activi
 | Legal Advice | — | Legal matters, such as rights, procedures, regulations, or disputes. |
 | Medical Advice | — | Medical or health-related issues, including symptoms, conditions, treatments, or healthcare access. |
 
-### Harm Categories
+### Harm categories
 
 | Category | Subcategory | Definition |
 |---|---|---|
@@ -59,11 +59,11 @@ In our practice we focus on toxic/hateful/sexual/violent content, illegal activi
 | Harm to Organisation and Society | Harm to Public Cohesion | Responses likely to inflame social tensions, encourage hostility between communities, or otherwise undermine social harmony. |
 | Harm to International Relations | Harm to Diplomatic Relations | Responses that could reasonably undermine diplomatic standing or adversely affect relationships with foreign governments or international partners. |
 
-## Minimum Launch Expectation
+## Minimum launch expectation
 
 Safety testing is part of the minimum bar before launch. Teams should define the safety categories that matter, run representative tests, review failures, and decide whether mitigations are required before release.
 
-## How to Measure Safety
+## How to measure safety
 
 ![Safety Testing](/images/safety_testing_diagram.png)
 _Figure: Refusal in LLM systems_
@@ -77,11 +77,11 @@ The most common way to measure how "safe" an LLM product is to measure how frequ
 
 :::
 
-## Adversarial / Red-team Prompt Generation
+## Adversarial / red-team prompt generation
 
 Well-known safety benchmarks provide an important baseline, but they are inherently static. As models improve, benchmark prompts often become less effective due to model updates, fine-tuning, or benchmark leakage. Effective red teaming relies on continuously generating and evolving prompts that reflect how real adversaries adapt.
 
-### LLM-Assisted Prompt Mutation
+### LLM-assisted prompt mutation
 
 Modern red teaming increasingly uses LLMs to generate, evaluate, and refine adversarial prompts automatically. Rather than manually writing thousands of prompts, an LLM proposes attack variants, tests them against a target model, and iteratively improves unsuccessful attempts based on the model's responses.
 
@@ -97,7 +97,7 @@ Automated prompt mutation enables high-throughput exploration of a model's behav
 
 :::
 
-### Team-Led Red Teaming
+### Team-led red teaming
 
 Automation is effective for scaling exploration, but human expertise remains essential for discovering novel attack strategies. Human red teamers are particularly valuable for identifying context-dependent failures, social engineering techniques, and domain-specific weaknesses that automated systems may overlook.
 
@@ -105,7 +105,7 @@ Effective red teams are typically multidisciplinary, bringing together expertise
 
 Red-team exercises should also be tailored to the capabilities of the system being evaluated. For example, retrieval-augmented systems should be tested for prompt injection and unintended information disclosure, while agentic systems require evaluation of tool misuse, unauthorised actions, and privilege escalation.
 
-### Combining Human Creativity with Automated Scale
+### Combining human creativity with automated scale
 
 A practical workflow combines both approaches:
 
@@ -115,7 +115,7 @@ A practical workflow combines both approaches:
 
 This hybrid workflow combines human creativity with algorithmic scale, allowing organisations to discover novel attack vectors while thoroughly characterising their impact.
 
-### Key Research
+### Key research
 
 The following papers have significantly influenced modern adversarial prompt generation and LLM red teaming:
 
@@ -142,7 +142,7 @@ The following papers have significantly influenced modern adversarial prompt gen
 
 </details>
 
-### Building Your Testing Dataset
+### Building your testing dataset
 
 Designing the adversarial prompts is critical as they determine how meaningful the entire safety testing process will be.
 
@@ -158,7 +158,7 @@ Mix prompts from open-source benchmarks (some with modifications) with your own 
 
 :::
 
-### Open-source Safety Benchmarks
+### Open-source safety benchmarks
 
 #### Recommended
 
@@ -166,8 +166,8 @@ The following benchmarks are actively maintained, methodology-driven, and have l
 
 | Dataset | Description |
 |---|---|
-| [HarmBench](https://github.com/centerforaisafety/HarmBench) | Standardized red-teaming framework evaluating 18 attack methods against 33 models and defences. Methodology-driven rather than a static dataset, making it resistant to leakage. (2024) |
-| [JailbreakBench](https://github.com/JailbreakBench/jailbreakbench) | 100 well-defined harmful behaviours with a live leaderboard and standardized evaluation protocols. Dynamic updates resist staleness. NeurIPS 2024 Datasets & Benchmarks. |
+| [HarmBench](https://github.com/centerforaisafety/HarmBench) | Standardised red-teaming framework evaluating 18 attack methods against 33 models and defences. Methodology-driven rather than a static dataset, making it resistant to leakage. (2024) |
+| [JailbreakBench](https://github.com/JailbreakBench/jailbreakbench) | 100 well-defined harmful behaviours with a live leaderboard and standardised evaluation protocols. Dynamic updates resist staleness. NeurIPS 2024 Datasets & Benchmarks. |
 | [AIR-Bench 2024](https://arxiv.org/abs/2407.17436) | 5,694 prompts across 314 risk categories mapped to government regulations and company policies. Strong fit for compliance-focused testing. (2024) |
 | [Do-Not-Answer](https://github.com/Libr-AI/do-not-answer) | ~939 naturally-occurring questions spanning different risk categories. Lightweight refusal test with a well-structured harm taxonomy. Moderate leakage risk — best used as a quick screen. (2023) |
 | [SALAD-Bench](https://github.com/OpenSafetyLab/SALAD-BENCH) | ~21k samples from 6 risk categories. Approach of fine-tuning on harmful QA-pairs to generate more unsafe data, plus prompt expansion with attack/defence modifications, is easily adapted. (2024) |
@@ -175,7 +175,7 @@ The following benchmarks are actively maintained, methodology-driven, and have l
 | [Tree of Attacks with Pruning (TAP)](https://github.com/RICommunity/TAP) | Iteratively refines candidate attack prompts using Tree-of-Thought. Expensive but the multi-LLM generate/curate/refine pattern is adaptable. |
 | [SafeBench-MM](https://safebench-mm.github.io/) | ~2k multi-modal harmful query pairs across 23 risk scenarios. |
 
-#### Outdated or Limited
+#### Outdated or limited
 
 These benchmarks are widely known and likely leaked into LLM training data. They remain useful as historical baselines or for adapting their methodology, but should not be relied on as primary test suites:
 
@@ -189,7 +189,7 @@ These benchmarks are widely known and likely leaked into LLM training data. They
 
 For automated support, see [Litmus](../tools/litmus.md), [MinorBench](../tools/minorbench.md), [RabakBench](../tools/rabakbench.md), and the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md).
 
-## Refusal Taxonomy and Rejection Classifiers
+## Refusal taxonomy and rejection classifiers
 
 To determine suitable metrics for safety testing, think about how an LLM should ideally respond in each risk scenario. The ideal response to an unsafe prompt is some variant of "I cannot engage in this conversation" or an explanation of why the prompt was unsafe. However, rejections are not always firm and clear, and LLMs sometimes engage with unsafe prompts by providing a balanced perspective rather than rejecting outright.
 
@@ -214,11 +214,11 @@ Common classifiers and methods for detecting rejections:
 - [Keyword search](https://arxiv.org/pdf/2402.05044) — list of keywords like "I cannot", "I am sorry" (see Appendix C of linked paper).
 - Evaluator LLM, possibly using frameworks like [G-Eval](https://docs.confident-ai.com/docs/metrics-llm-evals) — prompt an instruction-tuned LLM to identify whether a sentence is semantically similar to a rejection. Most accurate for fine-grained refusal definitions.
 
-### Toxicity Measurement
+### Toxicity measurement
 
 If the LLM application does not refuse to answer, analyse the content of the response itself. Measuring toxicity gives a more holistic view of safety than refusal alone, especially when the model steers conversation rather than refusing outright. See the [Content safety guardrails](../improving-ai-systems/safety-improvements.mdx#content-safety) page for classifiers.
 
-## Benchmark-Leakage Handling
+## Benchmark-leakage handling
 
 Reliable evaluation depends on ensuring benchmarks remain independent from training data. When benchmark prompts are unintentionally included during training, models can appear stronger than they actually are — inflating scores and reducing confidence that results will generalise to new tasks.
 
@@ -230,7 +230,7 @@ Leakage occurs at several levels. Benchmark questions may appear verbatim in tra
 
 :::
 
-### Detecting Leakage
+### Detecting leakage
 
 **Perturbation testing** provides a useful signal without requiring access to model internals. Small, meaning-preserving changes — such as shuffling multiple-choice options, swapping names or numbers, or paraphrasing questions — should have little effect on a model that has learnt the underlying task. Large performance drops after these changes suggest reliance on memorised benchmark text rather than genuine generalisation.
 
@@ -246,7 +246,7 @@ Where clean reference models are available, statistical comparisons can strength
 
 **Proactive safeguards** reduce the likelihood of undetected leakage. Benchmark creators may embed subtle statistical watermarks or unique canary strings into evaluation datasets, allowing accidental ingestion to be detected later. These require planning before a benchmark is released but provide stronger evidence than post-hoc analysis alone.
 
-### Rotating Proprietary Evaluation Prompts
+### Rotating proprietary evaluation prompts
 
 Even proprietary evaluation suites lose effectiveness over time. Models may overfit to static prompts, synthetic training pipelines may inadvertently reproduce internal evaluation patterns, and mature models can eventually solve fixed prompts so consistently that they no longer distinguish capability. This is sometimes called **evaluation decay**.
 
@@ -270,11 +270,11 @@ Prompt rotation introduces a risk: score changes may reflect differences in prom
 | Prompt calibration | Ensure score changes reflect model quality rather than prompt difficulty. |
 | Prompt versioning | Preserve traceability and reproducibility when investigating failures. |
 
-### Putting It Together
+### Putting it together
 
 No single technique can conclusively prove benchmark leakage or guarantee evaluation integrity. In practice, combine multiple approaches: perturbation tests to identify memorisation, statistical analyses to detect anomalous performance, proactive safeguards such as watermarking, and continuous rotation of proprietary prompts to prevent evaluation decay.
 
-## Evaluator-LLM Validation
+## Evaluator-LLM validation
 
 When running safety evals at scale, it is common to use an LLM (the "judge") to automatically score whether responses are safe or unsafe. This is faster than human review, but the judge can make mistakes — it might miss subtle compliance, be fooled by disclaimers preceding harmful content, or misclassify soft refusals.
 
@@ -287,7 +287,7 @@ The general workflow:
 3. Compare the judge's labels against the human labels.
 4. If agreement is sufficient, use the judge at scale. If not, refine the rubric or switch models.
 
-### Example: Safety Judge Prompt
+### Example: safety judge prompt
 
 ```python
 SAFETY_JUDGE_PROMPT = """
@@ -339,7 +339,7 @@ def classify_safety(user_prompt: str, llm_response: str) -> str:
     return out.content[0].text
 ```
 
-## Safety-Testing Tools
+## Safety-testing tools
 
 Open-source SDKs and platforms that aggregate safety datasets and provide higher-level interfaces:
 
@@ -357,7 +357,7 @@ Assess whether the tool covers the risk categories and scenarios you care about.
 
 :::
 
-## Code Example
+## Code example
 
 <Tabs>
 <TabItem value="general-adversarial-prompt-loop" label="General (adversarial-prompt loop)">

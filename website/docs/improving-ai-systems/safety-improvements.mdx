@@ -6,7 +6,7 @@ sidebar_position: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Safety Improvements
+# Safety improvements
 
 :::info[About this page]
 
@@ -14,7 +14,7 @@ This page is new in the upcoming Responsible AI Playbook release. It covers cont
 
 :::
 
-## Content Safety
+## Content safety
 
 Content safety guardrails detect harmful, offensive, or prohibited content in user inputs and model outputs. While most state-of-the-art LLMs have built-in safety features through their alignment process, an additional moderation layer enhances security.
 
@@ -24,7 +24,7 @@ External moderation services receive your data. Confirm compliance with your org
 
 :::
 
-### Common Categories
+### Common categories
 
 - Hate or harassment.
 - Sexual content.
@@ -35,7 +35,7 @@ External moderation services receive your data. Confirm compliance with your org
 
 Use a taxonomy that fits your users and context. For Singapore public-sector safety categories, see the [WOG safety testing framework](../tools/wog-safety-testing.md) and [LionGuard](../tools/lionguard.md).
 
-### Popular Moderation Services
+### Popular moderation services
 
 - [OpenAI's Moderation API](https://platform.openai.com/docs/guides/moderation)
 - [AWS Bedrock Guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html)
@@ -45,11 +45,11 @@ Use a taxonomy that fits your users and context. For Singapore public-sector saf
 
 These guardrails define their own taxonomy of harmful content, typically described in their documentation.
 
-### Localised Content Moderation
+### Localised content moderation
 
 Generic moderation models may miss local nuance. [LionGuard](../tools/lionguard.md) was developed specifically for Singapore-contextualised content moderation across English, Singlish, Chinese, Malay, and partial Tamil.
 
-### Integration Choices
+### Integration choices
 
 - Block high-confidence harmful content.
 - Warn or redirect ambiguous content.
@@ -57,7 +57,7 @@ Generic moderation models may miss local nuance. [LionGuard](../tools/lionguard.
 - Log aggregate trends for monitoring.
 - Use different thresholds for public-facing and internal systems.
 
-### Code Example
+### Code example
 
 <Tabs>
 <TabItem value="openai-moderation" label="OpenAI Moderation">
@@ -116,7 +116,7 @@ See [Sentinel](../tools/sentinel.md) for the full set of available guardrails an
 </TabItem>
 </Tabs>
 
-## Prompt Injection and Jailbreaks
+## Prompt injection and jailbreaks
 
 
 Prompt injection and jailbreak attempts try to override system instructions, bypass safety constraints, reveal hidden context, or misuse tools.
@@ -127,7 +127,7 @@ Jailbreak techniques routinely evolve. Models trained on known jailbreak pattern
 
 :::
 
-### What to Defend
+### What to defend
 
 - System prompts and hidden instructions.
 - Retrieved context and internal documents.
@@ -135,7 +135,7 @@ Jailbreak techniques routinely evolve. Models trained on known jailbreak pattern
 - Safety policies and refusal behaviour.
 - User or organisation data.
 
-### Mitigation Patterns
+### Mitigation patterns
 
 - Detect suspicious instructions in input and retrieved content.
 - Separate trusted instructions from untrusted content.
@@ -143,7 +143,7 @@ Jailbreak techniques routinely evolve. Models trained on known jailbreak pattern
 - Avoid placing secrets in prompts or retrievable context.
 - Test multi-turn attacks, not only single-turn jailbreaks.
 
-### Detection Tools
+### Detection tools
 
 | Tool | Description |
 |---|---|
@@ -153,7 +153,7 @@ Jailbreak techniques routinely evolve. Models trained on known jailbreak pattern
 | [ProtectAI / Rebuff](https://github.com/protectai/rebuff) | Multi-stage detection framework with a continually updated database of injections plus an LLM-based detector. May be expensive and slow. |
 | [Perplexity heuristics](https://docs.nvidia.com/nemo/guardrails/user-guides/guardrails-library.html#jailbreak-detection-heuristics) | Perplexity-based rules for detecting jailbreaking templates with adversarial prefixes/suffixes. |
 
-:::tip[Input validation and sanitization]
+:::tip[Input validation and sanitisation]
 
 Beyond a separate guardrail model, design the application to be robust against prompt injection:
 
@@ -164,7 +164,7 @@ Beyond a separate guardrail model, design the application to be robust against p
 
 See [safety evals](../evaluating-ai-systems/safety.mdx) and [agentic safety controls](agentic-improvements.mdx) for related testing and control guidance.
 
-### Code Example
+### Code example
 
 <Tabs>
 <TabItem value="general" label="General">

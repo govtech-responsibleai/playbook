@@ -3,7 +3,7 @@ sidebar_label: "[S] Fairness evals"
 sidebar_position: 5
 ---
 
-# Fairness Evals
+# Fairness evals
 
 :::info[About this page]
 
@@ -13,20 +13,20 @@ This page is new at this URL in the upcoming Responsible AI Playbook release. It
 
 Fairness evals check whether system behaviour differs unfairly across protected or sensitive attributes, groups, languages, or user contexts.
 
-## When to Run Fairness Evals
+## When to run fairness evals
 
-Prioritize fairness testing when:
+Prioritise fairness testing when:
 
 - The system affects access, ranking, triage, recommendations, or decisions.
 - User inputs include protected attributes directly or indirectly.
 - Outputs could vary by names, gender, race, religion, language, disability, age, or other sensitive attributes.
 - Generated text may encode stereotypes or unequal treatment.
 
-## Practical Advice
+## Practical advice
 
 For generative AI, create paired or controlled prompts that vary only the attribute of interest where possible. For discriminative models, evaluate subgroup performance, false positive and false negative rates, calibration, and downstream impact.
 
-## Paired-Prompt Design (Generative AI)
+## Paired-prompt design (generative AI)
 
 Whether your application requires fairness testing depends on whether LLM generations could be affected by a protected attribute, whether explicit (user must state gender) or implicit (e.g. name). For instance, an LLM that generates student testimonials may use student names in the prompt template — fairness testing matters there.
 
@@ -60,6 +60,6 @@ This section is adapted from our [original blog post](https://medium.com/dsaid-g
 
 :::
 
-## Discriminative AI Fairness
+## Discriminative AI fairness
 
 <mark class="new-since-v1">*Coming soon — this section will cover fairness evaluation for discriminative AI models, including subgroup performance, false-positive/negative rates, calibration, and downstream impact analysis.*</mark>

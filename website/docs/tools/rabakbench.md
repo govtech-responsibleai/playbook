@@ -11,14 +11,14 @@ Use RabakBench to evaluate multilingual safety behaviour for LLMs, guardrails, o
 ![RabakBench](/images/rabakbench.png)
 *RabakBench — using Singapore's unique multilingual landscape as a stress test for AI safety*
 
-## What It Reveals
+## What it reveals
 
 RabakBench can evaluate guardrails, LLMs as models, and LLM applications. We evaluated widely-used guardrails and identified significant multilingual performance disparities — underscoring the need for localised benchmarks that uncover specific linguistic blind spots.
 
 ![RabakBench Results](/images/rabakbench_results.png)
 *Results of evaluating 11 widely-used guardrails on RabakBench*
 
-## How It Was Built
+## How it was built
 
 The creation of RabakBench followed a three-stage pipeline that carefully used LLMs to amplify human insights:
 

@@ -3,7 +3,7 @@ sidebar_label: "[JY] Guardrail architecture"
 sidebar_position: 2
 ---
 
-# Guardrail Architecture
+# Guardrail architecture
 
 :::info[About this page]
 
@@ -13,7 +13,7 @@ This page is new in the upcoming Responsible AI Playbook release. It explains wh
 
 A guardrail architecture defines where checks happen, what they detect, and what action the application takes.
 
-## Common Positions
+## Common positions
 
 - **Input guardrails** inspect user input before it reaches the model.
 - **Output guardrails** inspect model responses before they reach the user.
@@ -31,7 +31,7 @@ flowchart LR
   outputGuardrail --> escalation[Human escalation]
 ```
 
-## Design Questions
+## Design questions
 
 - What risk is this guardrail meant to reduce?
 - Is it applied to input, output, retrieval, tools, or logs?

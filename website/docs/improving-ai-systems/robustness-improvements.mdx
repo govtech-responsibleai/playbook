@@ -6,7 +6,7 @@ sidebar_position: 7
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Robustness Improvements
+# Robustness improvements
 
 :::info[About this page]
 
@@ -18,20 +18,20 @@ Off-topic guardrails keep applications within their intended purpose. Beyond fil
 
 ![Off-topic](/images/off_topic.png)
 
-## Use Cases
+## Use cases
 
 - Public service chatbots that should only answer about a specific scheme or service.
 - Internal assistants limited to a business process.
 - Education or youth-facing applications with restricted topics.
 - Retrieval systems that should not answer outside their knowledge base.
 
-## Detection Approaches
+## Detection approaches
 
 - **Zero-shot/few-shot classifiers** to detect relevance against the system prompt. Suffers from lower precision — many valid queries are wrongly flagged off-topic.
 - **Custom topic classifier guardrails** from Amazon Bedrock Guardrails or Azure AI Content Safety. Requires defining your own taxonomy of what is off-topic and/or providing custom training examples.
 - **GovTech's Off-Topic guardrail** — a custom guardrail trained zero-shot on synthetic system-prompt and user-prompt pairs.
 
-## GovTech's Off-Topic Guardrail
+## GovTech's off-topic guardrail
 
 We built this guardrail because existing solutions either required training a use-case-specific guardrail or configuring it with examples of on- and off-topic prompts — challenging in the absence of real production data. Instead, we created a rich dataset of synthetic system-prompt / user-prompt pairs (on- and off-topic) and trained a lightweight classifier.
 
@@ -48,7 +48,7 @@ For v1 we trained a bi-encoder classifier on top of `jina-embeddings-v2-small-en
 - Ask a clarifying question when scope is ambiguous.
 - Escalate repeated or suspicious attempts.
 
-## Code Example
+## Code example
 
 <Tabs>
 <TabItem value="general-cosine-similarity" label="General (cosine similarity)">

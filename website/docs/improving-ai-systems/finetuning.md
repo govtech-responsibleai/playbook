@@ -32,4 +32,4 @@ Prefer prompting, retrieval, or external guardrails when the behaviour gap is na
 - Finetuning does not replace evaluation — re-run [safety](../evaluating-ai-systems/safety.mdx), [robustness](../evaluating-ai-systems/robustness.md), and [fairness](../evaluating-ai-systems/fairness.md) evals on the tuned model.
 - Track the base model version; a finetune is only valid against the base it was trained from.
 - Watch for capability regressions: tuning on a narrow distribution can degrade general performance.
-- Document the training data, objective, and known trade-offs alongside the model artifact.
+- Document the training data, objective, and known trade-offs alongside the model artefact.

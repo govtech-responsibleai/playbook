@@ -12,7 +12,7 @@ The Responsible AI Benchmark consolidates several of the key benchmarks and guar
 
 ![Responsible AI Benchmark landing page](/images/rai-bench-main.png)
 
-## When to Use
+## When to use
 
 - Early model and guardrail comparison.
 - A baseline view of safety, robustness, and fairness before tuning.

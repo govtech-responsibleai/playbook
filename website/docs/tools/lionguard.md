@@ -8,7 +8,7 @@ sidebar_position: 4
 
 <img src="/images/lionguard.png" alt="LionGuard" class="tool-logo" />
 
-LionGuard is GovTech's localized content moderation guardrail for Singapore's linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
+LionGuard is GovTech's localised content moderation guardrail for Singapore's linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
 
 </div>
 
@@ -20,7 +20,7 @@ LionGuard 2 enhances moderation through:
 2. Integration of our Whole-of-Government [risk taxonomy](./wog-safety-testing.md), enabling fine-grained moderation with defined severity levels.
 3. Improved robustness against noisy and code-mixed inputs.
 
-## LionGuard's Lightweight Architecture
+## LionGuard's lightweight architecture
 
 Lightweight deployment is central to LionGuard's design. LionGuard 2 pairs a pre-trained embedding model with a multi-head ordinal classifier, significantly outperforming commercial and open-source systems across 17 localised and general benchmarks. It achieves these accuracy improvements using a training dataset 70% smaller than its predecessor, LionGuard 1, and can be fully retrained within two minutes on standard CPUs.
 

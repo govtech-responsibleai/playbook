@@ -3,7 +3,7 @@ sidebar_label: "[S] Overview"
 sidebar_position: 1
 ---
 
-# Tools & Benchmarks
+# Tools & benchmarks
 
 :::info[About this page]
 
@@ -13,15 +13,15 @@ This page is new in the upcoming Responsible AI Playbook release. It is the entr
 
 This section collects practical implementation support for teams applying the playbook.
 
-Tools and templates are separated from conceptual methodology pages so readers can first learn the method, then choose the artefact that operationalizes it.
+Tools and templates are separated from conceptual methodology pages so readers can first learn the method, then choose the artefact that operationalises it.
 
-## GovTech Tools & Benchmarks
+## GovTech tools & benchmarks
 
 | Item | Use for |
 | --- | --- |
 | [Litmus](../tools/litmus.md) | Safety and security testing as a service |
 | [Sentinel](../tools/sentinel.md) | Input and output guardrails |
-| [LionGuard](lionguard.md) | Localized content moderation |
+| [LionGuard](lionguard.md) | Localised content moderation |
 | [Kaleidoscope](kaleidoscope.md) | Automated evaluation of AI applications with reliability-scored LLM judges |
 | [MetaEvaluator](metaevaluator.md) | Measuring how well LLM judges align with human annotations |
 | [RabakBench](rabakbench.md) | Multilingual safety benchmarking for Singapore context |
