@@ -3,7 +3,7 @@ sidebar_label: "[JY] Threshold tuning"
 sidebar_position: 9
 ---
 
-# Threshold Tuning
+# Threshold tuning
 
 :::info[About this page]
 
@@ -13,7 +13,7 @@ This page is new in the upcoming Responsible AI Playbook release. It covers how 
 
 Many guardrails return scores rather than simple yes/no decisions. Threshold tuning decides when the application should block, warn, log, or escalate.
 
-## Tune Against the Product Risk
+## Tune against the product risk
 
 A high-recall threshold may catch more harmful content but over-block benign users. A high-precision threshold may reduce false alarms but miss more risky content.
 
@@ -25,7 +25,7 @@ Choose thresholds based on:
 - Whether the application is public-facing or internal.
 - Whether the domain is high-stakes.
 
-## Suggested Action Bands
+## Suggested action bands
 
 | Score range | Example action |
 | --- | --- |

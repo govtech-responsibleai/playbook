@@ -11,7 +11,7 @@ Our aim is to help people understand and apply Responsible AI from a technical p
 2. Easy-to-follow and actionable **recommendations for deploying AI responsibly** for your applications
 3. **Curated resources and papers** to dive deeper into various aspects of Responsible AI
 
-Our hope is for our playbook to help you to **quickly grasp the entire landscape** of papers, guides, tools, and methodologies relating to Responsible AI, provide a **practical starting point** to guard your AI systems against basic risks, and thus enabling you to **ship fast and responsibly**.
+Our hope is for our playbook to help you to **quickly grasp the entire landscape** of papers, guides, tools, and methodologies relating to Responsible AI, provide a **practical starting point** to guard your AI systems against basic risks, and thus enable you to **ship fast and responsibly**.
 
 This playbook focuses on providing technical guidance to build Responsible AI in AI systems for the Singapore public sector. This sits alongside a variety of other resources that may also be relevant for your work:
 

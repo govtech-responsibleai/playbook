@@ -3,21 +3,21 @@ sidebar_label: "[T] WOG safety testing"
 sidebar_position: 1
 ---
 
-# WOG Safety Testing Framework
+# WOG safety testing framework
 
 The Whole-of-Government (WOG) safety testing framework defines how Singapore public-sector teams should evaluate AI systems for safety before deployment. It standardises the risk taxonomy, the choice of metrics, and the evaluation protocol used across agencies.
 
-## Why Safety Testing Matters
+## Why safety testing matters
 
 Chatbot systems without structured safety testing can generate unsafe or policy-violating outputs under unsafe or adversarial conditions, such as instructions to generate hateful content or engage in dangerous activities. Developers and product teams frequently work with chatbot systems and products that are subject to safety requirements, and therefore need a systematic approach to safety evaluation.
 
-## The Role of a Safety Taxonomy
+## The role of a safety taxonomy
 
 One central component of safety evaluation is a well-defined safety taxonomy, which provides the structure needed to organise safety risks, evaluate chatbot safety performance, and standardise evaluation across different chatbots. As new risk categories emerge, risk taxonomies must be updated to maintain risk coverage, ensuring that the corresponding benchmark dataset remains valid.
 
 This taxonomy is designed to categorise AI safety within the scope of application-level chatbot systems, focusing on outputs generated in response to user prompts. Within this scope, failure modes are defined as observable patterns in model outputs that violate specified safety criteria, and safety domains correspond to categories of real-world hazards as defined in relevant governmental and regulatory contexts.
 
-## Taxonomy Design Principles
+## Taxonomy design principles
 
 These principles provide a consistent, comprehensive, and practical framework for organising AI safety risks and evaluation categories:
 
@@ -27,7 +27,7 @@ These principles provide a consistent, comprehensive, and practical framework fo
 - **Completeness within scope.** The taxonomy is considered complete if it covers all observable failure modes within the defined scope. Within this scope, failure modes are restricted to outputs that fulfil one of the definitions of a hazard in a governmental context.
 - **Singapore-centric coverage.** The taxonomy includes risks grounded in Singapore's sociopolitical context, such as domestic policy and issues related to racial and religious harmony, which may not be covered under existing international benchmarks.
 
-## How the Taxonomy Was Developed
+## How the taxonomy was developed
 
 The taxonomy was developed by first compiling a comprehensive list of known AI safety risks relevant to application-level chatbot systems from established AI safety taxonomies and benchmarks. Specifically, we focused on recurring risks and commonly evaluated safety hazards that fell within our defined categories of harm. This review was limited to concrete, observable harms arising from chatbot interactions.
 
@@ -35,7 +35,7 @@ The extracted risks were then consolidated into a centralised candidate list bef
 
 Next, we grouped the candidate risks into domain-level categories based on the specific type of unsafe behaviour they represent. Risks sharing similar patterns of harmful behaviour were placed into the same domain, while distinct manifestations of the same underlying risk were differentiated using subcategories to facilitate downstream analysis.
 
-## Harm Categories
+## Harm categories
 
 | Category | Subcategory | Definition |
 |---|---|---|
@@ -46,7 +46,7 @@ Next, we grouped the candidate risks into domain-level categories based on the s
 | Harm to Government and Society | Harm to Public Cohesion | Responses likely to inflame social tensions, encourage hostility between communities, or otherwise undermine social harmony. |
 | Harm to International Relations | Harm to Diplomatic Relations | Responses that could reasonably undermine Singapore's diplomatic standing or adversely affect its relationships with foreign governments or international partners. |
 
-## Safety Taxonomy
+## Safety taxonomy
 
 The high-level taxonomy presents definitions that are intended to be mutually exclusive, and the categories are intended to be complete within the scope of the defined hazards in a governmental context.
 
@@ -69,7 +69,7 @@ The high-level taxonomy presents definitions that are intended to be mutually ex
 | Legal Advice | — | Legal matters, such as rights, procedures, regulations, or disputes. |
 | Medical Advice | — | Medical or health-related issues, including symptoms, conditions, treatments, or healthcare access. |
 
-## Benchmark Design Principles
+## Benchmark design principles
 
 High-quality test cases are required to satisfy the following principles:
 
@@ -77,13 +77,13 @@ High-quality test cases are required to satisfy the following principles:
 - **Content diversity.** Prompts should vary in wording, topic, and phrasing to reduce overly-template wording effects and improve the robustness of evaluation.
 - **Complexity diversity.** Each safety category should include prompts spanning a range of complexity, from direct requests to more nuanced situations.
 
-## Benchmark Construction
+## Benchmark construction
 
 Initial prompt material was compiled from a range of established AI safety benchmarks and datasets, with a focus on prompts involving violations of regulations and policies. These sources were selected to provide broad coverage of known safety risks and adversarial prompt formulations.
 
 The compiled prompt set then underwent a quality curation process. In accordance with the design principles, duplicate and semantically equivalent prompts were removed, as well as prompts that were low-quality or not contained by one of the taxonomy risk categories.
 
-## Continuous Benchmark Evolution
+## Continuous benchmark evolution
 
 Unlike static evaluations, safety benchmarks must be continuously updated to reflect evolving best practices, including deprecating low-quality samples that no longer challenge modern models and incorporating increasingly sophisticated attack strategies. They must also evolve to capture emerging risks arising from advances in AI capabilities and changes in the broader threat landscape, such as attempts to elicit exploits against new AI agents or novel threats stemming from geopolitical developments that may affect government and diplomatic systems.
 
@@ -99,7 +99,7 @@ $$
 
 As this benchmark consists exclusively of adversarial prompts designed to elicit unsafe responses, the unsafe engagement rate is equivalent to the ASR. The benchmark is able to distinguish between chatbot systems with different levels of safety performance, providing evidence of its discriminative validity.
 
-## Where to Go Next
+## Where to go next
 
 - [Safety evals](../evaluating-ai-systems/safety.mdx) — for the operational evaluation playbook.
 - [RabakBench](./rabakbench.md), [MinorBench](./minorbench.md), and the [Responsible AI Benchmark](./responsible-ai-benchmark.md) — benchmarks that operationalise the framework.

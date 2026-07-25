@@ -6,7 +6,7 @@ sidebar_position: 7
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Agentic Evals
+# Agentic evals
 
 :::info[About this page]
 
@@ -16,7 +16,7 @@ This page is new in the upcoming Responsible AI Playbook release. It covers how 
 
 Agentic evals check whether a system can complete tasks safely and reliably across multiple steps.
 
-## What to Evaluate
+## What to evaluate
 
 - Task success.
 - Planning reliability.
@@ -27,7 +27,7 @@ Agentic evals check whether a system can complete tasks safely and reliably acro
 - Data leakage and privilege misuse.
 - Human override and escalation behaviour.
 
-## Evaluation Design
+## Evaluation design
 
 Use realistic task scenarios, not only isolated prompts. Each scenario should define the goal, allowed tools, forbidden actions, expected checkpoints, and success criteria.
 
@@ -35,15 +35,15 @@ Include failure cases: unavailable tools, ambiguous user requests, malicious ret
 
 For risk framing, see the [Agentic Risk & Capability Framework](../tools/agentic-risk-capability-framework.md).
 
-## Tool-Use Checks
+## Tool-use checks
 
 - Calls the right tool for the task.
 - Passes valid and safe arguments.
 - Does not call tools when information is insufficient.
 - Handles tool errors without unsafe retries.
-- Does not expose tool outputs to unauthorized users.
+- Does not expose tool outputs to unauthorised users.
 
-## Planning Checks
+## Planning checks
 
 - Breaks tasks into sensible steps.
 - Does not skip required approvals.
@@ -51,35 +51,35 @@ For risk framing, see the [Agentic Risk & Capability Framework](../tools/agentic
 - Stops when goals are impossible or unsafe.
 - Keeps user intent and system constraints aligned.
 
-## Scenario Design
+## Scenario design
 
 Create scenarios with normal tasks, ambiguous tasks, malicious instructions, partial tool failures, and permission boundaries.
 
-## End-to-end Task Scenarios
+## End-to-end task scenarios
 
 <mark className="new-since-v1">*Coming soon — this section will cover how to design realistic multi-step task scenarios that test goal completion, checkpoint adherence, and failure recovery.*</mark>
 
-## Tool-call Attack Surface
+## Tool-call attack surface
 
 <mark className="new-since-v1">*Coming soon — this section will cover how to test tool-argument injection (shell, SQL, SSRF via tool args), permission-boundary violations, and credential exposure through tools.*</mark>
 
-## Memory and State Evals
+## Memory and state evals
 
 <mark className="new-since-v1">*Coming soon — this section will cover how to test agent memory and state for leakage, contamination across sessions, and context-window manipulation.*</mark>
 
-## Multi-agent and Delegated-task Evals
+## Multi-agent and delegated-task evals
 
 <mark className="new-since-v1">*Coming soon — this section will cover how to evaluate multi-agent systems and delegated subtasks, where one agent invokes another or instructions cross trust boundaries.*</mark>
 
-## Tool Argument-Injection Tests
+## Tool argument-injection tests
 
 <mark className="new-since-v1">*Coming soon — this section will cover specific argument-injection test patterns: shell injection via filename arguments, SQL injection in query parameters, SSRF via URL arguments, path traversal via path arguments, and how to detect each in a scenario harness.*</mark>
 
-## Permission-Boundary Scenarios
+## Permission-boundary scenarios
 
 <mark className="new-since-v1">*Coming soon — this section will cover scenarios that probe permission edges: cross-tenant access attempts, requests for tools not in the allowlist, attempts to invoke high-impact tools without approval, and validation that least-privilege defaults hold under adversarial input.*</mark>
 
-## Code Example
+## Code example
 
 <Tabs>
 <TabItem value="general-scenario-harness" label="General (scenario harness)">

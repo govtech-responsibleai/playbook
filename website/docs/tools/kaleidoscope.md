@@ -12,7 +12,7 @@ Evals are the process of measuring the abilities of an AI system to understand h
 
 ## What is Kaleidoscope?
 
-Systems can already test and safeguard their applications for safety through tools such as [Litmus](litmus.md) and [Sentinel](sentinel.md). Kaleidoscope goes beyond safety testing towards contextualised, functional evals: evaluating whether an AI application performs well for its intended users, tasks, and context.
+Teams can already test and safeguard their applications for safety through tools such as [Litmus](litmus.md) and [Sentinel](sentinel.md). Kaleidoscope goes beyond safety testing towards contextualised, functional evals: evaluating whether an AI application performs well for its intended users, tasks, and context.
 
 In practice, teams often face challenges conducting evals. They require meaningful evaluation criteria, contextualised datasets, human alignment, and transparent automated scoring. Kaleidoscope helps to close that gap by offering an end-to-end workflow with the following features.
 

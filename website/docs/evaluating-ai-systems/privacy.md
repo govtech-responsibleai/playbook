@@ -3,7 +3,7 @@ sidebar_label: "[JY] Privacy evals"
 sidebar_position: 6
 ---
 
-# Privacy and PII Leakage Evals
+# Privacy and PII leakage evals
 
 :::info[About this page]
 
@@ -19,11 +19,11 @@ In the era of generative AI and foundation models, privacy can no longer be trea
 
 </div>
 
-## Data Layer
+## Data layer
 
 <div class="privacy-additions" markdown>
 
-The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion become fundamentally baked into the model's weights. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymized prior to training, models can memorise and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
+The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion become fundamentally baked into the model's weights. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymised prior to training, models can memorise and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
 
 The primary goal at this layer is to measure the risk of individual-level linkage — the ability to connect data back to a specific person. Concrete techniques:
 
@@ -34,11 +34,11 @@ The primary goal at this layer is to measure the risk of individual-level linkag
 
 </div>
 
-## Model Layer
+## Model layer
 
 <div class="privacy-additions" markdown>
 
-The Model Layer introduces the danger of machine learning models — especially LLMs — memorizing their training data or learning feature correlations that malicious actors can exploit to reverse-engineer sensitive training data. Beyond direct regurgitation of PII, Protected Health Information (PHI), or proprietary code, attackers can exploit model weights and predictive probabilities to extract information that was never explicitly exposed.
+The Model Layer introduces the danger of machine learning models — especially LLMs — memorising their training data or learning feature correlations that malicious actors can exploit to reverse-engineer sensitive training data. Beyond direct regurgitation of PII, Protected Health Information (PHI), or proprietary code, attackers can exploit model weights and predictive probabilities to extract information that was never explicitly exposed.
 
 Testing at this layer relies on simulated attacks to establish empirical privacy metrics:
 
@@ -48,7 +48,7 @@ Testing at this layer relies on simulated attacks to establish empirical privacy
 
 </div>
 
-## Application Layer
+## Application layer
 
 <div class="privacy-additions" markdown>
 
@@ -57,12 +57,12 @@ The Application Layer introduces new attack vectors when the AI interface intera
 Test priorities at this layer:
 
 - **Adversarial red-teaming and prompt injection** — bypass safety guardrails to leak proprietary instructions and private context.
-- **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC), guaranteeing that users only generate insights from data they are explicitly authorized to query.
+- **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC), guaranteeing that users only generate insights from data they are explicitly authorised to query.
 - **Logs and traces** — verify that operational telemetry does not retain unnecessary personal data.
 
 </div>
 
-## Evaluation Set Design
+## Evaluation set design
 
 Include examples with:
 
@@ -72,7 +72,7 @@ Include examples with:
 - Prompt injection attempts that ask the system to expose hidden context or logs.
 - RAG documents containing information that should not be surfaced to the user.
 
-## Link to Mitigations
+## Link to mitigations
 
 Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../improving-ai-systems/privacy-improvements.mdx#pii-protection), [system-prompt leakage guardrails](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage), and [production integration](../improving-ai-systems/production-integration.md).
 

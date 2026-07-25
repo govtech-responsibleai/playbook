@@ -3,7 +3,7 @@ sidebar_label: "[L] Functional evals"
 sidebar_position: 2
 ---
 
-# Functional Evals
+# Functional evals
 
 :::info[About this page]
 
@@ -13,9 +13,9 @@ This page is new in the upcoming Responsible AI Playbook release. It combines ta
 
 For AI systems, "accuracy" is often too narrow. Functional evaluation asks whether the system performs the intended task well enough for its users and risk context. It covers task quality, retrieval-augmented generation (RAG), and operational performance.
 
-## Task Quality
+## Task quality
 
-### Common Quality Criteria
+### Common quality criteria
 
 Depending on the application, evaluate:
 
@@ -27,7 +27,7 @@ Depending on the application, evaluate:
 - Task success: did the user journey complete successfully?
 - Tool-use correctness: did the system call the right tool with the right arguments?
 
-### Suggested Process
+### Suggested process
 
 1. List the top user journeys.
 2. Create realistic examples for each journey.
@@ -40,11 +40,11 @@ Depending on the application, evaluate:
 
 Use exact-match or structured metrics when outputs are constrained. Use rubrics, human evaluation, or LLM-as-judge methods when outputs are open-ended. See [Evaluation methods](methods.mdx).
 
-## RAG and Grounding
+## RAG and grounding
 
 RAG systems should be evaluated on both retrieval quality and answer quality. A fluent answer is not enough; it must be supported by the right sources.
 
-### What to Test
+### What to test
 
 - Retrieval relevance: did the retriever fetch useful context?
 - Answer correctness: is the final answer right?
@@ -53,7 +53,7 @@ RAG systems should be evaluated on both retrieval quality and answer quality. A 
 - Abstention: does the system refuse or say it does not know when the answer is outside the knowledge base?
 - Source leakage: does the system expose sensitive or irrelevant source content?
 
-### Evaluation Set Design
+### Evaluation set design
 
 Include:
 
@@ -65,7 +65,7 @@ Include:
 
 For out-of-knowledge-base behaviour, see [Robustness evals](robustness.md).
 
-### Common Failure Modes
+### Common failure modes
 
 - Correct retrieval but unsupported generation.
 - Incorrect retrieval followed by confident answer.
@@ -77,7 +77,7 @@ For out-of-knowledge-base behaviour, see [Robustness evals](robustness.md).
 
 Performance evals check whether an AI system is operationally viable, not only whether it is correct.
 
-### What to Measure
+### What to measure
 
 - Latency at p50, p90, and p95.
 - Cost per request or completed task.
@@ -86,10 +86,10 @@ Performance evals check whether an AI system is operationally viable, not only w
 - Retry behaviour and fallback behaviour.
 - Provider or model differences.
 
-### Why This Matters
+### Why this matters
 
 A technically safe model can still be unsuitable if it is too slow, too costly, or too unreliable for production. Performance results also affect mitigation choices: a high-latency guardrail may be acceptable for back-office review but not for a public chatbot.
 
-### Suggested Practice
+### Suggested practice
 
 Run performance evals on realistic prompts, realistic context sizes, and realistic traffic patterns. Record both end-to-end application latency and component-level latency for retrieval, model calls, guardrails, and tools.

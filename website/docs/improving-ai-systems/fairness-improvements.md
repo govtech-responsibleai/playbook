@@ -3,7 +3,7 @@ sidebar_label: "[S] Fairness improvements"
 sidebar_position: 4
 ---
 
-# Fairness Improvements
+# Fairness improvements
 
 Fairness improvements reduce systematic differences in how the system performs across groups or attributes. Unlike safety or privacy, fairness rarely has a single guardrail you can drop in — the work is usually in the data, the evaluation pipeline, and the deployment policy.
 

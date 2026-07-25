@@ -3,7 +3,7 @@ sidebar_label: "[S] External resources"
 sidebar_position: 10
 ---
 
-# External Resources
+# External resources
 
 :::info[What's changed in this release]
 
@@ -29,12 +29,12 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Libra-Leaderboard: Towards Responsible AI through a Balanced Leaderboard of Safety and Capability (Dec 2024)](https://arxiv.org/pdf/2412.18551) - uses a distance-to-optimal-score method to calculate overall rankings, balancing performance and safety
 - [DarkBench: Benchmarking Dark Patterns in Large Language Models (Mar 2025)](https://arxiv.org/abs/2503.10728) - benchmark to detect manipulative LLM outputs across six categories
 
-## Testing and Red-Teaming
+## Testing and red-teaming
 
 - [Red Teaming Language Models with Language Models (Feb 2022)](https://aclanthology.org/2022.emnlp-main.225.pdf) - generating red-teaming test cases with another language model
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models (Jul 2023)](https://github.com/llm-attacks/llm-attacks) - finds transferable adversarial suffixes
 - [GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts (Sep 2023)](https://github.com/sherdencooper/GPTFuzz) - automates generation of jailbreak templates
 - [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models (Oct 2023)](https://github.com/SheltonLiu-N/AutoDAN?tab=readme-ov-file) - generates stealthy jailbreak prompts using hierarchical genetic algorithms
-- [Universal and Transferable Adversarial Attacks on Aligned Language Models (Dec 2023)](https://github.com/llm-attacks/llm-attacks) - finds transferable adversarial suffixes
 - [The Crescendo Multi-Turn LLM Jailbreak Attack (Apr 2024)](https://crescendo-the-multiturn-jailbreak.github.io/) - multi-turn attack that progressively steers a conversation toward a prohibited objective
 - [Fishing for Magikarp: Automatically detecting under-trained tokens in large language models (May 2024)](https://aclanthology.org/2024.emnlp-main.649/) - automatic detection of problematic rare tokens
 - [Scaling Synthetic Data Creation with 1,000,000,000 Personas (Jun 2024)](https://github.com/tencent-ailab/persona-hub) - personas for synthetic testing data generation
@@ -51,14 +51,14 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Constitutional AI: Harmlessness from AI Feedback (Dec 2022)](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 - [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model (Jun 2023)](https://arxiv.org/pdf/2306.03341)
 - [Refusal in Language Models Is Mediated by a Single Direction (Jun 2024)](https://arxiv.org/abs/2406.11717)
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep (Jun 2024)](https://arxiv.org/abs/2406.05946)
 - [When Thinking Fails: The Pitfalls of Reasoning for Instruction-Following in LLMs (May 2025)](https://arxiv.org/abs/2505.11423)
-- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep (Jun 2025)](https://arxiv.org/abs/2406.05946)
 
 ## Interpretability
 
 - [Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet (May 2024)](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) - sparse autoencoders for interpretable features in model activations
 
-## Agentic Safety
+## Agentic safety
 
 - [Progent: Programmable Privilege Control for LLM Agents (Apr 2025)](https://arxiv.org/abs/2504.11703) - privilege control policies for agent execution
 - [Design Patterns for Securing LLM Agents against Prompt Injections (Jun 2025)](https://arxiv.org/abs/2506.08837) - design patterns for prompt-injection resistant agents
@@ -68,7 +68,7 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Awesome-LM-SSP](https://github.com/ThuCCSLab/Awesome-LM-SSP/tree/main) - reading list for safety, security, and privacy in large models
 - [Awesome-LLM-Judges](https://github.com/haizelabs/Awesome-LLM-Judges) - research on using LLM judges for automated evaluation
 
-## Blogs and Guides
+## Blogs and guides
 
 - [Frequently Asked Questions (And Answers) About AI Evals](https://hamel.dev/blog/posts/evals-faq/) and [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) by Hamel Husain - practical tips on iterative evaluations for AI systems
 - [Simon Willison's Weblog](https://simonwillison.net/) - practical writing on AI systems and prompt injection

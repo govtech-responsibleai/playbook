@@ -217,7 +217,7 @@ LLM judges can be influenced by factors unrelated to the evaluation criteria. Un
 
 For an overview of known biases and reliability challenges, see [A Survey on LLM-as-a-Judge](https://arxiv.org/pdf/2411.15594).
 
-### Judge Calibration (Measurement)
+### Judge calibration (measurement)
 
 This step requires human review on a subset of examples.
 
@@ -234,7 +234,7 @@ Human review can suffer from fatigue-related inconsistencies. While larger revie
 
 :::note[This is not a hard rule.]
 
-The amount of data needed depends on the use case and scoring rubric -- for instance, subjective tasks or multi-class labels may require more examples for calibration, and subjective tasks may require more annotators. More advanced teams should run statistical tests to estimate the sample size needed for their use case.
+The amount of data needed depends on the use case and scoring rubric — for instance, subjective tasks or multi-class labels may require more examples for calibration, and subjective tasks may require more annotators. More advanced teams should run statistical tests to estimate the sample size needed for their use case.
 
 With a small sample, a few disagreements or rare cases can substantially change agreement scores. Prepare more annotated examples where possible, provided they are meaningful and representative of the target population.
 
@@ -269,7 +269,7 @@ Measure categorical judgements with traditional classification metrics, dependin
 
 </div>
 
-#### Inter-annotator Agreement Metrics
+#### Inter-annotator agreement metrics
 
 Measure how consistently human and LLM annotators agree on the same labels.
 
@@ -287,7 +287,7 @@ Measure how consistently human and LLM annotators agree on the same labels.
 
   <details className="metric-disclosure">
     <summary>Alternative Annotator Test (Alt-Test)</summary>
-    <p>The Alt-Test is one way to measure the alignment of your LLM-as-a-Judge. It reframes the goal of evaluation from "Is the model correct?" to "To what extent to LLMs concur with human annotations?"</p>
+    <p>The Alt-Test is one way to measure the alignment of your LLM-as-a-Judge. It reframes the goal of evaluation from "Is the model correct?" to "To what extent do LLMs concur with human annotations?"</p>
     <p>Essentially, it is a leave-one-annotator-out hypothesis test that measures whether an LLM judge agrees with the remaining human consensus at least as well as the left-out human does.</p>
     <p>How is this better than traditional metrics? Commonly used agreement measures (e.g. Cohen's kappa, Krippendorff) only assess agreement among annotators, and performance metrics (e.g. Accuracy, F1 Score) only evaluate whether the LLM matches human performance. The Alt-Test provides two key advantages:</p>
     <ul>
