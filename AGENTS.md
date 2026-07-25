@@ -94,6 +94,7 @@ Because there are no tests, review attention belongs on factual accuracy, tone, 
 ## Authoring conventions
 
 - Write concise Markdown with sentence-case headings and practitioner-focused guidance.
+- Write in British English and say "AI systems", not "AI applications". Product names and code identifiers keep their original spelling.
 - New pages should usually include purpose, when to use it, application steps, pitfalls, and relevant tools or templates.
 - Use lowercase, hyphenated filenames.
 - Adding a new page requires updating `website/sidebars.ts` and setting `sidebar_position` in the file's frontmatter.
@@ -104,13 +105,13 @@ Because there are no tests, review attention belongs on factual accuracy, tone, 
 
 Follow `website/docs/contributing/page-standards.md` for:
 
-- top-of-page release admonitions,
-- inline highlight classes such as `.new-since-v1` and `.privacy-additions`,
-- tabbed code examples,
-- ownership and review notes,
-- linking principles.
+- the single "What's new on this page" release admonition (refreshed or removed at every release; no branch names or editing history),
+- placeholder and roadmap conventions (no empty section headings, no internal shorthand such as "KIV" in reader-facing text),
+- tabbed code examples pairing a framework-agnostic version with a GovTech (Sentinel/Litmus/Cloak) version,
+- ownership (`owner`) and last-reviewed dates (`last_reviewed`) in page frontmatter, not in sidebar labels,
+- linking principles and the single-source-of-truth rule for shared tables and taxonomies.
 
-In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs><TabItem>` JSX, which requires `.mdx` files. Custom highlight classes are defined in `website/src/css/custom.css`.
+In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs><TabItem>` JSX, which requires `.mdx` files. The inline highlight classes (`.new-since-v1`, `.privacy-additions`) are retired: do not add new highlight marks, and remove existing ones when touching a page.
 
 ## Analytics
 
