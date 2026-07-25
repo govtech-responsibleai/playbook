@@ -32,7 +32,7 @@ There are three versions of LionGuard 2. All share the same methodology and diff
 | Version          | Embedding model          | Best for                                                                                                                 |
 | ---------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | LionGuard 2      | `text-embedding-3-large` | Baseline classifier with strong, robust performance across all benchmarks.                                               |
-| LionGuard 2.1    | `gemini-embedding-001`   | Strong performance across all benchmark, particularly in multilingual performance.                                       |
+| LionGuard 2.1    | `gemini-embedding-001`   | Strong performance across all benchmarks, particularly in multilingual settings.                                       |
 | LionGuard 2 Lite | `embeddinggemma-300m`    | Most lightweight, on-prem variant with no external API dependency, best for restricted environments and local inference. |
 
 

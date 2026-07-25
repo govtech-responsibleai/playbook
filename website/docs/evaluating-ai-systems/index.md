@@ -82,7 +82,7 @@ A useful evaluation set should include:
 
 - Standard questions across a variety of categories covered by the chatbot.
 - Realistic edge-case questions testing the chatbot's boundaries.
-- Out-of-scope and prohibited requests, especially relating to safety or appropriatness.
+- Out-of-scope and prohibited requests, especially relating to safety or appropriateness.
 - Adversarial or stress cases where relevant.
 - Known historical failures, if available.
 
