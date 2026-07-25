@@ -104,7 +104,7 @@ payload = json.dumps({
     "messages": [
         {"role": "system", "content": "You are an education bot focused on O-Level Maths."}
     ],
-    "guardrails": {"lionguard": {}, "aws": {}},
+    "guardrails": {"lionguard2": {}, "aws": {}},
 })
 
 response = requests.post(SENTINEL_BASE_URL, headers=HEADERS, data=payload)

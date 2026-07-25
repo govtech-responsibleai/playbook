@@ -32,9 +32,9 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 ## Testing and Red-Teaming
 
 - [Red Teaming Language Models with Language Models (Feb 2022)](https://aclanthology.org/2022.emnlp-main.225.pdf) - generating red-teaming test cases with another language model
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models (Jul 2023)](https://github.com/llm-attacks/llm-attacks) - finds transferable adversarial suffixes
 - [GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts (Sep 2023)](https://github.com/sherdencooper/GPTFuzz) - automates generation of jailbreak templates
 - [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models (Oct 2023)](https://github.com/SheltonLiu-N/AutoDAN?tab=readme-ov-file) - generates stealthy jailbreak prompts using hierarchical genetic algorithms
-- [Universal and Transferable Adversarial Attacks on Aligned Language Models (Dec 2023)](https://github.com/llm-attacks/llm-attacks) - finds transferable adversarial suffixes
 - [The Crescendo Multi-Turn LLM Jailbreak Attack (Apr 2024)](https://crescendo-the-multiturn-jailbreak.github.io/) - multi-turn attack that progressively steers a conversation toward a prohibited objective
 - [Fishing for Magikarp: Automatically detecting under-trained tokens in large language models (May 2024)](https://aclanthology.org/2024.emnlp-main.649/) - automatic detection of problematic rare tokens
 - [Scaling Synthetic Data Creation with 1,000,000,000 Personas (Jun 2024)](https://github.com/tencent-ailab/persona-hub) - personas for synthetic testing data generation
@@ -51,8 +51,8 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Constitutional AI: Harmlessness from AI Feedback (Dec 2022)](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 - [Inference-Time Intervention: Eliciting Truthful Answers from a Language Model (Jun 2023)](https://arxiv.org/pdf/2306.03341)
 - [Refusal in Language Models Is Mediated by a Single Direction (Jun 2024)](https://arxiv.org/abs/2406.11717)
+- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep (Jun 2024)](https://arxiv.org/abs/2406.05946)
 - [When Thinking Fails: The Pitfalls of Reasoning for Instruction-Following in LLMs (May 2025)](https://arxiv.org/abs/2505.11423)
-- [Safety Alignment Should Be Made More Than Just a Few Tokens Deep (Jun 2025)](https://arxiv.org/abs/2406.05946)
 
 ## Interpretability
 

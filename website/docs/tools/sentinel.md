@@ -76,7 +76,7 @@ The following diagram shows how Sentinel enhances the safety and security of an 
 
 ## LionGuard Harm Categories
 
-The table below lists the risk categories used by LionGuard. The model assigns a risk core to each category. Some categories are further classified into severity levels (Level 1 and Level 2) with Level 2 indicating a higher level of severity than Level 1. If a Level 2 instance is detected, Level 1 is also flagged by design.
+The table below lists the risk categories used by LionGuard. The model assigns a risk score to each category. Some categories are further classified into severity levels (Level 1 and Level 2) with Level 2 indicating a higher level of severity than Level 1. If a Level 2 instance is detected, Level 1 is also flagged by design.
 
 | S/N | Category | Description |
 | --- | --- | --- |
@@ -118,7 +118,7 @@ payload = json.dumps({
         }
     ],
     "guardrails": {
-        "lionguard": {},
+        "lionguard2": {},
         "off-topic": {},
         "system-prompt-leakage": {},
         "aws": {},
@@ -136,19 +136,22 @@ Sample output:
     "request_id": "b00ff141-79e7-4d88-be5a-00fe6999efc5",
     "status": "completed",
     "results": {
-        "lionguard-binary":         {"score": 0.9999, "time_taken": 0.114},
-        "lionguard-toxic":          {"score": 0.9978, "time_taken": 0.114},
-        "lionguard-hateful":        {"score": 0.2469, "time_taken": 0.114},
-        "lionguard-harassment":     {"score": 0.1014, "time_taken": 0.114},
-        "lionguard-public_harm":    {"score": 0.004,  "time_taken": 0.114},
-        "lionguard-self_harm":      {"score": 0.0,    "time_taken": 0.114},
-        "lionguard-sexual":         {"score": 0.0437, "time_taken": 0.114},
-        "lionguard-violent":        {"score": 0.0001, "time_taken": 0.114},
-        "aws/insults":              {"score": 1.0,    "time_taken": 0.6432},
-        "aws/sexual":               {"score": 1.0,    "time_taken": 0.6432},
-        "aws/prompt_attack":        {"score": 0.0,    "time_taken": 0.6432},
-        "off-topic":                {"score": 0.9977, "time_taken": 0.9443},
-        "system-prompt-leakage":    {"score": 0.2355, "time_taken": 0.9648}
+        "govtech/lionguard-2-binary":                 {"score": 0.9999, "time_taken": 0.114},
+        "govtech/lionguard-2-hateful_l1":             {"score": 0.2469, "time_taken": 0.114},
+        "govtech/lionguard-2-hateful_l2":             {"score": 0.0021, "time_taken": 0.114},
+        "govtech/lionguard-2-insults":                {"score": 0.9978, "time_taken": 0.114},
+        "govtech/lionguard-2-sexual_l1":              {"score": 0.0437, "time_taken": 0.114},
+        "govtech/lionguard-2-sexual_l2":              {"score": 0.0005, "time_taken": 0.114},
+        "govtech/lionguard-2-physical_violence":      {"score": 0.0001, "time_taken": 0.114},
+        "govtech/lionguard-2-self_harm_l1":           {"score": 0.0,    "time_taken": 0.114},
+        "govtech/lionguard-2-self_harm_l2":           {"score": 0.0,    "time_taken": 0.114},
+        "govtech/lionguard-2-all_other_misconduct_l1": {"score": 0.1014, "time_taken": 0.114},
+        "govtech/lionguard-2-all_other_misconduct_l2": {"score": 0.004,  "time_taken": 0.114},
+        "aws/insults":                                {"score": 1.0,    "time_taken": 0.6432},
+        "aws/sexual":                                 {"score": 1.0,    "time_taken": 0.6432},
+        "aws/prompt_attack":                          {"score": 0.0,    "time_taken": 0.6432},
+        "govtech/off-topic":                          {"score": 0.9977, "time_taken": 0.9443},
+        "govtech/system-prompt-leakage":              {"score": 0.2355, "time_taken": 0.9648}
     },
     "time_taken": 0.9752
 }
