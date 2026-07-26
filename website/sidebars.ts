@@ -19,14 +19,14 @@ const sidebars: SidebarsConfig = {
       items: [
         {type: 'doc', id: 'evaluating-ai-systems/index', label: '[JY] Overview'},
         {type: 'doc', id: 'evaluating-ai-systems/methods', label: 'Evaluation methods'},
+        {type: 'doc', id: 'evaluating-ai-systems/functional', label: 'Functional evals'},
         {
           type: 'category',
           label: 'Evals for RAI principles',
           collapsed: true,
           items: [
-            {type: 'doc', id: 'evaluating-ai-systems/functional', label: '[L] Functional evals'},
             {type: 'doc', id: 'evaluating-ai-systems/safety', label: '[T] Safety evals'},
-            {type: 'doc', id: 'evaluating-ai-systems/robustness', label: '[JY] Robustness evals'},
+            {type: 'doc', id: 'evaluating-ai-systems/robustness', label: '[L] Robustness evals'},
             {type: 'doc', id: 'evaluating-ai-systems/fairness', label: '[S] Fairness evals'},
             {type: 'doc', id: 'evaluating-ai-systems/privacy', label: '[JY] Privacy evals'},
             {type: 'doc', id: 'evaluating-ai-systems/agentic-evals', label: '[S] Agentic evals'},
@@ -60,7 +60,7 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           items: [
             {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: '[JY] Safety improvements'},
-            {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: '[JY] Robustness improvements'},
+            {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: '[L] Robustness improvements'},
             {type: 'doc', id: 'improving-ai-systems/fairness-improvements', label: '[S] Fairness improvements'},
             {type: 'doc', id: 'improving-ai-systems/privacy-improvements', label: '[JY] Privacy improvements'},
             {type: 'doc', id: 'improving-ai-systems/agentic-improvements', label: '[S] Agentic improvements'},
