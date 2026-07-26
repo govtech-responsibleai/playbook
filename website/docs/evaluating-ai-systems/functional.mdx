@@ -1,0 +1,153 @@
+---
+sidebar_label: "Functional evals"
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Functional evals
+
+:::info[What's new on this page]
+
+New in this release: functional evals are framed as product-specific utility evals, with worked case studies on branding and helpfulness. Grounding, abstention, and hallucination testing now lives on [Robustness evals](robustness.md).
+
+:::
+
+Functional evals (also called "utility" evals) measure an AI system's task quality: whether the system performs the intended task well enough for its users and context.
+
+We address functional evals first as they are what a product owner typically thinks about first. They are product-specific and require deep domain knowledge about what you are building. Functional criteria are rarely standardised as they don't fully transfer between products, unlike some other evaluation dimensions covered in the next section.
+
+## Quality
+
+When you define your functional evals, there are three choices to make.
+
+### Criteria/Policy
+
+Write down what you are measuring in enough detail that two reviewers scoring the same output would land on the same answer. Define your **evaluation scope and boundaries** carefully. This is especially important when the criterion is subjective.
+
+It is common practice to write out your policies and rubrics with AI, but do so carefully. Give a model a criterion name alone and it will invent a definition that may not align with what you truly care about.
+
+See [Evaluation methods](methods.mdx) for why criteria need to be defined precisely, particularly when scoring with less deterministic methods.
+
+### Scale
+
+There are several ways to define your scoring options, and each comes with its own considerations.
+
+<div className="evaluation-method-comparison">
+
+| Scale | Advantages | Limitations |
+| --- | --- | --- |
+| Pass/fail | Easiest for evaluators to interpret and apply | No way to distinguish degrees of failure |
+| Ordinal (e.g. 1–5, or named levels) | Clearer distribution of labels | Subject to miscalibration and more disagreements |
+| Pairwise comparison | Produces more reliable judgements | No absolute score, and cost grows with the number of candidates to compare |
+| Open-ended feedback | Rich signals | Cannot be aggregated or scored, and does not scale |
+
+</div>
+
+### Threshold
+
+This indicates when your system is good enough and ready to ship. It differs for every product and depends on how costly failures are and what happens to the output.
+
+:::note[Scores are not fully representative of the real world]
+
+Do not rely on your eval scores alone. Meeting a threshold only tells you that the system passed a set of test cases on the distribution you tested them on. In the real world, there may be unexpected behaviours and inputs you did not anticipate. Hence, continuous evals are important.
+
+The same caveat applies to safety testing, where a perfect score does not imply perfect safety. See [Safety evals](safety.mdx#how-to-measure-safety).
+
+:::
+
+<details>
+<summary><strong>Examples: Define criteria, scale, and threshold</strong></summary>
+
+<Tabs>
+<TabItem value="branding" label="Branding">
+
+**System**: A drafting assistant that produces weekly infographics for a company's social media page.
+
+**Criteria**: Branding
+
+Following the organisation's brand guidelines:
+
+- Organisation and scheme names appear in their approved forms
+- Graphic style matches the brand, and colours drawn from the approved palette
+- Layout follows the approved template
+- Copy is written in the third person
+- No spelling or grammatical errors
+
+Attached: `<brand_guidelines.pdf>` `<infographic_template.pdf>` `<approved_names_list.csv>`
+
+**Scale**: Pass/Fail on each check
+
+The output fails overall if any single check fails and is routed to a human for review.
+
+**Threshold**: 100%
+
+A failure is expensive to publish, and all failures are subject to human review.
+
+</TabItem>
+
+<TabItem value="helpfulness" label="Helpfulness">
+
+**System**: A chatbot on a job site that helps users with their job search.
+
+**Criteria**: Helpfulness, briefly and as one example.
+
+In scope: whether the system directed the user to resources that suit their stated requirements and situation, whether the next step is actionable and meaningful.
+
+Out of scope: tone, formatting, safety, the factual accuracy of retrieved sources, whether the user actually found a job.
+
+Attached: `<scoring_rubric.md>` `<annotated_examples.csv>`
+
+**Scale**: 1–5
+
+| Score | Meaning |
+| --- | --- |
+| 1 | Not at all helpful — wrong or irrelevant resources |
+| 2 | Barely helpful — relevant but not helpful |
+| 3 | Neutral — generic and does not give the user direction |
+| 4 | Helpful — relevant resources provided |
+| 5 | Very helpful — fits the user's specific situation and gives them clear next steps with rich resources |
+
+**Threshold**: 80% scoring 4 and above.
+
+</TabItem>
+</Tabs>
+
+</details>
+
+When you develop evals for your own system, start by thinking about how your users might use them, how your system might respond, and where things may go wrong or may need extra checks.
+
+## Performance
+
+Performance evals check whether an AI system is operationally viable, not only whether it is correct. These come hand in hand with quality evals because: 
+
+- Performance is part of the user experience
+- Operational failures can contaminate your evals. For instance, if a timeout or an error message reaches your evaluator on some evaluation criteria, it could get incorrectly scored as a failure. Unhandled operational issues add noise and may misattribute failures in your evals. 
+- Task quality alone does not ensure good functional performance. Even if a system scores well on all evaluation dimensions, it is not optimal if it is too slow, costly, or unreliable.
+
+### What to measure
+
+- Latency at p50, p90, and p95.
+- Throughput under expected load.
+- Cost per request or completed task.
+- Error rates and timeout rates.
+- Provider or model differences.
+
+### Suggested practice
+
+- Log full traces for your system, and check them against your latency, cost, and throughput expectations.
+- Set up automated checks and alerts when a threshold is breached.
+- Exclude or label errors before scoring quality.
+
+## Beyond functional evals
+
+Functional evals stop at "does it do the job", but do not tell you whether the system is safe, consistent, and robust. Some of these areas are less product-specific, and can be adapted from existing methods today.
+
+In the next chapter, we share more about Evals for specific areas of Responsible AI:
+
+- **[Safety evals](safety.mdx)** — harmful, prohibited, and adversarial behaviour.
+- **[Robustness evals](robustness.md)** — consistency, grounding, and handling of messy real-world input.
+- **[Fairness evals](fairness.md)** — consistent treatment across affected groups.
+- **[Privacy evals](privacy.md)** — PII and sensitive-data leakage.
+- **[Agentic evals](agentic-evals.mdx)** — planning, tool use, and multi-step action.

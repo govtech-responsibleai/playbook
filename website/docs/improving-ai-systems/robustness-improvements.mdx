@@ -1,5 +1,5 @@
 ---
-sidebar_label: "[JY] Robustness improvements"
+sidebar_label: "[L] Robustness improvements"
 sidebar_position: 7
 ---
 
@@ -8,30 +8,42 @@ import TabItem from '@theme/TabItem';
 
 # Robustness improvements
 
-:::info[About this page]
+:::info[What's new on this page]
 
-This page is new in the upcoming Responsible AI Playbook release. It covers off-topic detection approaches, the GovTech off-topic guardrail, and a General/Sentinel code example. Unhighlighted sections are migrated from the previously published [Guardrails developed by GovTech: Off-Topic](https://playbooks.aip.gov.sg/responsibleai/guardrails/govtech/#off-topic) and [Different Types of Guardrails: Off-Topic](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#4-off-topic) pages; new prose and the code example are highlighted.
+Updated for this release: the page is organised around the same three robustness issue types used on [Robustness evals](../evaluating-ai-systems/robustness.md) — consistency, grounding, and input variation. The off-topic guardrail material is now framed as the consistency lever, and sections on grounding and input variation are new.
 
 :::
 
-Off-topic guardrails keep applications within their intended purpose. Beyond filtering harmful content, detecting and filtering irrelevant queries helps maintain application focus.
+This page mirrors [Robustness evals](../evaluating-ai-systems/robustness.md) section for section. A failure you find there has its mitigations under the identically named heading here.
+
+| Issue | Main levers |
+| --- | --- |
+| [Consistency](#consistency) | Off-topic guardrails; determinism controls |
+| [Grounding](#grounding) | Knowledge-base hygiene; retrieval quality; abstention; citation enforcement |
+| [Input variation](#input-variation) | Normalisation; aliases; multilingual handling; clarifying questions |
+
+## Consistency
+
+### Keeping input consistent with purpose
+
+Off-topic guardrails keep AI systems within their intended purpose. Beyond filtering harmful content, detecting and filtering irrelevant queries helps maintain focus.
 
 ![Off-topic](/images/off_topic.png)
 
-## Use cases
+#### Use cases
 
 - Public service chatbots that should only answer about a specific scheme or service.
 - Internal assistants limited to a business process.
-- Education or youth-facing applications with restricted topics.
+- Education or youth-facing systems with restricted topics.
 - Retrieval systems that should not answer outside their knowledge base.
 
-## Detection approaches
+#### Detection approaches
 
 - **Zero-shot/few-shot classifiers** to detect relevance against the system prompt. Suffers from lower precision — many valid queries are wrongly flagged off-topic.
 - **Custom topic classifier guardrails** from Amazon Bedrock Guardrails or Azure AI Content Safety. Requires defining your own taxonomy of what is off-topic and/or providing custom training examples.
 - **GovTech's Off-Topic guardrail** — a custom guardrail trained zero-shot on synthetic system-prompt and user-prompt pairs.
 
-## GovTech's off-topic guardrail
+#### GovTech's off-topic guardrail
 
 We built this guardrail because existing solutions either required training a use-case-specific guardrail or configuring it with examples of on- and off-topic prompts — challenging in the absence of real production data. Instead, we created a rich dataset of synthetic system-prompt / user-prompt pairs (on- and off-topic) and trained a lightweight classifier.
 
@@ -41,14 +53,16 @@ For v1 we trained a bi-encoder classifier on top of `jina-embeddings-v2-small-en
 - [Paper](https://arxiv.org/abs/2411.12946)
 - Available via the [Sentinel API](../tools/sentinel.md#available-guardrails) (`govtech/off-topic`)
 
-## Actions
+#### Actions on detection
 
 - Redirect the user to supported topics.
 - Refuse unsupported topics politely.
 - Ask a clarifying question when scope is ambiguous.
 - Escalate repeated or suspicious attempts.
 
-## Code example
+Whichever you choose, set the threshold against both halves of the eval pair — refusal rate on out-of-scope input *and* false-refusal rate on in-scope input. Tuning against the first alone produces a system that is technically robust and practically useless. See [Threshold tuning](threshold-tuning.md).
+
+#### Code example
 
 <Tabs>
 <TabItem value="general-cosine-similarity" label="General (cosine similarity)">
@@ -81,3 +95,101 @@ if response.json()["results"]["off-topic"]["score"] > 0.7:
 
 </TabItem>
 </Tabs>
+
+### Keeping outputs consistent with each other
+
+Where the same question produces different answers, the fixes are mostly configuration rather than modelling.
+
+- **Set temperature to 0 on factual lookup paths.** Keep sampling only where variety is genuinely a feature, such as drafting. Note that temperature 0 reduces variance without eliminating it.
+- **Pin the model version.** A silent provider upgrade changes behaviour everywhere at once, and the symptom — answers that used to be stable are no longer stable — is easy to misattribute.
+- **Version the system prompt alongside code**, and re-run consistency evals whenever it changes.
+- **Constrain the output shape.** A fixed answer schema strips out incidental wording variation and makes genuine disagreement much easier to detect automatically.
+- **Cache canonical answers** for high-traffic factual questions rather than regenerating them each time. This also removes a class of drift between identical queries.
+
+## Grounding
+
+### Knowledge-base hygiene
+
+The cheapest and most neglected lever. Fixes here routinely outperform model or prompt changes, because a model cannot ground an answer in a source that is wrong.
+
+- **Remove superseded documents** rather than adding new ones beside them. Two live versions of an income threshold is the single most common cause of confidently wrong answers.
+- **Date-stamp every chunk** and surface that date in the answer, so a reader can judge staleness even when the system cannot.
+- **Deduplicate near-identical documents.** Copies crowd the top-k and push the authoritative chunk out of the context window.
+- **Give every document an owner and a review cadence.** Content decay is an operational problem, not a modelling one.
+
+### Retrieval quality
+
+- **Chunk on semantic boundaries**, not fixed token counts, and keep headings attached to the content beneath them.
+- **Rewrite queries before retrieval** — resolve pronouns and references from the conversation history, so "what about for my mother" retrieves against the resolved question.
+- **Use hybrid retrieval.** Dense retrieval alone misses exact identifiers such as scheme names, form numbers, and section references; keyword matching catches them.
+- **Rerank the candidate set** before it reaches the model rather than passing the raw top-k.
+- **Apply a relevance cutoff.** Always passing the top-k means the model receives irrelevant context on exactly the questions where it should be receiving none.
+
+### Abstention
+
+- **Give the model an explicit "I don't know" path** in the system prompt, with the wording to use and a concrete next step for the user.
+- **Tune the retrieval-score cutoff** below which the system abstains. Test it in both directions: raising the cutoff increases correct abstention and over-refusal at the same time. See [Threshold tuning](threshold-tuning.md).
+- **Route abstentions somewhere useful** — a human, a search link, or a phone number. An abstention that dead-ends is a better failure than a hallucination, but it is still a failure.
+
+### Citation and output-side checks
+
+- **Require citations** and reject answers containing claims that carry none.
+- **Verify that the cited span supports the claim** before the answer is shown, using an entailment model or a judge.
+- **Where latency is tight**, run the check asynchronously and use the results for monitoring rather than blocking. See [Production integration](production-integration.md) and [Monitoring and incident response](monitoring-incident-response.md).
+
+An output-side `govtech/hallucination` guardrail, which checks generated text against provided context, is listed as planned on [Sentinel](../tools/sentinel.md#available-guardrails).
+
+## Input variation
+
+- **Normalise for retrieval, not for display.** Lowercase, expand common abbreviations, and correct known misspellings of scheme names before the retrieval step, but answer against the user's original wording.
+- **Maintain an alias list** for scheme names, agency names, and colloquial terms. Populate it from how users actually refer to things, not from official nomenclature.
+- **Decide explicitly how you handle other languages.** Translating to English before retrieval is simpler but loses local terms; maintaining multilingual indexes preserves them at higher cost. Test both rather than inheriting whichever the framework defaults to.
+- **Check your embedding model on your users' input.** Models trained predominantly on standard English degrade on code-mixed and colloquial text. [LionGuard](../tools/lionguard.md) was improved specifically for robustness against noisy and code-mixed inputs.
+- **Ask a clarifying question** rather than guessing when a query is terse or ambiguous. It costs a turn, and it is far cheaper than a confident wrong answer.
+- **Feed real phrasings back.** Production traces should flow into the eval set, the alias list, and few-shot examples. This is the only mitigation on this page that improves on its own over time.
+
+## Where to start
+
+If you are triaging, work in this order: knowledge-base hygiene, then abstention, then retrieval quality, then guardrails. Hygiene and abstention are cheap, require no model changes, and remove the failures that damage trust most. Guardrails are worth adding once you know what you are guarding against — added first, they tend to be tuned against the wrong threshold.
+
+---
+
+## Legacy content (remove before release)
+
+:::warning[Not for readers]
+
+Retained temporarily so the previous version can be checked against the rewrite. Delete this section before the release.
+
+:::
+
+Off-topic guardrails keep applications within their intended purpose. Beyond filtering harmful content, detecting and filtering irrelevant queries helps maintain application focus.
+
+### Use cases
+
+- Public service chatbots that should only answer about a specific scheme or service.
+- Internal assistants limited to a business process.
+- Education or youth-facing applications with restricted topics.
+- Retrieval systems that should not answer outside their knowledge base.
+
+### Detection approaches
+
+- **Zero-shot/few-shot classifiers** to detect relevance against the system prompt. Suffers from lower precision — many valid queries are wrongly flagged off-topic.
+- **Custom topic classifier guardrails** from Amazon Bedrock Guardrails or Azure AI Content Safety. Requires defining your own taxonomy of what is off-topic and/or providing custom training examples.
+- **GovTech's Off-Topic guardrail** — a custom guardrail trained zero-shot on synthetic system-prompt and user-prompt pairs.
+
+### GovTech's off-topic guardrail
+
+We built this guardrail because existing solutions either required training a use-case-specific guardrail or configuring it with examples of on- and off-topic prompts — challenging in the absence of real production data. Instead, we created a rich dataset of synthetic system-prompt / user-prompt pairs (on- and off-topic) and trained a lightweight classifier.
+
+For v1 we trained a bi-encoder classifier on top of `jina-embeddings-v2-small-en` and a cross-encoder classifier on top of `stsb-roberta-base`.
+
+- [Blog post](https://medium.com/dsaid-govtech/open-sourcing-an-off-topic-prompt-guardrail-fde422a66152)
+- [Paper](https://arxiv.org/abs/2411.12946)
+- Available via the [Sentinel API](../tools/sentinel.md#available-guardrails) (`govtech/off-topic`)
+
+### Actions
+
+- Redirect the user to supported topics.
+- Refuse unsupported topics politely.
+- Ask a clarifying question when scope is ambiguous.
+- Escalate repeated or suspicious attempts.
