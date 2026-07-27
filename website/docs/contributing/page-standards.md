@@ -9,7 +9,8 @@ Use these standards when adding or updating playbook pages. Repository workflow 
 
 ## Language and voice
 
-- Write in British English (colour, organise, localise). Keep the original spelling of product and library names (e.g. OpenAI Moderation) and of identifiers in code.
+- Write in British English (colour, organise, localise). Keep the original spelling of product and library names, for example OpenAI Moderation, and of identifiers in code.
+- Prefer plain English to Latin abbreviations in reader-facing prose. Write "for example" instead of "e.g.", "that is" instead of "i.e.", and "and so on" instead of "etc.".
 - Say "AI systems", not "AI applications".
 - Use sentence case for all headings.
 - Write in a practitioner register: direct, concrete, and factual. Describe what a tool does and where its limits are — never assurances that it "ensures" safety or "guarantees" protection.
@@ -41,7 +42,7 @@ refreshed the recommended benchmarks table.
 
 - Open with "New in this release: …" for wholly new pages, or "Updated for the `<release>` release: …" for existing pages.
 - Keep it to one sentence or one to three bullets, written for readers.
-- Credit contributing teams here where relevant (e.g. "contributed by GovTech Data Practice").
+- Credit contributing teams here where relevant, for example "contributed by GovTech Data Practice".
 - No git archaeology: no branch names, no links to previous page URLs, no editing history.
 - Refresh or remove the admonition at every release. It must never describe a release that has already shipped.
 
@@ -60,7 +61,7 @@ state evals.
 :::
 ```
 
-- Never use internal shorthand (e.g. "KIV") in reader-facing text.
+- Never use internal shorthand such as "KIV" in reader-facing text.
 - Only include code tabs that contain working content — no "coming soon" stub tabs.
 
 ## Code examples
@@ -84,7 +85,7 @@ import TabItem from '@theme/TabItem';
 Tabs require the page to be `.mdx`.
 
 - Examples must run against a documented API, or be clearly labelled as illustrative in a comment.
-- Use placeholder model identifiers (e.g. `"your-pinned-judge-model-version"`) rather than hardcoding a model name that will age.
+- Use placeholder model identifiers, for example `"your-pinned-judge-model-version"`, rather than hardcoding a model name that will age.
 
 ## Single source of truth
 
