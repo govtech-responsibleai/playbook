@@ -98,11 +98,16 @@ body {
 }
 
 /* Footer styling */
+.footer {
+  --ifm-footer-padding-vertical: 0.5rem;
+}
+
 .footer__links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
 @media (max-width: 768px) {
@@ -789,3 +794,179 @@ figcaption {
   }
 }
 
+/* ─── Card system ───────────────────────────────────────────────────────────
+   Shared recipe behind every card grid in the playbook — archetype routes on
+   start-here/getting-started.mdx, capability groups on
+   tools/agentic-risk-capability-framework.md. The base class carries the
+   surface, border, radius, shadow, heading, blurb and icon slot; each component
+   adds only what is specific to it.
+
+     <div class="rai-card-grid">
+
+       <div class="rai-card capability-group capability-group--cognitive">
+       <strong>Cognitive</strong>
+       <span>What the system can reason about and plan.</span>
+       </div>
+
+     </div>
+
+   Keep each card on contiguous lines with no blank line inside it, and a blank
+   line between cards: that is what makes CommonMark pass the block through as
+   raw HTML instead of wrapping the inner tags in paragraphs. In .mdx files use
+   className rather than class.
+
+   Modifiers supply --rai-icon as a Lucide glyph in a data URI. The glyph is
+   applied as a mask rather than an <img>, so it takes its colour from the theme
+   — the same technique as .access-card.
+
+   Every colour resolves from an Infima variable, so light and dark mode are
+   both handled with no [data-theme='dark'] block. Cards are distinguished by
+   icon and position, never by hue — brand teal is the only accent.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.rai-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.rai-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.35rem 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+}
+
+/* The modifier class is what supplies --rai-icon, so key the glyph off its
+   presence: a bare .rai-card then renders with no icon rather than with an
+   empty teal square. */
+.rai-card[class*="--"]::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.7rem;
+  background-color: var(--ifm-color-primary);
+  -webkit-mask: var(--rai-icon) center / contain no-repeat;
+  mask: var(--rai-icon) center / contain no-repeat;
+}
+
+.rai-card > strong {
+  margin-bottom: 0.35rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.rai-card > span {
+  margin-bottom: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Cards that end on the blurb keep no trailing gap; the margin above exists
+   for cards that carry a link or a list after it. */
+.rai-card > span:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Archetype routes ──────────────────────────────────────────────────────
+   Reader entry points on start-here/getting-started.md. Each card names one
+   archetype and the ordered path it should take through the playbook, so the
+   page answers "where do I start?" and not just "what is here?".
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.archetype-route--developer {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 18 6-6-6-6'/%3E%3Cpath d='m8 6-6 6 6 6'/%3E%3C/svg%3E");
+}
+
+.archetype-route--governance {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='M7 21h10'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'/%3E%3C/svg%3E");
+}
+
+.archetype-route--practitioner {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E");
+}
+
+/* The route itself. margin-top:auto pins every path to the bottom of its card,
+   so the numbered steps line up across cards whose intro sentences wrap to
+   different heights. */
+.archetype-route > ol {
+  margin: auto 0 0;
+  padding: 0;
+  counter-reset: archetype-step;
+  list-style: none;
+}
+
+.archetype-route > ol > li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.42rem 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+/* Numbering comes from a counter so the markup carries no presentational
+   digits. The circle is filled with the accent; its label takes the card's own
+   surface colour, which inverts with the theme — white on dark teal in light
+   mode (13.1:1), near-black on light teal in dark mode (6.5:1). Hardcoding
+   white here would drop to 2.4:1 on the dark theme. */
+.archetype-route > ol > li::before {
+  display: grid;
+  flex: 0 0 1.55rem;
+  height: 1.55rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-background-surface-color);
+  content: counter(archetype-step);
+  counter-increment: archetype-step;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Connector between steps — this is what makes the list read as a route rather
+   than as three unrelated links. It spans exactly the gap between two circles
+   (0.42rem padding either side), so the numbers read as one continuous path.
+
+   Tinted from the accent rather than an emphasis grey: --ifm-color-emphasis-300
+   is near-white on a light card (1.2:1) and would vanish, while the greys that
+   do show in light mode become heavy-handed in dark. Reducing the accent's
+   opacity keeps the line the same visual weight in both themes and ties it to
+   the circles it joins. */
+.archetype-route > ol > li:not(:last-child)::after {
+  position: absolute;
+  top: 1.97rem;
+  bottom: -0.42rem;
+  left: 0.775rem;
+  width: 2px;
+  background-color: var(--ifm-color-primary);
+  content: "";
+  opacity: 0.35;
+  transform: translateX(-50%);
+}
+
+/* ─── Capability groups ─────────────────────────────────────────────────────
+   The three ARC capability categories on tools/agentic-risk-capability-framework.
+   Same card recipe; icon modifiers only.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.capability-group--cognitive {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='4.5' r='2.5'/%3E%3Cpath d='m10.2 6.3-3.9 3.9'/%3E%3Ccircle cx='4.5' cy='12' r='2.5'/%3E%3Cpath d='M7 12h10'/%3E%3Ccircle cx='19.5' cy='12' r='2.5'/%3E%3Cpath d='m13.8 17.7 3.9-3.9'/%3E%3Ccircle cx='12' cy='19.5' r='2.5'/%3E%3C/svg%3E");
+}
+
+.capability-group--interaction {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
+}
+
+.capability-group--operational {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 17 6-6-6-6'/%3E%3Cpath d='M12 19h8'/%3E%3C/svg%3E");
+}

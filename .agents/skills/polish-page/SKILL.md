@@ -60,7 +60,17 @@ Remove `*Coming soon*` stubs only if you can replace them with real content base
 Ensure at least 2 inline links are present. If fewer exist and relevant pages are obvious (based on the site structure), add them.
 
 **Images**
-If any image is missing alt text, add a descriptive placeholder and flag it in your summary.
+- Every image must have descriptive alt text.
+- Images that need a size constraint or caption must use `<img>`/`<figure>` JSX — this requires the file to be `.mdx`. If the file is `.md` and has such images, rename it to `.mdx` and add the import for any existing JSX components.
+- Use this pattern for captioned or size-constrained images:
+  ```mdx
+  <figure style={{textAlign: 'center', margin: '1rem 0'}}>
+    <img src="/images/example.png" alt="Descriptive alt text" style={{maxWidth: '400px', width: 'auto'}} />
+    <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>Caption text</figcaption>
+  </figure>
+  ```
+  (Note: captions do not end with a full stop)
+- Full-width images with no caption may use plain `![]()` syntax in `.md` files.
 
 ## Step 3 — Self-check before outputting
 
@@ -71,8 +81,9 @@ Silently verify the polished page:
 - [ ] All headings in sentence case
 - [ ] British English throughout
 - [ ] At least 2 inline links
-- [ ] Every image has alt text
+- [ ] Every image has descriptive alt text
+- [ ] Images needing size control or captions use `<figure>`/`<img>` JSX (file is `.mdx`)
 - [ ] No new stubs added
-- [ ] File extension unchanged
+- [ ] File extension is `.mdx` if the page contains any JSX or size-constrained images
 
 Fix any remaining issues, then output the polished page followed by a short **What changed** summary — bullet points only, one line each.

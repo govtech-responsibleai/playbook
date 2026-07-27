@@ -81,6 +81,47 @@ const config: Config = {
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
+    // Mermaid renders client-side and re-initialises on colour-mode change, but
+    // `theme` is the only value that varies per mode — `options` (and therefore
+    // themeVariables) is shared. See @docusaurus/theme-mermaid useMermaidConfig.
+    //
+    // So rather than maintaining two palettes, the palette below is deliberately
+    // theme-agnostic: filled dark-teal nodes with white text, outlined and joined
+    // in a mid-teal that clears WCAG 1.4.11 (3:1) against both the light (#fff)
+    // and dark (#1b1b1d) page backgrounds. That keeps one source of truth and
+    // needs no [data-theme='dark'] overrides.
+    //
+    // Mermaid is for simple flows only. Anything that needs to look designed is
+    // hand-built in CSS — see the archetype routes in src/css/custom.css.
+    mermaid: {
+      theme: {light: 'base', dark: 'base'},
+      options: {
+        themeVariables: {
+          fontFamily: "'Lato', system-ui, -apple-system, sans-serif",
+          fontSize: '15px',
+
+          // Node fill — brand dark teal. 13.1:1 against the white node text.
+          primaryColor: '#0d363b',
+          mainBkg: '#0d363b',
+
+          // Node outline and connectors. 4.18:1 on light, 4.12:1 on dark, so the
+          // node stays delineated on the dark theme where fill and page
+          // background are otherwise too close (1.32:1).
+          primaryBorderColor: '#2a8891',
+          nodeBorder: '#2a8891',
+          lineColor: '#2a8891',
+          arrowheadColor: '#2a8891',
+
+          // All Mermaid text sits on a dark-teal surface, so white throughout.
+          // edgeLabelBackground keeps that true for edge labels too, should a
+          // future diagram add them.
+          primaryTextColor: '#ffffff',
+          nodeTextColor: '#ffffff',
+          textColor: '#ffffff',
+          edgeLabelBackground: '#0d363b',
+        },
+      },
+    },
     navbar: {
       title: 'Responsible AI Playbook',
       logo: {

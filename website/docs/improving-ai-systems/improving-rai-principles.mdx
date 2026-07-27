@@ -2,11 +2,11 @@
 slug: /improving-ai-systems/principle-specific-improvements
 ---
 
-import { Shield, Zap, Scale, Lightbulb, Lock } from 'lucide-react';
+import { Shield, Zap, Scale, Lock } from 'lucide-react';
 
 # Improving RAI principles
 
-Choose improvements for safety, robustness, fairness, privacy and agentic AI systems.
+Choose improvements for safety, robustness, fairness, and privacy.
 
 <div style={{
   display: 'grid',
@@ -104,28 +104,5 @@ Choose improvements for safety, robustness, fairness, privacy and agentic AI sys
   }}>
     <Lock size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
     <strong>Privacy improvements</strong>
-  </a>
-
-  <a href="/improving-ai-systems/agentic-improvements" style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '1.5rem',
-    border: '1px solid var(--ifm-color-emphasis-300)',
-    borderRadius: '0.75rem',
-    textDecoration: 'none',
-    color: 'inherit',
-    transition: 'all 0.2s ease',
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = 'translateY(-3px)';
-    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = 'none';
-    e.currentTarget.style.boxShadow = 'none';
-  }}>
-    <Lightbulb size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
-    <strong>Agentic improvements</strong>
   </a>
 </div>

@@ -4,11 +4,11 @@ sidebar_position: 3
 slug: /evaluating-ai-systems/rai-principles
 ---
 
-import { Shield, Zap, Scale, Lock, Lightbulb } from 'lucide-react';
+import { Shield, Zap, Scale, Lock } from 'lucide-react';
 
 # Evals for RAI principles
 
-Evaluating across the five Responsible AI principles ensures your system is safe, robust, fair, private, and transparent. Choose the evaluation dimension that matches your identified risks.
+Evaluating across the four Responsible AI principles ensures your system is safe, robust, fair, and private. Choose the evaluation dimension that matches your identified risks.
 
 <div style={{
   display: 'grid',
@@ -106,28 +106,5 @@ Evaluating across the five Responsible AI principles ensures your system is safe
   }}>
     <Lock size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
     <strong>Privacy evals</strong>
-  </a>
-
-  <a href="./agentic-evals" style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '1.5rem',
-    border: '1px solid var(--ifm-color-emphasis-300)',
-    borderRadius: '0.75rem',
-    textDecoration: 'none',
-    color: 'inherit',
-    transition: 'all 0.2s ease',
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = 'translateY(-3px)';
-    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = 'none';
-    e.currentTarget.style.boxShadow = 'none';
-  }}>
-    <Lightbulb size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
-    <strong>Agentic evals</strong>
   </a>
 </div>

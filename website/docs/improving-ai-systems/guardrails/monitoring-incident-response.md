@@ -74,7 +74,7 @@ Capture enough context to reconstruct what happened:
 
 Replay the trace in a controlled environment when possible. Determine whether the failure came from detection, threshold choice, response logic, integration, permissions, unavailable dependencies, or a risk not represented in the evaluation set.
 
-Agentic systems need particular attention because a failure can involve a sequence of actions rather than one response. Review the permissions, state changes, intermediate tool results, and approval decisions across the complete trace. See [Agentic improvements](../agentic-improvements.mdx) for controls on tool use and human approval.
+Agentic systems need particular attention because a failure can involve a sequence of actions rather than one response. Review the permissions, state changes, intermediate tool results, and approval decisions across the complete trace. See the [Agentic Risk & Capability Framework](../../tools/agentic-risk-capability-framework.md) for working out which agentic risks apply to a system and which controls address them.
 
 ## Feed evidence back into the system
 

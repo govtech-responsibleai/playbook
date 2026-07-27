@@ -60,6 +60,12 @@ Most AI systems will require functional testing (to assess how well the AI syste
 - Fairness evals where protected attributes could influence outcomes.
 - Agentic evals where the system plans, uses tools, or takes multi-step actions.
 
+:::note[On the roadmap]
+
+Detailed guidance on agentic evaluation is an active workstream and will be added in a future release. Until then, the [Agentic Risk & Capability Framework](../tools/agentic-risk-capability-framework.md) covers how to work out which agentic risks apply to a system and which controls address them.
+
+:::
+
 <details>
 <summary><strong>Worked example: choosing evaluation dimensions for GrantsAssist</strong></summary>
 
@@ -72,7 +78,6 @@ Continuing the GrantsAssist example, the team might decide on the following dime
 | Robustness | Yes | Real users will write in Singlish, code-mix, or ask ambiguous off-topic questions. Test paraphrases, mixed languages, and out-of-scope inputs. |
 | Privacy | Yes | The system collects optional household details and could retrieve PII from logs. Test for PII leakage in responses and system-prompt disclosure. |
 | Fairness | Yes | Response quality and refusal behaviour must not vary systematically across the four supported languages or user demographics. Test across language and household-profile slices. |
-| Agentic | Light coverage only | The system uses retrieval and a calculator but does not plan multi-step actions or invoke external tools. Cover tool-call correctness only. |
 
 </details>
 

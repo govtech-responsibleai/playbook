@@ -2,6 +2,7 @@
 sidebar_label: "Getting started"
 sidebar_position: 1
 ---
+import Link from '@docusaurus/Link';
 import LifecycleDiagram from '@site/src/components/LifecycleDiagram';
 
 # Welcome to the Responsible AI Playbook!
@@ -20,6 +21,42 @@ This playbook is primarily designed for **application developers**  in the Singa
 
 Although the playbook is written with the Singapore Government context in mind, most of its principles, explanations, and recommendations are broadly applicable to organisations developing AI systems. Building AI that is safe, fair, and responsible is a shared goal across sectors and contexts.
 
+Find yourself below, then follow the route into the playbook — each one is ordered, so start at step 1.
+
+<div className="rai-card-grid">
+
+<div className="rai-card archetype-route archetype-route--developer">
+<strong>Application developers</strong>
+<span>You build and launch AI systems, and want to ship safely without becoming a Responsible AI specialist.</span>
+<ol>
+<li><Link to="/evaluating-ai-systems/">Plan your evaluation</Link></li>
+<li><Link to="/tools/lionguard/">Add an off-the-shelf guardrail</Link></li>
+<li><Link to="/improving-ai-systems/safety-improvements/">Defend against prompt injection</Link></li>
+</ol>
+</div>
+
+<div className="rai-card archetype-route archetype-route--governance">
+<strong>Governance teams</strong>
+<span>You oversee AI risk across an organisation — setting policy, reviewing launches, and tracking residual risk.</span>
+<ol>
+<li><Link to="/start-here/about-responsible-ai/">Start with the six principles</Link></li>
+<li><Link to="/evaluating-ai-systems/">Adopt a shared evaluation framework</Link></li>
+<li><Link to="/improving-ai-systems/">Require improvement patterns</Link></li>
+</ol>
+</div>
+
+<div className="rai-card archetype-route archetype-route--practitioner">
+<strong>AI practitioners</strong>
+<span>You build models, evaluations, or systems, and want patterns you can apply alongside your existing work.</span>
+<ol>
+<li><Link to="/evaluating-ai-systems/methods/">Choose an evaluation method</Link></li>
+<li><Link to="/improving-ai-systems/guardrails/production-integration/">Tune your thresholds</Link></li>
+<li><Link to="/improving-ai-systems/guardrails/choosing-a-guardrail/">Build your own guardrail</Link></li>
+</ol>
+</div>
+
+</div>
+
 ### Application developers who build AI systems
 
 You build and launch AI products and want to ship safely with practical guidance.
@@ -36,7 +73,7 @@ You oversee AI risk across an organisation — setting policy, reviewing launche
 
 What this playbook gives you:
 
-- [A shared evaluation framework](../evaluating-ai-systems/index.md) across safety, robustness, fairness, privacy, and agentic dimensions.
+- [A shared evaluation framework](../evaluating-ai-systems/index.md) across safety, robustness, fairness, and privacy dimensions.
 - [Clear understanding of Responsible AI](./about-responsible-ai.mdx) and its 6 principles.
 - Concrete [improvement patterns](../improving-ai-systems/index.md) — guardrails, finetuning, and principle-specific controls — to require of product teams.
 
@@ -52,7 +89,7 @@ What this playbook gives you:
 
 ## Why this playbook?
 
-Our aim is to help people understand and apply Responsible AI from a technical perspective. e do so in three ways:
+Our aim is to help people understand and apply Responsible AI from a technical perspective. We do so in three ways:
 
 1. Clear and detailed **explanations for key concepts** in Responsible AI (such as safety, fairness, and interpretability)
 2. Easy-to-follow and actionable **recommendations for deploying AI responsibly** for your applications
