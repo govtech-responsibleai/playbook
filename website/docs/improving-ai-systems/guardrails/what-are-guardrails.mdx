@@ -46,13 +46,25 @@ Prompts first pass through an **input guardrail** before being sent to the LLM. 
 
 Guardrails can be as simple as a keyword check, but modern implementations typically incorporate machine learning to capture semantics and are multi-layered for robustness.
 
+## Types of guardrails
+
+Guardrails can be implemented using different approaches, each with distinct trade-offs:
+
+| Type | Description |
+|------|-------------|
+| **Rule-based** | Pattern matching using keywords, regex, exact matches, or predefined rules<br/><br/>**Pros:** Fast, cheap to run, no model needed, easy to implement and debug<br/>**Cons:** Cannot capture semantic meaning, high false positives, easily bypassed |
+| **Machine learning model** | Trained classifiers (e.g., decision trees, neural networks) that detect content based on learned patterns<br/><br/>**Pros:** Captures semantic meaning, better accuracy than rule-based checks, faster inference than LLMs, economical to host, configurable thresholds for precision/recall trade-offs<br/>**Cons:** Requires training data and expertise, may need fine-tuning for new domains |
+| **Large language model** | Using a large language model to classify content as acceptable or not<br/><br/>**Pros:** Highly flexible, can understand complex context, explainable reasoning, minimal setup needed<br/>**Cons:** Slower inference, more expensive to run, higher latency, binary yes/no output without calibrated confidence scores |
+
 :::tip[Guardrails as a classification task]
 
-For an ML mindset, guardrails can be thought of as binary classification: is the content acceptable or not? Standard classification metrics — precision, recall, ROC-AUC, F1 — apply.
+Guardrails can be thought of as binary classification: is the content acceptable or not? Standard classification metrics — precision, recall, F1 score, ROC-AUC, PR-AUC — applies.
 
 :::
 
 ## Common risk types
+
+These are common risks that AI applications face. Most can be mitigated by applying input and/or output guardrails.
 
 | Type | Description | Input | Output |
 |------|-------------|:-----:|:------:|
