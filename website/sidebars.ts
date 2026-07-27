@@ -7,8 +7,8 @@ const sidebars: SidebarsConfig = {
       label: 'Start Here',
       collapsed: false,
       items: [
-        {type: 'doc', id: 'start-here/getting-started', label: '[ALL] Getting started'},
-        {type: 'doc', id: 'start-here/about-responsible-ai', label: '[ALL] About Responsible AI'},
+        {type: 'doc', id: 'start-here/getting-started', label: 'Getting started'},
+        {type: 'doc', id: 'start-here/about-responsible-ai', label: 'About Responsible AI'},
       ],
     },
     {
