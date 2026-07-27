@@ -7,11 +7,41 @@ sidebar_position: 1
 
 Welcome to the Responsible AI Playbook! This playbook is developed by GovTech Singapore's AI Practice, and aims to help you **build safe and trustworthy AI systems** by **providing practical guidance and useful insights**. 
 
-We designed this playbook to cater to three main archetypes within the Singapore public sector:
+We designed this playbook to cater to three main archetypes within the Singapore public sector. Find yourself below, then follow the route into the playbook — each one is ordered, so start at step 1.
 
-* [Application developers who build AI systems](#application-developers)
-* [Governance officers who oversee AI systems](#governance-teams)
-* [AI practitioners who want to learn more about Responsible AI](#ai-practitioners)
+<div class="rai-card-grid">
+
+<div class="rai-card archetype-route archetype-route--developer">
+<strong>Application developers</strong>
+<span>You build and launch AI systems, and want to ship safely without becoming a Responsible AI specialist.</span>
+<ol>
+<li><a href="../../evaluating-ai-systems/">Plan your evaluation</a></li>
+<li><a href="../../tools/lionguard/">Add an off-the-shelf guardrail</a></li>
+<li><a href="../../improving-ai-systems/safety-improvements/">Defend against prompt injection</a></li>
+</ol>
+</div>
+
+<div class="rai-card archetype-route archetype-route--governance">
+<strong>Governance teams</strong>
+<span>You oversee AI risk across an organisation — setting policy, reviewing launches, and tracking residual risk.</span>
+<ol>
+<li><a href="../about-responsible-ai/">Start with the six principles</a></li>
+<li><a href="../../evaluating-ai-systems/">Adopt a shared evaluation framework</a></li>
+<li><a href="../../improving-ai-systems/">Require improvement patterns</a></li>
+</ol>
+</div>
+
+<div class="rai-card archetype-route archetype-route--practitioner">
+<strong>AI practitioners</strong>
+<span>You build models, evaluations, or systems, and want patterns you can apply alongside your existing work.</span>
+<ol>
+<li><a href="../../evaluating-ai-systems/methods/">Choose an evaluation method</a></li>
+<li><a href="../../improving-ai-systems/threshold-tuning/">Tune your thresholds</a></li>
+<li><a href="../../improving-ai-systems/building-your-own-guardrail/">Build your own guardrail</a></li>
+</ol>
+</div>
+
+</div>
 
 ## Application developers
 
@@ -29,7 +59,7 @@ You oversee AI risk across an organisation — setting policy, reviewing launche
 
 What this playbook gives you:
 
-- [A shared evaluation framework](../evaluating-ai-systems/index.md) across safety, robustness, fairness, privacy, and agentic dimensions.
+- [A shared evaluation framework](../evaluating-ai-systems/index.md) across safety, robustness, fairness, and privacy dimensions.
 - [Clear understanding of Responsible AI](./about-responsible-ai.md) and the six principles.
 - Concrete [improvement patterns](../improving-ai-systems/index.md) — guardrails, finetuning, and principle-specific controls — to require of product teams.
 - The full [Glossary](../tools/glossary.md) of terms used across the playbook.
@@ -52,6 +82,10 @@ The playbook is organised around a practical lifecycle:
 flowchart LR
   define[Define] --> evaluate[Evaluate]
   evaluate --> mitigate[Mitigate]
-  mitigate --> govern[Govern KIV]
-  govern --> apply[Apply KIV]
 ```
+
+:::note[On the roadmap]
+
+Two further stages, Govern and Apply, will join this lifecycle once their guidance is written.
+
+:::

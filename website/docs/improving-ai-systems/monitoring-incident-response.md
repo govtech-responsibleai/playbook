@@ -5,45 +5,43 @@ sidebar_position: 14
 
 # Monitoring and incident response
 
-:::info[About this page]
+Evaluation establishes how a system behaves before launch. Monitoring establishes how it behaves afterwards, against real users and inputs no test set anticipated. Two kinds of failure need to stay visible: the model producing an unacceptable output, and the system taking an unacceptable action.
 
-This page is new in the upcoming Responsible AI Playbook release. It covers what to monitor and how to respond to agentic incidents, with placeholder sections for anomaly detection thresholds, trace replay, and kill-switch design. All content is new.
+Both need a defined response before they occur, because the point at which an incident is discovered is a poor moment to decide who can switch what off.
 
-:::
+## What to monitor
 
-Agentic systems should be monitored for both model failures and action failures.
-
-## Monitor
-
-- Tool calls and arguments.
+- Guardrail triggers, and the rate at which they fire.
+- Refusals, and whether the refusal rate is drifting.
+- User reports and escalations to human review.
+- Tool calls and their arguments, for systems that use tools.
 - Failed or repeated actions.
 - Permission denials.
 - Human override events.
-- Guardrail triggers.
 - Unexpected state or memory use.
-- User reports and escalations.
 
-## Respond
+Rates matter more than individual events. A single guardrail trigger says little; a guardrail whose trigger rate doubles overnight says something has changed, either in the traffic or in the system.
 
-Define what happens when the system behaves unexpectedly:
+## How to respond
+
+Define the available responses in advance, and record which of them each role is authorised to take:
 
 - Pause or disable specific tools.
 - Fall back to human review.
 - Preserve traces for investigation.
-- Notify owners.
-- Patch prompts, tools, permissions, or evals.
-- Add the incident to the regression suite.
+- Notify the system owner.
+- Patch prompts, tools, permissions, or evaluations.
+- Add the incident to the regression suite so the same failure is caught next time.
 
-Governance and incident response guidance is KIV, but basic monitoring should still be part of agentic system readiness.
+The last of these is the one most often skipped. An incident that is resolved but never turned into a test case is an incident that remains available to recur.
 
-## Anomaly detection and alert thresholds
+:::note[On the roadmap]
 
-<mark class="new-since-v1">*Coming soon — this section will cover how to set anomaly thresholds on tool-call rates, permission-denial rates, refusal rates, and trace-length distributions so that real incidents page someone but routine variation does not.*</mark>
+Planned additions to this page: anomaly detection and alert thresholds, trace replay for incident reconstruction, kill-switch design, and the governance process around incident response.
 
-## Trace replay for incident response
+:::
 
-<mark class="new-since-v1">*Coming soon — this section will cover how to capture, store, and replay agent traces (prompts, tool calls, tool results, model outputs) so that responders can reconstruct what an agent did and why.*</mark>
+## Where to go next
 
-## Kill-switch design
-
-<mark class="new-since-v1">*Coming soon — this section will cover kill-switch architectures: per-tool disable flags, per-tenant pauses, global stop-the-world switches, and how to ensure the kill switch itself is not in the agent's control surface.*</mark>
+- [Measuring impact](measuring-impact.md) — quantifying what a guardrail changes in production.
+- [Production integration](production-integration.md) — where monitoring hooks sit in the serving path.

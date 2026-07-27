@@ -27,9 +27,8 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'evaluating-ai-systems/functional', label: '[L] Functional evals'},
             {type: 'doc', id: 'evaluating-ai-systems/safety', label: '[T] Safety evals'},
             {type: 'doc', id: 'evaluating-ai-systems/robustness', label: '[JY] Robustness evals'},
-            {type: 'doc', id: 'evaluating-ai-systems/fairness', label: '[S] Fairness evals'},
+            {type: 'doc', id: 'evaluating-ai-systems/fairness', label: 'Fairness evals'},
             {type: 'doc', id: 'evaluating-ai-systems/privacy', label: '[JY] Privacy evals'},
-            {type: 'doc', id: 'evaluating-ai-systems/agentic-evals', label: '[S] Agentic evals'},
           ],
         },
       ],
@@ -39,7 +38,7 @@ const sidebars: SidebarsConfig = {
       label: 'Improving AI Systems',
       collapsed: true,
       items: [
-        {type: 'doc', id: 'improving-ai-systems/index', label: '[S] Overview'},
+        {type: 'doc', id: 'improving-ai-systems/index', label: 'Overview'},
         {
           type: 'category',
           label: 'Guardrails',
@@ -53,7 +52,7 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'improving-ai-systems/monitoring-incident-response', label: '[JY] Monitoring and incident response'},
           ],
         },
-        {type: 'doc', id: 'improving-ai-systems/finetuning', label: '[S] Finetuning'},
+        {type: 'doc', id: 'improving-ai-systems/finetuning', label: 'Finetuning'},
         {
           type: 'category',
           label: 'Improving RAI principles',
@@ -61,9 +60,8 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: '[JY] Safety improvements'},
             {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: '[JY] Robustness improvements'},
-            {type: 'doc', id: 'improving-ai-systems/fairness-improvements', label: '[S] Fairness improvements'},
+            {type: 'doc', id: 'improving-ai-systems/fairness-improvements', label: 'Fairness improvements'},
             {type: 'doc', id: 'improving-ai-systems/privacy-improvements', label: '[JY] Privacy improvements'},
-            {type: 'doc', id: 'improving-ai-systems/agentic-improvements', label: '[S] Agentic improvements'},
           ],
         },
       ],
@@ -73,14 +71,14 @@ const sidebars: SidebarsConfig = {
       label: 'Tools & Resources',
       collapsed: true,
       items: [
-        {type: 'doc', id: 'tools/index', label: '[S] Overview'},
+        {type: 'doc', id: 'tools/index', label: 'Overview'},
         {
           type: 'category',
           label: 'WOG Products',
           collapsed: true,
           items: [
-            {type: 'doc', id: 'tools/litmus', label: '[S] Litmus'},
-            {type: 'doc', id: 'tools/sentinel', label: '[S] Sentinel'},
+            {type: 'doc', id: 'tools/litmus', label: 'Litmus'},
+            {type: 'doc', id: 'tools/sentinel', label: 'Sentinel'},
           ],
         },
         {
@@ -89,7 +87,7 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           items: [
             {type: 'doc', id: 'tools/rabakbench', label: '[L] RabakBench'},
-            {type: 'doc', id: 'tools/minorbench', label: '[S] MinorBench'},
+            {type: 'doc', id: 'tools/minorbench', label: 'MinorBench'},
             {type: 'doc', id: 'tools/responsible-ai-benchmark', label: 'Responsible AI Benchmark'},
           ],
         },
@@ -107,7 +105,7 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           items: [
             {type: 'doc', id: 'tools/wog-safety-testing', label: '[T] WOG Safety Testing Framework'},
-            {type: 'doc', id: 'tools/agentic-risk-capability-framework', label: '[S] Agentic Risk & Capability Framework'},
+            {type: 'doc', id: 'tools/agentic-risk-capability-framework', label: 'Agentic Risk & Capability Framework'},
             {type: 'doc', id: 'tools/knowornot', label: 'KnowOrNot'},
           ],
         },
@@ -120,8 +118,8 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'tools/metaevaluator', label: 'MetaEvaluator'},
           ],
         },
-        {type: 'doc', id: 'resources', label: '[S] External resources'},
-        {type: 'doc', id: 'tools/glossary', label: '[S] Glossary'},
+        {type: 'doc', id: 'resources', label: 'External resources'},
+        {type: 'doc', id: 'tools/glossary', label: 'Glossary'},
       ],
     },
   ],
