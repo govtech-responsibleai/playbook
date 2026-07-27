@@ -408,6 +408,16 @@ mark.privacy-additions,
   font-weight: 700;
 }
 
+/* Two-column summary table with no header row. */
+.issue-summary thead {
+  display: none;
+}
+
+.issue-summary tbody td:first-child {
+  width: 32%;
+  font-weight: 700;
+}
+
 .markdown details.metric-disclosure {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-left-width: 0;
