@@ -8,7 +8,6 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         {type: 'doc', id: 'start-here/getting-started', label: '[ALL] Getting started'},
-        {type: 'doc', id: 'start-here/why-this-playbook', label: '[ALL] Why this playbook'},
         {type: 'doc', id: 'start-here/about-responsible-ai', label: '[ALL] About Responsible AI'},
       ],
     },
