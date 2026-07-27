@@ -3,7 +3,7 @@ sidebar_label: "[S] Litmus"
 sidebar_position: 2
 ---
 
-# Litmus: Comprehensive AI Safety Testing for Government Applications
+# Litmus: comprehensive AI safety testing for government applications
 
 :::info[About this page]
 
@@ -11,10 +11,10 @@ This page is new at this URL in the upcoming Responsible AI Playbook release. It
 
 :::
 
-Litmus is a Testing-as-a-Service (TaaS) platform that allows development teams building Generative AI systems to perform frequent and seamless AI safety and security testing. By having the ability to perform testing within the CI/CD pipeline as well as through a Web App, Litmus provides application teams and business owners with a near real-time awareness of AI system and model risks in this ever-changing landscape, without the need for extensive setup or infrastructure management. Through Litmus, we hope to empower teams to make informed decisions in the AI systems, and react to AI-related risks in an agile manner.
+Litmus is a Testing-as-a-Service (TaaS) platform that allows development teams building Generative AI systems to perform frequent and seamless AI safety and security testing. By having the ability to perform testing within the CI/CD pipeline as well as through a Web App, Litmus provides application teams and business owners with a near real-time awareness of AI system and model risks in this ever-changing landscape, without the need for extensive setup or infrastructure management. Through Litmus, we hope to empower teams to make informed decisions about their AI systems and react to AI-related risks in an agile manner.
 
 
-### Why Use Litmus?
+### Why use Litmus?
 
 Litmus ensures that AI systems used in Singapore's public services meet the highest safety standards, providing confidence to both government agencies and citizens in the reliability of AI-powered solutions.
 
@@ -23,7 +23,7 @@ Litmus ensures that AI systems used in Singapore's public services meet the high
 - Comprehensive risk and behaviour analysis aligned with public sector AI ethics, policies, and guidelines
 - Customisable testing scenarios for diverse government use cases (e.g., chatbots, document processing, policy analysis)
 
-## How Does Litmus Work?
+## How does Litmus work?
 The following diagram shows how Litmus enhances the safety and security of an AI App with automated testing via CICD integration:
 ![How Litmus Works](/images/litmus.svg "How Litmus Works")
 
@@ -35,7 +35,7 @@ The following diagram shows how Litmus enhances the safety and security of an AI
 - **Continuous Integration Support**  
   Integrate Litmus into your CI/CD pipelines for continuous testing. Automatically trigger tests on every code commit or deployment.
 - **API Integration**  
-  Integrate Litmus with your internal systems using our Litmus API for seamless data synchronization and automation.
+  Integrate Litmus with your internal systems using our Litmus API for seamless data synchronisation and automation.
 - **Custom Test Scenarios**  
   Create custom test cases, simulate user interactions, and perform specific workflows to ensure your app is comprehensively tested.
 

@@ -3,7 +3,7 @@ sidebar_label: "[JY] Production integration"
 sidebar_position: 12
 ---
 
-# Production Integration
+# Production integration
 
 :::info[About this page]
 
@@ -13,7 +13,7 @@ This page is new in the upcoming Responsible AI Playbook release. It covers inte
 
 Production integration is where mitigations become part of the application workflow.
 
-## Integration Checklist
+## Integration checklist
 
 - Decide where each mitigation runs: input, retrieval, model output, tool call, log, or human review.
 - Define actions for allow, warn, block, redact, and escalate outcomes.
@@ -23,7 +23,7 @@ Production integration is where mitigations become part of the application workf
 - Add regression tests for known failures.
 - Define who reviews alerts and failures after launch.
 
-## Common Mistakes
+## Common mistakes
 
 - Adding guardrails without testing their false positives.
 - Treating provider safety filters as the only mitigation.
@@ -31,7 +31,7 @@ Production integration is where mitigations become part of the application workf
 - Applying the same threshold to every user journey.
 - Not testing multi-turn and tool-use behaviour.
 
-## Best Practices for Integration
+## Best practices for integration
 
 ### 1. Start simple
 

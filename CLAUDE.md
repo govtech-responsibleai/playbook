@@ -68,7 +68,19 @@ npm run start        # dev server at localhost:3000
 npm run build        # production build → website/build/
 ```
 
-Required validation for content or component changes: successful `npm run build` and, for visible changes, visual review in the dev server. There is no separate test suite or linter configured in this repository.
+## Validation
+
+**This repository has no test suite and no linter, and none should be added for content work.** It is a documentation site: Markdown/MDX pages plus a small amount of React, published for reading. "Does it pass?" means the docs compile and the page renders correctly — not that a test run went green.
+
+Validate changes this way:
+
+1. **Docs compile.** Run `npm run build` from `website/`. It must end with `[SUCCESS] Generated static files in "build"`.
+2. **Links actually resolve.** A green build does *not* prove this: `onBrokenLinks` and `onBrokenMarkdownLinks` are both set to `warn` in `docusaurus.config.ts`, so broken links only produce warnings. Read the build output for warnings, or check the rendered HTML under `website/build/` directly.
+3. **Assets actually render.** Confirm images resolve rather than trusting the Markdown source. Docusaurus rewrites `/images/foo.png` to a content-hashed path under `build/assets/images/` and only emits that path when the source file exists in `website/static/`, so finding the hashed reference in the built HTML is proof the image will display.
+4. **Visual review for visible changes.** Use `npm run start` for layout, styling, or component work.
+5. **Navigation is wired.** A new page must appear in `website/sidebars.ts`; otherwise the build warns that the doc is not in any sidebar and readers cannot reach it.
+
+Because there are no tests, review attention belongs on factual accuracy, tone, heading conventions, and whether links and images resolve — the failure modes this repository actually has.
 
 ## Branch and release model
 
@@ -82,6 +94,7 @@ Required validation for content or component changes: successful `npm run build`
 ## Authoring conventions
 
 - Write concise Markdown with sentence-case headings and practitioner-focused guidance.
+- Write in British English and say "AI systems", not "AI applications". Product names and code identifiers keep their original spelling.
 - New pages should usually include purpose, when to use it, application steps, pitfalls, and relevant tools or templates.
 - Use lowercase, hyphenated filenames.
 - Adding a new page requires updating `website/sidebars.ts` and setting `sidebar_position` in the file's frontmatter.
@@ -92,13 +105,13 @@ Required validation for content or component changes: successful `npm run build`
 
 Follow `website/docs/contributing/page-standards.md` for:
 
-- top-of-page release admonitions,
-- inline highlight classes such as `.new-since-v1` and `.privacy-additions`,
-- tabbed code examples,
-- ownership and review notes,
-- linking principles.
+- the single "What's new on this page" release admonition (refreshed or removed at every release; no branch names or editing history),
+- placeholder and roadmap conventions (no empty section headings, no internal shorthand such as "KIV" in reader-facing text),
+- tabbed code examples pairing a framework-agnostic version with a GovTech (Sentinel/Litmus/Cloak) version,
+- ownership (`owner`) and last-reviewed dates (`last_reviewed`) in page frontmatter, not in sidebar labels,
+- linking principles and the single-source-of-truth rule for shared tables and taxonomies.
 
-In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs><TabItem>` JSX, which requires `.mdx` files. Custom highlight classes are defined in `website/src/css/custom.css`.
+In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs><TabItem>` JSX, which requires `.mdx` files. The inline highlight classes (`.new-since-v1`, `.privacy-additions`) are retired: do not add new highlight marks, and remove existing ones when touching a page.
 
 ## Analytics
 

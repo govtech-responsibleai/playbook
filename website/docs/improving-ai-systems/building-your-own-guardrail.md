@@ -3,7 +3,7 @@ sidebar_label: "[JY] Building your own guardrail"
 sidebar_position: 11
 ---
 
-# Building Your Own Guardrail
+# Building your own guardrail
 
 :::info[About this page]
 
@@ -13,7 +13,7 @@ This page is new in the upcoming Responsible AI Playbook release. It covers when
 
 Build a custom guardrail when off-the-shelf options do not match your risk, language, domain, latency, privacy, or deployment constraints.
 
-## When to Build
+## When to build
 
 Consider a custom guardrail when:
 
@@ -23,7 +23,7 @@ Consider a custom guardrail when:
 - You need configurable thresholds or action bands.
 - You have examples from production or expert review.
 
-## Basic Workflow
+## Basic workflow
 
 1. Define the risk category and action policy.
 2. Collect positive and negative examples.
@@ -33,4 +33,4 @@ Consider a custom guardrail when:
 6. Tune thresholds against product risk.
 7. Monitor failures and refresh the dataset.
 
-For examples of GovTech-developed guardrails, see [LionGuard](../tools/lionguard.md), the [GovTech Off-Topic guardrail](robustness-improvements.mdx#govtechs-off-topic-guardrail), and the [system-prompt leakage guardrail](privacy-improvements.mdx#govtechs-system-prompt-leakage-guardrail).
+For examples of GovTech-developed guardrails, see [LionGuard](../tools/lionguard.md), the [GovTech Off-Topic guardrail](../tools/off-topic-guardrail.md), and the [system-prompt leakage guardrail](privacy-improvements.mdx#govtechs-system-prompt-leakage-guardrail).

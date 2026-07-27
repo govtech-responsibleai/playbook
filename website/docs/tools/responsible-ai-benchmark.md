@@ -1,24 +1,20 @@
 ---
-sidebar_label: "[R] Responsible AI Benchmark"
+sidebar_label: "Responsible AI Benchmark"
 sidebar_position: 7
 ---
-
 # Responsible AI Benchmark
 
-:::info[About this page]
+The Responsible AI Benchmark consolidates several of the key benchmarks and guardrails to give a baseline view of how the newest LLMs behave. A common set of tests runs across many models, reporting where they cluster on three dimensions:
 
-This page is new in the upcoming Responsible AI Playbook release. It is the dedicated tool page for the Responsible AI Benchmark, replacing the section that previously lived inside the legacy Testing page. All content is new.
+- **Safety**: refusal on unsafe prompts, from [RabakBench](./rabakbench.md) and our WOG [risk taxonomy](./wog-safety-testing.md).
+- **Robustness**: factual grounding and abstention on RAG tasks, from [KnowOrNot](./knowornot.md).
+- **Fairness**: differential treatment across groups.
 
-:::
+![Responsible AI Benchmark landing page](/images/rai-bench-main.png)
 
-The Responsible AI Benchmark is a collection of application-level safety, robustness, and fairness tests designed around real-world use cases.
+## When to use
 
-Use it as a rough guide when comparing models or applications, but do not treat it as a replacement for application-specific testing before deployment.
+- Early model and guardrail comparison.
+- A baseline view of safety, robustness, and fairness before tuning.
 
-## When to Use
-
-- Early model or provider comparison.
-- A baseline view of safety, robustness, and fairness behaviour.
-- A starting point for application-specific eval design.
-
-For application launch readiness, combine benchmark results with [Designing an evaluation plan](../evaluating-ai-systems/index.md).
+For launch readiness, combine results with [Designing an evaluation plan](../evaluating-ai-systems/index.md).

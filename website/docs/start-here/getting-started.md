@@ -30,7 +30,7 @@ You oversee AI risk across an organisation — setting policy, reviewing launche
 What this playbook gives you:
 
 - [A shared evaluation framework](../evaluating-ai-systems/index.md) across safety, robustness, fairness, privacy, and agentic dimensions.
-- [Clear understanding of Responsible AI](./about-responsible-ai.md) and the 6 different principles
+- [Clear understanding of Responsible AI](./about-responsible-ai.md) and the six principles.
 - Concrete [improvement patterns](../improving-ai-systems/index.md) — guardrails, finetuning, and principle-specific controls — to require of product teams.
 - The full [Glossary](../tools/glossary.md) of terms used across the playbook.
 

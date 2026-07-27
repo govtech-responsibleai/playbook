@@ -3,7 +3,7 @@ sidebar_label: "[JY] Overview"
 sidebar_position: 1
 ---
 
-# Evaluating AI Systems
+# Evaluating AI systems
 
 Evaluation is the process of defining what good behaviour means, creating representative tests, measuring system performance, and analysing failures. For AI systems, this includes both functional quality and Responsible AI risks.
 
@@ -13,19 +13,19 @@ Start by testing whether the system works for its intended task. Then test wheth
 
 :::
 
-## What to Evaluate
+## What to evaluate
 
 A practical evaluation plan usually covers five areas. Each has its own page in this section:
 
-1. **[Functional](functional.md)** — does the application complete the task well? Includes accuracy, RAG grounding, and performance.
+1. **[Functional](functional.mdx)** — does the system do the job it was built for? Covers the quality criteria specific to your product, and performance.
 2. **[Safety](safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
-3. **[Robustness](robustness.md)** — does it behave consistently across realistic variation and out-of-scope inputs?
+3. **[Robustness](robustness.md)** — does it stay consistent, grounded, and usable when real input is messier than the eval set?
 4. **[Fairness](fairness.md)** — does it treat affected groups consistently?
 5. **[Privacy](privacy.md)** — does it avoid leaking PII or sensitive data?
 
 For cross-cutting techniques used across all five areas — human evaluation, LLM-as-judge, and continuous evals — see [Evaluation methods](methods.mdx).
 
-## Designing an Evaluation Plan
+## Designing an evaluation plan
 
 An evaluation plan turns broad concerns into tests that can be run, reviewed, and repeated.
 
@@ -52,7 +52,7 @@ A citizen-facing eligibility chatbot might fill these in as follows.
 
 </details>
 
-### 2. Choose Evaluation Dimensions
+### 2. Choose evaluation dimensions
 
 Most AI systems will require functional testing (to assess how well the AI system performs) and safety testing (to assess resistance to common safety risks and attacks). Depending on the use case, other evaluation dimensions may be needed:
 
@@ -76,13 +76,13 @@ Continuing the GrantsAssist example, the team might decide on the following dime
 
 </details>
 
-### 3. Build the Evaluation Set
+### 3. Build the evaluation set
 
 A useful evaluation set should include:
 
 - Standard questions across a variety of categories covered by the chatbot.
 - Realistic edge-case questions testing the chatbot's boundaries.
-- Out-of-scope and prohibited requests, especially relating to safety or appropriatness.
+- Out-of-scope and prohibited requests, especially relating to safety or appropriateness.
 - Adversarial or stress cases where relevant.
 - Known historical failures, if available.
 
@@ -103,7 +103,7 @@ Continuing the GrantsAssist example, the team might populate the evaluation set 
 
 </details>
 
-### 4. Define Metrics and Review Process
+### 4. Define metrics and review process
 
 Use quantitative metrics when behaviour is easy to score, and rubric-based or human evaluation when quality is contextual.
 
@@ -131,7 +131,7 @@ Continuing the GrantsAssist example, the team might pin down the following metri
 
 </details>
 
-### 5. Analyse Failures
+### 5. Analyse failures
 
 Good error analysis is critical to improving your AI system's performance. Group failures by root cause, severity, affected users, and whether they can be mitigated through system design, data changes, guardrails, or human review. Apply the [relevant mitigations](../improving-ai-systems/index.md) to improve your system's safety.
 
