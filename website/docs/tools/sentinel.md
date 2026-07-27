@@ -39,7 +39,7 @@ The following diagram shows how Sentinel enhances the safety and security of an 
 | [Toxicity/Content Moderation](../improving-ai-systems/safety-improvements.mdx#content-safety) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
 | [Jailbreak/Prompt Injection](../improving-ai-systems/safety-improvements.mdx#prompt-injection-and-jailbreaks) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
 | [PII](../improving-ai-systems/privacy-improvements.mdx#pii-protection) | Information that can identify an individual | ✓ | ✓ |
-| [Off-Topic](../improving-ai-systems/robustness-improvements.mdx) | Content irrelevant to the application's purpose | ✓ | ✓ |
+| [Off-Topic](off-topic-guardrail.md) | Content irrelevant to the application's purpose | ✓ | ✓ |
 | [System-Prompt Leakage](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage) | Exposure of system prompts containing application information |  | ✓ |
 | Hallucination | Content not factual or grounded in source material |  | ✓ |
 | [Relevance](../improving-ai-systems/robustness-improvements.mdx) | Responses not pertinent to user queries |  | ✓ |

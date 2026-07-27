@@ -22,6 +22,7 @@ Tools and templates are separated from conceptual methodology pages so readers c
 | [Litmus](../tools/litmus.md) | Safety and security testing as a service |
 | [Sentinel](../tools/sentinel.md) | Input and output guardrails |
 | [LionGuard](lionguard.md) | Localised content moderation |
+| [Off-Topic guardrail](off-topic-guardrail.md) | Detecting prompts outside an AI system's intended purpose |
 | [Kaleidoscope](kaleidoscope.md) | Automated evaluation of AI applications with reliability-scored LLM judges |
 | [MetaEvaluator](metaevaluator.md) | Measuring how well LLM judges align with human annotations |
 | [RabakBench](rabakbench.md) | Multilingual safety benchmarking for Singapore context |

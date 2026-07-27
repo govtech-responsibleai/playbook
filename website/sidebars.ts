@@ -99,6 +99,7 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           items: [
             {type: 'doc', id: 'tools/lionguard', label: 'LionGuard'},
+            {type: 'doc', id: 'tools/off-topic-guardrail', label: 'Off-Topic guardrail'},
           ],
         },
         {
