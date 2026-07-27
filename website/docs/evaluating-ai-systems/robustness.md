@@ -27,7 +27,7 @@ Retrieval-augmented generation (RAG) is one of the most common ways to reduce ha
 
 Evaluate retrieval on its own, separately from the response. Whether the right content is supplied to the LLM is a separate issue from how the LLM handles it, and it has its own levers (changing the knowledge base, embedding model, chunking strategy, and more).
 
-There are some well-defined metrics you can use here: context precision (how much of what was retrieved is relevant), context recall (how much of the relevant material was retrieved), and faithfulness (whether each claim in the answer is supported by the retrieved context). All three are implemented in open-source packages such as [DeepEval](https://deepeval.com/guides/guides-rag-evaluation) and [Ragas](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/). 
+There are some well-defined metrics you can use here: context precision (how much of what was retrieved is relevant), context recall (how much of the relevant material was retrieved), and faithfulness (whether each claim in the answer is supported by the retrieved context). All three are implemented in open-source packages such as [DeepEval](https://deepeval.com/guides/guides-rag-evaluation) and [Ragas](https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/).
 
 ### Evaluating context hallucination
 

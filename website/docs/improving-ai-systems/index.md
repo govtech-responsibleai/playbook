@@ -49,7 +49,7 @@ For an ML mindset, guardrails can be thought of as binary classification: is the
 | [Toxicity / content moderation](safety-improvements.mdx#content-safety) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
 | [Jailbreak / prompt injection](safety-improvements.mdx#prompt-injection-and-jailbreaks) | Attempts to bypass system constraints or inject malicious prompts | ✓ | |
 | [PII](privacy-improvements.mdx#pii-protection) | Information that can identify an individual | ✓ | ✓ |
-| [Off-topic](robustness-improvements.mdx) | Content irrelevant to the application's purpose | ✓ | ✓ |
+| [Off-topic](../tools/off-topic-guardrail.md) | Content irrelevant to the application's purpose | ✓ | ✓ |
 | [System-prompt leakage](privacy-improvements.mdx#system-prompt-leakage) | Exposure of system prompts containing application information | | ✓ |
 | Hallucination | Content not factual or grounded in source material | | ✓ |
 

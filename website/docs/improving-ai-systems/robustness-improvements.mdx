@@ -49,17 +49,7 @@ Off-topic guardrails keep AI systems within their intended purpose. Beyond filte
 
 - **Zero-shot/few-shot classifiers** to detect relevance against the system prompt. Suffers from lower precision — many valid queries are wrongly flagged off-topic.
 - **Custom topic classifier guardrails** from Amazon Bedrock Guardrails or Azure AI Content Safety. Requires defining your own taxonomy of what is off-topic and/or providing custom training examples.
-- **GovTech's Off-Topic guardrail** — a custom guardrail trained zero-shot on synthetic system-prompt and user-prompt pairs.
-
-### GovTech's off-topic guardrail
-
-We built this guardrail because existing solutions either required training a use-case-specific guardrail or configuring it with examples of on- and off-topic prompts — challenging in the absence of real production data. Instead, we created a rich dataset of synthetic system-prompt / user-prompt pairs (on- and off-topic) and trained a lightweight classifier.
-
-In v1, we trained a bi-encoder classifier on top of `jina-embeddings-v2-small-en` and a cross-encoder classifier on top of `stsb-roberta-base`.
-
-- [Blog post](https://medium.com/dsaid-govtech/open-sourcing-an-off-topic-prompt-guardrail-fde422a66152)
-- [Paper](https://arxiv.org/abs/2411.12946)
-- Available via the [Sentinel API](../tools/sentinel.md#available-guardrails) (`govtech/off-topic`)
+- **[GovTech's Off-Topic guardrail](../tools/off-topic-guardrail.md)** — a custom guardrail trained zero-shot on synthetic system-prompt and user-prompt pairs, scored against your system prompt. Available via the [Sentinel API](../tools/sentinel.md#available-guardrails).
 
 ### Actions
 
