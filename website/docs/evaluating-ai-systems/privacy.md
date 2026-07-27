@@ -2,14 +2,7 @@
 sidebar_label: "Privacy evals"
 sidebar_position: 6
 ---
-
 # Privacy and PII leakage evals
-
-:::info[About this page]
-
-This page is new in the upcoming Responsible AI Playbook release. It covers privacy evaluation across three layers — Data, Model, and Application — and links to the corresponding mitigations.
-
-:::
 
 Privacy evals check whether the system leaks, exposes, mishandles, or regurgitates personal or sensitive information.
 
@@ -23,7 +16,7 @@ The primary goal at this layer is to measure the risk of individual-level linkag
 
 - **PII density** — quantify PII within the dataset using descriptive metrics like entity frequency.
 - **Scrubber effectiveness** — use precision, recall, and F1 to evaluate automated PII scrubbers.
-- **Privacy models** — apply [_k_-anonymity](https://www.worldscientific.com/doi/abs/10.1142/S0218488502001648), [_l_-diversity](https://dl.acm.org/doi/10.1145/1217299.1217302), and [_t_-closeness](https://www.cs.purdue.edu/homes/ninghui/papers/t_closeness_icde07.pdf) to measure vulnerability to linkage attacks and re-identification via auxiliary public records.
+- **Privacy models** — apply [*k*-anonymity](https://www.worldscientific.com/doi/abs/10.1142/S0218488502001648), [*l*-diversity](https://dl.acm.org/doi/10.1145/1217299.1217302), and [*t*-closeness](https://www.cs.purdue.edu/homes/ninghui/papers/t_closeness_icde07.pdf) to measure vulnerability to linkage attacks and re-identification via auxiliary public records.
 - **Attribute inference attacks** — for unstructured text, simulate how easily adversaries can infer hidden attributes such as medical status or political affiliations from semantic context, even when explicit identifiers are scrubbed.
 
 ## Model layer
@@ -32,9 +25,9 @@ The Model Layer introduces the danger of machine learning models — especially 
 
 Testing at this layer relies on simulated attacks to establish empirical privacy metrics:
 
-- **[Data extraction attacks](https://arxiv.org/abs/2311.17035)** — measure how often the model regurgitates sensitive training data verbatim.
-- **[Membership inference attacks](https://ieeexplore.ieee.org/document/9793586)** — quantify the probability of deducing an individual's presence in the training set.
-- **[Model inversion attacks](https://rist.tech.cornell.edu/papers/mi-ccs.pdf)** — evaluate whether demographic profiles or exact identities can be reconstructed from the model's outputs.
+- [**Data extraction attacks**](https://arxiv.org/abs/2311.17035) — measure how often the model regurgitates sensitive training data verbatim.
+- [**Membership inference attacks**](https://ieeexplore.ieee.org/document/9793586) — quantify the probability of deducing an individual's presence in the training set.
+- [**Model inversion attacks**](https://rist.tech.cornell.edu/papers/mi-ccs.pdf) — evaluate whether demographic profiles or exact identities can be reconstructed from the model's outputs.
 
 ## Application layer
 

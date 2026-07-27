@@ -5,12 +5,6 @@ sidebar_position: 5
 
 # Glossary
 
-:::info[About this page]
-
-This page is new in the upcoming Responsible AI Playbook release. It collects working definitions for the terms used across the playbook. All content is new.
-
-:::
-
 ## Accuracy
 
 A broad measure of whether the system gives correct or acceptable outputs for the intended task. For LLM applications, accuracy may include correctness, completeness, relevance, faithfulness, format adherence, citation quality, and task success.
