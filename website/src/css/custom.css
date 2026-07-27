@@ -154,15 +154,7 @@ mark.new-since-v1,
   border-radius: 2px;
 }
 
-mark.privacy-additions,
-.privacy-additions {
-  background-color: #d1ecf1;
-  padding: 0 0.15em;
-  border-radius: 2px;
-}
-
-.new-since-v1 p,
-.privacy-additions p {
+.new-since-v1 p {
   background-color: inherit;
 }
 

@@ -7,21 +7,15 @@ sidebar_position: 6
 
 :::info[About this page]
 
-This page is new in the upcoming Responsible AI Playbook release. It covers privacy evaluation across three layers — Data, Model, and Application — and links to the corresponding mitigations. Teal-highlighted sections were contributed via the [`feat/privacy-additions`](https://github.com/govtech-responsibleai/playbook/tree/feat/privacy-additions) branch by the GovTech Data Practice team.
+This page is new in the upcoming Responsible AI Playbook release. It covers privacy evaluation across three layers — Data, Model, and Application — and links to the corresponding mitigations.
 
 :::
 
 Privacy evals check whether the system leaks, exposes, mishandles, or regurgitates personal or sensitive information.
 
-<div class="privacy-additions" markdown>
-
 In the era of generative AI and foundation models, privacy can no longer be treated as a static compliance checkbox; it is a dynamic property that must be evaluated across the entire lifecycle of an AI system. Protecting an AI ecosystem requires a comprehensive approach that measures and tests privacy risks at three distinct layers: **the data, the model, and the application**.
 
-</div>
-
 ## Data layer
-
-<div class="privacy-additions" markdown>
 
 The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion become fundamentally baked into the model's weights. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymised prior to training, models can memorise and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
 
@@ -32,11 +26,7 @@ The primary goal at this layer is to measure the risk of individual-level linkag
 - **Privacy models** — apply [_k_-anonymity](https://www.worldscientific.com/doi/abs/10.1142/S0218488502001648), [_l_-diversity](https://dl.acm.org/doi/10.1145/1217299.1217302), and [_t_-closeness](https://www.cs.purdue.edu/homes/ninghui/papers/t_closeness_icde07.pdf) to measure vulnerability to linkage attacks and re-identification via auxiliary public records.
 - **Attribute inference attacks** — for unstructured text, simulate how easily adversaries can infer hidden attributes such as medical status or political affiliations from semantic context, even when explicit identifiers are scrubbed.
 
-</div>
-
 ## Model layer
-
-<div class="privacy-additions" markdown>
 
 The Model Layer introduces the danger of machine learning models — especially LLMs — memorising their training data or learning feature correlations that malicious actors can exploit to reverse-engineer sensitive training data. Beyond direct regurgitation of PII, Protected Health Information (PHI), or proprietary code, attackers can exploit model weights and predictive probabilities to extract information that was never explicitly exposed.
 
@@ -46,11 +36,7 @@ Testing at this layer relies on simulated attacks to establish empirical privacy
 - **[Membership inference attacks](https://ieeexplore.ieee.org/document/9793586)** — quantify the probability of deducing an individual's presence in the training set.
 - **[Model inversion attacks](https://rist.tech.cornell.edu/papers/mi-ccs.pdf)** — evaluate whether demographic profiles or exact identities can be reconstructed from the model's outputs.
 
-</div>
-
 ## Application layer
-
-<div class="privacy-additions" markdown>
 
 The Application Layer introduces new attack vectors when the AI interface interacts with users, databases, or third-party APIs. Even well-intentioned users pose a risk by inadvertently including PII in their prompts, which can lead to data leakage if the application logs or trains on user interactions.
 
@@ -59,8 +45,6 @@ Test priorities at this layer:
 - **Adversarial red-teaming and prompt injection** — bypass safety guardrails to leak proprietary instructions and private context.
 - **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC), guaranteeing that users only generate insights from data they are explicitly authorised to query.
 - **Logs and traces** — verify that operational telemetry does not retain unnecessary personal data.
-
-</div>
 
 ## Evaluation set design
 
@@ -76,12 +60,8 @@ Include examples with:
 
 Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../improving-ai-systems/privacy-improvements.mdx#pii-protection) and [system-prompt leakage guardrails](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage) in the privacy improvements section.
 
-<div class="privacy-additions" markdown>
-
 :::note[Further reading]
 
 By decoupling the AI lifecycle into these three layers, you can deploy targeted testing methodologies that transition privacy from a reactive obligation to a proactive engineering standard. For more details, see the [Identifying Privacy Risks](https://go.gov.sg/identifying-privacy-risks-for-rai) and [Measuring Privacy Risks](https://go.gov.sg/measuring-privacy-risks-for-rai) chapters in GovTech Data Practice's AI Privacy publication.
 
 :::
-
-</div>
