@@ -74,7 +74,7 @@ Include examples with:
 
 ## Link to mitigations
 
-Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../improving-ai-systems/privacy-improvements.mdx#pii-protection), [system-prompt leakage guardrails](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage), and [production integration](../improving-ai-systems/production-integration.md).
+Testing identifies leakage risk. Mitigation choices live in [PII guardrails](../improving-ai-systems/privacy-improvements.mdx#pii-protection) and [system-prompt leakage guardrails](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage) in the privacy improvements section.
 
 <div class="privacy-additions" markdown>
 
