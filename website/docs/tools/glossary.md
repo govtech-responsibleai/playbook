@@ -23,9 +23,25 @@ Describes a system that takes actions with consequences beyond the conversation,
 
 The proportion of adversarial prompts that produce an unsafe response, calculated as unsafe responses divided by total adversarial prompts tested. A lower ASR indicates a safer system. See [WOG safety testing framework](wog-safety-testing.md).
 
+## Base model
+
+The pretrained model that a finetune starts from, before any task-specific or safety-specific training is applied. Its size, language coverage, and existing safety alignment all constrain what finetuning can achieve. See [finetuning](../improving-ai-systems/finetuning.md).
+
 ## Benchmark leakage
 
 Contamination of a model's training data with prompts from a public benchmark, which inflates scores without any matching improvement in behaviour. See [safety evals](../evaluating-ai-systems/safety.mdx).
+
+## Calibration
+
+Whether a score means what it claims, so that among cases scored 0.7, roughly 70% turn out positive. A model can rank cases correctly while being poorly calibrated. Calibration within groups is one of three fairness criteria that cannot all hold at once. See [fairness evals](../evaluating-ai-systems/fairness.md).
+
+## Demographic parity
+
+A fairness criterion requiring each group to receive positive outcomes at the same rate, regardless of differences in underlying base rates. See [fairness improvements](../improving-ai-systems/fairness-improvements.md).
+
+## Equalised odds
+
+A fairness criterion requiring error rates, both false positives and false negatives, to be equal across groups. Requiring equal true positive rates alone gives the weaker variant, equal opportunity. See [fairness improvements](../improving-ai-systems/fairness-improvements.md).
 
 ## Evaluation
 
@@ -34,6 +50,10 @@ A structured process for measuring system behaviour against defined criteria, da
 ## Fairness
 
 Whether system behaviour differs across groups in ways the task does not justify, for example varying tone, refusal rate, or answer quality with a user's stated identity. See [fairness evals](../evaluating-ai-systems/fairness.md).
+
+## Finetuning
+
+Training that adjusts a model's weights so its outputs suit a particular task, domain, or behaviour profile. Supervised finetuning trains on examples of the correct output, preference optimisation trains on pairs showing that one response is better than another, and parameter-efficient methods such as LoRA update a small slice of the weights rather than all of them. See [finetuning](../improving-ai-systems/finetuning.md).
 
 ## Functional testing
 
@@ -65,7 +85,7 @@ Personally identifiable information: information that can identify an individual
 
 ## Prompt injection
 
-Instructions planted in content the model reads — user input, a retrieved document, a web page — which the model then follows as though they came from the operator. Distinct from a jailbreak, where the attacker addresses the model directly.
+Instructions planted in content the model reads, such as user input, a retrieved document, or a web page, which the model then follows as though they came from the operator. Distinct from a jailbreak, where the attacker addresses the model directly.
 
 ## RAG
 
