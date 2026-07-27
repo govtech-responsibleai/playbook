@@ -52,18 +52,6 @@ For an ML mindset, guardrails can be thought of as binary classification: is the
 
 :::
 
-## Common mitigation types
-
-| Mitigation | Use when |
-| --- | --- |
-| Input guardrails | Risky requests should be blocked, warned, rewritten, or escalated before model execution |
-| Output guardrails | Generated responses may contain unsafe, private, irrelevant, or unsupported content |
-| Retrieval constraints | Retrieved context may be irrelevant, stale, sensitive, or unauthorised |
-| Tool-use controls | A system can take actions or access systems beyond text generation |
-| UX and policy design | Users need clearer expectations, warnings, consent, or escalation paths |
-| Human review | Errors are high-impact or hard to classify automatically |
-| Monitoring and logging | Risks must be detected after launch and fed back into evals |
-
 ## Common risk types
 
 | Type | Description | Input | Output |
@@ -122,8 +110,3 @@ Guardrails should expose **confidence or severity scores** rather than only bina
 
 Configurability matters too. Teams should be able to adjust thresholds and action bands based on the AI system's context — prioritise recall in healthcare where safety is paramount, or precision in customer service where false positives erode trust.
 
-:::note[Original blog post]
-
-This page is adapted from our [original blog post](https://medium.com/dsaid-govtech/building-responsible-ai-why-guardrails-matter-b66e1d635d71) on guardrails.
-
-:::
