@@ -13,10 +13,44 @@ Use these standards when adding or updating playbook pages. Repository workflow 
 - Prefer plain English to Latin abbreviations in reader-facing prose. Write "for example" instead of "e.g.", "that is" instead of "i.e.", and "and so on" instead of "etc.".
 - Say "AI systems", not "AI applications".
 - Use sentence case for all headings.
-- Do not end image captions with a full stop.
 - Write in a practitioner register: direct, concrete, and factual. Describe what a tool does and where its limits are — never assurances that it "ensures" safety or "guarantees" protection.
 - Prefer concrete steps over abstract advice. Where a method has several steps, show it applied to a realistic scenario: the GrantsAssist worked example in Evaluating AI systems is the house pattern.
 - State minimum launch expectations in the flow of the page where they exist; they do not need a dedicated heading.
+
+## Images and captions
+
+- Store documentation images in `website/static/images/`.
+- Give every image meaningful alt text that describes the information conveyed by the image.
+- For an image without a caption, use Markdown image syntax. Docusaurus rewrites the path for each deployment's base URL:
+
+  ```markdown
+  ![Description of the information shown](/images/example.png)
+  ```
+
+- For an image with a caption, use an `.mdx` page. Import the image and pass the imported value to the JSX `src` attribute:
+
+  ```mdx
+  import exampleImage from '@site/static/images/example.png';
+
+  <figure style={{textAlign: 'center', margin: '1rem 0'}}>
+    <img
+      src={exampleImage}
+      alt="Description of the information shown"
+      style={{width: 'auto'}}
+    />
+    <figcaption
+      style={{
+        fontSize: '0.85rem',
+        color: 'var(--ifm-color-emphasis-600)',
+        marginTop: '0.5rem',
+      }}>
+      Short contextual caption
+    </figcaption>
+  </figure>
+  ```
+
+- Do not use a root-relative string such as `src="/images/example.png"` in a JSX `<img>` element. Docusaurus does not rewrite JSX string paths, so they break when the site is deployed under a subpath.
+- Do not end image captions with a full stop.
 
 ## Page shape
 
