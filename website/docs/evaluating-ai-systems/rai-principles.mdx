@@ -1,20 +1,133 @@
 ---
 sidebar_label: "Evals for RAI principles"
 sidebar_position: 3
+slug: /evaluating-ai-systems/rai-principles
 ---
 
-import PrinciplesGrid from '@site/src/components/PrinciplesGrid';
+import { Shield, Zap, Scale, Lock, Lightbulb } from 'lucide-react';
 
 # Evals for RAI principles
 
 Evaluating across the five Responsible AI principles ensures your system is safe, robust, fair, private, and transparent. Choose the evaluation dimension that matches your identified risks.
 
-<PrinciplesGrid />
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gap: '1.5rem',
+  margin: '2rem 0',
+}}>
+  <a href="./safety" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '1.5rem',
+    border: '1px solid var(--ifm-color-emphasis-300)',
+    borderRadius: '0.75rem',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s ease',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-3px)';
+    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'none';
+    e.currentTarget.style.boxShadow = 'none';
+  }}>
+    <Shield size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
+    <strong>Safety evals</strong>
+  </a>
 
-## Evaluation guides by principle
+  <a href="./robustness" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '1.5rem',
+    border: '1px solid var(--ifm-color-emphasis-300)',
+    borderRadius: '0.75rem',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s ease',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-3px)';
+    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'none';
+    e.currentTarget.style.boxShadow = 'none';
+  }}>
+    <Zap size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
+    <strong>Robustness evals</strong>
+  </a>
 
-- **[Safety evals](./safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
-- **[Robustness evals](./robustness.md)** — does it stay consistent, grounded, and usable with real input?
-- **[Fairness evals](./fairness.md)** — does it treat affected groups consistently?
-- **[Privacy evals](./privacy.md)** — does it avoid leaking PII or sensitive data?
-- **[Agentic evals](./agentic-evals.mdx)** — for systems that plan, use tools, or take multi-step actions
+  <a href="./fairness" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '1.5rem',
+    border: '1px solid var(--ifm-color-emphasis-300)',
+    borderRadius: '0.75rem',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s ease',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-3px)';
+    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'none';
+    e.currentTarget.style.boxShadow = 'none';
+  }}>
+    <Scale size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
+    <strong>Fairness evals</strong>
+  </a>
+
+  <a href="./privacy" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '1.5rem',
+    border: '1px solid var(--ifm-color-emphasis-300)',
+    borderRadius: '0.75rem',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s ease',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-3px)';
+    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'none';
+    e.currentTarget.style.boxShadow = 'none';
+  }}>
+    <Lock size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
+    <strong>Privacy evals</strong>
+  </a>
+
+  <a href="./agentic-evals" style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '1.5rem',
+    border: '1px solid var(--ifm-color-emphasis-300)',
+    borderRadius: '0.75rem',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s ease',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = 'translateY(-3px)';
+    e.currentTarget.style.boxShadow = '0 6px 18px rgb(0 0 0 / 12%)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = 'none';
+    e.currentTarget.style.boxShadow = 'none';
+  }}>
+    <Lightbulb size={32} color="var(--ifm-color-primary)" style={{marginBottom: '0.75rem'}} />
+    <strong>Agentic evals</strong>
+  </a>
+</div>
