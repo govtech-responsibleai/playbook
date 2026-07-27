@@ -39,7 +39,15 @@ Choose improvements based on evaluated failure modes. Do not apply them blindly 
 |                                                      | Monitoring and logging | Risks must be detected after launch and fed back into evals                              | Add cases to evaluation datasets, track incidents                    |
 
 
-These routes apply across the Responsible AI principles. Use the [principle-specific guidance](/improving-ai-systems/principle-specific-improvements) to determine what to improve for safety, robustness, fairness, privacy and agentic risks.
+## Improve across the five principles
+
+These improvement routes apply across all Responsible AI principles. Choose principle-specific mitigations based on your evaluation findings:
+
+1. **[Safety improvements](safety-improvements.mdx)** — avoid harmful, prohibited, or adversarial behaviour
+2. **[Robustness improvements](robustness-improvements.md)** — stay consistent, grounded, and usable with real input
+3. **[Fairness improvements](fairness-improvements.md)** — treat affected groups consistently
+4. **[Privacy improvements](privacy-improvements.mdx)** — avoid leaking PII or sensitive data
+5. **[Agentic improvements](agentic-improvements.md)** — improve planning, tool use, and multi-step actions
 
 These routes are not mutually exclusive. A single failure may require several improvements at different points in the system.
 
