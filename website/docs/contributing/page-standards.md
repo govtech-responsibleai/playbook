@@ -13,6 +13,7 @@ Use these standards when adding or updating playbook pages. Repository workflow 
 - Prefer plain English to Latin abbreviations in reader-facing prose. Write "for example" instead of "e.g.", "that is" instead of "i.e.", and "and so on" instead of "etc.".
 - Say "AI systems", not "AI applications".
 - Use sentence case for all headings.
+- Do not end image captions with a full stop.
 - Write in a practitioner register: direct, concrete, and factual. Describe what a tool does and where its limits are — never assurances that it "ensures" safety or "guarantees" protection.
 - Prefer concrete steps over abstract advice. Where a method has several steps, show it applied to a realistic scenario: the GrantsAssist worked example in Evaluating AI systems is the house pattern.
 - State minimum launch expectations in the flow of the page where they exist; they do not need a dedicated heading.
