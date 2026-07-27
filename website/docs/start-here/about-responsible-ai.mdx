@@ -1,0 +1,68 @@
+---
+sidebar_label: "About Responsible AI"
+sidebar_position: 2
+---
+
+import PrinciplesGrid from '@site/src/components/PrinciplesGrid';
+
+# About Responsible AI
+
+Broadly, Responsible AI ("RAI") focuses on how to develop, evaluate, deploy, and monitor AI systems in a safe, trustworthy, and ethical manner. From how data is collected to how humans interact with AI systems, RAI will help to guide these decisions toward beneficial and equitable outcomes. In the public sector context, RAI will help align AI systems to achieve the public good.
+
+At GovTech's AI Practice, we break down RAI into 6 key principles that AI systems should strive towards.
+
+<PrinciplesGrid />
+
+## Why is RAI important?
+
+<figure style={{textAlign: 'center', margin: '1rem 0'}}>
+  <img src="/images/rai-case-studies.png" alt="Examples of how LLM systems can fail in the real world" style={{width: 'auto'}} />
+  <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>Examples of how LLM systems can fail in the real world</figcaption>
+</figure>
+
+Responsible AI is crucial because failures in AI systems can have real-world consequences as people begin relying on them more for information, decisions, and increasingly, actions.
+
+In 2024, a Canadian tribunal ruled against Air Canada after its customer service chatbot provided incorrect information about bereavement fares that a customer relied on. The case reinforced that organisations remain accountable for the information provided by AI systems they deploy.
+
+Fairness is another concern, particularly when AI is used to support consequential decisions. Across multiple studies, researchers have found that LLMs used in hiring and resume screening can produce systematically different outcomes across demographic groups, even when candidates have otherwise comparable qualifications. In June 2026, Workday was ordered to face claims in a proposed class-action lawsuit alleging that its AI-powered hiring software discriminated against job applicants. Together, these findings and cases highlight the need to evaluate AI systems not only for overall performance, but also for whether their behaviour is consistent and fair across different groups.
+
+As AI systems become more agentic, the risks extend beyond what a model says or recommends to what it can actually do. In July 2026, OpenAI disclosed that an autonomous agent being evaluated for advanced cybersecurity capabilities went beyond its intended test environment and compromised external infrastructure while pursuing its objective. The incident illustrates how failures in increasingly autonomous systems can translate directly into unintended real-world actions.
+
+These examples show that Responsible AI is not only about preventing harmful model outputs. It is about understanding how AI systems can fail within the context in which they are deployed, evaluating those risks rigorously, and putting appropriate safeguards, oversight, and monitoring in place throughout the AI system lifecycle.
+
+## Where can issues arise?
+
+Responsible AI issues can arise at different stages of an AI system's lifecycle, from the data used to build the model to how the application is deployed and used in the real world.
+
+<figure style={{textAlign: 'center', margin: '1rem 0'}}>
+  <img src="/images/ai_cycle.png" alt="The AI life cycle consists of the data, model, and application" style={{width: 'auto'}} />
+  <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>The AI life cycle consists of the data, model, and application</figcaption>
+</figure>
+
+### Data
+
+As the old adage goes, "garbage in, garbage out". If unsafe or biased data is used for training, the model outputs are likely to be unsafe and biased as well which can carry through into downstream outputs and decisions.
+
+In Discriminative AI settings, biased data can directly affect how individuals are classified or scored. For example, a 2019 study found that a widely used healthcare algorithm exhibited racial bias by underestimating the health needs of Black patients compared to equally ill white patients. The algorithm used healthcare costs as a proxy for health needs. Because Black patients tended to incur lower healthcare costs due to broader systemic disparities, they were assigned lower risk scores and were less likely to be referred for advanced care management programmes.
+
+In the Generative AI space, LLMs are typically pre-trained on massive amounts of text or image data from the Internet, which contain harmful, toxic and biased texts. Since LLMs autoregressively generate the next most probable token, the output depends on the joint distribution of tokens learned during training. If unsafe token sequences are learned, they will naturally be reproduced by the model, as ChatGPT did in its early days. For image generation models, there have been several studies finding that generated outputs of engineers, scientists, or lawyers disproportionately portray men over women, reflecting the unequal gender representation of those occupations in the training data.
+
+### Model
+
+Issues can also arise from the way a model is designed, trained, and optimised, even when the underlying data appears suitable.
+
+In Discriminative AI settings, the choice of modelling parameters can greatly impact their fairness. One key consideration is whether to include sensitive variables (i.e. variables about protected attributes like race or gender) in the model. On one hand, including these variables may result in bias against specific groups, such as ageist and sexist bias in online recruitment software. However, algorithmic bias has also been shown to persist even in models that deliberately exclude sensitive variables from the model, such as with recidivism prediction (i.e. COMPAS) or with delivery services (i.e. Amazon Prime).
+
+In the Generative AI space, significant research has been dedicated to aligning models with human preferences and desirable values. Given paired text data and their rankings, LLMs undergo a second stage of reinforcement learning to learn to output preferred (i.e. safer) responses.
+
+Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness.
+
+### Application
+
+Finally, risks can emerge from how an AI model is integrated into and used within a real-world application. At this layer, issues may arise even when the underlying model performs well in isolation.
+
+For Discriminative AI systems, risks may come from how model outputs are incorporated into decision-making. Users may over-rely on predictions, thresholds may be set inappropriately, or systems may continue operating after the real-world data distribution has shifted away from the conditions under which the model was originally evaluated.
+
+Generative AI applications introduce additional risks because users can interact with models in open-ended and often adversarial ways. Users may intentionally attempt to bypass safeguards, exfiltrate sensitive information, or elicit harmful outputs. Applications that connect LLMs to retrieval systems, memory, external tools, or APIs may introduce further risks such as prompt injection, data leakage, or unintended tool use.
+
+As AI systems become increasingly agentic, the consequences of application-layer failures can extend beyond what a model says to what it can actually do. An agent with access to email, databases, code execution, or other external tools may take unintended actions if its instructions are manipulated or its reasoning fails.

@@ -23,7 +23,7 @@ Wait for their answers before writing anything.
 
 ## Step 2 — Write the draft
 
-Default to a `.md` file. Only use `.mdx` if the page includes JSX components such as `<Tabs>`. Follow every rule below without exception.
+Default to a `.mdx` file — it supports JSX components, sized images, and captions. Only use `.md` if the page has no images and no JSX components. Follow every rule below without exception.
 
 ### Frontmatter
 
@@ -96,7 +96,14 @@ External moderation services receive your data. Confirm compliance with your org
 
 - **H1** — one per page, the title only.
 - **H2** — major sections. **H3** — subsections inside H2. Stop at H3.
-- **Images** — every image must have descriptive alt text. Use `.webp` or `.png` for generated/diagram images, `.jpg` for photos. Add a caption on the next line using `_Figure: description. Source: ..._`.
+- **Images** — every image must have descriptive alt text. Use `.webp` or `.png` for generated/diagram images, `.jpg` for photos. Always use `<figure>`/`<figcaption>` for images with captions, and `<img>` JSX for size-constrained images (requires `.mdx`). Plain `![]()` markdown syntax renders at full container width with no size control. Use this pattern:
+  ```mdx
+  <figure style={{textAlign: 'center', margin: '1rem 0'}}>
+    <img src="/images/example.png" alt="Descriptive alt text" style={{maxWidth: '400px', width: 'auto'}} />
+    <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>Caption text here.</figcaption>
+  </figure>
+  ```
+  For full-width images without a caption, `![]()` is acceptable.
 - **Hyperlinks** — include at minimum 2 inline links to related playbook pages or external resources.
 - **Tables** — use for comparisons, taxonomies, or tool lists. Keep to 3–4 columns.
 - **Lists** — bullet lists for unordered sets; numbered lists for sequential steps only.
@@ -145,6 +152,8 @@ Before presenting the draft, silently verify:
 - [ ] At least 2 inline links to related pages or external resources
 - [ ] Every image has descriptive alt text
 - [ ] No `*Coming soon*` stubs except where genuinely blocked
-- [ ] File extension is `.md` unless JSX components are used
+- [ ] File extension is `.mdx` unless the page has no images and no JSX components
+- [ ] All images with captions use `<figure>`/`<figcaption>` JSX
+- [ ] All size-constrained images use `<img>` JSX with `maxWidth` and `width: 'auto'`
 
 Fix any issues, then output the draft.
