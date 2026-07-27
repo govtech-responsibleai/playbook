@@ -38,18 +38,17 @@ const sidebars: SidebarsConfig = {
       label: 'Improving AI Systems',
       collapsed: true,
       items: [
-        {type: 'doc', id: 'improving-ai-systems/index', label: '[S] Overview'},
+        {type: 'doc', id: 'improving-ai-systems/index', label: 'Overview'},
         {
           type: 'category',
           label: 'Guardrails',
           collapsed: true,
           items: [
-            {type: 'doc', id: 'improving-ai-systems/guardrail-architecture', label: '[JY] Guardrail architecture'},
-            {type: 'doc', id: 'improving-ai-systems/threshold-tuning', label: '[JY] Threshold tuning'},
-            {type: 'doc', id: 'improving-ai-systems/measuring-impact', label: '[JY] Measuring impact'},
-            {type: 'doc', id: 'improving-ai-systems/building-your-own-guardrail', label: '[JY] Building your own guardrail'},
-            {type: 'doc', id: 'improving-ai-systems/production-integration', label: '[JY] Production integration'},
-            {type: 'doc', id: 'improving-ai-systems/monitoring-incident-response', label: '[JY] Monitoring and incident response'},
+            {type: 'doc', id: 'improving-ai-systems/new-guardrails/what-are-guardrails', label: 'What are guardrails?'},
+            {type: 'doc', id: 'improving-ai-systems/new-guardrails/guardrail-architecture', label: 'Guardrail architecture'},
+            {type: 'doc', id: 'improving-ai-systems/new-guardrails/choosing-a-guardrail', label: 'Choosing a guardrail'},
+            {type: 'doc', id: 'improving-ai-systems/new-guardrails/production-integration', label: 'Production integration'},
+            {type: 'doc', id: 'improving-ai-systems/new-guardrails/monitoring-incident-response', label: 'Monitoring and incident response'},
           ],
         },
         {type: 'doc', id: 'improving-ai-systems/finetuning', label: '[S] Finetuning'},
@@ -57,6 +56,12 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Improving RAI principles',
           collapsed: true,
+          link: {
+            type: 'generated-index',
+            title: 'Improving RAI principles',
+            description: 'Choose improvements for safety, robustness, fairness, privacy and agentic AI systems.',
+            slug: '/improving-ai-systems/principle-specific-improvements',
+          },
           items: [
             {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: '[JY] Safety improvements'},
             {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: 'Robustness improvements'},
