@@ -1,5 +1,5 @@
 ---
-sidebar_label: "[JY] Privacy evals"
+sidebar_label: "Privacy evals"
 sidebar_position: 6
 ---
 

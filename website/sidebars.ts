@@ -16,7 +16,7 @@ const sidebars: SidebarsConfig = {
       label: 'Evaluating AI Systems',
       collapsed: true,
       items: [
-        {type: 'doc', id: 'evaluating-ai-systems/index', label: '[JY] Overview'},
+        {type: 'doc', id: 'evaluating-ai-systems/index', label: 'Overview'},
         {type: 'doc', id: 'evaluating-ai-systems/methods', label: 'Evaluation methods'},
         {type: 'doc', id: 'evaluating-ai-systems/functional', label: 'Functional evals'},
         {
@@ -27,7 +27,7 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'evaluating-ai-systems/safety', label: '[T] Safety evals'},
             {type: 'doc', id: 'evaluating-ai-systems/robustness', label: 'Robustness evals'},
             {type: 'doc', id: 'evaluating-ai-systems/fairness', label: '[S] Fairness evals'},
-            {type: 'doc', id: 'evaluating-ai-systems/privacy', label: '[JY] Privacy evals'},
+            {type: 'doc', id: 'evaluating-ai-systems/privacy', label: 'Privacy evals'},
             {type: 'doc', id: 'evaluating-ai-systems/agentic-evals', label: '[S] Agentic evals'},
           ],
         },
@@ -63,10 +63,10 @@ const sidebars: SidebarsConfig = {
             slug: '/improving-ai-systems/principle-specific-improvements',
           },
           items: [
-            {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: '[JY] Safety improvements'},
+            {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: 'Safety improvements'},
             {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: 'Robustness improvements'},
             {type: 'doc', id: 'improving-ai-systems/fairness-improvements', label: '[S] Fairness improvements'},
-            {type: 'doc', id: 'improving-ai-systems/privacy-improvements', label: '[JY] Privacy improvements'},
+            {type: 'doc', id: 'improving-ai-systems/privacy-improvements', label: 'Privacy improvements'},
             {type: 'doc', id: 'improving-ai-systems/agentic-improvements', label: '[S] Agentic improvements'},
           ],
         },
