@@ -20,6 +20,12 @@ When you add a new page:
 3. Use lowercase, hyphenated filenames.
 4. Prefer existing Docusaurus patterns such as admonitions, details blocks, tabs, and fenced code blocks.
 
+When you add a diagram or CSS-based visual:
+
+5. Wrap it in `<figure>` with a `<figcaption>` label so readers understand what they're seeing.
+6. Use the Lato font family for any text in diagrams (apply CSS `font-family: 'Lato', system-ui, -apple-system, sans-serif;` to match the site typography).
+7. Follow the CSS-based content standards in `AGENTS.md`: use `clamp()` for responsive sizing, include `role="img"` and `aria-label` for accessibility, and test at multiple viewports (480px, 768px, 1024px, 1440px+).
+
 ## Local validation
 
 Before opening or updating a PR:
