@@ -44,10 +44,10 @@ Choose improvements based on evaluated failure modes. Do not apply them blindly 
 These improvement routes apply across all Responsible AI principles. Choose principle-specific mitigations based on your evaluation findings:
 
 1. **[Safety improvements](safety-improvements.mdx)** — avoid harmful, prohibited, or adversarial behaviour
-2. **[Robustness improvements](robustness-improvements.md)** — stay consistent, grounded, and usable with real input
+2. **[Robustness improvements](robustness-improvements.mdx)** — stay consistent, grounded, and usable with real input
 3. **[Fairness improvements](fairness-improvements.md)** — treat affected groups consistently
 4. **[Privacy improvements](privacy-improvements.mdx)** — avoid leaking PII or sensitive data
-5. **[Agentic improvements](agentic-improvements.md)** — improve planning, tool use, and multi-step actions
+5. **[Agentic improvements](agentic-improvements.mdx)** — improve planning, tool use, and multi-step actions
 
 These routes are not mutually exclusive. A single failure may require several improvements at different points in the system.
 
