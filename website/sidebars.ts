@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Evals for RAI principles',
           collapsed: true,
+          link: {type: 'doc', id: 'evaluating-ai-systems/rai-principles'},
           items: [
             {type: 'doc', id: 'evaluating-ai-systems/safety', label: '[T] Safety evals'},
             {type: 'doc', id: 'evaluating-ai-systems/robustness', label: 'Robustness evals'},
