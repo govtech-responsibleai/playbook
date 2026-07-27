@@ -16,6 +16,8 @@
 .icon {
   display: block;
   margin: 0 auto 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: var(--ifm-color-primary);
 }
 
