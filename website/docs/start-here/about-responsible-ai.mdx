@@ -4,6 +4,8 @@ sidebar_position: 2
 ---
 
 import PrinciplesGrid from '@site/src/components/PrinciplesGrid';
+import aiCycle from '@site/static/images/ai_cycle.png';
+import raiCaseStudies from '@site/static/images/rai-case-studies.png';
 
 # About Responsible AI
 
@@ -16,7 +18,7 @@ At GovTech's AI Practice, we break down RAI into 6 key principles that AI system
 ## Why is RAI important?
 
 <figure style={{textAlign: 'center', margin: '1rem 0'}}>
-  <img src="/images/rai-case-studies.png" alt="Examples of how LLM systems can fail in the real world" style={{width: 'auto'}} />
+  <img src={raiCaseStudies} alt="Examples of how LLM systems can fail in the real world" style={{width: 'auto'}} />
   <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>Examples of how LLM systems can fail in the real world</figcaption>
 </figure>
 
@@ -35,7 +37,7 @@ These examples show that Responsible AI is not only about preventing harmful mod
 Responsible AI issues can arise at different stages of an AI system's lifecycle, from the data used to build the model to how the application is deployed and used in the real world.
 
 <figure style={{textAlign: 'center', margin: '1rem 0'}}>
-  <img src="/images/ai_cycle.png" alt="The AI life cycle consists of the data, model, and application" style={{width: 'auto'}} />
+  <img src={aiCycle} alt="The AI life cycle consists of the data, model, and application" style={{width: 'auto'}} />
   <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>The AI life cycle consists of the data, model, and application</figcaption>
 </figure>
 

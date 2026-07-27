@@ -119,6 +119,18 @@ In the Docusaurus site, admonitions use `:::info[title]` syntax. Tabs use `<Tabs
 - The `FeedbackWidget` component sends custom GA4 events (`page_feedback`) with thumbs-up/down values. It is rendered at the bottom of doc pages.
 - When adding new interactive components, prefer GA4 custom events over third-party analytics.
 
+## CSS-based content
+
+All CSS-based content — diagrams, cards, grids, interactive components — must follow these standards:
+
+- **Use `clamp()` for responsive sizing, not media queries.** Pattern: `clamp(min-mobile, vw-expression, max-desktop)`.
+- **Semantic HTML:** use `<figure>`, `<figcaption>`, `<section>` where meaningful; always add `role="img"` and `aria-label` to complex diagrams.
+- **BEM naming:** all custom styles use `component-name__element--modifier` pattern.
+- **CSS custom properties:** define colours, spacing, and typography as variables for global updates.
+- **Validation:** run `npm run build`, test at 480px / 768px / 1024px / 1440px+, check for text overlap and icon visibility at all sizes.
+
+Refer to `.guardrail-flow` and `.evaluation-method-spectrum` in `custom.css` for working examples.
+
 ## Content behavior
 
 - Structured page data should live beside the page that uses it or in the relevant `website/src/components/` directory.

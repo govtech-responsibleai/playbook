@@ -1,5 +1,5 @@
 ---
-sidebar_label: "[JY] Privacy improvements"
+sidebar_label: "Privacy improvements"
 sidebar_position: 3
 ---
 
@@ -8,21 +8,11 @@ import TabItem from '@theme/TabItem';
 
 # Privacy improvements
 
-:::info[About this page]
-
-This page is new in the upcoming Responsible AI Playbook release. It covers where PII appears, detection tools, possible actions, privacy-enhancing technologies, and a General/Sentinel code example. Unhighlighted sections are migrated from [Different Types of Guardrails: PII](https://playbooks.aip.gov.sg/responsibleai/guardrails/diff_guardrails/#2-personal-identifiable-information-pii). Teal-highlighted sections were contributed via the [`feat/privacy-additions`](https://github.com/govtech-responsibleai/playbook/tree/feat/privacy-additions) branch.
-
-:::
-
 ## PII protection
 
 PII guardrails detect, redact, block, warn, log, or escalate content that may contain personal data. The goal is to avoid passing PII to LLMs unnecessarily, especially when the LLM is accessed via an external managed service.
 
-<div className="privacy-additions">
-
 We avoid passing both **direct identifiers** (names, emails) and **indirect identifiers** (postal codes, date of birth, gender, job titles) to LLMs. While indirect identifiers do not point to a specific person on their own, the advanced capabilities of LLMs pose an [increasing risk](https://arxiv.org/pdf/2310.07298) — they can piece such fragments together with other data to infer sensitive personal attributes.
-
-</div>
 
 ### Where PII can appear
 
@@ -34,7 +24,7 @@ We avoid passing both **direct identifiers** (names, emails) and **indirect iden
 
 ### Detection tools
 
-- **[Cloak](https://cloak.gov.sg)** — GovTech's dedicated internal service for comprehensive and localised PII detection (names, addresses, etc.). <mark className="privacy-additions">Beyond the standard PII types, Cloak also offers LLM-enabled custom entity detection to protect custom, domain-specific or localised entities unique to your use case.</mark> Direct integration with the Sentinel API is coming soon.
+- **[Cloak](https://cloak.gov.sg)** — GovTech's dedicated internal service for comprehensive and localised PII detection (names, addresses, etc.). Beyond the standard PII types, Cloak also offers LLM-enabled custom entity detection to protect custom, domain-specific or localised entities unique to your use case. Direct integration with the Sentinel API is coming soon.
 - **[Presidio](https://github.com/microsoft/presidio)** — open-source tool that identifies PII entities like names, phone numbers, addresses.
 - **Custom regex patterns** — for basic PII detection of structured formats.
 
@@ -50,8 +40,6 @@ We avoid passing both **direct identifiers** (names, emails) and **indirect iden
 
 ### Privacy-enhancing technologies
 
-<div className="privacy-additions">
-
 To address privacy risks associated with data collection and model memorisation, Privacy-Enhancing Technologies (PETs) serve as a crucial line of defence. They sit upstream of inference-time guardrails:
 
 - **Synthetic Data Generation** — at the data level, allows organisations to train downstream models without exposing actual PII by creating artificial datasets that mirror the statistical properties of real-world data.
@@ -59,8 +47,6 @@ To address privacy risks associated with data collection and model memorisation,
 - **Federated Learning** — enables models to train on decentralised devices, keeping raw data localised and eliminating the risk of centralised data breaches.
 
 For more information, see the [Mitigating Privacy Risks for RAI](https://go.gov.sg/mitigating-privacy-risks-for-rai) chapter in GovTech Data Practice's AI Privacy publication.
-
-</div>
 
 ### Testing
 

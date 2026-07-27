@@ -154,15 +154,7 @@ mark.new-since-v1,
   border-radius: 2px;
 }
 
-mark.privacy-additions,
-.privacy-additions {
-  background-color: #d1ecf1;
-  padding: 0 0.15em;
-  border-radius: 2px;
-}
-
-.new-since-v1 p,
-.privacy-additions p {
+.new-since-v1 p {
   background-color: inherit;
 }
 
@@ -408,6 +400,186 @@ mark.privacy-additions,
   font-weight: 700;
 }
 
+/* ─── Guardrail flow ────────────────────────────────────────────────────────
+   High-level request and response flow on the guardrails overview page.
+   Uses clamp() for fluid responsive scaling across all screen sizes.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.guardrail-flow {
+  display: grid;
+  grid-template:
+    "user request model" auto
+    "user response model" auto
+    / minmax(0, 1fr) minmax(0, 2.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0 clamp(0.75rem, 2vw, 1.75rem);
+  margin: 1.5rem 0 0.5rem;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
+}
+
+.guardrail-flow__actor {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: clamp(5rem, 15vw, 9.5rem);
+  align-self: center;
+  gap: 0.55rem;
+  place-items: center;
+  padding: clamp(0.6rem, 2vw, 1.25rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 8%);
+  text-align: center;
+}
+
+.guardrail-flow__actor strong {
+  color: var(--ifm-color-emphasis-900);
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  line-height: 1.3;
+}
+
+.guardrail-flow__actor svg {
+  box-sizing: content-box;
+  padding: clamp(0.15rem, 1vw, 0.55rem);
+  border-radius: 50%;
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-background-surface-color) 82%,
+    transparent
+  );
+  color: var(--ifm-color-primary-dark);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.guardrail-flow__actor--user {
+  grid-area: user;
+  border-color: color-mix(in srgb, #4aaf6b 55%, var(--ifm-color-emphasis-300));
+  background-color: color-mix(
+    in srgb,
+    #79d996 24%,
+    var(--ifm-background-surface-color)
+  );
+}
+
+.guardrail-flow__actor--model {
+  grid-area: model;
+  border-color: color-mix(in srgb, #4f9dca 55%, var(--ifm-color-emphasis-300));
+  background-color: color-mix(
+    in srgb,
+    #69b9ea 24%,
+    var(--ifm-background-surface-color)
+  );
+}
+
+.guardrail-flow__lane {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.guardrail-flow__lane--request {
+  grid-area: request;
+}
+
+.guardrail-flow__lane--response {
+  grid-area: response;
+}
+
+.guardrail-flow__lane::before {
+  position: absolute;
+  top: 50%;
+  right: clamp(-1rem, -2vw, -1.75rem);
+  left: clamp(-1rem, -2vw, -1.75rem);
+  height: clamp(1px, 0.3vw, 2px);
+  background-color: var(--ifm-color-emphasis-600);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.guardrail-flow__lane::after {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: clamp(4px, 1vw, 6px) solid transparent;
+  border-bottom: clamp(4px, 1vw, 6px) solid transparent;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.guardrail-flow__lane--request::after {
+  right: clamp(-1rem, -2vw, -1.75rem);
+  border-left: clamp(6px, 1.5vw, 10px) solid var(--ifm-color-emphasis-600);
+}
+
+.guardrail-flow__lane--response::after {
+  left: clamp(-1rem, -2vw, -1.75rem);
+  border-right: clamp(6px, 1.5vw, 10px) solid var(--ifm-color-emphasis-600);
+}
+
+.guardrail-flow__lane-label {
+  position: absolute;
+  top: calc(50% - clamp(1.3rem, 3vw, 2.15rem));
+  padding: 0 0.35rem;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-800);
+  font-size: clamp(0.6rem, 1.8vw, 0.82rem);
+  font-weight: 600;
+}
+
+.guardrail-flow__lane--request .guardrail-flow__lane-label {
+  left: 0;
+}
+
+.guardrail-flow__lane--response .guardrail-flow__lane-label {
+  right: 0;
+}
+
+.guardrail-flow__guardrail {
+  z-index: 1;
+  display: inline-flex;
+  max-width: clamp(4.5rem, 14vw, 11rem);
+  align-items: center;
+  gap: clamp(0.15rem, 0.8vw, 0.45rem);
+  padding: clamp(0.3rem, 1vw, 0.65rem) clamp(0.35rem, 1.2vw, 0.8rem);
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-900);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 9%);
+}
+
+.guardrail-flow__guardrail svg {
+  flex: 0 0 auto;
+  width: clamp(10px, 2vw, 20px);
+  height: clamp(10px, 2vw, 20px);
+  color: var(--ifm-color-primary);
+}
+
+.guardrail-flow__guardrail strong {
+  font-size: clamp(0.48rem, 1.8vw, 0.84rem);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Figure captions for diagrams */
+figure {
+  margin: 1.5rem 0 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
 /* Two-column summary table with no header row. */
 .issue-summary thead {
   display: none;
@@ -504,17 +676,116 @@ mark.privacy-additions,
   padding-left: 1.2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .evaluation-method-spectrum__methods {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.85rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .evaluation-method-spectrum {
+    padding: 1rem;
+  }
+
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.7rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.65rem;
+  }
+
+  .evaluation-method-spectrum__axis {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__axis strong {
+    font-size: 0.8rem;
+  }
+
+  .evaluation-method-spectrum__axis small {
+    font-size: 0.65rem;
+  }
+
+  .evaluation-method-spectrum__number {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .evaluation-method-spectrum {
+    padding: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.5rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .evaluation-method-spectrum__axis {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .evaluation-method-spectrum__axis strong {
+    font-size: 0.7rem;
+  }
+
+  .evaluation-method-spectrum__axis small {
+    font-size: 0.6rem;
+  }
+
+  .evaluation-method-spectrum__number {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.6rem;
   }
 
   .evaluation-method-spectrum__methods li:not(:last-child)::after {
-    top: calc(100% + 0.25rem);
-    left: 50%;
-    width: 1rem;
-    content: "↓";
-    transform: translateX(-50%);
+    font-size: 1rem;
   }
 }
+
