@@ -105,5 +105,5 @@ Everything not shown here, such as learning rate, batch size, and LoRA rank, sho
 ## Where to go next
 
 - [Evaluation methods](../evaluating-ai-systems/methods.mdx) — establishing the gap before, and the result after.
-- [Guardrail architecture](guardrail-architecture.md) — the lower-investment alternative to compare against.
+- [Guardrail architecture](guardrails/guardrail-architecture.md) — the lower-investment alternative to compare against.
 - [Finetuning tooling](../resources.md#finetuning-tooling) — libraries and recipes with runnable code.

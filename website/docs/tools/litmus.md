@@ -19,7 +19,7 @@ Manual safety testing does not scale with a system that changes frequently. You 
 
 Litmus automates that loop. The same curated suites run on a schedule or on each commit, results are scored without a person reading every response, and successive runs accumulate into a trend you can compare rather than a series of disconnected reports.
 
-Use it when your system is already built and needs recurring safety and security testing against a standard suite. It does not evaluate whether your system does its job well. For that, see [functional evals](../evaluating-ai-systems/functional.md) and [Kaleidoscope](kaleidoscope.md), which is the contextual evaluation module within Litmus.
+Use it when your system is already built and needs recurring safety and security testing against a standard suite. It does not evaluate whether your system does its job well. For that, see [functional evals](../evaluating-ai-systems/functional.mdx) and [Kaleidoscope](kaleidoscope.md), which is the contextual evaluation module within Litmus.
 
 ## How it works
 
@@ -51,7 +51,7 @@ Litmus tests a system; it does not defend one at runtime. A failing Litmus resul
 - **Treating a passing run as coverage.** The baseline suites test common, known risks. They are a floor rather than a description of everything your system can get wrong, and application-specific risks need custom scenarios.
 - **Running it only before launch.** A single pre-launch run gives you no trend, which is most of the value.
 - **Testing an endpoint that is not the production path.** Results describe whatever endpoint you registered. If guardrails sit in front of your production endpoint but not the tested one, the scores describe a system nobody uses.
-- **Reading refusal rates without context.** A system that refuses everything scores well on safety suites while being unusable, so read safety results alongside [functional evals](../evaluating-ai-systems/functional.md).
+- **Reading refusal rates without context.** A system that refuses everything scores well on safety suites while being unusable, so read safety results alongside [functional evals](../evaluating-ai-systems/functional.mdx).
 
 ## Onboarding
 

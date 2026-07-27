@@ -117,4 +117,4 @@ An evaluation that measures whether outputs are useful for the specific task, no
 
 ## Threshold
 
-The score at which a guardrail's output triggers an action such as blocking, warning, logging, or escalating. Guardrails return scores rather than verdicts, so the threshold trades false positives against false negatives. See [threshold tuning](../improving-ai-systems/threshold-tuning.md).
+The score at which a guardrail's output triggers an action such as blocking, warning, logging, or escalating. Guardrails return scores rather than verdicts, so the threshold trades false positives against false negatives. See [threshold tuning](../improving-ai-systems/guardrails/production-integration.md#tune-thresholds-and-responses).

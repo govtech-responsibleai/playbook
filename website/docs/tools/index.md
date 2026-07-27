@@ -41,6 +41,7 @@ Runtime classifiers that inspect inputs and outputs and flag or block unsafe con
 | Item | Use for |
 | --- | --- |
 | [LionGuard](lionguard.md) | Localised content moderation |
+| [Off-Topic guardrail](off-topic-guardrail.md) | Detecting prompts outside an AI system's intended purpose |
 
 ## Frameworks
 

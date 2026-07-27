@@ -25,7 +25,7 @@ A safety test run tells you that a category of prompt gets through. It does not 
 
 Sentinel covers that gap at runtime. Each request is screened before it reaches your model, and each response before it reaches the user, against the guardrails you select for that system.
 
-Use it when your system accepts free-text input from users or returns generated text to them. Note that Sentinel scores text and returns those scores; deciding what to do with a score — block, redact, log, or escalate — stays with your system, and the score at which you act is something you tune. See [threshold tuning](../improving-ai-systems/threshold-tuning.md) for how to set those cut-offs.
+Use it when your system accepts free-text input from users or returns generated text to them. Note that Sentinel scores text and returns those scores; deciding what to do with a score — block, redact, log, or escalate — stays with your system, and the score at which you act is something you tune. See [threshold tuning](../improving-ai-systems/guardrails/production-integration.md#tune-thresholds-and-responses) for how to set those cut-offs.
 
 ## How it works
 
@@ -42,7 +42,7 @@ You send text to the Sentinel API together with the guardrails you want applied.
 | [Toxicity/Content Moderation](../improving-ai-systems/safety-improvements.mdx#content-safety) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
 | [Jailbreak/Prompt Injection](../improving-ai-systems/safety-improvements.mdx#prompt-injection-and-jailbreaks) | Attempts to bypass system constraints or inject malicious prompts | ✓ |  |
 | [PII](../improving-ai-systems/privacy-improvements.mdx#pii-protection) | Information that can identify an individual | ✓ | ✓ |
-| [Off-Topic](../improving-ai-systems/robustness-improvements.mdx) | Content irrelevant to the system's purpose | ✓ | ✓ |
+| [Off-Topic](off-topic-guardrail.md) | Content irrelevant to the system's purpose | ✓ | ✓ |
 | [System-Prompt Leakage](../improving-ai-systems/privacy-improvements.mdx#system-prompt-leakage) | Exposure of system prompts containing application information |  | ✓ |
 | Hallucination | Content not factual or grounded in source material |  | ✓ |
 | [Relevance](../improving-ai-systems/robustness-improvements.mdx) | Responses not pertinent to user queries |  | ✓ |
@@ -83,11 +83,11 @@ The `lionguard2` suite scores against LionGuard's [harm categories](lionguard.md
 
 Sentinel defends a system at runtime; it does not tell you which defences that system needs. [Litmus](litmus.md) does that, by testing which categories of prompt actually get through. The two are designed to be used together: Litmus identifies the risks your system exhibits, and Sentinel mitigates them in production.
 
-The guardrails themselves come from several sources. [LionGuard](lionguard.md) is GovTech's localised moderation classifier and supplies the `lionguard2` suite; the `aws` suite wraps AWS Bedrock Guardrails. For how these layers sit in a system, see [guardrail architecture](../improving-ai-systems/guardrail-architecture.md).
+The guardrails themselves come from several sources. [LionGuard](lionguard.md) is GovTech's localised moderation classifier and supplies the `lionguard2` suite; the `aws` suite wraps AWS Bedrock Guardrails. For how these layers sit in a system, see [guardrail architecture](../improving-ai-systems/guardrails/guardrail-architecture.md).
 
 ## Pitfalls
 
-- **Reading a score as a decision.** Sentinel returns a score per guardrail, not a verdict. Your system chooses the cut-off, and that choice is a product decision about how much friction you will accept. See [threshold tuning](../improving-ai-systems/threshold-tuning.md).
+- **Reading a score as a decision.** Sentinel returns a score per guardrail, not a verdict. Your system chooses the cut-off, and that choice is a product decision about how much friction you will accept. See [threshold tuning](../improving-ai-systems/guardrails/production-integration.md#tune-thresholds-and-responses).
 - **Screening input but not output.** Several risks only appear on the way out, including system-prompt leakage and hallucination. Input-only screening leaves those uncovered.
 - **Treating guardrails as a substitute for testing.** A guardrail in front of a system does not tell you what the system does without it. Test the system as well as defending it.
 - **Assuming the list is complete.** The available guardrails cover common, known risks. Risks specific to your domain will not be in the table, and some entries are still marked Planned rather than Available.
@@ -168,5 +168,5 @@ A benchmarking report covering Sentinel's guardrails is planned for a future rel
 
 - [Litmus](litmus.md) — testing that identifies which risks your system exhibits.
 - [LionGuard](lionguard.md) — the localised classifier behind the `lionguard2` suite, and its harm categories.
-- [Guardrail architecture](../improving-ai-systems/guardrail-architecture.md) — where guardrail checks sit in a system.
-- [Threshold tuning](../improving-ai-systems/threshold-tuning.md) — choosing the score at which you act.
+- [Guardrail architecture](../improving-ai-systems/guardrails/guardrail-architecture.md) — where guardrail checks sit in a system.
+- [Threshold tuning](../improving-ai-systems/guardrails/production-integration.md#tune-thresholds-and-responses) — choosing the score at which you act.

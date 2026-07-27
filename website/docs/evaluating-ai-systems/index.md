@@ -1,5 +1,5 @@
 ---
-sidebar_label: "[JY] Overview"
+sidebar_label: "Overview"
 sidebar_position: 1
 ---
 
@@ -17,9 +17,9 @@ Start by testing whether the system works for its intended task. Then test wheth
 
 A practical evaluation plan usually covers five areas. Each has its own page in this section:
 
-1. **[Functional](functional.md)** — does the application complete the task well? Includes accuracy, RAG grounding, and performance.
+1. **[Functional](functional.mdx)** — does the system do the job it was built for? Covers the quality criteria specific to your product, and performance.
 2. **[Safety](safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
-3. **[Robustness](robustness.md)** — does it behave consistently across realistic variation and out-of-scope inputs?
+3. **[Robustness](robustness.md)** — does it stay consistent, grounded, and usable when real input is messier than the eval set?
 4. **[Fairness](fairness.md)** — does it treat affected groups consistently?
 5. **[Privacy](privacy.md)** — does it avoid leaking PII or sensitive data?
 

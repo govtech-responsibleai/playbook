@@ -159,15 +159,7 @@ mark.new-since-v1,
   border-radius: 2px;
 }
 
-mark.privacy-additions,
-.privacy-additions {
-  background-color: #d1ecf1;
-  padding: 0 0.15em;
-  border-radius: 2px;
-}
-
-.new-since-v1 p,
-.privacy-additions p {
+.new-since-v1 p {
   background-color: inherit;
 }
 
@@ -413,6 +405,196 @@ mark.privacy-additions,
   font-weight: 700;
 }
 
+/* ─── Guardrail flow ────────────────────────────────────────────────────────
+   High-level request and response flow on the guardrails overview page.
+   Uses clamp() for fluid responsive scaling across all screen sizes.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.guardrail-flow {
+  display: grid;
+  grid-template:
+    "user request model" auto
+    "user response model" auto
+    / minmax(0, 1fr) minmax(0, 2.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0 clamp(0.75rem, 2vw, 1.75rem);
+  margin: 1.5rem 0 0.5rem;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
+}
+
+.guardrail-flow__actor {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: clamp(5rem, 15vw, 9.5rem);
+  align-self: center;
+  gap: 0.55rem;
+  place-items: center;
+  padding: clamp(0.6rem, 2vw, 1.25rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 8%);
+  text-align: center;
+}
+
+.guardrail-flow__actor strong {
+  color: var(--ifm-color-emphasis-900);
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  line-height: 1.3;
+}
+
+.guardrail-flow__actor svg {
+  box-sizing: content-box;
+  padding: clamp(0.15rem, 1vw, 0.55rem);
+  border-radius: 50%;
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-background-surface-color) 82%,
+    transparent
+  );
+  color: var(--ifm-color-primary-dark);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.guardrail-flow__actor--user {
+  grid-area: user;
+  border-color: color-mix(in srgb, #4aaf6b 55%, var(--ifm-color-emphasis-300));
+  background-color: color-mix(
+    in srgb,
+    #79d996 24%,
+    var(--ifm-background-surface-color)
+  );
+}
+
+.guardrail-flow__actor--model {
+  grid-area: model;
+  border-color: color-mix(in srgb, #4f9dca 55%, var(--ifm-color-emphasis-300));
+  background-color: color-mix(
+    in srgb,
+    #69b9ea 24%,
+    var(--ifm-background-surface-color)
+  );
+}
+
+.guardrail-flow__lane {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.guardrail-flow__lane--request {
+  grid-area: request;
+}
+
+.guardrail-flow__lane--response {
+  grid-area: response;
+}
+
+.guardrail-flow__lane::before {
+  position: absolute;
+  top: 50%;
+  right: clamp(-1rem, -2vw, -1.75rem);
+  left: clamp(-1rem, -2vw, -1.75rem);
+  height: clamp(1px, 0.3vw, 2px);
+  background-color: var(--ifm-color-emphasis-600);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.guardrail-flow__lane::after {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: clamp(4px, 1vw, 6px) solid transparent;
+  border-bottom: clamp(4px, 1vw, 6px) solid transparent;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.guardrail-flow__lane--request::after {
+  right: clamp(-1rem, -2vw, -1.75rem);
+  border-left: clamp(6px, 1.5vw, 10px) solid var(--ifm-color-emphasis-600);
+}
+
+.guardrail-flow__lane--response::after {
+  left: clamp(-1rem, -2vw, -1.75rem);
+  border-right: clamp(6px, 1.5vw, 10px) solid var(--ifm-color-emphasis-600);
+}
+
+.guardrail-flow__lane-label {
+  position: absolute;
+  top: calc(50% - clamp(1.3rem, 3vw, 2.15rem));
+  padding: 0 0.35rem;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-800);
+  font-size: clamp(0.6rem, 1.8vw, 0.82rem);
+  font-weight: 600;
+}
+
+.guardrail-flow__lane--request .guardrail-flow__lane-label {
+  left: 0;
+}
+
+.guardrail-flow__lane--response .guardrail-flow__lane-label {
+  right: 0;
+}
+
+.guardrail-flow__guardrail {
+  z-index: 1;
+  display: inline-flex;
+  max-width: clamp(4.5rem, 14vw, 11rem);
+  align-items: center;
+  gap: clamp(0.15rem, 0.8vw, 0.45rem);
+  padding: clamp(0.3rem, 1vw, 0.65rem) clamp(0.35rem, 1.2vw, 0.8rem);
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-900);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 9%);
+}
+
+.guardrail-flow__guardrail svg {
+  flex: 0 0 auto;
+  width: clamp(10px, 2vw, 20px);
+  height: clamp(10px, 2vw, 20px);
+  color: var(--ifm-color-primary);
+}
+
+.guardrail-flow__guardrail strong {
+  font-size: clamp(0.48rem, 1.8vw, 0.84rem);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Figure captions for diagrams */
+figure {
+  margin: 1.5rem 0 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Two-column summary table with no header row. */
+.issue-summary thead {
+  display: none;
+}
+
+.issue-summary tbody td:first-child {
+  width: 32%;
+  font-weight: 700;
+}
+
 .markdown details.metric-disclosure {
   --ifm-alert-background-color: transparent;
   --ifm-alert-border-left-width: 0;
@@ -499,39 +681,139 @@ mark.privacy-additions,
   padding-left: 1.2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .evaluation-method-spectrum__methods {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.85rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .evaluation-method-spectrum {
+    padding: 1rem;
+  }
+
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.7rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.65rem;
+  }
+
+  .evaluation-method-spectrum__axis {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__axis strong {
+    font-size: 0.8rem;
+  }
+
+  .evaluation-method-spectrum__axis small {
+    font-size: 0.65rem;
+  }
+
+  .evaluation-method-spectrum__number {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .evaluation-method-spectrum {
+    padding: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.5rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .evaluation-method-spectrum__axis {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .evaluation-method-spectrum__axis strong {
+    font-size: 0.7rem;
+  }
+
+  .evaluation-method-spectrum__axis small {
+    font-size: 0.6rem;
+  }
+
+  .evaluation-method-spectrum__number {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.6rem;
   }
 
   .evaluation-method-spectrum__methods li:not(:last-child)::after {
-    top: calc(100% + 0.25rem);
-    left: 50%;
-    width: 1rem;
-    content: "↓";
-    transform: translateX(-50%);
+    font-size: 1rem;
   }
 }
 
 /* ─── Card system ───────────────────────────────────────────────────────────
    Shared recipe behind every card grid in the playbook — archetype routes on
-   start-here/getting-started.md, improvement forms on improving-ai-systems.
-   The base class carries the surface, border, radius, shadow, heading, blurb
-   and icon slot; each component adds only what is specific to it.
+   start-here/getting-started.mdx, capability groups on
+   tools/agentic-risk-capability-framework.md. The base class carries the
+   surface, border, radius, shadow, heading, blurb and icon slot; each component
+   adds only what is specific to it.
 
      <div class="rai-card-grid">
 
-       <div class="rai-card improvement-form improvement-form--guardrails">
-       <strong>Guardrails</strong>
-       <span>Separate components that filter or block content.</span>
+       <div class="rai-card capability-group capability-group--cognitive">
+       <strong>Cognitive</strong>
+       <span>What the system can reason about and plan.</span>
        </div>
 
      </div>
 
    Keep each card on contiguous lines with no blank line inside it, and a blank
    line between cards: that is what makes CommonMark pass the block through as
-   raw HTML instead of wrapping the inner tags in paragraphs.
+   raw HTML instead of wrapping the inner tags in paragraphs. In .mdx files use
+   className rather than class.
 
    Modifiers supply --rai-icon as a Lucide glyph in a data URI. The glyph is
    applied as a mask rather than an <img>, so it takes its colour from the theme
@@ -671,94 +953,6 @@ mark.privacy-additions,
   opacity: 0.35;
   transform: translateX(-50%);
 }
-
-/* ─── Improvement forms ─────────────────────────────────────────────────────
-   The three broad forms an improvement can take, on improving-ai-systems.
-   Same card recipe as the archetype routes; the only additions are the icon
-   modifiers and a trailing link pinned to the bottom of each card.
-   ──────────────────────────────────────────────────────────────────────────── */
-
-.improvement-form--guardrails {
-  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
-}
-
-.improvement-form--finetuning {
-  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='21' x2='14' y1='4' y2='4'/%3E%3Cline x1='10' x2='3' y1='4' y2='4'/%3E%3Cline x1='21' x2='12' y1='12' y2='12'/%3E%3Cline x1='8' x2='3' y1='12' y2='12'/%3E%3Cline x1='21' x2='16' y1='20' y2='20'/%3E%3Cline x1='12' x2='3' y1='20' y2='20'/%3E%3Cline x1='14' x2='14' y1='2' y2='6'/%3E%3Cline x1='8' x2='8' y1='10' y2='14'/%3E%3Cline x1='16' x2='16' y1='18' y2='22'/%3E%3C/svg%3E");
-}
-
-.improvement-form--principles {
-  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z'/%3E%3Cpath d='m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65'/%3E%3Cpath d='m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65'/%3E%3C/svg%3E");
-}
-
-/* margin-top:auto pins the link to the card's bottom edge, so the links align
-   across cards whose blurbs wrap to different heights. */
-.improvement-form > a {
-  margin-top: auto;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-.improvement-form > a::after {
-  content: " →";
-}
-
-/* ─── Swiss cheese model ────────────────────────────────────────────────────
-   Layered-defence diagram on improving-ai-systems. Inline SVG rather than a
-   raster: it themes from the variables below, stays crisp at any zoom, and
-   weighs about 2KB against the 104KB PNG it replaces.
-
-   The slabs are sheared by matrix(1 -0.5 0 1 0 0) to fake perspective, and the
-   holes are punched with a mask so the page background — whichever theme is
-   active — shows through them.
-
-   This diagram is the documented exception to the monochrome-plus-one-accent
-   rule: a hazard being stopped versus reaching the user is a genuine
-   safe/unsafe distinction, so it earns a second, semantic hue.
-   ──────────────────────────────────────────────────────────────────────────── */
-
-:root {
-  /* Verified 4.38:1 on the light page background and 3.93:1 on the dark one, so
-     it clears WCAG 1.4.11 (3:1) for graphical objects in both themes without
-     needing a per-theme value. */
-  --rai-color-hazard: #d64545;
-}
-
-.swiss-cheese {
-  display: block;
-  width: 100%;
-  max-width: 680px;
-  height: auto;
-  margin: 1.5rem auto 0.5rem;
-}
-
-.swiss-cheese__slab {
-  /* Opaque, so a hazard drawn beneath is genuinely hidden by the material, but
-     tinted away from the page background so the punched holes read as holes.
-     A plain surface fill makes them invisible in light mode. */
-  fill: color-mix(in srgb, var(--ifm-color-primary) 16%, var(--ifm-background-surface-color));
-  stroke: var(--ifm-color-primary);
-  stroke-width: 2;
-}
-
-/* Outlines drawn over the slabs so each gap is unmistakably a hole. */
-.swiss-cheese__hole {
-  fill: none;
-  stroke: var(--ifm-color-primary);
-  stroke-opacity: 0.55;
-  stroke-width: 1.5;
-}
-
-.swiss-cheese__hazard {
-  fill: none;
-  stroke: var(--rai-color-hazard);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.swiss-cheese__stopped {
-  fill: var(--rai-color-hazard);
-}
-
 
 /* ─── Capability groups ─────────────────────────────────────────────────────
    The three ARC capability categories on tools/agentic-risk-capability-framework.

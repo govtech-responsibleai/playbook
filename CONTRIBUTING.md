@@ -20,6 +20,12 @@ When you add a new page:
 3. Use lowercase, hyphenated filenames.
 4. Prefer existing Docusaurus patterns such as admonitions, details blocks, tabs, and fenced code blocks.
 
+When you add a diagram or CSS-based visual:
+
+5. Wrap it in `<figure>` with a `<figcaption>` label so readers understand what they're seeing.
+6. Use the Lato font family for any text in diagrams (apply CSS `font-family: 'Lato', system-ui, -apple-system, sans-serif;` to match the site typography).
+7. Follow the CSS-based content standards in `AGENTS.md`: use `clamp()` for responsive sizing, include `role="img"` and `aria-label` for accessibility, and test at multiple viewports (480px, 768px, 1024px, 1440px+).
+
 ## Local validation
 
 Before opening or updating a PR:
@@ -92,15 +98,37 @@ Examples:
 
 If contributors do not add labels themselves, maintainers should add them during review before merge.
 
-## Release notes
+## Production releases
 
 Do not maintain a reader-facing changelog page in the published site.
 
-Instead, use GitHub Releases as the final release summary:
+Use a published GitHub Release as the signal that a version is approved for production. Each release points to an immutable Git tag, which identifies the exact commit to build and provides a stable rollback target.
 
-1. Merge labeled PRs into `staging`.
-2. Create the release tag when the release is ready.
-3. Generate GitHub release notes from merged PRs.
-4. Edit the draft release notes so the final summary is concise and reader-relevant.
+### Choose a version
+
+Use version tags in the form `vMAJOR.MINOR.PATCH`:
+
+- Increment **MAJOR** for a substantial Playbook restructuring or a change that significantly alters expected reader paths, for example `v1.4.2` to `v2.0.0`.
+- Increment **MINOR** for meaningful new guidance, pages, or sections, for example `v1.4.2` to `v1.5.0`.
+- Increment **PATCH** for corrections, clarifications, and link or rendering fixes, for example `v1.4.2` to `v1.4.3`.
+
+Reset the numbers to the right when incrementing a version. For example, the release after `v1.4.2` is `v1.5.0` for a minor update, not `v1.5.2`.
+
+Use a prerelease identifier for a version that is not approved for production, for example `v2.0.0-rc.1`. Production deployment uses published, non-prerelease GitHub Releases.
+
+### Publish a release
+
+1. Merge labelled PRs into `staging`.
+2. Validate the complete staging site.
+3. Merge `staging` into `main` through a pull request.
+4. In GitHub, draft a new Release targeting the approved commit on `main`.
+5. Create the next version tag as part of the draft, or select an existing annotated tag that points to the same approved commit.
+6. Generate release notes from merged PRs.
+7. Edit the notes so the final summary is concise and relevant to readers.
+8. Mark test versions as prereleases. Otherwise, publish the stable Release to make it eligible for production deployment.
 
 The release-note categories are configured in `.github/release.yml`, so use clear PR titles and the primary labels documented above.
+
+Do not move or overwrite a published tag. If a released version contains an error, correct it in a new commit and publish the next patch version. A small production correction can have brief release notes, but it should still have a GitHub Release so the production history remains complete.
+
+AWS-specific deployment commands, credentials, scheduled-job behaviour, and recovery procedures belong in the production operations runbook rather than this contributor guide.
