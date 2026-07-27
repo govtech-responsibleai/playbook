@@ -57,12 +57,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Improving RAI principles',
           collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'Improving RAI principles',
-            description: 'Choose improvements for safety, robustness, fairness, privacy and agentic AI systems.',
-            slug: '/improving-ai-systems/principle-specific-improvements',
-          },
+          link: {type: 'doc', id: 'improving-ai-systems/improving-rai-principles'},
           items: [
             {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: 'Safety improvements'},
             {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: 'Robustness improvements'},
