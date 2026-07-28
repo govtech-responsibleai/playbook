@@ -42,6 +42,7 @@ repo root/
 │   └── pages-staging.yml          ← staging deploy configuration
 ├── README.md
 ├── CONTRIBUTING.md
+├── PAGE-STANDARDS.md              ← page structure, release-marking, and linking rules
 ├── AGENTS.md
 └── CLAUDE.md                      ← must be identical to AGENTS.md
 ```
