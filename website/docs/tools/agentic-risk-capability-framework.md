@@ -5,11 +5,6 @@ sidebar_position: 2
 
 # Agentic Risk & Capability Framework
 
-:::info[What's new on this page]
-
-New in this release: full guidance on applying ARC, covering the capability taxonomy, how risks are classified, the four-step assessment process, and the three control levels.
-
-:::
 
 The [Agentic Risk and Capability Framework](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/) (ARC) is GovTech's technical governance framework for identifying, assessing, and mitigating safety and security risks in agentic AI systems. It gives you three things: a taxonomy of what agentic systems can do, a register of 46 risks tied to those capabilities, and 88 technical controls tied to those risks.
 

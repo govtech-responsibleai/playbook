@@ -5,11 +5,6 @@ sidebar_position: 5
 
 # Fairness evals
 
-:::info[What's new on this page]
-
-Updated for this release: fairness evaluation for discriminative systems now sits alongside the generative guidance, with the metrics and evaluation design for each.
-
-:::
 
 Fairness evals check whether your system behaves differently across protected or sensitive attributes, groups, languages, or user contexts. What you measure depends on what kind of system you have. For a generative system you are comparing outputs that vary only by an attribute; for a discriminative one you are comparing error rates and calibration across groups.
 

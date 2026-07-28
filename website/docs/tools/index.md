@@ -5,11 +5,6 @@ sidebar_position: 1
 
 # Tools & resources
 
-:::info[What's new on this page]
-
-New in this release: an index of the GovTech tools, benchmarks, guardrails, and frameworks available to teams applying the playbook.
-
-:::
 
 This section collects practical implementation support for teams applying the playbook.
 

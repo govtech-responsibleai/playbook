@@ -5,11 +5,6 @@ sidebar_position: 2
 
 # Finetuning
 
-:::info[What's new on this page]
-
-Updated for this release: guidance on choosing an approach and a base model, running the training itself, and applying finetuning to improve safety.
-
-:::
 
 Finetuning adjusts model weights so outputs suit a particular task, domain, or behaviour profile. It is a higher-investment option than prompting or guardrails, and becomes worth considering when those have run out of headroom.
 

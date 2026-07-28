@@ -5,11 +5,6 @@ sidebar_position: 3
 
 # Sentinel: runtime guardrails for government AI systems
 
-:::info[What's new on this page]
-
-Updated for this release: rewritten around how Sentinel fits your deployment, with guidance on when to use it, where it sits alongside Litmus, and what to watch for.
-
-:::
 
 Sentinel is a guardrails-as-a-service platform run by GovTech as part of [AI Guardian](https://www.aiguardian.gov.sg). It screens the text going into and coming out of your AI system, scores that text against a set of guardrails you select, and returns the scores over an API.
 

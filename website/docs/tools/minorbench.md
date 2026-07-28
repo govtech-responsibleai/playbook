@@ -5,11 +5,6 @@ sidebar_position: 6
 
 # MinorBench
 
-:::info[What's new on this page]
-
-New in this release: a dedicated tool page for MinorBench, covering the risk categories it tests and what its results showed.
-
-:::
 
 MinorBench is a benchmark for child-specific safety risks in AI systems. It is a hand-curated set of prompts across six child-specific risk categories: **Danger, Sexual, Profanities, Hateful, Self-harm, and Substance Use**.
 

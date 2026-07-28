@@ -53,7 +53,7 @@ Key locations (Docusaurus):
 - `website/src/css/custom.css`: dark-teal theme CSS variables and custom highlight classes.
 - `website/src/components/OurWork/`: React component rendering project cards from `data.json`.
 - `website/src/components/FeedbackWidget/`: thumbs up/down widget that fires GA4 custom events.
-- `website/docs/contributing/page-standards.md`: source of truth for page structure and release-marking conventions.
+- `PAGE-STANDARDS.md`: source of truth for page structure and release-marking conventions.
 - `.github/workflows/pages-staging.yml`: staging deploy workflow with GitHub Pages path settings.
 - `CONTRIBUTING.md`: contributor workflow, PR expectations, and release-note process for GitHub collaborators.
 
@@ -103,7 +103,7 @@ Because there are no tests, review attention belongs on factual accuracy, tone, 
 
 ## Page standards
 
-Follow `website/docs/contributing/page-standards.md` for:
+Follow `PAGE-STANDARDS.md` for:
 
 - the single "What's new on this page" release admonition (refreshed or removed at every release; no branch names or editing history),
 - placeholder and roadmap conventions (no empty section headings, no internal shorthand such as "KIV" in reader-facing text),

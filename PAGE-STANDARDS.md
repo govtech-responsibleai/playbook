@@ -1,11 +1,4 @@
----
-sidebar_label: "Page standards"
-unlisted: true
----
-
 # Page standards
-
-Use these standards when adding or updating playbook pages. Repository workflow (branches, pull requests, sidebar registration) lives in `CONTRIBUTING.md` and `AGENTS.md`.
 
 ## Language and voice
 

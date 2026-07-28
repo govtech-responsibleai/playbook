@@ -5,11 +5,6 @@ sidebar_position: 4
 
 # Fairness improvements
 
-:::info[What's new on this page]
-
-Updated for this release: guidance on choosing a fairness definition before intervening, which stage of the pipeline to intervene at, the measurement process, and common pitfalls.
-
-:::
 
 Fairness improvements reduce systematic differences in how your system performs across groups, attributes, or languages. Unlike safety or privacy, fairness rarely has a component you can put in front of the model. The work sits in your data, your evaluation pipeline, and your deployment policy.
 

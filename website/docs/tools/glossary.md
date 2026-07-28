@@ -5,11 +5,6 @@ sidebar_position: 5
 
 # Glossary
 
-:::info[What's new on this page]
-
-New in this release: working definitions for the terms used across the playbook.
-
-:::
 
 ## Accuracy
 
