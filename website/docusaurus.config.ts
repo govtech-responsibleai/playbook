@@ -168,6 +168,13 @@ const config: Config = {
 
   headTags: [
     {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: 'D540F5CBF11AB04B',
+      },
+    },
+    {
       tagName: 'link',
       attributes: {
         rel: 'preconnect',
