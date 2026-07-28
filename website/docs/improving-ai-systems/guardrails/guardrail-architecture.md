@@ -27,6 +27,8 @@ Use evaluation results to prioritise controls. The [evaluation methods](../../ev
 
 Guardrails can run at several points in the application flow.
 
+<div class="table-centered">
+
 | Position | What it checks | Example response |
 | --- | --- | --- |
 | Input | User prompts and uploaded content | Reject, rewrite, clarify, or escalate a request |
@@ -34,6 +36,8 @@ Guardrails can run at several points in the application flow.
 | Model output | Draft responses before users see them | Redact, regenerate, warn, or block |
 | Tool use | Tool selection, arguments, permissions, and results | Deny or require approval for an action |
 | Post-interaction | Logs, traces, feedback, and aggregate patterns | Alert an owner or add a case to the evaluation set |
+
+</div>
 
 Run a control at the earliest point where it has enough context to make a useful decision. An input guardrail can stop a clearly disallowed request before it incurs model or tool costs. However, it cannot detect a disclosure introduced by retrieved content or the generated response.
 

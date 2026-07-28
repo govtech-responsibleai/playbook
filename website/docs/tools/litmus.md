@@ -26,6 +26,8 @@ You register your application endpoint and select the suites to run. Litmus disp
 
 ## What it covers
 
+<div class="table-centered">
+
 | Capability | What it means in practice |
 | --- | --- |
 | Baseline safety and security suites | A sanctioned standard set of tests, shared across agencies |
@@ -34,6 +36,8 @@ You register your application endpoint and select the suites to run. Litmus disp
 | API access | Programmatic runs and result retrieval, if you are integrating with your own systems |
 | Custom scenarios | Application-specific test cases alongside the baseline suites |
 | Trend comparison | Results compared across runs rather than read in isolation |
+
+</div>
 
 Litmus runs as multi-tenant software-as-a-service built to government security standards, so onboarding does not require your agency to host or maintain testing infrastructure.
 

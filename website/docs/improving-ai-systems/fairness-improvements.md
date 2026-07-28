@@ -26,11 +26,15 @@ The [Fairness section of External resources](../resources.md#fairness) collects 
 
 ## Where to intervene
 
+<div class="table-centered">
+
 | Stage | Approach |
 | --- | --- |
 | Pre-processing | Curate training and evaluation data to cover protected groups, languages, and dialects; rebalance under-represented slices; remove biased labels |
 | In-processing | Use finetuning, alignment, or constraint-based training to reduce disparate behaviour; choose model variants with better cross-group performance |
 | Post-processing | Apply output adjustments such as rerankers, per-group thresholds, or refusal templates; add equitable defaults for ambiguous inputs |
+
+</div>
 
 Which stage is available depends on what you control. If you consume a hosted model, in-processing is closed to you and your options are data coverage and post-processing. If you can finetune, all three are open, and you should still prefer the cheapest one that closes the measured gap. See [finetuning](finetuning.md) for the in-processing route.
 

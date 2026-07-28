@@ -313,6 +313,8 @@ Using the set of human-reviewed examples, calibrate the judge to be aligned to y
 
 The approaches below include prompt optimisers from the [DSPy library](https://dspy.ai/).
 
+<div class="table-centered">
+
 | Approach | How it improves the judge | Data guidance |
 | --- | --- | --- |
 | Few-shot examples | Demonstrate how human reviewers apply the criteria | 3-5 examples covering key labels |
@@ -320,6 +322,8 @@ The approaches below include prompt optimisers from the [DSPy library](https://d
 | [MIPROv2](https://dspy.ai/api/optimizers/MIPROv2/) | Optimises instructions and few-shot examples together | No fixed minimum; the default configuration requires at least 35 validation examples |
 | [GEPA](https://dspy.ai/api/optimizers/GEPA/overview/) | Uses execution feedback to improve prompts | No fixed minimum; use the smallest representative validation set and keep the training set as large as practical |
 | [MemAlign](https://mlflow.org/docs/latest/genai/eval-monitor/scorers/llm-judge/memalign/) | Learns principles and examples from human feedback | Start with at least 10 examples containing human feedback, with a mix of positive and negative labels |
+
+</div>
 
 </details>
 

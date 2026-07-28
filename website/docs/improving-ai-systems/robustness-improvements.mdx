@@ -10,11 +10,15 @@ import TabItem from '@theme/TabItem';
 
 It is important to ensure that your system remains robust to unexpected inputs. The table below summarises the issue types from [Robustness evals](../evaluating-ai-systems/robustness.md).
 
+<div class="table-centered">
+
 | Issue | How to improve |
 | --- | --- |
 | Out-of-context reliability | Ensure knowledge-base and context hygiene before deployment |
 | Out-of-scope / edge case queries | Integrate off-topic guardrails; instruct agents on expected behaviour when faced with edge cases; apply normalisation and handle aliases |
 | Response consistency | Lower model temperature for deterministic tasks; pin model and prompt versions |
+
+</div>
 
 ## Tips on improving context reliability
 

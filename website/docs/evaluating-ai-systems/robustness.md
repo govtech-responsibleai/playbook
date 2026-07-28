@@ -63,6 +63,8 @@ Baseline question, which the system already answers correctly:
 
 > What is the income ceiling for the Green Support Scheme?
 
+<div class="table-centered">
+
 | Perturbation | Query |
 | --- | --- |
 | Typos | wat is the incom ceilling for gren suport scheme |
@@ -70,6 +72,8 @@ Baseline question, which the system already answers correctly:
 | Multilingual / Code-mixing | Green Support 的 income ceiling 多少? |
 | Terse | green support income ceil |
 | Out-of-scope | what to eat for lunch today |
+
+</div>
 
 Score each against the same functional criterion and compare to the baseline. Report the drop per perturbation type, so you know where the weakness lies.
 
