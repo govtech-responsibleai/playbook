@@ -24,6 +24,7 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback (Jul 2023)](https://arxiv.org/abs/2307.15217)
 - [Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models (Sep 2023)](https://arxiv.org/abs/2309.01219)
 - [Open Problems in Mechanistic Interpretability (Jan 2025)](https://arxiv.org/abs/2501.16496)
+- [A Survey on LLM-as-a-Judge (Nov 2024)](https://arxiv.org/abs/2411.15594) - a comprehensive review of building reliable systems that use LLMs as evaluators
 
 ## Benchmarks
 
@@ -87,6 +88,7 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 
 - [Awesome-LM-SSP](https://github.com/ThuCCSLab/Awesome-LM-SSP/tree/main) - reading list for safety, security, and privacy in large models
 - [Awesome-LLM-Judges](https://github.com/haizelabs/Awesome-LLM-Judges) - research on using LLM judges for automated evaluation
+- [Awesome Agent Evals](https://github.com/benchflow-ai/awesome-evals) - curated resources for building and evaluating AI agents, including papers, tools, and benchmarks
 
 ## Blogs and guides
 
