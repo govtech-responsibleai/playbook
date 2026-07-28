@@ -76,6 +76,17 @@ const config: Config = {
 
   themeConfig: {
     image: 'assets/favicons/logo.png',
+    algolia: {
+      appId: 'VHZV7YW9KX',
+      apiKey: 'cc9e6391601ba6f247c6ab455c1d048a',
+      indexName: 'playbooks_aip_gov_sg_vhzv7yw9kx_pages',
+      // This Algolia crawler index does not expose Docusaurus version facets.
+      contextualSearch: false,
+      replaceSearchResultPathname: {
+        from: '/responsibleai/',
+        to: baseUrl,
+      },
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
@@ -129,7 +140,12 @@ const config: Config = {
         src: 'images/govtech-black.gif',
         srcDark: 'images/govtech-white.gif',
       },
-      items: [],
+      items: [
+        {
+          type: 'search',
+          position: 'right',
+        },
+      ],
     },
     footer: {
       style: 'dark',
@@ -148,12 +164,6 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['python', 'bash', 'yaml', 'json'],
     },
-    // Algolia DocSearch — register at https://docsearch.algolia.com and fill in credentials
-    // algolia: {
-    //   appId: 'YOUR_APP_ID',
-    //   apiKey: 'YOUR_SEARCH_API_KEY',
-    //   indexName: 'responsible-ai-playbook',
-    // },
   } satisfies Preset.ThemeConfig,
 
   stylesheets: [
@@ -172,6 +182,14 @@ const config: Config = {
       attributes: {
         name: 'algolia-site-verification',
         content: 'D540F5CBF11AB04B',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://VHZV7YW9KX-dsn.algolia.net',
+        crossorigin: 'anonymous',
       },
     },
     {
