@@ -5,11 +5,6 @@ sidebar_position: 2
 
 # Litmus: automated safety and security testing for government AI systems
 
-:::info[What's new on this page]
-
-Updated for this release: rewritten around how Litmus fits your testing workflow, with the automated testing loop and guidance on what it does and does not cover.
-
-:::
 
 Litmus is a testing-as-a-service platform for AI safety and security testing, run by GovTech as part of [AI Guardian](https://www.aiguardian.gov.sg). It sends curated adversarial prompts at your AI system, scores the responses, and returns a report, either on demand through a web application or automatically from a CI/CD pipeline.
 
@@ -31,6 +26,8 @@ You register your application endpoint and select the suites to run. Litmus disp
 
 ## What it covers
 
+<div class="table-centered">
+
 | Capability | What it means in practice |
 | --- | --- |
 | Baseline safety and security suites | A sanctioned standard set of tests, shared across agencies |
@@ -39,6 +36,8 @@ You register your application endpoint and select the suites to run. Litmus disp
 | API access | Programmatic runs and result retrieval, if you are integrating with your own systems |
 | Custom scenarios | Application-specific test cases alongside the baseline suites |
 | Trend comparison | Results compared across runs rather than read in isolation |
+
+</div>
 
 Litmus runs as multi-tenant software-as-a-service built to government security standards, so onboarding does not require your agency to host or maintain testing infrastructure.
 

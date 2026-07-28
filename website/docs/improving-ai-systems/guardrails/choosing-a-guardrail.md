@@ -28,6 +28,8 @@ Use representative examples to make the requirement testable. Include ordinary t
 
 Potential sources include model-provider safety features, specialist API providers, open-source models and rules, and WOG tools. Compare them using the same evaluation set and application flow.
 
+<div class="table-centered">
+
 | Criterion | What to verify |
 | --- | --- |
 | Risk coverage | The guardrail detects the defined failure, including relevant edge cases |
@@ -36,6 +38,8 @@ Potential sources include model-provider safety features, specialist API provide
 | Operations | The team can monitor versions, outages, latency, cost, and performance changes |
 | Data handling | Processing, storage, and deployment meet the agency's requirements |
 | Configurability | Thresholds, categories, and responses can be adapted to the user journey |
+
+</div>
 
 Do not rely on a provider's headline benchmark alone. Reproduce the evaluation on examples drawn from the intended use case. Test the guardrail inside the complete AI system because prompts, retrieval, tools, and other controls can change its effect.
 

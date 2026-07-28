@@ -11,11 +11,15 @@ Evaluation tells you where an AI system fails. The next step is to choose an imp
 Start with the evaluated failure and identify its likely cause. Choose the least complex of the improvement routes that can address the failure reliably. After making the change, evaluate the complete AI system again to confirm that the route was suitable and identify any new trade-offs.
 
 
+<div class="table-centered">
+
 | Route                                                | Use when                                                                                      |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | **Model and system design**                          | The failure can be addressed without training the model or adding a separate runtime detector |
 | [**Guardrails**](guardrails/what-are-guardrails.mdx) | The system must detect and respond to identifiable conditions at runtime                      |
 | [**Finetuning**](finetuning.md)                      | A persistent behaviour or task-performance gap remains after simpler changes                  |
+
+</div>
 
 
 :::tip[Key message]
@@ -27,6 +31,8 @@ Choose improvements based on evaluated failure modes. Do not apply them blindly 
 ## Specific tactics within each route
 
 
+<div class="table-centered">
+
 | Route                                                | Tactic                 | Use when                                                                                 | Examples                                                             |
 | ---------------------------------------------------- | ---------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | **Model and system design**                          | UX and policy design   | Users need clearer expectations, warnings, consent, or escalation paths                  | Improve the user journey, add warnings or consent flows              |
@@ -37,6 +43,8 @@ Choose improvements based on evaluated failure modes. Do not apply them blindly 
 | [**Finetuning**](finetuning.md)                      | —                      | A persistent behaviour or task-performance gap remains after simpler changes             | Improve domain terminology, output format or task-specific behaviour |
 | **Ongoing practice**                                 | Human review           | Errors are high-impact or hard to classify automatically                                 | Escalate uncertain cases for review                                  |
 |                                                      | Monitoring and logging | Risks must be detected after launch and fed back into evals                              | Add cases to evaluation datasets, track incidents                    |
+
+</div>
 
 
 ## Improve across the four principles

@@ -5,11 +5,6 @@ sidebar_position: 5
 
 # Fairness evals
 
-:::info[What's new on this page]
-
-Updated for this release: fairness evaluation for discriminative systems now sits alongside the generative guidance, with the metrics and evaluation design for each.
-
-:::
 
 Fairness evals check whether your system behaves differently across protected or sensitive attributes, groups, languages, or user contexts. What you measure depends on what kind of system you have. For a generative system you are comparing outputs that vary only by an attribute; for a discriminative one you are comparing error rates and calibration across groups.
 
@@ -62,6 +57,8 @@ For a system that classifies, scores, or ranks, fairness testing compares perfor
 
 Compute each of these per group rather than in aggregate, since an aggregate figure hides exactly the differences you are looking for:
 
+<div class="table-centered">
+
 | Metric | What it tells you |
 | --- | --- |
 | Base rate | The proportion of positive cases in each group. Everything else is uninterpretable without it |
@@ -70,6 +67,8 @@ Compute each of these per group rather than in aggregate, since an aggregate fig
 | False positive rate | The proportion of negative cases wrongly flagged. Equal true and false positive rates together is equalised odds |
 | Precision | The proportion of positive predictions that are correct |
 | Calibration | Whether a predicted score of 0.7 corresponds to a 70% observed rate within each group |
+
+</div>
 
 Gaps are usually reported either as a difference between the best and worst group, or as a ratio between them. The ratio is easier to compare across metrics with different scales.
 

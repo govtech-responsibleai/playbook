@@ -5,11 +5,6 @@ sidebar_position: 2
 
 # Finetuning
 
-:::info[What's new on this page]
-
-Updated for this release: guidance on choosing an approach and a base model, running the training itself, and applying finetuning to improve safety.
-
-:::
 
 Finetuning adjusts model weights so outputs suit a particular task, domain, or behaviour profile. It is a higher-investment option than prompting or guardrails, and becomes worth considering when those have run out of headroom.
 
@@ -28,12 +23,16 @@ Prompting, retrieval, or external guardrails are the better answer when the beha
 
 ## Common approaches
 
+<div class="table-centered">
+
 | Approach | What it changes | Choose it when |
 | --- | --- | --- |
 | Supervised finetuning (SFT) | Trains on input → output pairs | The team has examples of the correct output, and the goal is format, structure, style, or domain vocabulary |
 | Preference optimisation (DPO, RLHF, RLAIF) | Trains on preferred versus rejected responses | The team has pairs where one response is better, and the goal is refusal behaviour, tone, safety, or reducing differential treatment |
 | Parameter-efficient tuning (LoRA, adapters) | Updates a small slice of weights | By default, in combination with either of the above, unless it has been tried and the behaviour has not moved far enough |
 | Continued pre-training | Updates base weights on raw domain text | Fundamental vocabulary or language adaptation is needed, and large volumes of raw text are available |
+
+</div>
 
 ## The general process
 

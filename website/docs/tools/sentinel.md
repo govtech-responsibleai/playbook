@@ -5,11 +5,6 @@ sidebar_position: 3
 
 # Sentinel: runtime guardrails for government AI systems
 
-:::info[What's new on this page]
-
-Updated for this release: rewritten around how Sentinel fits your deployment, with guidance on when to use it, where it sits alongside Litmus, and what to watch for.
-
-:::
 
 Sentinel is a guardrails-as-a-service platform run by GovTech as part of [AI Guardian](https://www.aiguardian.gov.sg). It screens the text going into and coming out of your AI system, scores that text against a set of guardrails you select, and returns the scores over an API.
 
@@ -37,6 +32,8 @@ You send text to the Sentinel API together with the guardrails you want applied.
 
 ## Types of guardrails
 
+<div class="table-centered">
+
 | Type | Description | Input | Output |
 | --- | --- | --- | --- |
 | [Toxicity/Content Moderation](../improving-ai-systems/safety-improvements.mdx#content-safety) | Harmful, offensive, or inappropriate content | ✓ | ✓ |
@@ -47,11 +44,15 @@ You send text to the Sentinel API together with the guardrails you want applied.
 | Hallucination | Content not factual or grounded in source material |  | ✓ |
 | [Relevance](../improving-ai-systems/robustness-improvements.mdx) | Responses not pertinent to user queries |  | ✓ |
 
+</div>
+
 This list is not exhaustive, and more guardrails are added on an ongoing basis.
 
 ## Available guardrails
 
 The `lionguard2` suite scores against LionGuard's [harm categories](lionguard.md#harm-categories).
+
+<div class="table-centered">
 
 | Suite | Guardrail | Input/Output | Explanation | Example(s) | Status | Additional Parameters |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -78,6 +79,8 @@ The `lionguard2` suite scores against LionGuard's [harm categories](lionguard.md
 | aws | aws/violence | Input | Detects violence in conversations using AWS Bedrock Guardrails. |  | Available | nil |
 | aws | aws/prompt_attack | Input | Detects attempts to override system instructions using AWS Bedrock Guardrails. |  | Available | nil |
 | aws | aws/pii | Input/Output | Detects sensitive information, such as personally identifiable information (PIIs), in standard format in input prompts or model responses using AWS Bedrock Guardrails. |  | Available | nil |
+
+</div>
 
 ## Where it fits alongside other tools
 

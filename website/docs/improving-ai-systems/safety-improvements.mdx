@@ -139,6 +139,8 @@ Jailbreak techniques routinely evolve. Models trained on known jailbreak pattern
 
 ### Detection tools
 
+<div class="table-centered">
+
 | Tool | Description |
 |---|---|
 | [PromptGuard](https://huggingface.co/meta-llama/Prompt-Guard-86M) | Lightweight 86M-parameter model specifically for detecting jailbreaks/prompt injections. Integrated into the Sentinel API. |
@@ -146,6 +148,8 @@ Jailbreak techniques routinely evolve. Models trained on known jailbreak pattern
 | [deberta-v3-base-injection](https://huggingface.co/deepset/deberta-v3-base-injection) | Model fine-tuned on jailbreaks/prompt injections. May be outdated. |
 | [ProtectAI / Rebuff](https://github.com/protectai/rebuff) | Multi-stage detection framework with a continually updated database of injections plus an LLM-based detector. May be expensive and slow. |
 | [Perplexity heuristics](https://docs.nvidia.com/nemo/guardrails/user-guides/guardrails-library.html#jailbreak-detection-heuristics) | Perplexity-based rules for detecting jailbreaking templates with adversarial prefixes/suffixes. |
+
+</div>
 
 :::tip[Input validation and sanitisation]
 

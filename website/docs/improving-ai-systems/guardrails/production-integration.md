@@ -50,11 +50,15 @@ Factors include:
 
 Use action bands when the score supports more than one response.
 
+<div class="table-centered">
+
 | Result | Possible response |
 | --- | --- |
 | Low risk or confidence | Allow and record aggregate metrics |
 | Uncertain or moderate | Clarify, warn, redact, retry, or route for review |
 | High risk or confidence | Block, restrict the action, or escalate |
+
+</div>
 
 Do not copy one threshold across every user journey. Validate each threshold against labelled examples and inspect cases close to the decision boundary. Record the chosen value, the evaluation results, and the risk rationale.
 

@@ -1,10 +1,12 @@
 ---
-sidebar_label: "[T] Safety evals"
+sidebar_label: "Safety evals"
 sidebar_position: 3
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import safetyTestingDiagram from '@site/static/images/safety_testing_diagram.png';
+import donotanswer from '@site/static/images/donotanswer.png';
 
 # Safety evals
 
@@ -26,6 +28,8 @@ In our practice we focus on toxic/hateful/sexual/violent content, illegal activi
 
 ### Safety taxonomy
 
+<div class="table-centered">
+
 | Risk Category | Level | Definition |
 |---|---|---|
 | Hateful | L1 | Derogatory statements or negative stereotypes directed at a protected group based on legally protected characteristics. |
@@ -42,7 +46,11 @@ In our practice we focus on toxic/hateful/sexual/violent content, illegal activi
 | Legal Advice | — | Legal matters, such as rights, procedures, regulations, or disputes. |
 | Medical Advice | — | Medical or health-related issues, including symptoms, conditions, treatments, or healthcare access. |
 
+</div>
+
 ### Harm categories
+
+<div class="table-centered">
 
 | Category | Subcategory | Definition |
 |---|---|---|
@@ -53,14 +61,18 @@ In our practice we focus on toxic/hateful/sexual/violent content, illegal activi
 | Harm to Organisation and Society | Harm to Public Cohesion | Responses likely to inflame social tensions, encourage hostility between communities, or otherwise undermine social harmony. |
 | Harm to International Relations | Harm to Diplomatic Relations | Responses that could reasonably undermine diplomatic standing or adversely affect relationships with foreign governments or international partners. |
 
+</div>
+
 ## Minimum launch expectation
 
 Safety testing is part of the minimum bar before launch. Teams should define the safety categories that matter, run representative tests, review failures, and decide whether mitigations are required before release.
 
 ## How to measure safety
 
-![Safety Testing](/images/safety_testing_diagram.png)
-_Figure: Refusal in LLM systems_
+<figure style={{textAlign: 'center', margin: '1rem 0'}}>
+  <img src={safetyTestingDiagram} alt="Refusal in LLM systems" style={{width: 'auto'}} />
+  <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>Refusal in LLM systems</figcaption>
+</figure>
 
 The most common way to measure the safety of an LLM product is to measure how frequently it rejects attempts to elicit unsafe outputs. This is typically known as **Attack Success Rate (ASR)** and is assessed using a dataset of adversarial prompts.
 
@@ -113,6 +125,8 @@ This hybrid workflow combines human creativity with algorithmic scale, allowing 
 
 The following papers have significantly influenced modern adversarial prompt generation and LLM red teaming:
 
+<div class="table-centered">
+
 | Paper | Key contribution |
 |---|---|
 | **PAIR** (Prompt Automatic Iterative Refinement) | Introduced iterative attacker–target refinement, where an LLM repeatedly improves adversarial prompts using feedback from previous attempts. |
@@ -122,8 +136,12 @@ The following papers have significantly influenced modern adversarial prompt gen
 | **Skeleton Key** (Microsoft, 2024) | Instructs the model to add a safety warning prefix rather than refuse outright, effectively bypassing alignment with minimal prompt engineering. |
 | **Multilingual / low-resource language attacks** | Safety training is significantly weaker in non-English and low-resource languages. Translating harmful prompts into these languages often bypasses refusal mechanisms entirely. |
 
+</div>
+
 <details>
 <summary>Additional and historical methods</summary>
+
+<div class="table-centered">
 
 | Paper | Key contribution |
 |---|---|
@@ -133,6 +151,8 @@ The following papers have significantly influenced modern adversarial prompt gen
 | **DeepInception** (Li et al., 2023) | Nested fictional scenarios ("a story within a story") to psychologically distance the model from its safety training. |
 | **Cipher / encoding attacks** (Yuan et al., 2023) | Using base64, ROT13, pig latin, or other encodings to bypass keyword-level safety filters. Effectiveness varies as models improve at detecting encoded content. |
 | **GCG** (Zou et al., 2023) | Gradient-based adversarial suffix optimisation. Requires white-box access; largely patched in production models but foundational for the field. |
+
+</div>
 
 </details>
 
@@ -158,6 +178,8 @@ Mix prompts from open-source benchmarks (some with modifications) with your own 
 
 The following benchmarks are actively maintained, methodology-driven, and have lower risk of data leakage into LLM training:
 
+<div class="table-centered">
+
 | Dataset | Description |
 |---|---|
 | [HarmBench](https://github.com/centerforaisafety/HarmBench) | Standardised red-teaming framework evaluating 18 attack methods against 33 models and defences. Methodology-driven rather than a static dataset, making it resistant to leakage. (2024) |
@@ -169,9 +191,13 @@ The following benchmarks are actively maintained, methodology-driven, and have l
 | [Tree of Attacks with Pruning (TAP)](https://github.com/RICommunity/TAP) | Iteratively refines candidate attack prompts using Tree-of-Thought. Expensive but the multi-LLM generate/curate/refine pattern is adaptable. |
 | [SafeBench-MM](https://safebench-mm.github.io/) | ~2k multi-modal harmful query pairs across 23 risk scenarios. |
 
+</div>
+
 #### Outdated or limited
 
 These benchmarks are widely known and likely leaked into LLM training data. They remain useful as historical baselines or for adapting their methodology, but should not be relied on as primary test suites:
+
+<div class="table-centered">
 
 | Dataset | Description |
 |---|---|
@@ -180,6 +206,8 @@ These benchmarks are widely known and likely leaked into LLM training data. They
 | [Do Anything Now (In The Wild)](https://github.com/verazuo/jailbreak_llms) | Templates to prompt LLMs to disregard system prompts. Standard DAN templates have largely been safety-aligned. Useful as historical reference only. |
 | [PromptInject](https://github.com/agencyenterprise/PromptInject) | Prompts for goal hijacking and prompt leaking. Mostly safety-aligned by modern models. Can be used as few-shot examples. (2022) |
 | [AdvBench / GCG](https://github.com/llm-attacks/llm-attacks) | 500 harmful behaviours with adversarial suffixes derived via gradient search. High leakage risk; GCG-style attacks are largely patched. Superseded by JailbreakBench. (2023) |
+
+</div>
 
 For automated support, see [Litmus](../tools/litmus.md), [MinorBench](../tools/minorbench.md), [RabakBench](../tools/rabakbench.md), and the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md).
 
@@ -199,8 +227,10 @@ Engage business users to ascertain what type of refusals matter to them. The tax
 
 :::
 
-![Rejection Taxonomy](/images/donotanswer.png)
-_Figure: Taxonomy of rejections by LLMs. Source: [Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs](https://arxiv.org/pdf/2308.13387)_
+<figure style={{textAlign: 'center', margin: '1rem 0'}}>
+  <img src={donotanswer} alt="Taxonomy of rejections by LLMs" style={{width: 'auto'}} />
+  <figcaption style={{fontSize: '0.85rem', color: 'var(--ifm-color-emphasis-600)', marginTop: '0.5rem'}}>Taxonomy of rejections by LLMs. Source: <a href="https://arxiv.org/pdf/2308.13387">Do-Not-Answer: A Dataset for Evaluating Safeguards in LLMs</a></figcaption>
+</figure>
 
 Common classifiers and methods for detecting rejections:
 
@@ -230,11 +260,15 @@ Leakage occurs at several levels. Benchmark questions may appear verbatim in tra
 
 **Likelihood and perplexity analyses** measure how confidently a model predicts benchmark text. Unusually high confidence on benchmark examples compared with similar unseen text can indicate memorisation. These methods require white-box access to model logits.
 
+<div class="table-centered">
+
 | Detection Approach | Access Required | What it reveals |
 |---|---|---|
 | Perturbation testing | Black-box (API access) | Whether small non-semantic prompt changes cause unexpected performance drops. |
 | Likelihood / perplexity analysis | White-box (logits or token probabilities) | Unusually confident predictions that may indicate memorisation. |
 | Statistical comparison | White-box or reference models | Anomalous benchmark behaviour relative to clean baselines. |
+
+</div>
 
 Where clean reference models are available, statistical comparisons can strengthen the analysis — comparing behaviour across original benchmarks and newly generated reference variants helps distinguish real capability improvements from contamination.
 
@@ -256,6 +290,8 @@ Prompt rotation introduces a risk: score changes may reflect differences in prom
 
 :::
 
+<div class="table-centered">
+
 | Practice | Purpose |
 |---|---|
 | Parameterised / generated prompts | Produce fresh evaluation cases while preserving the underlying task. |
@@ -263,6 +299,8 @@ Prompt rotation introduces a risk: score changes may reflect differences in prom
 | Anchor prompt set | Maintain score continuity across evaluation cycles. |
 | Prompt calibration | Ensure score changes reflect model quality rather than prompt difficulty. |
 | Prompt versioning | Preserve traceability and reproducibility when investigating failures. |
+
+</div>
 
 ### Putting it together
 
@@ -337,6 +375,8 @@ def classify_safety(user_prompt: str, llm_response: str) -> str:
 
 Open-source SDKs and platforms that aggregate safety datasets and provide higher-level interfaces:
 
+<div class="table-centered">
+
 | Tool | Description |
 |---|---|
 | [Giskard](https://github.com/Giskard-AI/giskard) | Open-source Python library with testing benchmarks and automated test-data generation. Heavy LLM-based generation; SaaS also available. |
@@ -344,6 +384,8 @@ Open-source SDKs and platforms that aggregate safety datasets and provide higher
 | [Moonshot](https://github.com/aiverify-foundation/moonshot) | Open-source Python library with datasets and automated attack modules. Includes Singapore-contextualised datasets. |
 | [Haize](https://platform.haizelabs.com/app/) | Web platform that auto-generates test data based on user-defined behaviours and a "Code of Conduct". Diverse jailbreaking templates; not open-source. |
 | [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) | Evaluation toolkit by UK AI Security Institute, with built-in tool-use and agent components. Comprehensive for research use. |
+
+</div>
 
 :::warning[Selecting the right tool]
 

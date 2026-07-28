@@ -31,7 +31,6 @@ repo root/
 │   │   ├── pages/index.tsx        ← custom home page (React)
 │   │   ├── css/custom.css
 │   │   └── components/
-│   │       ├── OurWork/           ← project card grid component
 │   │       └── FeedbackWidget/    ← thumbs up/down per-page feedback
 │   ├── docs/                      ← reader-facing content (MD/MDX)
 │   ├── static/                    ← images, favicons
@@ -42,6 +41,7 @@ repo root/
 │   └── pages-staging.yml          ← staging deploy configuration
 ├── README.md
 ├── CONTRIBUTING.md
+├── PAGE-STANDARDS.md              ← page structure, release-marking, and linking rules
 ├── AGENTS.md
 └── CLAUDE.md                      ← must be identical to AGENTS.md
 ```
@@ -51,9 +51,8 @@ Key locations (Docusaurus):
 - `website/docusaurus.config.ts`: site config, including environment-specific `url` and `baseUrl`.
 - `website/sidebars.ts`: explicit sidebar ordering.
 - `website/src/css/custom.css`: dark-teal theme CSS variables and custom highlight classes.
-- `website/src/components/OurWork/`: React component rendering project cards from `data.json`.
 - `website/src/components/FeedbackWidget/`: thumbs up/down widget that fires GA4 custom events.
-- `website/docs/contributing/page-standards.md`: source of truth for page structure and release-marking conventions.
+- `PAGE-STANDARDS.md`: source of truth for page structure and release-marking conventions.
 - `.github/workflows/pages-staging.yml`: staging deploy workflow with GitHub Pages path settings.
 - `CONTRIBUTING.md`: contributor workflow, PR expectations, and release-note process for GitHub collaborators.
 
@@ -103,7 +102,7 @@ Because there are no tests, review attention belongs on factual accuracy, tone, 
 
 ## Page standards
 
-Follow `website/docs/contributing/page-standards.md` for:
+Follow `PAGE-STANDARDS.md` for:
 
 - the single "What's new on this page" release admonition (refreshed or removed at every release; no branch names or editing history),
 - placeholder and roadmap conventions (no empty section headings, no internal shorthand such as "KIV" in reader-facing text),

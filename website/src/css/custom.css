@@ -187,7 +187,8 @@ mark.new-since-v1,
    media queries. min() keeps a card from overflowing containers under 200px. */
 .access-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  justify-content: start;
   gap: 0.75rem;
   width: 100%;
   margin: 1.5rem 0 2rem;
@@ -969,4 +970,17 @@ figcaption {
 
 .capability-group--operational {
   --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 17 6-6-6-6'/%3E%3Cpath d='M12 19h8'/%3E%3C/svg%3E");
+}
+
+.table-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-caption {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.5rem;
+  text-align: center;
 }

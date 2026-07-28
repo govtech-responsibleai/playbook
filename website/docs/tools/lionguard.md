@@ -6,7 +6,7 @@ sidebar_position: 4
 
 <div class="tool-intro">
 
-<img src="/images/lionguard.png" alt="LionGuard" class="tool-logo" />
+![LionGuard](/images/lionguard.png)
 
 LionGuard is GovTech's localised content moderation guardrail for Singapore's linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
 
@@ -24,6 +24,8 @@ LionGuard 2 enhances moderation through:
 
 LionGuard assigns a risk score to each of the categories below. Some categories are further classified into severity levels, with Level 2 indicating higher severity than Level 1. If a Level 2 instance is detected, Level 1 is also flagged by design.
 
+<div class="table-centered">
+
 | S/N | Category | Description |
 | --- | --- | --- |
 | 1 | Hateful | Text that discriminates, criticises, insults, denounces, or dehumanises a person or group on the basis of a protected identity (e.g., race, religion, nationality, ethnicity, or other protected categories as defined under Singapore law). <br />**[Level 1: Discriminatory Speech]** Derogatory statements or negative stereotypes against a protected group. <br />**[Level 2: Hate Speech]** Explicit calls for harm or violence against a protected group; or language praising or justifying violence. |
@@ -32,6 +34,8 @@ LionGuard assigns a risk score to each of the categories below. Some categories 
 | 4 | Physical Violence | Text that includes glorification of violence or threats to inflict physical harm or injury on a person, group, or entity. |
 | 5 | Self-Harm | Text that promotes, suggests, or expresses intent to self-harm or commit suicide. <br />**[Level 1: Ideation]** Expressions of suicidal thoughts or self-harm intention; or content encouraging someone to self-harm. <br />**[Level 2: Self-harm action or Suicide]** Descriptions or indications of ongoing or imminent self-harm behaviour. |
 | 6 | All Other Misconduct | Text that seeks or provides information about engaging in misconduct, wrongdoing, or criminal activity, or that threatens to harm, defraud, or exploit others. This includes facilitating illegal acts (under Singapore law) or other forms of socially harmful activity. <br />**[Level 1: Generally not socially accepted]** Advocates or instructs on unethical/immoral activities that may not necessarily be illegal but are socially condemned. <br />**[Level 2: Illegal activities]** Seeks or provides instructions to carry out clearly illegal activities or serious wrongdoing; includes credible threats of severe harm. |
+
+</div>
 
 ## LionGuard's lightweight architecture
 
@@ -42,11 +46,15 @@ Lightweight deployment is central to LionGuard's design. LionGuard 2 pairs a pre
 There are three versions of LionGuard 2. All share the same methodology and differ only in the embedding model they use, so the LionGuard 2 [paper](https://arxiv.org/abs/2507.15339) and [blog post](https://go.gov.sg/lionguard-2-blog) describe how each version works. For best performance, we recommend **LionGuard 2.1**. For local deployment, we recommend **LionGuard 2 Lite**.
 
 
+<div class="table-centered">
+
 | Version          | Embedding model          | Best for                                                                                                                 |
 | ---------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
 | LionGuard 2      | `text-embedding-3-large` | Baseline classifier with strong, robust performance across all benchmarks.                                               |
 | LionGuard 2.1    | `gemini-embedding-001`   | Strong performance across all benchmarks, particularly in multilingual settings.                                       |
 | LionGuard 2 Lite | `embeddinggemma-300m`    | Most lightweight, on-prem variant with no external API dependency, best for restricted environments and local inference. |
+
+</div>
 
 
 ## Access

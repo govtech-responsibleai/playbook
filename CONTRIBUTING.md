@@ -11,7 +11,7 @@ Use `website/docs/` for reader-facing content. Keep contributor process, release
 Before adding or revising pages, review:
 
 - `AGENTS.md` for repository-specific working conventions.
-- `website/docs/contributing/page-standards.md` for page structure, release-marking, ownership, and linking rules.
+- `PAGE-STANDARDS.md` for page structure, release-marking, ownership, and linking rules.
 
 When you add a new page:
 

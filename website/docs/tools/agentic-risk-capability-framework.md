@@ -5,11 +5,6 @@ sidebar_position: 2
 
 # Agentic Risk & Capability Framework
 
-:::info[What's new on this page]
-
-New in this release: full guidance on applying ARC, covering the capability taxonomy, how risks are classified, the four-step assessment process, and the three control levels.
-
-:::
 
 The [Agentic Risk and Capability Framework](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/) (ARC) is GovTech's technical governance framework for identifying, assessing, and mitigating safety and security risks in agentic AI systems. It gives you three things: a taxonomy of what agentic systems can do, a register of 46 risks tied to those capabilities, and 88 technical controls tied to those risks.
 
@@ -58,11 +53,15 @@ Identify which capabilities your system has, and the register returns the risks 
 
 Every risk in the register is described along three dimensions, which is what lets you filter it rather than read it as a flat list.
 
+<div class="table-centered">
+
 | Dimension | Values |
 | --- | --- |
 | [Element](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/arc_framework/elements/) | The component, design element, or capability the risk arises from |
 | [Failure mode](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/arc_framework/risks/#failure-modes) | Agent failure, external manipulation, or tool and resource malfunction |
 | [Hazard](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/arc_framework/risks/#hazards) | Security (data, application, infrastructure and network, identity and access management) or safety (illegal and CBRNE activity, discriminatory or hateful content, inappropriate content, compromised user safety, misrepresentation) |
+
+</div>
 
 The three failure modes describe how a system goes wrong rather than what goes wrong as a result: (1) **agent failure**, where the agent does not operate as intended through poor performance, misalignment, or unreliability, (2) **external manipulation**, where a malicious actor deliberately causes the agent to deviate from intended behaviour, and (3) **tool or resource malfunction**, where the tools and resources your system depends on fail, are compromised, or prove inadequate.
 
@@ -88,11 +87,15 @@ ARC runs these four steps end to end against three systems in its [application e
 
 Controls are graded by how much latitude you have in applying them.
 
+<div class="table-centered">
+
 | Level | Name | Expectation |
 | --- | --- | --- |
 | 0 | Cardinal | A fundamental requirement that cannot be waived. Adopted as written rather than adapted. |
 | 1 | Standard | Adopted or adapted meaningfully and sensibly to the implementation. |
 | 2 | Best practice | Worth considering, particularly for higher-risk systems. |
+
+</div>
 
 Each control works either by reducing the impact of a failure or by reducing the likelihood of it occurring, and the [controls documentation](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/arc_framework/controls/) states which of the two a given control is doing. A single risk usually draws controls from more than one level. The risk of prompt injection through retrieved web content, for instance, carries two Level 0 controls alongside a Level 1 one.
 
