@@ -31,7 +31,6 @@ repo root/
 │   │   ├── pages/index.tsx        ← custom home page (React)
 │   │   ├── css/custom.css
 │   │   └── components/
-│   │       ├── OurWork/           ← project card grid component
 │   │       └── FeedbackWidget/    ← thumbs up/down per-page feedback
 │   ├── docs/                      ← reader-facing content (MD/MDX)
 │   ├── static/                    ← images, favicons
@@ -52,7 +51,6 @@ Key locations (Docusaurus):
 - `website/docusaurus.config.ts`: site config, including environment-specific `url` and `baseUrl`.
 - `website/sidebars.ts`: explicit sidebar ordering.
 - `website/src/css/custom.css`: dark-teal theme CSS variables and custom highlight classes.
-- `website/src/components/OurWork/`: React component rendering project cards from `data.json`.
 - `website/src/components/FeedbackWidget/`: thumbs up/down widget that fires GA4 custom events.
 - `PAGE-STANDARDS.md`: source of truth for page structure and release-marking conventions.
 - `.github/workflows/pages-staging.yml`: staging deploy workflow with GitHub Pages path settings.

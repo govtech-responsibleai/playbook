@@ -35,7 +35,7 @@ Every application's out-of-context reliability scenarios will differ since each 
 
 :::note[KnowOrNot]
 
-Based on this testing methodology, [`KnowOrNot`](../tools/knowornot.md) generates out-of-knowledge-base queries and automatically assesses LLM applications' tendency to abstain accordingly. Details: [blog post](https://medium.com/dsaid-govtech/does-your-llm-know-when-to-say-i-dont-know-465b509505dc) and [paper](https://arxiv.org/abs/2505.13545).
+Based on this testing methodology, [`KnowOrNot`](../tools/knowornot.md) generates out-of-knowledge-base queries and automatically assesses LLM applications' tendency to abstain accordingly. Details: [blog post](https://blog.ai.gov.sg/does-your-llm-know-when-to-say-i-dont-know/) and [paper](https://arxiv.org/abs/2505.13545).
 
 :::
 
