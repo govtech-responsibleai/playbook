@@ -6,7 +6,7 @@ sidebar_position: 4
 
 <div class="tool-intro">
 
-<img src="/images/lionguard.png" alt="LionGuard" class="tool-logo" />
+![LionGuard](/images/lionguard.png)
 
 LionGuard is GovTech's localised content moderation guardrail for Singapore's linguistic and cultural context, addressing limitations in localisation and contextualisation faced by standard moderation guardrails.
 
