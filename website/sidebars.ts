@@ -23,7 +23,6 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Evals for RAI principles',
           collapsed: true,
-          link: {type: 'doc', id: 'evaluating-ai-systems/rai-principles'},
           items: [
             {type: 'doc', id: 'evaluating-ai-systems/safety', label: 'Safety evals'},
             {type: 'doc', id: 'evaluating-ai-systems/robustness', label: 'Robustness evals'},
@@ -56,7 +55,6 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: 'Improving RAI principles',
           collapsed: true,
-          link: {type: 'doc', id: 'improving-ai-systems/improving-rai-principles'},
           items: [
             {type: 'doc', id: 'improving-ai-systems/safety-improvements', label: 'Safety improvements'},
             {type: 'doc', id: 'improving-ai-systems/robustness-improvements', label: 'Robustness improvements'},
