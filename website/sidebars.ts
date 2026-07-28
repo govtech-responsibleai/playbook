@@ -25,7 +25,7 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           link: {type: 'doc', id: 'evaluating-ai-systems/rai-principles'},
           items: [
-            {type: 'doc', id: 'evaluating-ai-systems/safety', label: '[T] Safety evals'},
+            {type: 'doc', id: 'evaluating-ai-systems/safety', label: 'Safety evals'},
             {type: 'doc', id: 'evaluating-ai-systems/robustness', label: 'Robustness evals'},
             {type: 'doc', id: 'evaluating-ai-systems/fairness', label: 'Fairness evals'},
             {type: 'doc', id: 'evaluating-ai-systems/privacy', label: 'Privacy evals'},
@@ -105,7 +105,7 @@ const sidebars: SidebarsConfig = {
           label: 'Frameworks',
           collapsed: true,
           items: [
-            {type: 'doc', id: 'tools/wog-safety-testing', label: '[T] WOG Safety Testing Framework'},
+            {type: 'doc', id: 'tools/wog-safety-testing', label: 'WOG Safety Testing Framework'},
             {type: 'doc', id: 'tools/agentic-risk-capability-framework', label: 'Agentic Risk & Capability Framework'},
             {type: 'doc', id: 'tools/knowornot', label: 'KnowOrNot'},
           ],
