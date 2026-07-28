@@ -107,6 +107,14 @@ $$
 
 As this benchmark consists exclusively of adversarial prompts designed to elicit unsafe responses, the unsafe engagement rate is equivalent to the ASR. The benchmark is able to distinguish between chatbot systems with different levels of safety performance, providing evidence of its discriminative validity.
 
+## Access
+
+<div class="access-grid">
+
+  <a class="access-card access-card--paper" href="https://arxiv.org/abs/2507.09820"><strong>Paper</strong><span>WOG safety testing framework methodology</span></a>
+
+</div>
+
 ## Where to go next
 
 - [Safety evals](../evaluating-ai-systems/safety.mdx) — for the operational evaluation playbook.

@@ -187,7 +187,8 @@ mark.new-since-v1,
    media queries. min() keeps a card from overflowing containers under 200px. */
 .access-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  justify-content: start;
   gap: 0.75rem;
   width: 100%;
   margin: 1.5rem 0 2rem;
