@@ -1,0 +1,21 @@
+changelog:
+  exclude:
+    labels:
+      - skip-release-notes
+      - internal
+  categories:
+    - title: New pages and sections
+      labels:
+        - new-page
+    - title: Updates to existing guidance
+      labels:
+        - enhancement
+    - title: Fixes
+      labels:
+        - fix
+    - title: Breaking changes
+      labels:
+        - breaking
+    - title: Other changes
+      labels:
+        - "*"

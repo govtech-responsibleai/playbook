@@ -1,0 +1,303 @@
+/* ─── Hero ─────────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100svh - var(--ifm-navbar-height, 60px));
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: var(--hero-background);
+  background-color: #c5c3bd;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+    linear-gradient(to top right, rgba(186, 47, 162, 0.2) 0%, rgba(0, 192, 243, 0.2) 100%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: white;
+  max-width: min(900px, calc(100% - 4rem));
+  padding: 2rem;
+}
+
+.heroLogo {
+  width: min(320px, 60vw);
+  height: auto;
+  margin-bottom: 2rem;
+  object-fit: contain;
+}
+
+.heroContent h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.responsibleAi {
+  transition: -webkit-text-fill-color 0.3s ease;
+}
+
+.heroContent:has(.ctaButton:hover) .responsibleAi {
+  background: linear-gradient(135deg, #66d9f7 0%, #d580cc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.playbookTitle {
+  white-space: nowrap;
+}
+
+.playbookTagline {
+  display: block;
+  color: #fff;
+  padding: 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #00c0f3 0%, #ba2fa2 100%);
+  color: #fff !important;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px) scale(1.05);
+  text-decoration: none;
+}
+
+.ctaButton:hover::before {
+  animation: none;
+  left: 100%;
+  transition: left 0.5s ease;
+}
+
+@keyframes shine {
+  0%, 65% {
+    left: -100%;
+  }
+  80%, 100% {
+    left: 100%;
+  }
+}
+
+/* ─── Typing animation ───────────────────────────────────────────────────── */
+
+.typedWrapper {
+  display: inline;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+}
+
+.typedAreas {
+  color: #fff;
+}
+
+.typedCaret {
+  display: inline-block;
+  margin-left: 0;
+  color: #fff;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ─── Key areas section ───────────────────────────────────────────────────── */
+
+.keyAreasSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.keyAreasSection h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.keyAreasGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.keyAreaCard {
+  background: var(--ifm-card-background-color, var(--ifm-background-color));
+  border: 2px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.keyAreaCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--ifm-color-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.keyAreaCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
+}
+
+.keyAreaCard:hover::before {
+  transform: scaleX(1);
+}
+
+.keyAreaIcon {
+  font-size: 2rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.keyAreaCard h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.keyAreaCard p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: var(--hero-background-mobile);
+    padding: 2rem 1.5rem;
+    align-items: flex-end;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .playbookTagline {
+    white-space: normal;
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    width: fit-content;
+    text-align: center;
+  }
+
+  .keyAreasSection {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .keyAreasGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .keyAreaCard {
+    padding: 1.5rem;
+  }
+
+  .keyAreasSection h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .heroContent {
+    padding: 1rem;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .playbookTagline {
+    font-size: 0.85rem;
+  }
+
+  .ctaButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .playbookTitle {
+    white-space: normal;
+  }
+}

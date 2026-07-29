@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 160px;
+  height: 80px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: default;
+  transition: opacity 0.2s;
+}
+
+.active {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.inactive {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-500);
+  cursor: help;
+}
+
+.arrow {
+  color: var(--ifm-color-emphasis-400);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: unset;
+  }
+
+  .pill {
+    width: 130px;
+    height: 70px;
+    font-size: 0.85rem;
+  }
+}

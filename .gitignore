@@ -45,4 +45,12 @@ ENV/
 *.db
 
 # Local development settings
-local_settings.py 
+local_settings.py
+
+# MkDocs build output
+site/
+
+# Agents
+openspec
+.superpowers
+docs/superpowers/

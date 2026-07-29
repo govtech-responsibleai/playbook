@@ -1,0 +1,129 @@
+---
+sidebar_label: "Getting started"
+sidebar_position: 1
+---
+import Link from '@docusaurus/Link';
+import LifecycleDiagram from '@site/src/components/LifecycleDiagram';
+
+# Welcome to the Responsible AI Playbook!
+
+This playbook is developed by GovTech Singapore's AI Practice to help you **build safe and trustworthy AI systems** with practical guidance and tools.
+
+## About us
+
+We are the Responsible AI team in GovTech Singapore's AI Practice. We develop deep technical capabilities in Responsible AI to improve how the Singapore government develops, evaluates, deploys, and monitors AI systems in a safe, trustworthy, and ethical manner. To that end, we focus on applied research and experimentation on AI safety, fairness, and interpretability, especially in areas relevant to Singapore (such as localisation and low-resource languages).
+
+We benefit a lot from open-source research, and we are happy to contribute back to the community through our open-sourced work such as [LionGuard 2](https://huggingface.co/collections/govtech/lionguard-2), [Kaleidoscope](https://github.com/govtech-responsibleai/kaleidoscope), and the [Agentic Risk &amp; Capability Framework](https://govtech-responsibleai.github.io/agentic-risk-capability-framework/). Check out our [Hugging Face page](https://huggingface.co/govtech) and our blog articles [here](https://blog.ai.gov.sg) too!
+
+## Who is this for?
+
+This playbook is primarily designed for **application developers**  in the Singapore public sector who are building and launching AI products while navigating concerns around safety, fairness, and bias. It is also relevant to **product managers, CIO teams, policy officers, and others** with a foundational understanding of AI who want to learn more about Responsible AI.
+
+Although the playbook is written with the Singapore Government context in mind, most of its principles, explanations, and recommendations are broadly applicable to organisations developing AI systems. Building AI that is safe, fair, and responsible is a shared goal across sectors and contexts.
+
+Find yourself below, then follow the route into the playbook — each one is ordered, so start at step 1.
+
+<div className="rai-card-grid">
+
+<div className="rai-card archetype-route archetype-route--developer">
+<strong>Application developers</strong>
+<span>You build and launch AI systems, and want to ship safely without becoming a Responsible AI specialist.</span>
+<ol>
+<li><Link to="/evaluating-ai-systems/">Plan your evaluation</Link></li>
+<li><Link to="/tools/lionguard/">Add an off-the-shelf guardrail</Link></li>
+<li><Link to="/improving-ai-systems/safety-improvements/">Defend against prompt injection</Link></li>
+</ol>
+</div>
+
+<div className="rai-card archetype-route archetype-route--governance">
+<strong>Governance teams</strong>
+<span>You oversee AI risk across an organisation — setting policy, reviewing launches, and tracking residual risk.</span>
+<ol>
+<li><Link to="/start-here/about-responsible-ai/">Start with the six principles</Link></li>
+<li><Link to="/evaluating-ai-systems/">Adopt a shared evaluation framework</Link></li>
+<li><Link to="/improving-ai-systems/">Require improvement patterns</Link></li>
+</ol>
+</div>
+
+<div className="rai-card archetype-route archetype-route--practitioner">
+<strong>AI practitioners</strong>
+<span>You build models, evaluations, or systems, and want patterns you can apply alongside your existing work.</span>
+<ol>
+<li><Link to="/evaluating-ai-systems/methods/">Choose an evaluation method</Link></li>
+<li><Link to="/improving-ai-systems/guardrails/production-integration/">Tune your thresholds</Link></li>
+<li><Link to="/improving-ai-systems/guardrails/choosing-a-guardrail/">Build your own guardrail</Link></li>
+</ol>
+</div>
+
+</div>
+
+### Application developers who build AI systems
+
+You build and launch AI products and want to ship safely with practical guidance.
+
+What this playbook gives you:
+
+- A [simple and effective approach to developing an evaluation plan](../evaluating-ai-systems/index.md) you can run before launch.
+- Open-source guardrails, like [LionGuard 2](../tools/lionguard.md), and benchmarks, like [MinorBench](../tools/minorbench.md) you can drop into your stack.
+- Concrete guides for [PII redaction](../improving-ai-systems/privacy-improvements.mdx#pii-protection), [content safety](../improving-ai-systems/safety-improvements.mdx#content-safety), and [prompt-injection defence](../improving-ai-systems/safety-improvements.mdx#prompt-injection-and-jailbreaks).
+
+### Governance officers who oversee AI systems
+
+You oversee AI risk across an organisation — setting policy, reviewing launches, and tracking residual risk.
+
+What this playbook gives you:
+
+- [A shared evaluation framework](../evaluating-ai-systems/index.md) across safety, robustness, fairness, and privacy dimensions.
+- [Clear understanding of Responsible AI](./about-responsible-ai.mdx) and its 6 principles.
+- Concrete [improvement patterns](../improving-ai-systems/index.md) — guardrails, finetuning, and principle-specific controls — to require of product teams.
+
+### AI practitioners who want to learn more about Responsible AI
+
+You are a data scientist or AI/ML engineer building AI models, evaluations, or systems, and want practical Responsible AI patterns you can apply alongside your existing work.
+
+What this playbook gives you:
+
+- Deep technical guidance on [evaluation methods](../evaluating-ai-systems/methods.mdx) and [guardrails](../improving-ai-systems/guardrails/what-are-guardrails.mdx).
+- Benchmarks we maintain — [RabakBench](../tools/rabakbench.md), [MinorBench](../tools/minorbench.md), the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md) — and the [Litmus](../tools/litmus.md) test harness.
+- A curated reading list of papers, surveys, and external tools in [External resources](../resources.md).
+
+## Why this playbook?
+
+Our aim is to help people understand and apply Responsible AI from a technical perspective. We do so in three ways:
+
+1. Clear and detailed **explanations for key concepts** in Responsible AI (such as safety, fairness, and interpretability)
+2. Easy-to-follow and actionable **recommendations for deploying AI responsibly** for your applications
+3. **Curated resources and papers** to dive deeper into various aspects of Responsible AI
+
+Our hope is for our playbook to help you to **quickly grasp the entire landscape** of papers, guides, tools, and methodologies relating to Responsible AI, provide a **practical starting point** to guard your AI systems against basic risks, and thus enabling you to **ship fast and responsibly**.
+
+We organised this playbook around a practical AI development lifecycle:
+
+<LifecycleDiagram />
+
+## Other Relevant Work
+
+Our playbook sits alongside a variety of other resources that may also be relevant for your work:
+
+- If you are a public sector officer interested in AI governance in the Singapore public sector, please refer to the internal Circulars published by the National AI Group.
+- If you are a member of public interested in broader AI governance, please refer to IMDA's [Model AI Governance Framework for Generative AI](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2024/public-consult-model-ai-governance-framework-genai) and [Model AI Governance Framework for Agentic AI](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)
+- For specific guidance on AI security, please refer to CSA's [Guidelines and Companion Guide for Securing AI Systems](https://www.csa.gov.sg/resources/publications/guidelines-and-companion-guide-on-securing-ai-systems/) and their [Draft Addendum on Securing Agentic AI](https://www.csa.gov.sg/resources/publications/addendum-on-securing-ai-systems/).
+
+## Citation
+
+To cite this work, please use the following BibTeX citation:
+
+```
+@article{responsible_ai_playbook_govtech_singapore,
+    title   = {Responsible AI Playbook},
+    author  = {GovTech Singapore},
+    year    = {2025},
+    month   = {August},
+    url     = {https://playbooks.aip.gov.sg/responsibleai/}
+}
+```
+
+Alternatively, you may use the APA-formatted citation below:
+
+> GovTech Singapore (2025) Responsible AI Playbook. URL [https://playbooks.aip.gov.sg/responsibleai/](https://playbooks.aip.gov.sg/responsibleai/)
+

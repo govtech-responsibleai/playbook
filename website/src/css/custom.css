@@ -1,0 +1,986 @@
+/* ─── Brand colours ─────────────────────────────────────────────────────────
+   Generated from MkDocs Material palette (#0d363b dark-teal primary).
+   Docusaurus requires 7 shades per colour family.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --ifm-color-primary: #0d363b;
+  --ifm-color-primary-dark: #0b2f33;
+  --ifm-color-primary-darker: #0a2c30;
+  --ifm-color-primary-darkest: #082427;
+  --ifm-color-primary-light: #0f3d43;
+  --ifm-color-primary-lighter: #104046;
+  --ifm-color-primary-lightest: #145c64;
+
+  --ifm-link-color: #007aa8;
+  --ifm-link-hover-color: #005f86;
+
+  --ifm-font-family-base: 'Lato', system-ui, -apple-system, sans-serif;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #4db8c0;
+  --ifm-color-primary-dark: #37b1ba;
+  --ifm-color-primary-darker: #2eadb6;
+  --ifm-color-primary-darkest: #239198;
+  --ifm-color-primary-light: #63bfc7;
+  --ifm-color-primary-lighter: #6cc2ca;
+  --ifm-color-primary-lightest: #8acdd3;
+
+  --ifm-link-color: #4dd4f6;
+  --ifm-link-hover-color: #80e0fa;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+
+body {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* Images fill container width by default */
+.markdown img {
+  width: 100%;
+  height: auto;
+}
+
+/* Opt-out for small inline logos, e.g. the LionGuard tool logo */
+.markdown img.tool-logo {
+  width: 200px;
+  max-width: 100%;
+}
+
+/* Logo left, intro text right; stacks on narrow viewports */
+.tool-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.tool-intro img.tool-logo {
+  flex-shrink: 0;
+}
+
+.tool-intro p {
+  flex: 1 1 260px;
+  margin: 0;
+}
+
+/* Navbar logo sizing */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo img {
+  height: 4.2rem;
+  width: auto;
+  vertical-align: middle;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__title {
+  line-height: 1;
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Footer styling */
+.footer {
+  --ifm-footer-padding-vertical: 0.5rem;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .footer__links {
+    gap: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Hide logo and title inside mobile sidebar but keep close button and dark mode toggle */
+@media (max-width: 996px) {
+  .navbar-sidebar__brand .navbar__logo,
+  .navbar-sidebar__brand .navbar__title {
+    display: none;
+  }
+}
+
+.footer__link-item svg {
+  display: none;
+}
+
+.footer__copyright {
+  font-size: 0.75rem;
+}
+
+/* Two-column "dimension/value" tables inside admonitions:
+   constrain the first column so the value column gets the rest. */
+.theme-admonition table {
+  table-layout: fixed;
+  width: 100%;
+}
+.theme-admonition table th:first-child,
+.theme-admonition table td:first-child {
+  width: 35%;
+}
+.theme-admonition table td {
+  word-wrap: break-word;
+}
+
+/* ─── Release / highlight markers ───────────────────────────────────────────
+   Ported from MkDocs typography.css.
+   Removed when a page is promoted to stable.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+mark.new-since-v1,
+.new-since-v1 {
+  background-color: #fff3cd;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+
+.new-since-v1 p {
+  background-color: inherit;
+}
+
+/* ─── Access cards ──────────────────────────────────────────────────────────
+   Link boxes for tool pages, e.g. docs/tools/kaleidoscope.md. Copy this into
+   the page's "## Access" section and edit the hrefs and labels; the blank
+   lines around the cards are required for Markdown to leave the HTML alone:
+
+     <div class="access-grid">
+
+       <a class="access-card access-card--repo" href="…"><strong>Repository</strong><span>Open-source repository</span></a>
+       <a class="access-card access-card--docs" href="…"><strong>Documentation</strong><span>Setup and configuration guides</span></a>
+
+     </div>
+
+   Available icon modifiers: --paper, --repo, --docs, --blog, --dataset.
+   Any number of cards works; the grid sizes itself to fit them.
+   Colours come from Infima variables, so light and dark mode are both
+   handled without a separate [data-theme='dark'] block.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* auto-fit collapses tracks that no card occupies, so the grid adapts to however
+   many cards a page has: 3 cards fill the row just as evenly as 4 do, and the
+   columns wrap down to 2 and then 1 as the viewport narrows — no per-count
+   media queries. min() keeps a card from overflowing containers under 200px. */
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  justify-content: start;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+}
+
+.access-card {
+  position: relative;
+  display: block;
+  padding: 1.1rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: var(--ifm-color-emphasis-100);
+  transition:
+    transform 0.15s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.access-card:hover {
+  transform: translateY(-3px);
+  background-color: var(--ifm-color-primary);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 12%);
+  text-decoration: none;
+}
+
+/* Leading Lucide icon. Add one modifier class to the card and the glyph comes
+   from CSS, so pages never carry inline SVG:
+
+     <a class="access-card access-card--repo" href="…">…</a>
+
+   To add a kind, append a modifier below with its own --access-icon URL. The
+   box is pinned so every glyph renders at the same height regardless of how
+   much of its viewBox it fills. */
+.access-card[class*="access-card--"]::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-bottom: 0.6rem;
+  background-color: var(--ifm-color-primary);
+  -webkit-mask: var(--access-icon) center / contain no-repeat;
+  mask: var(--access-icon) center / contain no-repeat;
+  transition: background-color 0.2s ease;
+}
+
+.access-card--repo {
+  --access-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4'/%3E%3Cpath d='M9 18c-4.51 2-5-2-7-2'/%3E%3C/svg%3E");
+}
+
+.access-card--docs {
+  --access-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 7v14'/%3E%3Cpath d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/%3E%3C/svg%3E");
+}
+
+.access-card--paper {
+  --access-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z'/%3E%3Cpath d='M14 2v4a2 2 0 0 0 2 2h4'/%3E%3Cpath d='M10 9H8'/%3E%3Cpath d='M16 13H8'/%3E%3Cpath d='M16 17H8'/%3E%3C/svg%3E");
+}
+
+.access-card--blog {
+  --access-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 18h-5'/%3E%3Cpath d='M18 14h-8'/%3E%3Cpath d='M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2'/%3E%3Cpath d='M10 6h8v4h-8V6Z'/%3E%3C/svg%3E");
+}
+
+.access-card--dataset {
+  --access-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='9' ry='3'/%3E%3Cpath d='M3 5v14a9 3 0 0 0 18 0V5'/%3E%3Cpath d='M3 12a9 3 0 0 0 18 0'/%3E%3C/svg%3E");
+}
+
+/* padding-right keeps long single-word titles ("Documentation") clear of the
+   external-link arrow instead of wrapping mid-word against it. */
+.access-card strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  padding-right: 1.25rem;
+  color: var(--ifm-color-primary);
+  font-size: 1rem;
+}
+
+.access-card span {
+  display: block;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* External-link cue (Lucide arrow-up-right) — signals the link opens off-site. */
+.access-card::after {
+  content: "";
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 15px;
+  height: 15px;
+  background-color: var(--ifm-color-emphasis-600);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: background-color 0.2s ease;
+}
+
+/* On hover the whole tile fills with brand colour; invert everything to read on it. */
+.access-card:hover strong,
+.access-card:hover span {
+  color: #fff;
+}
+
+.access-card:hover::before,
+.access-card:hover::after {
+  background-color: #fff;
+}
+
+/* ─── Evaluation method spectrum ───────────────────────────────────────────
+   Ordered comparison on evaluating-ai-systems/methods.mdx. The text labels
+   carry the meaning; colour and direction are supporting cues only.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.evaluation-method-spectrum {
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background: linear-gradient(
+    110deg,
+    var(--ifm-color-emphasis-100),
+    color-mix(in srgb, var(--ifm-color-primary-lightest) 18%, var(--ifm-background-surface-color))
+  );
+}
+
+.evaluation-method-spectrum__axis {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.evaluation-method-spectrum__axis span {
+  display: flex;
+  flex-direction: column;
+}
+
+.evaluation-method-spectrum__axis span:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.evaluation-method-spectrum__axis strong {
+  color: var(--ifm-color-primary);
+  font-size: 0.9rem;
+}
+
+.evaluation-method-spectrum__axis small {
+  font-size: 0.75rem;
+}
+
+.evaluation-method-spectrum__methods {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.evaluation-method-spectrum__methods li {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+}
+
+.evaluation-method-spectrum__methods li:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 0.4rem);
+  width: 0.8rem;
+  color: var(--ifm-color-primary);
+  content: "→";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.evaluation-method-spectrum__methods strong {
+  margin-bottom: 0.3rem;
+  color: var(--ifm-color-emphasis-900);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.evaluation-method-spectrum__methods small {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.evaluation-method-spectrum__number {
+  display: inline-grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-bottom: 0.65rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.evaluation-method-comparison tbody td:first-child {
+  font-weight: 700;
+}
+
+/* ─── Guardrail flow ────────────────────────────────────────────────────────
+   High-level request and response flow on the guardrails overview page.
+   Uses clamp() for fluid responsive scaling across all screen sizes.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.guardrail-flow {
+  display: grid;
+  grid-template:
+    "user request model" auto
+    "user response model" auto
+    / minmax(0, 1fr) minmax(0, 2.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 0 clamp(0.75rem, 2vw, 1.75rem);
+  margin: 1.5rem 0 0.5rem;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
+}
+
+.guardrail-flow__actor {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: clamp(5rem, 15vw, 9.5rem);
+  align-self: center;
+  gap: 0.55rem;
+  place-items: center;
+  padding: clamp(0.6rem, 2vw, 1.25rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 8%);
+  text-align: center;
+}
+
+.guardrail-flow__actor strong {
+  color: var(--ifm-color-emphasis-900);
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  line-height: 1.3;
+}
+
+.guardrail-flow__actor svg {
+  box-sizing: content-box;
+  padding: clamp(0.15rem, 1vw, 0.55rem);
+  border-radius: 50%;
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-background-surface-color) 82%,
+    transparent
+  );
+  color: var(--ifm-color-primary-dark);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.guardrail-flow__actor--user {
+  grid-area: user;
+  border-color: color-mix(in srgb, #4aaf6b 55%, var(--ifm-color-emphasis-300));
+  background-color: color-mix(
+    in srgb,
+    #79d996 24%,
+    var(--ifm-background-surface-color)
+  );
+}
+
+.guardrail-flow__actor--model {
+  grid-area: model;
+  border-color: color-mix(in srgb, #4f9dca 55%, var(--ifm-color-emphasis-300));
+  background-color: color-mix(
+    in srgb,
+    #69b9ea 24%,
+    var(--ifm-background-surface-color)
+  );
+}
+
+.guardrail-flow__lane {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.guardrail-flow__lane--request {
+  grid-area: request;
+}
+
+.guardrail-flow__lane--response {
+  grid-area: response;
+}
+
+.guardrail-flow__lane::before {
+  position: absolute;
+  top: 50%;
+  right: clamp(-1rem, -2vw, -1.75rem);
+  left: clamp(-1rem, -2vw, -1.75rem);
+  height: clamp(1px, 0.3vw, 2px);
+  background-color: var(--ifm-color-emphasis-600);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.guardrail-flow__lane::after {
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: clamp(4px, 1vw, 6px) solid transparent;
+  border-bottom: clamp(4px, 1vw, 6px) solid transparent;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.guardrail-flow__lane--request::after {
+  right: clamp(-1rem, -2vw, -1.75rem);
+  border-left: clamp(6px, 1.5vw, 10px) solid var(--ifm-color-emphasis-600);
+}
+
+.guardrail-flow__lane--response::after {
+  left: clamp(-1rem, -2vw, -1.75rem);
+  border-right: clamp(6px, 1.5vw, 10px) solid var(--ifm-color-emphasis-600);
+}
+
+.guardrail-flow__lane-label {
+  position: absolute;
+  top: calc(50% - clamp(1.3rem, 3vw, 2.15rem));
+  padding: 0 0.35rem;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-800);
+  font-size: clamp(0.6rem, 1.8vw, 0.82rem);
+  font-weight: 600;
+}
+
+.guardrail-flow__lane--request .guardrail-flow__lane-label {
+  left: 0;
+}
+
+.guardrail-flow__lane--response .guardrail-flow__lane-label {
+  right: 0;
+}
+
+.guardrail-flow__guardrail {
+  z-index: 1;
+  display: inline-flex;
+  max-width: clamp(4.5rem, 14vw, 11rem);
+  align-items: center;
+  gap: clamp(0.15rem, 0.8vw, 0.45rem);
+  padding: clamp(0.3rem, 1vw, 0.65rem) clamp(0.35rem, 1.2vw, 0.8rem);
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-900);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 9%);
+}
+
+.guardrail-flow__guardrail svg {
+  flex: 0 0 auto;
+  width: clamp(10px, 2vw, 20px);
+  height: clamp(10px, 2vw, 20px);
+  color: var(--ifm-color-primary);
+}
+
+.guardrail-flow__guardrail strong {
+  font-size: clamp(0.48rem, 1.8vw, 0.84rem);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Figure captions for diagrams */
+figure {
+  margin: 1.5rem 0 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Two-column summary table with no header row. */
+.issue-summary thead {
+  display: none;
+}
+
+.issue-summary tbody td:first-child {
+  width: 32%;
+  font-weight: 700;
+}
+
+.markdown details.metric-disclosure {
+  --ifm-alert-background-color: transparent;
+  --ifm-alert-border-left-width: 0;
+  --ifm-alert-border-width: 0;
+  --ifm-alert-shadow: none;
+  margin: 0.25rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ifm-font-color-base);
+}
+
+.markdown details.metric-disclosure > summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+  padding-left: 0;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.markdown details.metric-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown details.metric-disclosure > summary::before {
+  position: static;
+  top: auto;
+  left: auto;
+  width: 1.5rem;
+  flex: 0 0 1.5rem;
+  border: 0;
+  color: var(--ifm-font-color-base);
+  content: "•";
+  font-weight: 400;
+  text-align: center;
+  transform: none !important;
+  transition: none;
+}
+
+.markdown details.metric-disclosure > summary::after {
+  margin-left: auto;
+  color: var(--ifm-color-emphasis-600);
+  content: "›";
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1;
+  transform-origin: center;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.markdown details.metric-disclosure[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+.markdown details.metric-disclosure > summary:hover::after {
+  color: var(--ifm-color-primary);
+}
+
+.markdown details.metric-disclosure > summary:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+.markdown details.metric-disclosure > div > div {
+  margin-top: 0.25rem;
+  padding: 0 0 0 var(--ifm-list-left-padding);
+  border-top: 0;
+}
+
+.markdown details.metric-disclosure > div > div > p,
+.markdown details.metric-disclosure > div > div > ul {
+  margin: 0 0 0.75rem;
+}
+
+.markdown details.metric-disclosure > div > div > ul {
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.85rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .evaluation-method-spectrum {
+    padding: 1rem;
+  }
+
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.7rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.65rem;
+  }
+
+  .evaluation-method-spectrum__axis {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__axis strong {
+    font-size: 0.8rem;
+  }
+
+  .evaluation-method-spectrum__axis small {
+    font-size: 0.65rem;
+  }
+
+  .evaluation-method-spectrum__number {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .evaluation-method-spectrum {
+    padding: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__methods {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .evaluation-method-spectrum__methods li {
+    padding: 0.5rem;
+  }
+
+  .evaluation-method-spectrum__methods strong {
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .evaluation-method-spectrum__methods small {
+    font-size: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .evaluation-method-spectrum__axis {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .evaluation-method-spectrum__axis strong {
+    font-size: 0.7rem;
+  }
+
+  .evaluation-method-spectrum__axis small {
+    font-size: 0.6rem;
+  }
+
+  .evaluation-method-spectrum__number {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.6rem;
+  }
+
+  .evaluation-method-spectrum__methods li:not(:last-child)::after {
+    font-size: 1rem;
+  }
+}
+
+/* ─── Card system ───────────────────────────────────────────────────────────
+   Shared recipe behind every card grid in the playbook — archetype routes on
+   start-here/getting-started.mdx, capability groups on
+   tools/agentic-risk-capability-framework.md. The base class carries the
+   surface, border, radius, shadow, heading, blurb and icon slot; each component
+   adds only what is specific to it.
+
+     <div class="rai-card-grid">
+
+       <div class="rai-card capability-group capability-group--cognitive">
+       <strong>Cognitive</strong>
+       <span>What the system can reason about and plan.</span>
+       </div>
+
+     </div>
+
+   Keep each card on contiguous lines with no blank line inside it, and a blank
+   line between cards: that is what makes CommonMark pass the block through as
+   raw HTML instead of wrapping the inner tags in paragraphs. In .mdx files use
+   className rather than class.
+
+   Modifiers supply --rai-icon as a Lucide glyph in a data URI. The glyph is
+   applied as a mask rather than an <img>, so it takes its colour from the theme
+   — the same technique as .access-card.
+
+   Every colour resolves from an Infima variable, so light and dark mode are
+   both handled with no [data-theme='dark'] block. Cards are distinguished by
+   icon and position, never by hue — brand teal is the only accent.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.rai-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.rai-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.35rem 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+}
+
+/* The modifier class is what supplies --rai-icon, so key the glyph off its
+   presence: a bare .rai-card then renders with no icon rather than with an
+   empty teal square. */
+.rai-card[class*="--"]::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.7rem;
+  background-color: var(--ifm-color-primary);
+  -webkit-mask: var(--rai-icon) center / contain no-repeat;
+  mask: var(--rai-icon) center / contain no-repeat;
+}
+
+.rai-card > strong {
+  margin-bottom: 0.35rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.rai-card > span {
+  margin-bottom: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Cards that end on the blurb keep no trailing gap; the margin above exists
+   for cards that carry a link or a list after it. */
+.rai-card > span:last-child {
+  margin-bottom: 0;
+}
+
+/* ─── Archetype routes ──────────────────────────────────────────────────────
+   Reader entry points on start-here/getting-started.md. Each card names one
+   archetype and the ordered path it should take through the playbook, so the
+   page answers "where do I start?" and not just "what is here?".
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.archetype-route--developer {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 18 6-6-6-6'/%3E%3Cpath d='m8 6-6 6 6 6'/%3E%3C/svg%3E");
+}
+
+.archetype-route--governance {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z'/%3E%3Cpath d='M7 21h10'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'/%3E%3C/svg%3E");
+}
+
+.archetype-route--practitioner {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E");
+}
+
+/* The route itself. margin-top:auto pins every path to the bottom of its card,
+   so the numbered steps line up across cards whose intro sentences wrap to
+   different heights. */
+.archetype-route > ol {
+  margin: auto 0 0;
+  padding: 0;
+  counter-reset: archetype-step;
+  list-style: none;
+}
+
+.archetype-route > ol > li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.42rem 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+/* Numbering comes from a counter so the markup carries no presentational
+   digits. The circle is filled with the accent; its label takes the card's own
+   surface colour, which inverts with the theme — white on dark teal in light
+   mode (13.1:1), near-black on light teal in dark mode (6.5:1). Hardcoding
+   white here would drop to 2.4:1 on the dark theme. */
+.archetype-route > ol > li::before {
+  display: grid;
+  flex: 0 0 1.55rem;
+  height: 1.55rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-background-surface-color);
+  content: counter(archetype-step);
+  counter-increment: archetype-step;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Connector between steps — this is what makes the list read as a route rather
+   than as three unrelated links. It spans exactly the gap between two circles
+   (0.42rem padding either side), so the numbers read as one continuous path.
+
+   Tinted from the accent rather than an emphasis grey: --ifm-color-emphasis-300
+   is near-white on a light card (1.2:1) and would vanish, while the greys that
+   do show in light mode become heavy-handed in dark. Reducing the accent's
+   opacity keeps the line the same visual weight in both themes and ties it to
+   the circles it joins. */
+.archetype-route > ol > li:not(:last-child)::after {
+  position: absolute;
+  top: 1.97rem;
+  bottom: -0.42rem;
+  left: 0.775rem;
+  width: 2px;
+  background-color: var(--ifm-color-primary);
+  content: "";
+  opacity: 0.35;
+  transform: translateX(-50%);
+}
+
+/* ─── Capability groups ─────────────────────────────────────────────────────
+   The three ARC capability categories on tools/agentic-risk-capability-framework.
+   Same card recipe; icon modifiers only.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.capability-group--cognitive {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='4.5' r='2.5'/%3E%3Cpath d='m10.2 6.3-3.9 3.9'/%3E%3Ccircle cx='4.5' cy='12' r='2.5'/%3E%3Cpath d='M7 12h10'/%3E%3Ccircle cx='19.5' cy='12' r='2.5'/%3E%3Cpath d='m13.8 17.7 3.9-3.9'/%3E%3Ccircle cx='12' cy='19.5' r='2.5'/%3E%3C/svg%3E");
+}
+
+.capability-group--interaction {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20'/%3E%3Cpath d='M2 12h20'/%3E%3C/svg%3E");
+}
+
+.capability-group--operational {
+  --rai-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 17 6-6-6-6'/%3E%3Cpath d='M12 19h8'/%3E%3C/svg%3E");
+}
+
+.table-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-caption {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 0.5rem;
+  text-align: center;
+}

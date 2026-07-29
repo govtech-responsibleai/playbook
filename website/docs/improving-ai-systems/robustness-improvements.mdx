@@ -1,0 +1,97 @@
+---
+sidebar_label: "Robustness improvements"
+sidebar_position: 7
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Robustness improvements
+
+It is important to ensure that your system remains robust to unexpected inputs. The table below summarises the issue types from [Robustness evals](../evaluating-ai-systems/robustness.md).
+
+<div class="table-centered">
+
+| Issue | How to improve |
+| --- | --- |
+| Out-of-context reliability | Ensure knowledge-base and context hygiene before deployment |
+| Out-of-scope / edge case queries | Integrate off-topic guardrails; instruct agents on expected behaviour when faced with edge cases; apply normalisation and handle aliases |
+| Response consistency | Lower model temperature for deterministic tasks; pin model and prompt versions |
+
+</div>
+
+## Tips on improving context reliability
+
+- Ensure your knowledge base is always kept up-to-date. Integrate a reliable web search tool where needed.
+- Instruct the model to abstain when the retrieved context does not answer the question, and give the user a next step.
+- To reduce the chances of hallucinations, ensure the response is supported by a corresponding citation from the context.
+
+### Detecting retrieval failures
+
+The metrics from [Robustness evals](../evaluating-ai-systems/robustness.md#evaluating-retrieval) can double as a detection measure. Run evals on your traffic at a regular cadence, and treat a score below your threshold as a signal that the context was not properly retrieved, or that the answer was not supported by it.
+
+Use the results to tune:
+
+- The number of sources retrieved, and the similarity threshold a source must clear before it is retrieved.
+- Whether to fall back to web search when the knowledge base returns too little.
+- How the retrieved sources are presented to the model.
+
+## Handling off-topic queries
+
+Off-topic guardrails keep AI systems within their intended purpose. Beyond filtering harmful content, detecting and filtering irrelevant queries helps maintain focus.
+
+![Off-topic](/images/off_topic.png)
+
+### Use cases
+
+- Public service chatbots that should only answer about a specific scheme or service.
+- Internal assistants limited to a business process.
+- Education or youth-facing AI systems with restricted topics.
+- Retrieval systems that should not answer outside their knowledge base.
+
+### Detection approaches
+
+- **Zero-shot/few-shot classifiers** to detect relevance against the system prompt. Suffers from lower precision — many valid queries are wrongly flagged off-topic.
+- **Custom topic classifier guardrails** from Amazon Bedrock Guardrails or Azure AI Content Safety. Requires defining your own taxonomy of what is off-topic and/or providing custom training examples.
+- **[GovTech's Off-Topic guardrail](../tools/off-topic-guardrail.md)** — a custom guardrail trained zero-shot on synthetic system-prompt and user-prompt pairs, scored against your system prompt. Available via the [Sentinel API](../tools/sentinel.md#available-guardrails).
+
+### Actions
+
+- Redirect the user to supported topics.
+- Refuse unsupported topics politely.
+- Ask a clarifying question when scope is ambiguous.
+- Escalate repeated or suspicious attempts.
+
+### Code example
+
+<Tabs>
+<TabItem value="general-cosine-similarity" label="General (cosine similarity)">
+
+```python
+# Lightweight off-topic check: embed system prompt and user prompt,
+# flag if cosine similarity falls below a threshold.
+from sentence_transformers import SentenceTransformer, util
+
+model = SentenceTransformer("jinaai/jina-embeddings-v2-small-en")
+
+def is_off_topic(system_prompt: str, user_prompt: str, threshold: float = 0.35) -> bool:
+    s, u = model.encode([system_prompt, user_prompt])
+    return float(util.cos_sim(s, u)) < threshold
+```
+
+</TabItem>
+<TabItem value="sentinel" label="Sentinel">
+
+```python
+payload = json.dumps({
+    "text": user_input,
+    "messages": [{"role": "system", "content": SYSTEM}],
+    "guardrails": {"off-topic": {"system_prompt": SYSTEM}},
+})
+response = requests.post(SENTINEL_BASE_URL, headers=HEADERS, data=payload)
+if response.json()["results"]["off-topic"]["score"] > 0.7:
+    return "I can only help with O-Level Maths questions."
+```
+
+</TabItem>
+</Tabs>
