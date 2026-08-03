@@ -49,6 +49,8 @@ In Discriminative AI settings, biased data can directly affect how individuals a
 
 In the Generative AI space, LLMs are typically pre-trained on massive amounts of text or image data from the Internet, which contain harmful, toxic and biased texts. Since LLMs autoregressively generate the next most probable token, the output depends on the joint distribution of tokens learned during training. If unsafe token sequences are learned, they will naturally be reproduced by the model, as ChatGPT did in its early days. For image generation models, there have been several studies finding that generated outputs of engineers, scientists, or lawyers disproportionately portray men over women, reflecting the unequal gender representation of those occupations in the training data.
 
+This scale of data collection also introduces [severe privacy risks](https://arxiv.org/pdf/2506.17185). Because foundation models are typically trained on indiscriminately scraped web data, the resulting datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails, collected without the data subjects' explicit consent. If this data is not rigorously filtered or anonymised before training, models can memorise it and later regurgitate it to end users, directly enabling [harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
+
 ### Model
 
 Issues can also arise from the way a model is designed, trained, and optimised, even when the underlying data appears suitable.
@@ -59,6 +61,8 @@ In the Generative AI space, significant research has been dedicated to aligning 
 
 Another significant research direction entails analysing harmfulness and toxicity in LLM neurons and layers. Having found the weights or activations that are most responsible for toxicity, it is then possible to edit the models to reduce the incidence of harmful outputs. This is typically known as a white box approach to tackling model harmfulness.
 
+Alongside fairness and toxicity, the tendency of models to memorise training data often leads to the direct regurgitation of PII, Protected Health Information (PHI), or proprietary code from the training corpus. Even when raw data is not exposed directly, attackers can exploit model weights and predictive probabilities: [membership inference attacks](https://ieeexplore.ieee.org/document/9793586) can determine whether specific records were used in training, while [model inversion attacks](https://rist.tech.cornell.edu/papers/mi-ccs.pdf) can reconstruct sensitive input features.
+
 ### Application
 
 Finally, risks can emerge from how an AI model is integrated into and used within a real-world application. At this layer, issues may arise even when the underlying model performs well in isolation.
@@ -67,4 +71,8 @@ For Discriminative AI systems, risks may come from how model outputs are incorpo
 
 Generative AI applications introduce additional risks because users can interact with models in open-ended and often adversarial ways. Users may intentionally attempt to bypass safeguards, exfiltrate sensitive information, or elicit harmful outputs. Applications that connect LLMs to retrieval systems, memory, external tools, or APIs may introduce further risks such as prompt injection, data leakage, or unintended tool use.
 
+Not all privacy risk at this layer comes from deliberate misuse. Well-intentioned users may inadvertently include PII in their prompts, which becomes a leakage pathway if the system logs those interactions or uses them for training.
+
 As AI systems become increasingly agentic, the consequences of application-layer failures can extend beyond what a model says to what it can actually do. An agent with access to email, databases, code execution, or other external tools may take unintended actions if its instructions are manipulated or its reasoning fails.
+
+For a deeper look at how privacy vulnerabilities emerge across all three layers, see the [Identifying Privacy Risks](https://go.gov.sg/identifying-privacy-risks-for-rai) chapter in GovTech Data Practice's AI Privacy publication.
