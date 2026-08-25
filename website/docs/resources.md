@@ -7,10 +7,10 @@ sidebar_position: 10
 
 :::info[What's changed in this release]
 
-This page has been updated for the upcoming Responsible AI Playbook release. It now serves as a curated reading list across surveys, benchmarks, testing/red-teaming, guardrails, fairness, alignment, finetuning tooling, interpretability, agentic safety, and practitioner blogs. Summary of changes:
+This page has been updated for the upcoming Responsible AI Playbook release. It now serves as a curated reading list across surveys, benchmarks, testing/red-teaming, guardrails, fairness, alignment, fine-tuning tooling, interpretability, agentic safety, and practitioner blogs. Summary of changes:
 
 - Added an **Agentic Safety** section (Progent, prompt-injection design patterns).
-- Added a **Finetuning tooling** section (TRL, PEFT, Alignment Handbook, Axolotl, Unsloth, Llama Cookbook).
+- Added a **Fine-tuning tooling** section (TRL, PEFT, Alignment Handbook, Axolotl, Unsloth, Llama Cookbook).
 - Added a **Fairness** section covering the incompatibility results, the Barocas, Hardt, and Narayanan textbook, and the Fairlearn and AI Fairness 360 toolkits.
 - Refreshed Alignment, Interpretability, and Testing/Red-teaming entries with recent (2024–2025) work.
 - Added new practitioner blogs and OpenAI's agentic-AI governance paper.
@@ -66,14 +66,14 @@ This page collects influential papers, benchmarks, methods, repositories, and gu
 - [Safety Alignment Should Be Made More Than Just a Few Tokens Deep (Jun 2024)](https://arxiv.org/abs/2406.05946)
 - [When Thinking Fails: The Pitfalls of Reasoning for Instruction-Following in LLMs (May 2025)](https://arxiv.org/abs/2505.11423)
 
-## Finetuning tooling
+## Fine-tuning tooling
 
 - [TRL](https://huggingface.co/docs/trl/index) - reference implementation for post-training, providing `SFTTrainer`, `DPOTrainer`, `RewardTrainer` and others, each documented with a runnable snippet
 - [PEFT](https://huggingface.co/docs/peft/index) - parameter-efficient adapters (LoRA, QLoRA, DoRA and others) integrated with Transformers and TRL
 - [Alignment Handbook](https://github.com/huggingface/alignment-handbook) - end-to-end YAML recipes covering continued pre-training, SFT, DPO, ORPO, reward modelling, and rejection sampling
-- [Axolotl](https://github.com/axolotl-ai-cloud/axolotl) - configuration-driven finetuning across preprocessing, training, evaluation, and inference, with multi-GPU and multi-node support
+- [Axolotl](https://github.com/axolotl-ai-cloud/axolotl) - configuration-driven fine-tuning across preprocessing, training, evaluation, and inference, with multi-GPU and multi-node support
 - [Unsloth](https://github.com/unslothai/unsloth) - optimised LoRA and QLoRA training for a single GPU, with ready-to-run notebooks per model family
-- [Llama Cookbook](https://github.com/meta-llama/llama-cookbook) - worked finetuning examples and a finetuning FAQ, oriented around Llama models
+- [Llama Cookbook](https://github.com/meta-llama/llama-cookbook) - worked fine-tuning examples and a fine-tuning FAQ, oriented around Llama models
 
 ## Interpretability
 

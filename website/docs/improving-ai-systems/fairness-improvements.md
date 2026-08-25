@@ -31,12 +31,12 @@ The [Fairness section of External resources](../resources.md#fairness) collects 
 | Stage | Approach |
 | --- | --- |
 | Pre-processing | Curate training and evaluation data to cover protected groups, languages, and dialects; rebalance under-represented slices; remove biased labels |
-| In-processing | Use finetuning, alignment, or constraint-based training to reduce disparate behaviour; choose model variants with better cross-group performance |
+| In-processing | Use fine-tuning, alignment, or constraint-based training to reduce disparate behaviour; choose model variants with better cross-group performance |
 | Post-processing | Apply output adjustments such as rerankers, per-group thresholds, or refusal templates; add equitable defaults for ambiguous inputs |
 
 </div>
 
-Which stage is available depends on what you control. If you consume a hosted model, in-processing is closed to you and your options are data coverage and post-processing. If you can finetune, all three are open, and you should still prefer the cheapest one that closes the measured gap. See [finetuning](finetuning.md) for the in-processing route.
+Which stage is available depends on what you control. If you consume a hosted model, in-processing is closed to you and your options may be limited to data coverage and post-processing. If you can finetune, all three are open, and you should still prefer the cheapest one that closes the measured gap. See [fine-tuning](fine-tuning.md) for the in-processing route.
 
 ## The general process
 
@@ -67,5 +67,5 @@ Which stage is available depends on what you control. If you consume a hosted mo
 ## Where to go next
 
 - [Fairness evals](../evaluating-ai-systems/fairness.md) — measuring disparity before and after.
-- [Finetuning](finetuning.md) — the in-processing route.
+- [Fine-tuning](fine-tuning.md) — the in-processing route.
 - [External resources](../resources.md#fairness) — the fairness literature.

@@ -2,7 +2,7 @@
 sidebar_label: "Privacy evals"
 sidebar_position: 6
 ---
-# Privacy and PII leakage evals
+# Privacy and Personally Identifable Information (PII) leakage evals
 
 Privacy evals check whether the system leaks, exposes, mishandles, or regurgitates personal or sensitive information.
 
@@ -10,7 +10,7 @@ In the era of generative AI and foundation models, privacy can no longer be trea
 
 ## Data layer
 
-The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion become fundamentally baked into the model's weights. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymised prior to training, models can memorise and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
+The Data Layer serves as the foundation, where privacy vulnerabilities at data ingestion may be memorised or encoded in learned parameters. The training of foundational models often relies on indiscriminate web scraping; the resulting training datasets inadvertently contain Personally Identifiable Information (PII) such as names, phone numbers, addresses, and private emails without the data subjects' explicit consent. If this data is not rigorously filtered or anonymised prior to training, models can memorise and subsequently regurgitate this sensitive information to end users, directly enabling [severe harms such as identity theft and fraud](https://www.ijcai.org/proceedings/2025/1156.pdf).
 
 The primary goal at this layer is to measure the risk of individual-level linkage — the ability to connect data back to a specific person. Concrete techniques:
 
@@ -36,7 +36,7 @@ The Application Layer introduces new attack vectors when the AI interface intera
 Test priorities at this layer:
 
 - **Adversarial red-teaming and prompt injection** — bypass safety guardrails to leak proprietary instructions and private context.
-- **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC), guaranteeing that users only generate insights from data they are explicitly authorised to query.
+- **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC), by testing that users can only access or infer information they are authorised to use.
 - **Logs and traces** — verify that operational telemetry does not retain unnecessary personal data.
 
 ## Evaluation set design

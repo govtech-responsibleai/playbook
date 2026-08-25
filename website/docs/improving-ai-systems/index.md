@@ -17,7 +17,7 @@ Start with the evaluated failure and identify its likely cause. Choose the least
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | **Model and system design**                          | The failure can be addressed without training the model or adding a separate runtime detector |
 | [**Guardrails**](guardrails/what-are-guardrails.mdx) | The system must detect and respond to identifiable conditions at runtime                      |
-| [**Finetuning**](finetuning.md)                      | A persistent behaviour or task-performance gap remains after simpler changes                  |
+| [**Fine-tuning**](fine-tuning.md)                      | A persistent behaviour or task-performance gap remains after simpler changes                  |
 
 </div>
 
@@ -40,7 +40,7 @@ Choose improvements based on evaluated failure modes. Do not apply them blindly 
 | [**Guardrails**](guardrails/what-are-guardrails.mdx) | Input guardrails       | Risky requests should be blocked, warned, rewritten, or escalated before model execution | Detect personal data, block prompt injection                         |
 |                                                      | Output guardrails      | Generated responses may contain unsafe, private, irrelevant, or unsupported content      | Route high-risk outputs for review                                   |
 |                                                      | Tool-use controls      | A system can take actions or access systems beyond text generation                       | Restrict API calls or system access                                  |
-| [**Finetuning**](finetuning.md)                      | —                      | A persistent behaviour or task-performance gap remains after simpler changes             | Improve domain terminology, output format or task-specific behaviour |
+| [**Fine-tuning**](fine-tuning.md)                      | —                      | A persistent behaviour or task-performance gap remains after simpler changes             | Improve domain terminology, output format or task-specific behaviour |
 | **Ongoing practice**                                 | Human review           | Errors are high-impact or hard to classify automatically                                 | Escalate uncertain cases for review                                  |
 |                                                      | Monitoring and logging | Risks must be detected after launch and fed back into evals                              | Add cases to evaluation datasets, track incidents                    |
 

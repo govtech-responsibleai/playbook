@@ -73,7 +73,7 @@ const STARTING_POINTS = [
   {
     icon: '🛡️',
     question: 'Improving AI Systems',
-    description: 'Apply guardrails, finetuning, and principle-specific improvements to ship more responsibly.',
+    description: 'Apply guardrails, fine-tuning, and principle-specific improvements to ship more responsibly.',
     href: '/improving-ai-systems/',
   },
   {

@@ -31,9 +31,9 @@ An evaluation plan turns broad concerns into tests that can be run, reviewed, an
 
 ### 1. Specify your use case
 
-Start first by explaining what your AI system is meant to do, what it processes, and what the key risks are:
+Start first by documenting what your AI system is meant to do, what it processes, and what the key risks are:
 
-- Application purpose and intended users.
+- AI system purpose and intended users.
 - Inputs, outputs, tools, retrieved sources, and human review points.
 - Intended use and prohibited use.
 - Known high-risk user journeys or failure modes.
@@ -99,7 +99,7 @@ A useful evaluation set should include:
 - Adversarial or stress cases where relevant.
 - Known historical failures, if available.
 
-Building a good evaluation set that is comprehensive, realistic, and useful (especially reflecting how users would actually use and converse with the AI system) is difficult. If you care mostly about this, jump ahead to find out more about Kaleidoscope.
+Building a good evaluation set that is comprehensive, realistic, and useful (especially reflecting how users would actually use and converse with the AI system) is difficult. For guidance on creating representative evaluation sets, see Kaleidoscope for more information.
 
 <details>
 <summary><strong>Worked example: building the evaluation set for GrantsAssist</strong></summary>

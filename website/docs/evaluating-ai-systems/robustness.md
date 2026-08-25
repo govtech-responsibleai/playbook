@@ -14,7 +14,7 @@ There are some types of robustness issues you may face:
 | | |
 | --- | --- |
 | Out-of-context reliability | Whether the answer is supported by a source, and how the system handles it when there is none |
-| Out-of-scope / edge case queries | Whether quality holds when an input sits outside your scope |
+| Out-of-scope / edge case queries | Whether the system recognises unsupported requests and responds appropriately. |
 | Response consistency | Whether the same question produces the expected answer, however it is phrased |
 
 </div>

@@ -1,25 +1,25 @@
 ---
-sidebar_label: "Finetuning"
+sidebar_label: "Fine-tuning"
 sidebar_position: 2
 ---
 
-# Finetuning
+# Fine-tuning
 
 
-Finetuning adjusts model weights so outputs suit a particular task, domain, or behaviour profile. It is a higher-investment option than prompting or guardrails, and becomes worth considering when those have run out of headroom.
+Fine-tuning adjusts model weights so outputs suit a particular task, domain, or behaviour profile. It is a higher-investment option than prompting or guardrails, and becomes worth considering when those have run out of headroom.
 
 The decision is mostly economic. A guardrail can be added, tuned, and removed in days; a finetune requires a dataset, a training run, a fresh evaluation of the resulting model, and a commitment to repeat all three whenever the base model changes.
 
-## When finetuning helps
+## When fine-tuning helps
 
-Finetuning is a reasonable choice when:
+Fine-tuning is a reasonable choice when:
 
 - The behaviour gap is consistent across many inputs (eg style, format, refusal patterns, domain vocabulary) rather than a handful of edge cases a prompt can patch.
 - Latency and cost matter enough that a smaller finetuned model replacing a larger zero-shot one changes the economics.
 - The desired behaviour is hard to specify in a prompt but easy to demonstrate with examples.
 - A stable, high-quality dataset of inputs and target outputs already exists, or can be built.
 
-Prompting, retrieval, or external guardrails are the better answer when the behaviour gap is narrow, the data is noisy, or the underlying content changes often. A system answering questions about government schemes is a poor finetuning candidate for its subject matter, because the schemes change and the weights do not. That content belongs in retrieval. The same system might still be finetuned for something stable, such as consistent output format across languages.
+Prompting, retrieval, or external guardrails are the better answer when the behaviour gap is narrow, the data is noisy, or the underlying content changes often. A system answering questions about government schemes is a poor fine-tuning candidate for its subject matter, because the schemes change and the weights do not. That content belongs in retrieval. The same system might still be finetuned for something stable, such as consistent output format across languages.
 
 ## Common approaches
 
@@ -27,7 +27,7 @@ Prompting, retrieval, or external guardrails are the better answer when the beha
 
 | Approach | What it changes | Choose it when |
 | --- | --- | --- |
-| Supervised finetuning (SFT) | Trains on input → output pairs | The team has examples of the correct output, and the goal is format, structure, style, or domain vocabulary |
+| Supervised fine-tuning (SFT) | Trains on input → output pairs | The team has examples of the correct output, and the goal is format, structure, style, or domain vocabulary |
 | Preference optimisation (DPO, RLHF, RLAIF) | Trains on preferred versus rejected responses | The team has pairs where one response is better, and the goal is refusal behaviour, tone, safety, or reducing differential treatment |
 | Parameter-efficient tuning (LoRA, adapters) | Updates a small slice of weights | By default, in combination with either of the above, unless it has been tried and the behaviour has not moved far enough |
 | Continued pre-training | Updates base weights on raw domain text | Fundamental vocabulary or language adaptation is needed, and large volumes of raw text are available |
@@ -36,9 +36,9 @@ Prompting, retrieval, or external guardrails are the better answer when the beha
 
 ## The general process
 
-1. **Check that finetuning is the right fix.** Before embarking on finetuning your own model, you should check that three conditions hold: (1) cheaper fixes, such as prompt changes, better retrieval, or guardrails are not sufficient, (2) the key components (eg prompts, tools, corpus) do not change frequently, and (3) the gap in performance persists over several rounds of evaluations.
+1. **Check that fine-tuning is the right fix.** Before embarking on fine-tuning your own model, you should check that three conditions hold: (1) cheaper fixes, such as prompt changes, better retrieval, or guardrails are not sufficient, (2) the key components (eg prompts, tools, corpus) do not change frequently, and (3) the gap in performance persists over several rounds of evaluations.
 
-2. **Choose the approach.** Your choice follows from the data you already have: (1) examples of the correct output call for supervised finetuning, (2) pairs showing that one response is better than another call for preference optimisation, and (3) behaviour that must be established and then refined takes both, in that order. Use a parameter-efficient method such as LoRA by default, so that a run which goes wrong is discarded rather than overwriting your model.
+2. **Choose the approach.** Your choice follows from the data you already have: (1) examples of the correct output call for supervised fine-tuning, (2) pairs showing that one response is better than another call for preference optimisation, and (3) behaviour that must be established and then refined takes both, in that order. Use a parameter-efficient method such as LoRA by default, so that a run which goes wrong is discarded rather than overwriting your model.
 
 3. **Choose and pin the base model.** Before training, check the base model on three counts: (1) size against your latency and cost budget, (2) coverage of every language your system serves, and (3) how much safety alignment it already carries. You should generally favour a model that meets your requirements for (1) and (2), but is lacking in (3) especially in specific areas of concern.
 
@@ -48,15 +48,15 @@ Prompting, retrieval, or external guardrails are the better answer when the beha
 
 6. **Re-run the full evaluation suite.** A finetuned model is a new model, so your base model's safety, robustness, fairness, and functional results no longer apply to it. Run every dimension against the held-out set and compare against your baseline. Your finetune will almost always improve the thing it was trained on, so the useful question is what happened to everything else. Set a gate that blocks release if another dimension drops.
 
-7. **Decide, and write it down.** A finetune that improves its target and breaks nothing else can ship. One that trades a gain in one area for a loss in another is a decision for the system owner, not for whoever ran the training. Record the base version, your training data, the objective, and the measured trade-offs alongside the model, since explainability and transparency depend on that record.
+7. **Decide, and write it down.** A finetune which improves its target and breaks nothing else can ship. One that trades a gain in one area for a loss in another is a decision for the system owner, not for whoever ran the training. Record the base version, your training data, the objective, and the measured trade-offs alongside the model, since explainability and transparency depend on that record.
 
-## Finetuning for safety
+## Fine-tuning for safety
 
-Safety is not the most common use of finetuning. Most finetuning adapts a model to a task, a domain, or an output format, and safety tuning is usually carried out by model providers rather than by the teams deploying their models. It appears here because a safety gap that prompting and guardrails cannot close leaves you with few other options.
+Safety is not the most common use of fine-tuning. Most fine-tuning adapts a model to a task, a domain, or an output format, and safety tuning is usually carried out by model providers rather than by the teams deploying their models. It appears here because a safety gap that prompting and guardrails cannot close leaves you with few other options.
 
 Preference optimisation on triples of prompt, acceptable response, and unacceptable response moves refusal behaviour into the weights, where it is harder to talk the model out of than a system prompt. For example, a citizen-facing assistant may refuse requests for self-harm methods in English but comply when the same request arrives in Malay, because the provider's alignment data was predominantly English. A prompt patch helps unevenly. Preference pairs covering all four supported languages address the gap in the weights, where the behaviour actually lives.
 
-Treat the result as an improvement rather than a fix, because safety behaviour learned by finetuning is itself brittle in three ways: (1) later finetuning can undo it, even when that later training has nothing to do with safety, (2) it often fails on inputs that do not resemble your training data, and (3) it tends to be shallow, concentrated in the first few generated tokens, so a model steered past its opening tokens may continue unsafely ([Safety Alignment Should Be Made More Than Just a Few Tokens Deep](https://arxiv.org/abs/2406.05946)). All three apply equally to the alignment your base model arrives with, which is why that alignment counts for less than it appears to when choosing a base.
+Treat the result as an improvement rather than a fix, because safety behaviour learned by fine-tuning is itself brittle in three ways: (1) later fine-tuning can undo it, even when that later training has nothing to do with safety, (2) it often fails on inputs that do not resemble your training data, and (3) it tends to be shallow, concentrated in the first few generated tokens, so a model steered past its opening tokens may continue unsafely ([Safety Alignment Should Be Made More Than Just a Few Tokens Deep](https://arxiv.org/abs/2406.05946)). All three apply equally to the alignment your base model arrives with, which is why that alignment counts for less than it appears to when choosing a base.
 
 Two things follow. Re-run your safety evaluations after every finetune, including those that have nothing to do with safety. And keep your guardrails in place, since a separate component that inspects inputs and outputs does not depend on the model having learned the right behaviour.
 
@@ -105,4 +105,4 @@ Everything not shown here, such as learning rate, batch size, and LoRA rank, sho
 
 - [Evaluation methods](../evaluating-ai-systems/methods.mdx) — establishing the gap before, and the result after.
 - [Guardrail architecture](guardrails/guardrail-architecture.md) — the lower-investment alternative to compare against.
-- [Finetuning tooling](../resources.md#finetuning-tooling) — libraries and recipes with runnable code.
+- [Fine-tuning tooling](../resources.md#fine-tuning-tooling) — libraries and recipes with runnable code.
