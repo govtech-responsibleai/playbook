@@ -17,7 +17,7 @@ This page has been updated for the upcoming Responsible AI Playbook release. It 
 
 :::
 
-This page collects influential papers, benchmarks, methods, repositories, and guides for deeper Responsible AI and AI safety work.
+This page collates papers, benchmarks, methods, repositories, and guides which provides more information on Responsible AI and AI safety work.
 
 ## Surveys
 

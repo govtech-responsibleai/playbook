@@ -116,7 +116,7 @@ LionGuard is a content moderation guardrail localised to the Singapore context. 
 
 Guardrails are *separate components* from the LLM itself. This lets the team develop and test components independently, and swap LLMs or guardrails depending on the scenario.
 
-A separate guardrail also lets you **set a minimum safety performance for the system**. Typical guardrails are more deterministic than LLM outputs. If a guardrail has 95% accuracy in detecting NSFW language, the system's safety floor is at least 95%, leaving the model to handle the remainder.
+A guardrail’s standalone score does not establish a system-level safety floor. It is important to sill measure class-specific precision, recall, false-positive, and false-negative rates on representative data. After integration, measure the residual failure rate across the complete system, including routes that bypass or fall outside the guardrail.
 
 ### 3. Actionable and configurable
 

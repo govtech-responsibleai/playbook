@@ -12,7 +12,7 @@ import donotanswer from '@site/static/images/donotanswer.png';
 
 Safety evals check whether the system avoids harmful, prohibited, adversarial, or otherwise unacceptable behaviour.
 
-Safety testing is the process of assessing an LLM product (via API) using prompts designed to elicit unsafe responses, in order to provide a rough empirical assessment of how resistant the LLM product is to common safety attacks. Note the distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features) — our safety testing is focused on **LLM products**.
+Safety evaluation tests whether an AI system's outputs or actions violate its defined safety policy or enable material harm. Thereby providing a rough empirical assessment of how resistant the LLM product is to common safety attacks. Note the distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features) — our safety testing is focused on **LLM products**.
 
 Safety testing is distinct from red-teaming, though the two are complementary. Red-teaming generates novel prompts to probe LLMs for vulnerabilities, usually customised to the LLM/product, while safety testing focuses on common attacks and is kept deliberately generic. In practice, red-teaming techniques are useful for generating and refreshing the adversarial prompts used in safety testing. We also do not focus on existential risk or benchmark foundation models for intrinsic properties; we are interested in how safe an LLM product is when responding to conversational prompts.
 
