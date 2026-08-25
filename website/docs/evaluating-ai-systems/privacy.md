@@ -36,7 +36,7 @@ The Application Layer introduces new attack vectors when the AI interface intera
 Test priorities at this layer:
 
 - **Adversarial red-teaming and prompt injection** — bypass safety guardrails to leak proprietary instructions and private context.
-- **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC), by testing that users can only access or infer information they are authorised to use.
+- **Access control auditing** — ensure the system respects Role-Based Access Controls (RBAC) by testing that users can only access or infer information they are authorised to use.
 - **Logs and traces** — verify that operational telemetry does not retain unnecessary personal data.
 
 ## Evaluation set design
