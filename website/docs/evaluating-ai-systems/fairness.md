@@ -8,7 +8,7 @@ sidebar_position: 5
 
 Fairness evals check whether your system behaves differently across protected or sensitive attributes, groups, languages, or user contexts. What you measure depends on what kind of system you have. For a generative system you are comparing outputs that vary only by an attribute; for a discriminative one you are comparing error rates and calibration across groups.
 
-Both require a deciding upon a Fairness objective before metrics are selected. Fairness has several formal definitions and they cannot all hold at once, so you need to know which one your system is being held to before you choose metrics. See [fairness improvements](../improving-ai-systems/fairness-improvements.md) for why that choice is forced and what the options are.
+Both require choosing a fairness objective before metrics are selected. Fairness has several formal definitions and they cannot all hold at once, so you need to know which one your system is being held to before you choose metrics. See [fairness improvements](../improving-ai-systems/fairness-improvements.md) for why that choice is forced and what the options are.
 
 ## When to run fairness evals
 
