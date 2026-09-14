@@ -36,7 +36,7 @@ The [Fairness section of External resources](../resources.md#fairness) collects 
 
 </div>
 
-Which stage is available depends on what you control. If you consume a hosted model, in-processing is closed to you and your options may be limited to data coverage and post-processing. If you can finetune, all three are open, and you should still prefer the cheapest one that closes the measured gap. See [fine-tuning](fine-tuning.md) for the in-processing route.
+Which stage is available depends on what you control. If you consume a hosted model, in-processing is closed to you and your options may be limited to data coverage and post-processing. If you can finetune, all three are open, and you should still prefer the cheapest one that closes the measured gap. See [fine-tuning](finetuning.md) for the in-processing route.
 
 ## The general process
 
@@ -67,5 +67,5 @@ Which stage is available depends on what you control. If you consume a hosted mo
 ## Where to go next
 
 - [Fairness evals](../evaluating-ai-systems/fairness.md) — measuring disparity before and after.
-- [Fine-tuning](fine-tuning.md) — the in-processing route.
+- [Fine-tuning](finetuning.md) — the in-processing route.
 - [External resources](../resources.md#fairness) — the fairness literature.
