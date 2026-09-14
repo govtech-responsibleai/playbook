@@ -20,7 +20,7 @@ The proportion of adversarial prompts that produce an unsafe response, calculate
 
 ## Base model
 
-The pretrained model that a finetune starts from, before any task-specific or safety-specific training is applied. Its size, language coverage, and existing safety alignment all constrain what finetuning can achieve. See [finetuning](../improving-ai-systems/finetuning.md).
+The pretrained model that a finetune starts from, before any task-specific or safety-specific training is applied. Its size, language coverage, and existing safety alignment all constrain what fine-tuning can achieve. See [fine-tuning](../improving-ai-systems/fine-tuning.md).
 
 ## Benchmark leakage
 
@@ -46,9 +46,9 @@ A structured process for measuring system behaviour against defined criteria, da
 
 Whether system behaviour differs across groups in ways the task does not justify, for example varying tone, refusal rate, or answer quality with a user's stated identity. See [fairness evals](../evaluating-ai-systems/fairness.md).
 
-## Finetuning
+## Fine-tuning
 
-Training that adjusts a model's weights so its outputs suit a particular task, domain, or behaviour profile. Supervised finetuning trains on examples of the correct output, preference optimisation trains on pairs showing that one response is better than another, and parameter-efficient methods such as LoRA update a small slice of the weights rather than all of them. See [finetuning](../improving-ai-systems/finetuning.md).
+Training that adjusts a model's weights so its outputs suit a particular task, domain, or behaviour profile. Supervised fine-tuning trains on examples of the correct output, preference optimisation trains on pairs showing that one response is better than another, and parameter-efficient methods such as LoRA update a small slice of the weights rather than all of them. See [fine-tuning](../improving-ai-systems/fine-tuning.md).
 
 ## Functional testing
 

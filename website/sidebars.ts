@@ -50,7 +50,7 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'improving-ai-systems/guardrails/monitoring-incident-response', label: 'Monitoring and incident response'},
           ],
         },
-        {type: 'doc', id: 'improving-ai-systems/finetuning', label: 'Finetuning'},
+        {type: 'doc', id: 'improving-ai-systems/fine-tuning', label: 'Fine-tuning'},
         {
           type: 'category',
           label: 'Improving RAI principles',

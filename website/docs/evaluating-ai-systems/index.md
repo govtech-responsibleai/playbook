@@ -31,9 +31,9 @@ An evaluation plan turns broad concerns into tests that can be run, reviewed, an
 
 ### 1. Specify your use case
 
-Start first by explaining what your AI system is meant to do, what it processes, and what the key risks are:
+Start first by documenting what your AI system is meant to do, what it processes, and what the key risks are:
 
-- Application purpose and intended users.
+- AI system purpose and intended users.
 - Inputs, outputs, tools, retrieved sources, and human review points.
 - Intended use and prohibited use.
 - Known high-risk user journeys or failure modes.
@@ -47,7 +47,7 @@ A citizen-facing eligibility chatbot might fill these in as follows.
 
 | Dimension | GrantsAssist — public-sector eligibility chatbot |
 | --- | --- |
-| Application purpose and intended users | Help Singapore residents check eligibility for government grants and financial assistance schemes. Primary users are citizens via the gov.sg portal; secondary users are frontline officers at Social Service Offices. |
+| AI system purpose and intended users | Help Singapore residents check eligibility for government grants and financial assistance schemes. Primary users are citizens via the gov.sg portal; secondary users are frontline officers at Social Service Offices. |
 | Inputs, outputs, tools, retrieved sources, and human review points | **Inputs:** free-text questions, plus optional household details (income, family size, housing). <br/>**Outputs:** plain-language answers, lists of likely-eligible schemes, and links to apply — no formal decisions.<br/>**Tools:** knowledge-base retrieval and an income-threshold calculator.<br/>**Sources:** dated official scheme pages from MSF, HDB, and MOH.<br/>**Review:** flagged transcripts sampled by a duty officer; live escalation to a Social Service Office when the user requests one. |
 | Intended use and prohibited use | **Intended:** answer factual eligibility questions about published schemes in English, Mandarin, Malay, and Tamil; redirect users to the correct application channel.<br/>**Prohibited:** making formal eligibility decisions; giving legal, medical, or financial advice; commenting on political topics; processing identity documents. |
 | Known high-risk user journeys or failure modes | <ul><li>Failing to escalate when a user describes a crisis (financial hardship, abuse, suicidal ideation) inside a benefits query.</li><li>Hallucinating a scheme that does not exist.</li><li>Quoting outdated income thresholds.</li><li>Refusing legitimate questions about lesser-known schemes.</li><li>Replying only in English when prompted in Tamil.</li></ul> |
@@ -99,7 +99,7 @@ A useful evaluation set should include:
 - Adversarial or stress cases where relevant.
 - Known historical failures, if available.
 
-Building a good evaluation set that is comprehensive, realistic, and useful (especially reflecting how users would actually use and converse with the AI system) is difficult. If you care mostly about this, jump ahead to find out more about Kaleidoscope.
+Building a good evaluation set that is comprehensive, realistic, and useful (especially reflecting how users would actually use and converse with the AI system) is difficult. For guidance on creating representative evaluation sets, see Kaleidoscope for more information.
 
 <details>
 <summary><strong>Worked example: building the evaluation set for GrantsAssist</strong></summary>

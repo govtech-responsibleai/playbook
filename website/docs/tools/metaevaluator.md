@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 # MetaEvaluator
 
-**Evaluate LLM-as-a-Judge systems by measuring alignment between judge outputs with human annotations.**
+**Evaluate LLM-as-a-Judge systems by measuring alignment with judge outputs with human annotations.**
 
 MetaEvaluator is a Python framework that answers the question: **"How well do LLM judges align with human judgment?"** Use it to evaluate the quality of your LLM-as-a-judge, or to compare performance across various LLMs and system prompts.
 
