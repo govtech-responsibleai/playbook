@@ -86,6 +86,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'tools/rabakbench', label: 'RabakBench'},
             {type: 'doc', id: 'tools/minorbench', label: 'MinorBench'},
+            {type: 'doc', id: 'tools/veiled', label: 'VEILED-SH'},
             {type: 'doc', id: 'tools/responsible-ai-benchmark', label: 'Responsible AI Benchmark'},
           ],
         },

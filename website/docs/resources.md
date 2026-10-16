@@ -28,6 +28,8 @@ This page collates papers, benchmarks, methods, repositories, and guides which p
 
 ## Benchmarks
 
+- [VEILED-SH](https://huggingface.co/datasets/govtech/veiled-sh) provides Singapore-context mental-health prompts with separate evaluator-profile labels. See the [playbook guide](tools/veiled.mdx) for use and limits.
+
 - [Holistic Evaluation of Language Models](https://crfm.stanford.edu/helm/) - a reproducible and transparent framework for evaluating foundation models
 - [Libra-Leaderboard: Towards Responsible AI through a Balanced Leaderboard of Safety and Capability (Dec 2024)](https://arxiv.org/pdf/2412.18551) - uses a distance-to-optimal-score method to calculate overall rankings, balancing performance and safety
 - [DarkBench: Benchmarking Dark Patterns in Large Language Models (Mar 2025)](https://arxiv.org/abs/2503.10728) - benchmark to detect manipulative LLM outputs across six categories
@@ -91,6 +93,8 @@ This page collates papers, benchmarks, methods, repositories, and guides which p
 - [Awesome Agent Evals](https://github.com/benchflow-ai/awesome-evals) - curated resources for building and evaluating AI agents, including papers, tools, and benchmarks
 
 ## Blogs and guides
+
+- [Behind VEILED expressions](https://blog.ai.gov.sg/behind-veiled-expressions-a-singapore-context-benchmark-for-mental-health-ai-evaluation/) explains the benchmark's construction and approach to evaluating responses to indirect distress.
 
 - [Frequently Asked Questions (And Answers) About AI Evals](https://hamel.dev/blog/posts/evals-faq/) and [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) by Hamel Husain - practical tips on iterative evaluations for AI systems
 - [Simon Willison's Weblog](https://simonwillison.net/) - practical writing on AI systems and prompt injection

@@ -33,6 +33,7 @@ Fixed datasets that score system behaviour against a common standard, so results
 | --- | --- |
 | [RabakBench](rabakbench.md) | Multilingual safety benchmarking for Singapore context |
 | [MinorBench](minorbench.md) | Child-specific safety benchmarking |
+| [VEILED-SH](veiled.mdx) | Evaluating AI responses to indirect distress and self-harm in Singapore contexts |
 | [Responsible AI Benchmark](responsible-ai-benchmark.md) | Comparing application-level safety, robustness, and fairness performance |
 
 </div>

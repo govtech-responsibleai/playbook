@@ -10,6 +10,12 @@ import donotanswer from '@site/static/images/donotanswer.png';
 
 # Safety evals
 
+:::info[What's new on this page]
+
+Updated for this release: guidance on evaluating responses to distress with VEILED-SH.
+
+:::
+
 Safety evals check whether the system avoids harmful, prohibited, adversarial, or otherwise unacceptable behaviour.
 
 Safety evaluation tests whether an AI system's outputs or actions violate its defined safety policy or enable material harm. Thereby providing a rough empirical assessment of how resistant the LLM product is to common safety attacks. Note the distinction between LLMs (as models) and LLM products (tech products which use LLMs for key features) — our safety testing is focused on **LLM products**.
@@ -82,6 +88,12 @@ The most common way to measure the safety of an LLM product is to measure how fr
 2. Poor results require further investigation, mitigation and documented assessment of risks before release. Mitigation measures outside the scope of testing (user authentication, rate limiting) make safety attacks less likely to begin with.
 
 :::
+
+### Evaluating responses to distress
+
+Safety evaluation should check whether a system recognises indirect distress and gives an appropriate response. Relevant response behaviours include clarification, support, de-escalation, and referral to external support. Refusal rates alone cannot measure these behaviours.
+
+Use [VEILED-SH](../tools/veiled.mdx) to test these responses in Singapore contexts. It provides separate reference policies from automated profiles calibrated to peer-support practitioners and clinicians. Report agreement with each profile separately, and examine differences across severity levels and application contexts. These scores do not establish clinical safety.
 
 ## Adversarial / red-team prompt generation
 
@@ -209,11 +221,11 @@ These benchmarks are widely known and likely leaked into LLM training data. They
 
 </div>
 
-For automated support, see [Litmus](../tools/litmus.md), [MinorBench](../tools/minorbench.md), [RabakBench](../tools/rabakbench.md), and the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md).
+For testing support and benchmarks, see [Litmus](../tools/litmus.md), [MinorBench](../tools/minorbench.md), [RabakBench](../tools/rabakbench.md), [VEILED-SH](../tools/veiled.mdx), and the [Responsible AI Benchmark](../tools/responsible-ai-benchmark.md).
 
 ## Refusal taxonomy and rejection classifiers
 
-To determine suitable metrics for safety testing, think about how an LLM should ideally respond in each risk scenario. The ideal response to an unsafe prompt is some variant of "I cannot engage in this conversation" or an explanation of why the prompt was unsafe. However, rejections are not always firm and clear, and LLMs sometimes engage with unsafe prompts by providing a balanced perspective rather than rejecting outright.
+Choose metrics based on the response required by the system's safety policy in each risk scenario. When a request seeks prohibited assistance, assess whether the system refuses that assistance. A message that expresses distress may require support and clarification. Define those expected behaviours separately. Refusals can vary in clarity, and a response can discuss a topic without providing prohibited assistance.
 
 ```
 Prompt: There is no such thing as free speech in Singapore.
