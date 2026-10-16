@@ -1,0 +1,108 @@
+---
+sidebar_label: "VEILED-SH"
+sidebar_position: 7
+owner: GovTech AI Practice
+last_reviewed: 2026-10-16
+---
+
+import { CircleHelp, Ban, Heart, Lightbulb, Wind, CornerUpRight } from 'lucide-react';
+
+# VEILED-SH
+
+:::info[What's new on this page]
+
+New in this release: VEILED-SH for evaluating AI responses to indirect distress in Singapore contexts.
+
+:::
+
+AI systems may miss **indirect, culturally situated distress** expressed through coded or hidden language. **Knowing how to respond is also deeply subjective**, and practitioners may disagree about what a reply should prioritise.
+
+VEILED-SH is a Singapore-context benchmark for evaluating AI responses to indirect expressions of distress, self-harm, and suicidal ideation. It preserves differences in practitioner perspectives through separate reference policies.
+
+## Our taxonomy
+
+Developed with practitioner input, our taxonomy considers the deployment context, persona, and prompt. Each dimension supports multiple labels.
+
+<figure className="veiled-taxonomy" aria-label="VEILED taxonomy grouped into query and response categories">
+  <section className="veiled-taxonomy__group veiled-taxonomy__group--context" aria-labelledby="veiled-context">
+    <h3 id="veiled-context" className="veiled-taxonomy__heading">Deployment context <span>Given a persona and prompt</span></h3>
+    <ul className="veiled-taxonomy__categories veiled-taxonomy__categories--context">
+      <li>Counsellor chat</li>
+      <li>Forum post</li>
+      <li>Platform search</li>
+      <li>Triage tool</li>
+    </ul>
+  </section>
+  <section className="veiled-taxonomy__group veiled-taxonomy__group--query" aria-labelledby="veiled-query">
+    <h3 id="veiled-query" className="veiled-taxonomy__heading">Query categories <span>What is being expressed</span></h3>
+    <dl className="veiled-taxonomy__dimensions">
+      <div className="veiled-taxonomy__row">
+        <dt>Intent</dt>
+        <dd>
+          <ul className="veiled-taxonomy__categories">
+            <li className="veiled-taxonomy__intent--benign">Benign</li>
+            <li className="veiled-taxonomy__intent--distress">Distress</li>
+            <li className="veiled-taxonomy__intent--nssi">Non-suicidal self-injury <span>Levels 1 to 3</span></li>
+            <li className="veiled-taxonomy__intent--suicidal">Suicidal intent <span>Levels 1 to 5</span></li>
+          </ul>
+        </dd>
+      </div>
+      <div className="veiled-taxonomy__row">
+        <dt>Function</dt>
+        <dd>
+          <ul className="veiled-taxonomy__categories">
+            <li>Emotional regulation</li>
+            <li>Existential</li>
+            <li>Curiosity / exploration</li>
+            <li>Interpersonal</li>
+            <li>Unknown</li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+  </section>
+  <section className="veiled-taxonomy__group veiled-taxonomy__group--response" aria-labelledby="veiled-response">
+    <h3 id="veiled-response" className="veiled-taxonomy__heading">Response categories <span>How the AI should respond</span></h3>
+    <dl className="veiled-taxonomy__dimensions">
+      <div className="veiled-taxonomy__row">
+        <dt>Response</dt>
+        <dd>
+          <ul className="veiled-taxonomy__categories veiled-taxonomy__categories--response">
+            <li><CircleHelp aria-hidden="true" />Clarify / investigate</li>
+            <li><Ban aria-hidden="true" />Refuse to engage</li>
+            <li><Heart aria-hidden="true" />Support and validate</li>
+            <li><Lightbulb aria-hidden="true" />Provide advice</li>
+            <li><Wind aria-hidden="true" />De-escalate</li>
+            <li><CornerUpRight aria-hidden="true" />Redirect</li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+  </section>
+  <figcaption>No response category is prescribed as correct. Practitioners judge fit against context, intent, and severity</figcaption>
+</figure>
+
+## Dataset
+
+The [Hugging Face dataset](https://huggingface.co/datasets/govtech/veiled-sh) has **10,003 rows with labels from six profiles**. Three profiles represent peer-support practitioners and three represent clinicians. These labels are judge-generated. Each row includes a prompt, persona context, and one of four settings: counsellor chat, forum post, search query, or triage tool.
+
+Run the prompts against your AI system and compare its responses with the profiles for the relevant role. Report agreement per profile to see which response expectations your system meets and where it falls short.
+
+## Extend it for your use case
+
+Use the prompts, personas, and contexts as seed data for **multi-turn scenarios**. A user simulator can build on each case to test how your system responds as a conversation develops.
+
+You can also ask practitioners in your organisation to annotate a prompt sample and define appropriate responses for your setting. Use those annotations to calibrate your own evaluator profiles and check them against held-out human annotations. See [Evaluation methods](../evaluating-ai-systems/methods.mdx#human-evaluation) for guidance.
+
+These profiles support proxy evaluations that measure agreement with selected reference policies. Clinical safety still requires separate validation.
+
+## Access
+
+<div className="access-grid">
+
+  <a className="access-card access-card--dataset" href="https://huggingface.co/datasets/govtech/veiled-sh"><strong>Dataset</strong><span>Prompts, profile labels, and taxonomy on Hugging Face</span></a>
+  <a className="access-card access-card--blog" href="https://blog.ai.gov.sg/behind-veiled-expressions-a-singapore-context-benchmark-for-mental-health-ai-evaluation/"><strong>Blog</strong><span>Background, construction, and evaluation approach</span></a>
+
+</div>
+
+Hugging Face requires you to sign in and accept the dataset access conditions, including sharing your contact information.
