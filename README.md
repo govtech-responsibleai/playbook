@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="website/static/images/govtech-white.gif" />
-    <source media="(prefers-color-scheme: light)" srcset="website/static/images/govtech-black.gif" />
-    <img src="website/static/images/govtech-black.gif" alt="GovTech" width="300" />
+    <source media="(prefers-color-scheme: dark)" srcset="website/static/images/govtech-readme-dark.gif" />
+    <source media="(prefers-color-scheme: light)" srcset="website/static/images/govtech-readme-light.gif" />
+    <img src="website/static/images/govtech-readme-light.gif" alt="GovTech" width="300" />
   </picture>
 </p>
 
