@@ -7,20 +7,24 @@ sidebar_position: 1
 
 Evaluation is the process of defining what good behaviour means, creating representative tests, measuring system performance, and analysing failures. For AI systems, this includes both functional quality and Responsible AI risks.
 
-:::tip[Key message]
-
-Start by testing whether the system works for its intended task. Then test whether it behaves safely, privately, robustly, and fairly in the contexts that matter.
-
-:::
-
 ## What to evaluate
 
-Use the [Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/getting-started) to define specifications, design tests, choose judges, and analyse results. This section covers four Responsible AI areas:
+The type of evaluation you run, and how you run it, depends on the scope of your evals.
+
+**Functional evaluations** test whether the system does its intended task well. For instance, they check whether answers are correct, helpful, and in the right tone. The [Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/getting-started) gives a comprehensive guide to setting up evals for any AI system.
+
+Many of the same techniques also apply to **specialised evaluations**. This playbook goes deeper into specific areas of Responsible AI, introduced in [About Responsible AI](../start-here/about-responsible-ai.mdx). This section covers four areas:
 
 1. **[Safety](safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
 2. **[Robustness](robustness.md)** — does it stay consistent, grounded, and usable when real input is messier than the eval set?
 3. **[Fairness](fairness.md)** — does it treat affected groups consistently?
 4. **[Privacy](privacy.md)** — does it avoid leaking PII or sensitive data?
+
+:::tip[Balance functional quality and safety]
+
+Before you continue, note that some metrics pull in opposite directions. The most common example is the trade-off between helpfulness and harmlessness: a system that refuses more often is less helpful. We recommend that you use both playbooks together to find a balance between the qualities you wish to measure.
+
+:::
 
 ## Identify risks in your use case
 
