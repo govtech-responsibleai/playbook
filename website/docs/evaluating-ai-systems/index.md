@@ -5,6 +5,12 @@ sidebar_position: 1
 
 # Evaluating AI systems
 
+:::info[What's new on this page]
+
+Updated for the upcoming release: added links to the Evaluation Playbook for general evaluation guidance and retained worked examples for safety, robustness, fairness, and privacy testing.
+
+:::
+
 Evaluation is the process of defining what good behaviour means, creating representative tests, measuring system performance, and analysing failures. For AI systems, this includes both functional quality and Responsible AI risks.
 
 ## What to evaluate
