@@ -15,7 +15,7 @@ Start by testing whether the system works for its intended task. Then test wheth
 
 ## What to evaluate
 
-Use the [Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/docs/getting-started) to define specifications, design tests, choose judges, and analyse results. This section covers four Responsible AI areas:
+Use the [Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/getting-started) to define specifications, design tests, choose judges, and analyse results. This section covers four Responsible AI areas:
 
 1. **[Safety](safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
 2. **[Robustness](robustness.md)** — does it stay consistent, grounded, and usable when real input is messier than the eval set?
@@ -79,7 +79,7 @@ Continuing the GrantsAssist example, the team might decide on the following dime
 
 ## Include risk-specific test cases
 
-Use the [evaluation set design guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/evaluation-set/overview) for the general process. Include cases that test the risks identified above, such as prohibited requests, adversarial inputs, and known failures.
+Use the [evaluation set design guide](https://playbooks.aip.gov.sg/evaluation-playbook/design/evaluation-set/overview) for the general process. Include cases that test the risks identified above, such as prohibited requests, adversarial inputs, and known failures.
 
 <details>
 <summary><strong>Worked example: building the evaluation set for GrantsAssist</strong></summary>
@@ -102,7 +102,7 @@ Continuing the GrantsAssist example, the team might populate the evaluation set 
 
 ## Set risk thresholds and review rules
 
-Use the [metrics and interpretation guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/judgement/metrics-interpretation) to set acceptance criteria. Specify which risk failures block release and when to repeat the tests. The thresholds below are illustrative.
+Use the [metrics and interpretation guide](https://playbooks.aip.gov.sg/evaluation-playbook/design/judgement/metrics-interpretation) to set acceptance criteria. Specify which risk failures block release and when to repeat the tests. The thresholds below are illustrative.
 
 <details>
 <summary><strong>Worked example: defining metrics for GrantsAssist</strong></summary>
@@ -125,7 +125,7 @@ Continuing the GrantsAssist example, the team might pin down the following metri
 
 ## Address risk failures
 
-Use the [failure analysis guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/improve/analysing-failures) to investigate causes. Prioritise failures by severity and affected users, then apply the [relevant mitigations](../improving-ai-systems/index.md).
+Use the [failure analysis guide](https://playbooks.aip.gov.sg/evaluation-playbook/improve/analysing-failures) to investigate causes. Prioritise failures by severity and affected users, then apply the [relevant mitigations](../improving-ai-systems/index.md).
 
 <details>
 <summary><strong>Worked example: analysing failures for GrantsAssist</strong></summary>

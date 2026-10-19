@@ -21,7 +21,7 @@ Document each failure mode that needs a control. For each one, identify:
 
 For example, an AI system that answers questions from internal documents could expose personal data during retrieval or generation. A retrieval-time control can remove documents the user is not authorised to access. An output guardrail can detect personal data that remains in the generated response. These controls address different points in the same failure path.
 
-Use evaluation results to prioritise controls. The [evaluation methods](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/judgement/types-of-judges) page explains how to choose judges and use human review.
+Use evaluation results to prioritise controls. The [evaluation methods](https://playbooks.aip.gov.sg/evaluation-playbook/design/judgement/types-of-judges) page explains how to choose judges and use human review.
 
 ## Place guardrails where they can act
 

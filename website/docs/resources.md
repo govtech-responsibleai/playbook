@@ -17,7 +17,7 @@ This page has been updated for the upcoming Responsible AI Playbook release. It 
 
 :::
 
-This page lists resources for Responsible AI and AI safety. For general evaluation resources, see [External resources in the Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/docs/tools-resources/external-resources).
+This page lists resources for Responsible AI and AI safety. For general evaluation resources, see [Further reading in the Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/tools-resources/further-reading).
 
 ## Surveys
 

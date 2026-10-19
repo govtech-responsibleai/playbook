@@ -103,6 +103,6 @@ Everything not shown here, such as learning rate, batch size, and LoRA rank, sho
 
 ## Where to go next
 
-- [Evaluation methods](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/judgement/types-of-judges) — establishing the gap before, and the result after.
+- [Evaluation methods](https://playbooks.aip.gov.sg/evaluation-playbook/design/judgement/types-of-judges) — establishing the gap before, and the result after.
 - [Guardrail architecture](guardrails/guardrail-architecture.md) — the lower-investment alternative to compare against.
 - [Fine-tuning tooling](../resources.md#fine-tuning-tooling) — libraries and recipes with runnable code.
