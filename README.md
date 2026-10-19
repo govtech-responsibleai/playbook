@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="website/static/images/govtech-white.gif" alt="GovTech" width="300" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="website/static/images/govtech-readme-dark.gif" />
+    <source media="(prefers-color-scheme: light)" srcset="website/static/images/govtech-readme-light.gif" />
+    <img src="website/static/images/govtech-readme-light.gif" alt="GovTech" width="300" />
+  </picture>
 </p>
 
 <h1 align="center">Responsible AI Playbook</h1>
@@ -36,7 +40,6 @@ website/             Docusaurus 3 site source
 .githooks/           Shared pre-commit hooks
 .agents/skills/      Claude Code skills (write-page, polish-page)
 AGENTS.md            Repository instructions for coding assistants
-CLAUDE.md            Identical to AGENTS.md (enforced by hook)
 CONTRIBUTING.md      Contributor workflow and PR expectations
 ```
 
@@ -48,7 +51,7 @@ git config core.hooksPath .githooks
 
 Enforces:
 - `AGENTS.md` must be staged when repository-level files change.
-- `CLAUDE.md` and `AGENTS.md` must have identical content.
+- `.agents/skills/` and `.claude/skills/` must have identical content.
 
 ## Local hooks
 
