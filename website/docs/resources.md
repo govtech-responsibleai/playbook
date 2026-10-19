@@ -17,20 +17,18 @@ This page has been updated for the upcoming Responsible AI Playbook release. It 
 
 :::
 
-This page collates papers, benchmarks, methods, repositories, and guides which provides more information on Responsible AI and AI safety work.
+This page lists resources for Responsible AI and AI safety. For general evaluation resources, see [External resources in the Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/docs/tools-resources/external-resources).
 
 ## Surveys
 
 - [Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback (Jul 2023)](https://arxiv.org/abs/2307.15217)
 - [Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models (Sep 2023)](https://arxiv.org/abs/2309.01219)
 - [Open Problems in Mechanistic Interpretability (Jan 2025)](https://arxiv.org/abs/2501.16496)
-- [A Survey on LLM-as-a-Judge (Nov 2024)](https://arxiv.org/abs/2411.15594) - a comprehensive review of building reliable systems that use LLMs as evaluators
 
 ## Benchmarks
 
 - [VEILED-SH](https://huggingface.co/datasets/govtech/veiled-sh) provides Singapore-context mental-health prompts with separate evaluator-profile labels. See the [playbook guide](tools/veiled.mdx) for use and limits.
 
-- [Holistic Evaluation of Language Models](https://crfm.stanford.edu/helm/) - a reproducible and transparent framework for evaluating foundation models
 - [Libra-Leaderboard: Towards Responsible AI through a Balanced Leaderboard of Safety and Capability (Dec 2024)](https://arxiv.org/pdf/2412.18551) - uses a distance-to-optimal-score method to calculate overall rankings, balancing performance and safety
 - [DarkBench: Benchmarking Dark Patterns in Large Language Models (Mar 2025)](https://arxiv.org/abs/2503.10728) - benchmark to detect manipulative LLM outputs across six categories
 
@@ -42,7 +40,6 @@ This page collates papers, benchmarks, methods, repositories, and guides which p
 - [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models (Oct 2023)](https://github.com/SheltonLiu-N/AutoDAN?tab=readme-ov-file) - generates stealthy jailbreak prompts using hierarchical genetic algorithms
 - [The Crescendo Multi-Turn LLM Jailbreak Attack (Apr 2024)](https://crescendo-the-multiturn-jailbreak.github.io/) - multi-turn attack that progressively steers a conversation toward a prohibited objective
 - [Fishing for Magikarp: Automatically detecting under-trained tokens in large language models (May 2024)](https://aclanthology.org/2024.emnlp-main.649/) - automatic detection of problematic rare tokens
-- [Scaling Synthetic Data Creation with 1,000,000,000 Personas (Jun 2024)](https://github.com/tencent-ailab/persona-hub) - personas for synthetic testing data generation
 - [AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs (Oct 2024)](https://autodans.github.io/AutoDAN-Turbo/) - discovers and evolves attack strategies
 
 ## Guardrails
@@ -89,13 +86,10 @@ This page collates papers, benchmarks, methods, repositories, and guides which p
 ## Repositories
 
 - [Awesome-LM-SSP](https://github.com/ThuCCSLab/Awesome-LM-SSP/tree/main) - reading list for safety, security, and privacy in large models
-- [Awesome-LLM-Judges](https://github.com/haizelabs/Awesome-LLM-Judges) - research on using LLM judges for automated evaluation
-- [Awesome Agent Evals](https://github.com/benchflow-ai/awesome-evals) - curated resources for building and evaluating AI agents, including papers, tools, and benchmarks
 
 ## Blogs and guides
 
 - [Behind VEILED expressions](https://blog.ai.gov.sg/behind-veiled-expressions-a-singapore-context-benchmark-for-mental-health-ai-evaluation/) explains the benchmark's construction and approach to evaluating responses to indirect distress.
 
-- [Frequently Asked Questions (And Answers) About AI Evals](https://hamel.dev/blog/posts/evals-faq/) and [Your AI Product Needs Evals](https://hamel.dev/blog/posts/evals/) by Hamel Husain - practical tips on iterative evaluations for AI systems
 - [Simon Willison's Weblog](https://simonwillison.net/) - practical writing on AI systems and prompt injection
 - [OpenAI's Practices for Governing Agentic AI Systems](https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf) - recommendations and open questions for agentic AI systems

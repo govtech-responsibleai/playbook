@@ -34,7 +34,7 @@ Evaluate the guardrail on held-out examples that represent expected traffic and 
 
 Review both misses and over-blocks. Misses show where risk remains. Over-blocks show where the control reduces usefulness or erodes user trust.
 
-Test the full AI system with and without the guardrail where possible. A detector that performs well in isolation can still produce poor results when combined with prompts, retrieval, tools, or other guardrails. Use the broader [evaluation methods](../../evaluating-ai-systems/methods.mdx) to design representative tests.
+Test the full AI system with and without the guardrail where possible. A detector that performs well in isolation can still produce poor results when combined with prompts, retrieval, tools, or other guardrails. Use the [evaluation set design guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/evaluation-set/overview) to design representative tests.
 
 ## Tune thresholds and responses
 

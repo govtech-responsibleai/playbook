@@ -15,28 +15,16 @@ Start by testing whether the system works for its intended task. Then test wheth
 
 ## What to evaluate
 
-A practical evaluation plan usually covers five areas. Each has its own page in this section:
+Use the [Evaluation Playbook](https://playbooks.aip.gov.sg/evaluation-playbook/docs/getting-started) to define specifications, design tests, choose judges, and analyse results. This section covers four Responsible AI areas:
 
-1. **[Functional](functional.mdx)** — does the system do the job it was built for? Covers the quality criteria specific to your product, and performance.
-2. **[Safety](safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
-3. **[Robustness](robustness.md)** — does it stay consistent, grounded, and usable when real input is messier than the eval set?
-4. **[Fairness](fairness.md)** — does it treat affected groups consistently?
-5. **[Privacy](privacy.md)** — does it avoid leaking PII or sensitive data?
+1. **[Safety](safety.mdx)** — does it avoid harmful, prohibited, or adversarial behaviour?
+2. **[Robustness](robustness.md)** — does it stay consistent, grounded, and usable when real input is messier than the eval set?
+3. **[Fairness](fairness.md)** — does it treat affected groups consistently?
+4. **[Privacy](privacy.md)** — does it avoid leaking PII or sensitive data?
 
-For cross-cutting techniques used across all five areas — human evaluation, LLM-as-judge, and continuous evals — see [Evaluation methods](methods.mdx).
+## Identify risks in your use case
 
-## Designing an evaluation plan
-
-An evaluation plan turns broad concerns into tests that can be run, reviewed, and repeated.
-
-### 1. Specify your use case
-
-Start first by documenting what your AI system is meant to do, what it processes, and what the key risks are:
-
-- AI system purpose and intended users.
-- Inputs, outputs, tools, retrieved sources, and human review points.
-- Intended use and prohibited use.
-- Known high-risk user journeys or failure modes.
+Record the system's purpose, users, inputs, tools, and human review points. Identify prohibited uses and failures that could cause harm.
 
 <details>
 <summary><strong>Worked example: public-sector eligibility chatbot</strong></summary>
@@ -56,9 +44,9 @@ A citizen-facing eligibility chatbot might fill these in as follows.
 
 </details>
 
-### 2. Choose evaluation dimensions
+## Choose RAI evaluation dimensions
 
-Most AI systems will require functional testing (to assess how well the AI system performs) and safety testing (to assess resistance to common safety risks and attacks). Depending on the use case, other evaluation dimensions may be needed:
+Assess safety risks alongside task quality. Depending on the use case, other evaluation dimensions may be needed:
 
 - Privacy and PII leakage evals for systems handling user data, logs, documents, or retrieved sources.
 - Fairness evals where protected attributes could influence outcomes.
@@ -89,17 +77,9 @@ Continuing the GrantsAssist example, the team might decide on the following dime
 
 </details>
 
-### 3. Build the evaluation set
+## Include risk-specific test cases
 
-A useful evaluation set should include:
-
-- Standard questions across a variety of categories covered by the chatbot.
-- Realistic edge-case questions testing the chatbot's boundaries.
-- Out-of-scope and prohibited requests, especially relating to safety or appropriateness.
-- Adversarial or stress cases where relevant.
-- Known historical failures, if available.
-
-Building a good evaluation set that is comprehensive, realistic, and useful (especially reflecting how users would actually use and converse with the AI system) is difficult. For guidance on creating representative evaluation sets, see Kaleidoscope for more information.
+Use the [evaluation set design guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/evaluation-set/overview) for the general process. Include cases that test the risks identified above, such as prohibited requests, adversarial inputs, and known failures.
 
 <details>
 <summary><strong>Worked example: building the evaluation set for GrantsAssist</strong></summary>
@@ -120,18 +100,9 @@ Continuing the GrantsAssist example, the team might populate the evaluation set 
 
 </details>
 
-### 4. Define metrics and review process
+## Set risk thresholds and review rules
 
-Use quantitative metrics when behaviour is easy to score, and rubric-based or human evaluation when quality is contextual.
-
-For each metric, you should define:
-
-- What counts as success.
-- What threshold is acceptable for launch.
-- Which failures require mitigation before launch.
-- How the evaluation will be rerun after changes.
-
-Look at the [Evaluation Methods section](./methods.mdx) for more details about the different methods that can be used for evaluation metrics.
+Use the [metrics and interpretation guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/design/judgement/metrics-interpretation) to set acceptance criteria. Specify which risk failures block release and when to repeat the tests. The thresholds below are illustrative.
 
 <details>
 <summary><strong>Worked example: defining metrics for GrantsAssist</strong></summary>
@@ -152,9 +123,9 @@ Continuing the GrantsAssist example, the team might pin down the following metri
 
 </details>
 
-### 5. Analyse failures
+## Address risk failures
 
-Good error analysis is critical to improving your AI system's performance. Group failures by root cause, severity, affected users, and whether they can be mitigated through system design, data changes, guardrails, or human review. Apply the [relevant mitigations](../improving-ai-systems/index.md) to improve your system's safety.
+Use the [failure analysis guide](https://playbooks.aip.gov.sg/evaluation-playbook/docs/improve/analysing-failures) to investigate causes. Prioritise failures by severity and affected users, then apply the [relevant mitigations](../improving-ai-systems/index.md).
 
 <details>
 <summary><strong>Worked example: analysing failures for GrantsAssist</strong></summary>
