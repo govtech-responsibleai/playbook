@@ -2,12 +2,6 @@
 
 Canonical repository instructions for coding assistants working in this repository.
 
-## Canonical instruction file
-
-- `AGENTS.md` and `CLAUDE.md` must always have identical content.
-- When updating assistant guidance, edit both files (or edit one and copy to the other).
-- A pre-commit hook enforces this: commits are blocked if the two files differ.
-
 ## What this is
 
 Documentation site for the **Responsible AI Playbook**, maintained by GovTech AI Practice for Singapore public service. The active site is built with **Docusaurus 3**. MkDocs is deprecated and should be treated as legacy reference material only.
@@ -42,8 +36,7 @@ repo root/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── PAGE-STANDARDS.md              ← page structure, release-marking, and linking rules
-├── AGENTS.md
-└── CLAUDE.md                      ← must be identical to AGENTS.md
+└── AGENTS.md
 ```
 
 Key locations (Docusaurus):
@@ -64,7 +57,7 @@ Run all active site commands from `website/`:
 cd website
 npm install          # first time only
 npm run start        # dev server at localhost:3000
-npm run build        # production build → website/build/
+npm run build        # production build → website/build/ (user only, see Validation)
 ```
 
 ## Validation
@@ -73,10 +66,12 @@ npm run build        # production build → website/build/
 
 Validate changes this way:
 
-1. **Docs compile.** Run `npm run build` from `website/`. It must end with `[SUCCESS] Generated static files in "build"`.
-2. **Links actually resolve.** A green build does *not* prove this: `onBrokenLinks` and `onBrokenMarkdownLinks` are both set to `warn` in `docusaurus.config.ts`, so broken links only produce warnings. Read the build output for warnings, or check the rendered HTML under `website/build/` directly.
-3. **Assets actually render.** Confirm images resolve rather than trusting the Markdown source. Docusaurus rewrites `/images/foo.png` to a content-hashed path under `build/assets/images/` and only emits that path when the source file exists in `website/static/`, so finding the hashed reference in the built HTML is proof the image will display.
-4. **Visual review for visible changes.** Use `npm run start` for layout, styling, or component work.
+Agents never run `npm run build`. The build and the user's dev server share the `website/.docusaurus/` cache. A build writes the production `baseUrl` (`/responsibleai/`) into that cache, and every page on the running dev server then shows "Page not found". When a change needs a build check, ask the user to run it and to share the output.
+
+1. **Docs compile.** The user runs `npm run build` from `website/`. It must end with `[SUCCESS] Generated static files in "build"`.
+2. **Links actually resolve.** A green build does *not* prove this: `onBrokenLinks` and `onBrokenMarkdownLinks` are both set to `warn` in `docusaurus.config.ts`, so broken links only produce warnings. Read the build output that the user shares for warnings. Without build output, confirm that each relative link points to a file that exists under `website/docs/`.
+3. **Assets actually render.** Confirm that each image path resolves to a file in `website/static/`. For example, `/images/foo.png` needs `website/static/images/foo.png`.
+4. **Visual review for visible changes.** The user's dev server (`npm run start`) hot reloads. Ask the user to check layout, styling, or component work there.
 5. **Navigation is wired.** A new page must appear in `website/sidebars.ts`; otherwise the build warns that the doc is not in any sidebar and readers cannot reach it.
 
 Because there are no tests, review attention belongs on factual accuracy, tone, heading conventions, and whether links and images resolve — the failure modes this repository actually has.
@@ -126,7 +121,7 @@ All CSS-based content — diagrams, cards, grids, interactive components — mus
 - **Semantic HTML:** use `<figure>`, `<figcaption>`, `<section>` where meaningful; always add `role="img"` and `aria-label` to complex diagrams.
 - **BEM naming:** all custom styles use `component-name__element--modifier` pattern.
 - **CSS custom properties:** define colours, spacing, and typography as variables for global updates.
-- **Validation:** run `npm run build`, test at 480px / 768px / 1024px / 1440px+, check for text overlap and icon visibility at all sizes.
+- **Validation:** check that the docs compile (Validation step 1), test at 480px / 768px / 1024px / 1440px+, check for text overlap and icon visibility at all sizes.
 
 Refer to `.guardrail-flow` and `.evaluation-method-spectrum` in `custom.css` for working examples.
 
@@ -165,13 +160,7 @@ The shared pre-commit hook runs two checks:
    AGENT_GUIDES_REVIEWED=1 git commit
    ```
 
-2. **`.githooks/check-claude-agents-sync.sh`** — blocks commits if `CLAUDE.md` and `AGENTS.md` have different content. Fix with:
-
-   ```bash
-   cp AGENTS.md CLAUDE.md && git add CLAUDE.md AGENTS.md
-   ```
-
-3. **`.githooks/check-skills-sync.sh`** — blocks commits if `.agents/skills/` and `.claude/skills/` have different content. Fix with:
+2. **`.githooks/check-skills-sync.sh`** — blocks commits if `.agents/skills/` and `.claude/skills/` have different content. Fix with:
 
    ```bash
    rm -rf .agents/skills && cp -r .claude/skills .agents/skills

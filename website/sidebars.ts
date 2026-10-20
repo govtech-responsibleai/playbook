@@ -17,8 +17,6 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         {type: 'doc', id: 'evaluating-ai-systems/index', label: 'Overview'},
-        {type: 'doc', id: 'evaluating-ai-systems/methods', label: 'Evaluation methods'},
-        {type: 'doc', id: 'evaluating-ai-systems/functional', label: 'Functional evals'},
         {
           type: 'category',
           label: 'Evals for RAI principles',
@@ -50,7 +48,7 @@ const sidebars: SidebarsConfig = {
             {type: 'doc', id: 'improving-ai-systems/guardrails/monitoring-incident-response', label: 'Monitoring and incident response'},
           ],
         },
-        {type: 'doc', id: 'improving-ai-systems/finetuning', label: 'Finetuning'},
+        {type: 'doc', id: 'improving-ai-systems/finetuning', label: 'Fine-tuning'},
         {
           type: 'category',
           label: 'Improving RAI principles',
@@ -86,6 +84,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {type: 'doc', id: 'tools/rabakbench', label: 'RabakBench'},
             {type: 'doc', id: 'tools/minorbench', label: 'MinorBench'},
+            {type: 'doc', id: 'tools/veiled', label: 'VEILED-SH'},
             {type: 'doc', id: 'tools/responsible-ai-benchmark', label: 'Responsible AI Benchmark'},
           ],
         },

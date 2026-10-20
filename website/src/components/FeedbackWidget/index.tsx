@@ -29,34 +29,30 @@ function ThumbDownIcon() {
 export default function FeedbackWidget(): React.ReactElement | null {
   const { pathname } = useLocation();
   const [submitted, setSubmitted] = useState(false);
-  const [showTextInput, setShowTextInput] = useState(false);
+  const [helpful, setHelpful] = useState<boolean | null>(null);
   const [feedbackText, setFeedbackText] = useState('');
 
-  function sendFeedback(helpful: boolean, text?: string) {
+  function sendFeedback(wasHelpful: boolean, text?: string) {
     if (window.gtag) {
       window.gtag('event', 'doc_feedback', {
         page_path: pathname,
-        helpful: helpful ? 'yes' : 'no',
+        helpful: wasHelpful ? 'yes' : 'no',
         ...(text ? { feedback_text: text.slice(0, 100) } : {}),
       });
     }
     setSubmitted(true);
   }
 
-  function handleThumbsUp() {
-    sendFeedback(true);
-  }
-
-  function handleThumbsDown() {
-    setShowTextInput(true);
+  function handleThumbClick(wasHelpful: boolean) {
+    setHelpful(wasHelpful);
   }
 
   function handleSubmitText() {
-    sendFeedback(false, feedbackText);
+    sendFeedback(helpful!, feedbackText);
   }
 
   function handleSkipText() {
-    sendFeedback(false);
+    sendFeedback(helpful!);
   }
 
   if (submitted) {
@@ -67,10 +63,12 @@ export default function FeedbackWidget(): React.ReactElement | null {
     );
   }
 
-  if (showTextInput) {
+  if (helpful !== null && !submitted) {
     return (
       <div className={styles.containerColumn}>
-        <p className={styles.prompt}>What could we improve?</p>
+        <p className={styles.prompt}>
+          {helpful ? 'What did you find useful?' : 'What could we improve?'}
+        </p>
         <div className={styles.textInputRow}>
           <input
             type="text"
@@ -97,14 +95,14 @@ export default function FeedbackWidget(): React.ReactElement | null {
       <div className={styles.buttons}>
         <button
           className={styles.button}
-          onClick={handleThumbsUp}
+          onClick={() => handleThumbClick(true)}
           aria-label="Yes, this page was helpful"
         >
           <ThumbUpIcon />
         </button>
         <button
           className={styles.button}
-          onClick={handleThumbsDown}
+          onClick={() => handleThumbClick(false)}
           aria-label="No, this page was not helpful"
         >
           <ThumbDownIcon />
